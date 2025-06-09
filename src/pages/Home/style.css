@@ -1,0 +1,492 @@
+*{
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background-color: #DFE3F0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+/* NAVBAR */
+
+#navbar{
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 65px;
+}
+
+#navbar-left{
+    display: flex;
+    align-items: center;
+}
+
+#navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 100px 0 0;
+}
+
+#conta-cadastrada{
+    color: #4E6074;
+    font-size: 20px;
+    margin: 0;
+}
+
+#nav-logo{
+    width: 100px;
+    height: 65px;
+    margin: 0 0 0 100px;
+}
+
+.nav-icon{
+    width: 40px;
+    height: 40px;
+}
+
+/* CONTEUDO */
+
+#principal{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 30px;
+}
+
+/* SEÇÃO 1: UPDATE E ALERTAS */
+
+#container1{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* PAINEL UPDATE */
+
+#painel-update{
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    border-radius: 20px;
+    gap: 25px;
+}
+
+#title-update{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.upd-icon{
+    width: 50px;
+    height: 50px;
+}
+
+.updTitle{
+    width: 120px;
+    color: #344253;
+}
+
+.upd-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #344253;
+    
+    p{
+        margin: 0;
+    }
+}
+
+#updButton{
+    height: 30px;
+    width: 150px;
+    border-radius: 15px;
+    border: none;
+    color: #F5F5F5;
+    background: linear-gradient(to right, #68C899, #489D73);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* PAINEL ALERTAS */
+
+#painel-alertas{
+    background-color: #F5F5F5;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+#containerAlertTitle{
+    width: 90%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center
+}
+
+#box-title{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.alertIcon{
+    width: 20px;
+    height: 20px;
+}
+
+#containerAlertInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 60%;
+}
+
+#containerTitle{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#alertIcon{
+    width: 50px;
+    height: 50px;
+}
+
+#alertTitle{
+    color: #344253;
+    font-size: 40px;
+}
+
+#alert1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .alertInfo{
+
+} */
+
+#alertButton{
+    height: 50px;
+    width: 200px;
+    border-radius: 25px;
+    border: none;
+    color: #F5F5F5;
+    background: linear-gradient(to right, #68C899, #489D73);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.AlertInfoTitle{
+    color: #344253;
+
+    h2{
+        margin: 0px 0px 0px 0px;
+    }
+}
+
+.AlertInfoText{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* SEÇÃO 2: GRAFICOS */
+
+#container2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+#painel-graficos{
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+#grafBox{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#grafBoxTitle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grafIcon{
+    width: 40px;
+    height: 40px;
+}
+
+#grafTitle{
+    color: #344253;
+    font-size: 40px;
+    margin: 0;
+}
+
+#grafButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.grafButton{
+    height: 50px;
+    width: 200px;
+    border-radius: 15px;
+    border: none;
+    color: #F5F5F5;
+    background: linear-gradient(to right, #68C899, #489D73);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#grafContent{
+    display: flex;
+    width: 80%;
+}
+
+
+
+/* SEÇÃO 3: RELATORIO, ETIQUETA E PLANO PREMIUM */
+
+#container3{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+#containerLeft{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px; /* TEMPORARIO PRA DEIXAR SEPARADO PQ TOC*/
+}
+
+#containerRight{
+    width: 48%;
+}
+
+
+/* PAINEL RELATORIOS */
+
+#painel-relatorio{
+    background-color: #F5F5F5;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    height: 20vh;
+}
+
+#containerRelatContent{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#containerRelatTitle{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#containerRelatImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+#containerRelatTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#relatTitle{
+    color: #344253;
+    font-size: 40px;
+    margin: 0;
+}
+
+#relatIcon{
+    width: 40px;
+    height: 40px;
+}
+
+#relatImg{
+    width: 100px;
+    height: 120px;
+}
+
+
+/* PAINEL ETIQUETAS */
+
+#painel-etiquetas{
+    background-color: #F5F5F5;
+    border-radius: 30px;
+    display: flex;
+    width: 90%;
+    height: 20vh;
+}
+
+#containerEtiqContent{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#containerEtiqTitle{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#containerEtiqImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+#containerEtiqTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#etiqTitle{
+    color: #344253;
+    font-size: 40px;
+    margin: 0;
+}
+
+#etiqIcon{
+    width: 40px;
+    height: 40px;
+}
+
+#etiqImg{
+    width: 100px;
+    height: 120px;
+}
+
+/* PAINEL PUBLICIDADE PREMIUM */
+
+#painel-publicidade{
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    background: linear-gradient( #1F8170, #8BD8CA);
+    width: 90%;
+    height: 45vh;
+}
+
+#containerPubliTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    font-size: 30px;
+}
+
+#publiTitle{
+    color: #282C31;
+    margin: 0;
+}
+
+#containerPubliButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+}
+
+#publiButton{
+    width: 150px;
+    height: 30px;
+    border: 2px solid #F5F5F5;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #F5F5F5;
+}
+
+
+
+
+
+
+
+/* SEÇÃO 4: FOOTER */
+
+#footer-bar{
+    background-color: #489D73;
+    color: azure;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
