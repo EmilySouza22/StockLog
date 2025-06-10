@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 *{
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Medium", sans-serif;
 }
 
 body{
@@ -75,11 +83,11 @@ body{
 
 /* PAINEL UPDATE */
 
-#painel-update{
+#painelUpdate{
     background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     width: 20%;
     height: 100%;
@@ -87,7 +95,7 @@ body{
     gap: 25px;
 }
 
-#title-update{
+#titleUpdate{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -95,37 +103,57 @@ body{
     gap: 10px;
 }
 
-.upd-icon{
-    width: 50px;
-    height: 50px;
+.updIcon{
+    width: 60px;
+    height: 60px;
 }
 
 .updTitle{
-    width: 120px;
+    font-size: 35px;
+    line-height: 30px;
     color: #344253;
 }
 
-.upd-text{
+.updText{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #344253;
-    
-    p{
-        margin: 0;
-    }
+}
+
+.updInfo{
+    font-size: 30px;
+    color: #344253;
+    margin: 0;
+}
+
+.updInfoTime{
+    font-size: 20px;
+    color: #344253;
+    margin: 0;
+}
+
+.updHr{
+    border-top: 2px solid #344253;
+    margin: 5px 0;
+    width: 80%;
+}
+
+.updBoxButton{
+    height: 30%;
 }
 
 #updButton{
-    height: 30px;
-    width: 150px;
-    border-radius: 15px;
+    height: 60px;
+    width: 200px;
+    border-radius: 30px;
     border: none;
     color: #F5F5F5;
     background: linear-gradient(to right, #68C899, #489D73);
     cursor: pointer;
     font-weight: bold;
+    font-size: 20px;
 }
 
 /* PAINEL ALERTAS */
@@ -142,10 +170,30 @@ body{
 }
 
 #containerAlertTitle{
-    width: 90%;
+    width: 88%;
+    height: 30%;
     display: flex;
     justify-content:space-between;
     align-items: center
+}
+
+#containerTitle{
+    width: 16%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#alertIcon{
+    width: 50px;
+    height: 50px;
+}
+
+.alertInfoText{
+    color: #344253;
+    font-size: 20px;
+    margin: 0;
 }
 
 #box-title{
@@ -155,45 +203,15 @@ body{
 }
 
 .alertIcon{
-    width: 20px;
-    height: 20px;
-}
-
-#containerAlertInfo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 60%;
-}
-
-#containerTitle{
-    width: 20%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#alertIcon{
-    width: 50px;
-    height: 50px;
+    width: 24px;
+    height: 24px;
 }
 
 #alertTitle{
     color: #344253;
     font-size: 40px;
+    margin: 0;
 }
-
-#alert1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* .alertInfo{
-
-} */
 
 #alertButton{
     height: 50px;
@@ -207,19 +225,55 @@ body{
     font-size: 20px;
 }
 
-.AlertInfoTitle{
-    color: #344253;
-
-    h2{
-        margin: 0px 0px 0px 0px;
-    }
-}
-
-.AlertInfoText{
+#containerAlertInfo{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 70%;
+}
+
+#alert1{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content:space-evenly;
+}
+
+.alertInfo{
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+}
+
+.alertSubTitle{
+    color: #344253;
+    font-size: 30px;
+    margin: 0;
+}
+
+.verticalBar{
+    border-left: 2px solid #344253; 
+    height: 200px;               
+    margin: 0 20px; 
+}
+
+#alert2{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content:space-evenly;
+}
+
+.alertInfoContent{
+    display: flex;
+    flex-direction: row;
     gap: 10px;
 }
 
@@ -231,17 +285,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 60vh;
 }
 
 #painel-graficos{
     background-color: #F5F5F5;
     border-radius: 20px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-around; 
     width: 100%;
     height: 100%;
-    flex-direction: row;
     align-items: center;
 }
 
@@ -252,6 +305,16 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+.grafContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 90%;
+    background-color: #46906c;
+    border-radius: 20px;
 }
 
 #grafBoxTitle{
@@ -282,18 +345,13 @@ body{
 .grafButton{
     height: 50px;
     width: 200px;
-    border-radius: 15px;
+    border-radius: 30px;
     border: none;
     color: #F5F5F5;
     background: linear-gradient(to right, #68C899, #489D73);
     cursor: pointer;
     font-weight: bold;
     font-size: 20px;
-}
-
-#grafContent{
-    display: flex;
-    width: 80%;
 }
 
 
@@ -313,11 +371,15 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 50px; /* TEMPORARIO PRA DEIXAR SEPARADO PQ TOC*/
 }
 
 #containerRight{
     width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -328,24 +390,23 @@ body{
     border-radius: 30px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 90%;
     height: 20vh;
 }
 
 #containerRelatContent{
-    width: 75%;
+    width: 30%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
 }
 
 #containerRelatTitle{
-    width: 40%;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content:space-between;
 }
 
 #containerRelatImg{
@@ -355,21 +416,27 @@ body{
     width: 20%;
 }
 
-#containerRelatTitle{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 #relatTitle{
     color: #344253;
-    font-size: 40px;
+    font-size: 45px;
     margin: 0;
+    line-height: 100%;
+}
+
+#containerRelatText{
+    width: 100%; 
+}
+
+#relatText{
+    width: 100%;
+    font-size: 24px;
+    margin: 0;
+    color: #344253;
 }
 
 #relatIcon{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 
 #relatImg{
@@ -384,23 +451,24 @@ body{
     background-color: #F5F5F5;
     border-radius: 30px;
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     width: 90%;
     height: 20vh;
 }
 
 #containerEtiqContent{
-    width: 75%;
+    width: 35%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
 }
 
 #containerEtiqTitle{
-    width: 40%;
+    width: 90%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content:space-between;
 }
 
 #containerEtiqImg{
@@ -410,26 +478,35 @@ body{
     width: 20%;
 }
 
-#containerEtiqTitle{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 #etiqTitle{
     color: #344253;
-    font-size: 40px;
+    font-size: 45px;
     margin: 0;
+    line-height: 100%;
+}
+
+#containerEtiqText{
+    width: 100%;
+}
+
+#etiqText{
+    font-size: 24px;
+    margin: 0;
+    color: #344253;
 }
 
 #etiqIcon{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+}
+
+#containerEtiqText{
+    width: 100%; 
 }
 
 #etiqImg{
-    width: 100px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
 }
 
 /* PAINEL PUBLICIDADE PREMIUM */
@@ -455,7 +532,13 @@ body{
 
 #publiTitle{
     color: #282C31;
+    font-size: 200%;
+    line-height: 85%;
     margin: 0;
+}
+
+.destaque{
+    color: #F5F5F5;
 }
 
 #containerPubliButton{
@@ -466,12 +549,14 @@ body{
 }
 
 #publiButton{
-    width: 150px;
-    height: 30px;
+    width: 255px;
+    height: 60px;
     border: 2px solid #F5F5F5;
-    border-radius: 10px;
+    border-radius: 25px;
     background-color: transparent;
     color: #F5F5F5;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 

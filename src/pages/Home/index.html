@@ -20,16 +20,19 @@
     </nav>
     <main id="principal">
         <div id="container1">
-            <section id="painel-update">
-                <div id="title-update">
-                    <img class="upd-icon" src="../../assets/imgs/home/icon/atualizacao.svg" alt="Flecha">
-                    <h1 class="updTitle"> Última atualização </h1>
+            <section id="painelUpdate">
+                <div id="titleUpdate">
+                    <img class="updIcon" src="../../assets/imgs/home/icon/atualizacao.svg" alt="Flecha">
+                    <h1 class="updTitle"> Última <Br> atualização </h1>
                 </div>
-                <div class="upd-text">
-                    <p> +10 Entradas </p>
-                    <p> às 8:30 </p>
+                <div class="updText">
+                    <p class="updInfo"> +10 Entradas </p>
+                    <p class="updInfoTime"> às 8:30 </p>
                 </div>
-                <button id="updButton"> Checar estoque </button>
+                <div class="updHr"></div>
+                <div class="updBoxButton">
+                    <button id="updButton"> Checar estoque </button>
+                </div>
             </section>
 
             <section id="painel-alertas">
@@ -38,44 +41,50 @@
                         <img id="alertIcon" src="../../assets/imgs/home/icon/alerta.svg" alt="Alerta">
                         <h1 id="alertTitle">Alertas</h1>
                     </div>
-                    <div>
+                    <div id="containerButton">
                         <button id="alertButton">Ver mais</button>
                     </div>
                 </div>
                 <div id="containerAlertInfo">
                     <div id="alert1">
                         <div class="alertInfo">
-                            <div class="AlertInfoTitle">
-                                <h2>Máximo</h2>
+                            <div class="alertInfoTitle">
+                                <h2 class="alertSubTitle">Máximo</h2>
                             </div>
-                            <div class="AlertInfoText">
+                            <div class="alertInfoContent">
                                 <img class="alertIcon" src="../../assets/imgs/home/icon/quadrado-soma.svg" alt="Mais">
-                                <p> 1 item em excesso </p>
+                                <p class="alertInfoText"> 1 item em excesso </p>
                             </div>
                         </div>
                         <div class="alertInfo">
                             <div class="AlertInfoTitle">
-                                <h2>Mínimo</h2>
+                                <h2 class="alertSubTitle">Mínimo</h2>
                             </div>
-                            <div class="AlertInfoText">
+                            <div class="alertInfoContent">
                                 <img class="alertIcon" src="../../assets/imgs/home/icon/quadrado-menos.svg" alt="Menos">
-                                <p> 6 itens em falta </p>
+                                <p class="alertInfoText"> 6 itens em falta </p>
                             </div>
                         </div>
                     </div>
+                    <div class="verticalBar"></div>
                     <div id="alert2">
                         <div class="alertInfo">
                             <div class="AlertInfoTitle">
-                                <h2>Validade</h2>
+                                <h2 class="alertSubTitle">Vencidos</h2>
                             </div>
-                            <div class="AlertInfoText">
+                            <div class="alertInfoContent">
                                 <img class="alertIcon" src="../../assets/imgs/home/icon/atencao.svg" alt="Atenção">
-                                <p>8 itens estão vencidos</p>
+                                <p class="alertInfoText">8 itens estão vencidos</p>
                             </div>
                         </div>
-                        <div class="AlertInfoText">
-                            <img class="alertIcon" src="../../assets/imgs/home/icon/atencao.svg" alt="Atenção">
-                            <p>3 itens estão próximo do vencimento</p>
+                        <div class="alertInfo">
+                            <div class="AlertInfoTitle">
+                                <h2 class="alertSubTitle">Perto do vencimento</h2>
+                            </div>
+                            <div class="alertInfoContent">
+                                <img class="alertIcon" src="../../assets/imgs/home/icon/atencao.svg" alt="Atenção">
+                                <p class="alertInfoText">3 itens estão próximo do vencimento</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -99,7 +108,7 @@
                     </div>
                 </div>
                 <div class="grafContent">
-                    <p> Aqui vai ficar a tela dos graficos </p>
+                    <p> Gráficos </p>
                 </div>
             </section>
         </div>
@@ -128,7 +137,7 @@
                             <h1 id="etiqTitle">Etiquetas</h1>
                         </div>
                         <div id="containerEtiqText">
-                            <p id="etiqText">54 etiquetas impressas na última semana</p>
+                            <p id="etiqText">+10 etiquetas impressas na última semana</p>
                         </div>
                     </div>
                     <div id="containerEtiqImg">
@@ -139,7 +148,7 @@
             <div id="containerRight">
                 <section id="painel-publicidade">
                     <div id="containerPubliTitle">
-                        <h1 id="publiTitle">Assine o nosso <br> plano premium <br> para usar sem limites!</h1>
+                        <h1 id="publiTitle">Assine o nosso <br> <span class="destaque">plano premium</span> <br> para usar sem limites!</h1>
                     </div>
                     <div id="containerPubliButton">
                         <button id="publiButton">Acessar planos</button>
