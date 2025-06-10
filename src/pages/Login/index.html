@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href = "../../assets/imgs/login/img/logo.svg" type="image/png">
+
     <title>Login</title>
 </head>
-<body>
+<img>
     
+    <nav id="navbar">
+        <div id="navbar">
+            <img id="navLogo" src = "../../assets/imgs/login/img/logo.svg" alt="StockLog">
+        </div> 
+    </nav>
+
+
     <section id = "login">
 
         <h2>Login</h2>
@@ -15,11 +25,17 @@
         <div class = "containerInput">
             <label for = "" >CNPJ da Empresa</label>
             <input type="text" id="inpLogNome" placeholder="Digite o CNPJ da empresa">
+
+            <img id = "user" src = "../../assets/imgs/login/icon/user.svg" alt="Ícone de Usuário"> </img>
+
         </div>
 
         <div class = "containerInput">
             <label for = "" >Senha</label>
             <input type="password" id="inpLogSenha" placeholder="Digite a senha">
+
+            <img id = "lock" src = "../../assets/imgs/login/icon/cadeado.svg" alt="Ícone de Senha"> </img>
+
         </div>
 
         <button onclick = "login()">Entrar</button>
@@ -29,6 +45,9 @@
 
 
     </section>
+
+    <img id = "imgLogin" src="../../assets/imgs/login/img/image.png" alt="Imagem de Login"> </img>
+    
 
     <script src="script.js"></script>
 </body>
