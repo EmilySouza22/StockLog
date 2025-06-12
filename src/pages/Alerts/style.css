@@ -103,7 +103,7 @@ body{
     height: 30px;
 }
 
-/* ABAS */
+/* TABS */
 
 #mainSection{
     width: 100%;
@@ -111,6 +111,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: initial;
 }
 
 #sectionTabs{
@@ -119,16 +120,49 @@ body{
     flex-direction: row;
     align-items: start;
     justify-content: space-evenly;
+    position: relative;
 }
 
 .folderTab{
     width: 20%;
+    height: 6vh;
+    border: 1px solid #aaa;
+    border-bottom: none;
     display: flex;
+    position: relative;
+    top: 20px;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     background-color: #F5F5F5;
-    border-radius: 15px;
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.folderTab.active{
+    width: 20%;
+    height: 8vh;
+    background: white;
+    top: 0;
+    z-index: 2;
+    font-weight: bold;
+}
+
+.content{
+    background: white;
+    width: 100%;
+    height: 55vh;
+    position:sticky;
+    z-index: 1;
+}
+
+.tabContent{
+    display: none;
+}
+
+.tabContent.active{
+    display: block;
 }
 
 .imgTab{
@@ -146,12 +180,12 @@ body{
 #sectionMain{
     width: 100%;
     height: 72vh;
-    background-color: #F5F5F5;
+    background-color: white;
     border-radius: 15px;
     justify-content: space-evenly;
     display: flex;
     flex-direction: column;
-    margin: 5px
+    padding: 5px;
 }
 
 #containerEditButtons{
@@ -198,6 +232,10 @@ body{
     height: 50vh;
 }
 
+.stacked-tab{
+    z-index: 1;
+}
+
 #boxProduct{
     width: 30%;
     background-color: #CFD3DE;
@@ -214,12 +252,12 @@ body{
 }
 
 input[type="checkbox"] {
+    width: 30px;
     transform: scale(1.8);
     accent-color: #449B70; 
     cursor: pointer;
     outline: none;
 }
-
 
 /* PAGINAÇÃO */
 

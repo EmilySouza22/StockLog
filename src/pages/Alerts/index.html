@@ -25,19 +25,19 @@
 
         <section id="mainSection">
             <section id="sectionTabs">
-                <div class="folderTab">
+                <div class="folderTab active" data-tab="containerExpiredProducts">
                     <img class="imgTab" src="../../assets/imgs/alerts/icon/alerta-vermelho.svg" alt="Alerta Vermelho">
                     <h2 class="titleTab">Produtos Vencidos</h2>
                 </div>
-                <div class="folderTab">
+                <div class="folderTab" data-tab="containerProductsToExpire">
                     <img class="imgTab" src="../../assets/imgs/alerts/icon/alerta-amarelo.svg" alt="Alerta Amarelo">
                     <h2 class="titleTab">Próximos a vencer</h2>
                 </div>
-                <div class="folderTab">
+                <div class="folderTab" data-tab="containerAboveMaximum">
                     <img class="imgTab" src="../../assets/imgs/alerts/icon/seta-vermelha.svg" alt="Seta Vermelha">
                     <h2 class="titleTab">Acima do máximo</h2>
                 </div>
-                <div class="folderTab">
+                <div class="folderTab" data-tab="containerBelowMinimum">
                     <img class="imgTab" src="../../assets/imgs/alerts/icon/seta-amarela.svg" alt="Seta Amarela">
                     <h2 class="titleTab">Abaixo do mínimo</h2>
                 </div>
@@ -51,18 +51,65 @@
                         <button id="buttonDelete"> <img id="deleteIcon" src="../../assets/imgs/alerts/icon/lixeira.svg" alt="Lixeira"> Excluir </button>
                     </div>
                 </div>
-                <div id="containerProducts">
-                    <div id="boxProduct">
-                        <div>
-                            <img id="imgProduct" src="../../assets/imgs/alerts/img/ImgNull.png" alt="Imagem Não Carregada">
+                <div class="content">
+                    <div id="containerExpiredProducts" class="tabContent active">
+                        <div id="boxProduct">
+                            <div>
+                                <img id="imgProduct" src="../../assets/imgs/alerts/img/ImgNull.png" alt="Imagem Não Carregada">
+                            </div>
+                            <div>
+                                <p> Café Melitta Tradicional </p>
+                                <p> Quantidade: 3 UNIDADES </p>
+                                <p> Data: 08/06/2025 </p>
+                            </div>
+                            <div>
+                                <input id="productCheckBox" type="checkbox"></input>
+                            </div>
                         </div>
-                        <div>
-                            <p> Café Melitta Tradicional </p>
-                            <p> Quantidade: 3 UNIDADES </p>
-                            <p> Data: 08/06/2025 </p>
+                    </div>
+                    <div id="containerProductsToExpire" class="tabContent">
+                        <div id="boxProduct">
+                            <div>
+                                <img id="imgProduct" src="../../assets/imgs/alerts/img/ImgNull.png" alt="Imagem Não Carregada">
+                            </div>
+                            <div>
+                                <p> Café Melitta Tradicional </p>
+                                <p> Quantidade: 2 UNIDADES </p>
+                                <p> Data: 08/06/2025 </p>
+                            </div>
+                            <div>
+                                <input id="productCheckBox" type="checkbox"></input>
+                            </div>
                         </div>
-                        <div>
-                            <input id="productCheckBox" type="checkbox"></input>
+                    </div>
+                    <div id="containerAboveMaximum" class="tabContent">
+                        <div id="boxProduct">
+                            <div>
+                                <img id="imgProduct" src="../../assets/imgs/alerts/img/ImgNull.png" alt="Imagem Não Carregada">
+                            </div>
+                            <div>
+                                <p> Café Melitta Tradicional </p>
+                                <p> Quantidade: 1 UNIDADES </p>
+                                <p> Data: 08/06/2025 </p>
+                            </div>
+                            <div>
+                                <input id="productCheckBox" type="checkbox"></input>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="containerBelowMinimum" class="tabContent">
+                        <div id="boxProduct">
+                            <div>
+                                <img id="imgProduct" src="../../assets/imgs/alerts/img/ImgNull.png" alt="Imagem Não Carregada">
+                            </div>
+                            <div>
+                                <p> Café Melitta Tradicional </p>
+                                <p> Quantidade: 0 UNIDADES </p>
+                                <p> Data: 08/06/2025 </p>
+                            </div>
+                            <div>
+                                <input id="productCheckBox" type="checkbox"></input>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -86,4 +133,5 @@
         </section>
     </main>
 </body>
+<script src="script.js"></script>
 </html>
