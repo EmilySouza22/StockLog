@@ -17,57 +17,72 @@
             <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
         </div>
     </nav>
-    <main>
-        <section>
-            <button> <img src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> Voltar </button>
-            <button> <img src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> Próximo </button>
+    <main id="principal">
+        <section id="barraNavTelas">
+            <button class="botaoNavTelas"> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> Voltar </button>
+            <button class="botaoNavTelas"> Próximo <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> </button>
         </section>
-        <section>
-            <div>
-                <img src="../../assets/imgs/alerts/icon/alerta-vermelho.svg" alt="Alerta Vermelho">
-                <h2>Produtos Vencidos</h2>
-            </div>
-            <div>
-                <img src="../../assets/imgs/alerts/icon/alerta-amarelo.svg" alt="Alerta Amarelo">
-                <h2>Próximos a vencer</h2>
-            </div>
-            <div>
-                <img src="../../assets/imgs/alerts/icon/seta-vermelha.svg" alt="Seta Vermelha">
-                <h2>Acima do máximo</h2>
-            </div>
-            <div>
-                <img src="../../assets/imgs/alerts/icon/seta-amarela.svg" alt="Seta Amarela">
-                <h2>Abaixo do mínimo</h2>
-            </div>
-        </section>
-        <section>
-            <div>
-                <div>
-                    <button> Selecionar todos</button>
+
+        <section id="mainSection">
+            <section id="sectionTabs">
+                <div class="folderTab">
+                    <img class="imgTab" src="../../assets/imgs/alerts/icon/alerta-vermelho.svg" alt="Alerta Vermelho">
+                    <h2 class="titleTab">Produtos Vencidos</h2>
                 </div>
-                <div>
-                    <button> <img src="../../assets/imgs/alerts/icon/lixeira.svg" alt="Lixeira"> Excluir </button>
+                <div class="folderTab">
+                    <img class="imgTab" src="../../assets/imgs/alerts/icon/alerta-amarelo.svg" alt="Alerta Amarelo">
+                    <h2 class="titleTab">Próximos a vencer</h2>
                 </div>
-            </div>
-            <div>
-                
-            </div>
-            <div>
-                <div>
-                    <div>
-                        <button> <img src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> </button>
+                <div class="folderTab">
+                    <img class="imgTab" src="../../assets/imgs/alerts/icon/seta-vermelha.svg" alt="Seta Vermelha">
+                    <h2 class="titleTab">Acima do máximo</h2>
+                </div>
+                <div class="folderTab">
+                    <img class="imgTab" src="../../assets/imgs/alerts/icon/seta-amarela.svg" alt="Seta Amarela">
+                    <h2 class="titleTab">Abaixo do mínimo</h2>
+                </div>
+            </section>
+            <section id="sectionMain">
+                <div id="containerEditButtons">
+                    <div id="containerSelectionAll">
+                        <button id="buttonSelectionAll"> Selecionar todos</button>
                     </div>
-                    <div>
-                        <p> Página 1 de 3 </p>
-                    </div>
-                    <div>
-                        <button> <img src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> </button>
+                    <div id="containerDelete">
+                        <button id="buttonDelete"> <img id="deleteIcon" src="../../assets/imgs/alerts/icon/lixeira.svg" alt="Lixeira"> Excluir </button>
                     </div>
                 </div>
-                <div>
-                    <p> Mostrando 12 itens de 36 </p>
+                <div id="containerProducts">
+                    <div id="boxProduct">
+                        <div>
+                            <img id="imgProduct" src="../../assets/imgs/alerts/img/ImgNull.png" alt="Imagem Não Carregada">
+                        </div>
+                        <div>
+                            <p> Café Melitta Tradicional </p>
+                            <p> Quantidade: 3 UNIDADES </p>
+                            <p> Data: 08/06/2025 </p>
+                        </div>
+                        <div>
+                            <input id="productCheckBox" type="checkbox"></input>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div id="pagination">
+                    <div id="paginationNav">
+                        <div>
+                            <button class="buttonNavPag"> <img class="imgButtonPag" src="../../assets/imgs/alerts/icon/seta2.svg" alt="Seta Esquerda"> </button>
+                        </div>
+                        <div>
+                            <p> Página 1 de 3 </p>
+                        </div>
+                        <div>
+                            <button class="buttonNavPag"> <img class="imgButtonPag" src="../../assets/imgs/alerts/icon/seta.svg" alt="Seta Direita"> </button>
+                        </div>
+                    </div>
+                    <div id="paginationInfo">
+                        <p> Mostrando 12 itens de 36 </p>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
 </body>

@@ -17,7 +17,7 @@ body{
     min-height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    font-family: sans-serif;
+    font-family: "Roboto Medium", sans-serif;
 }
 
 /* NAVBAR */
@@ -61,3 +61,201 @@ body{
 }
 
 /* CONTEUDO */
+
+#principal{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    gap: 30px;
+}
+
+
+/* BARRA DE NAVEGAÇÃO ENTRE TELAS (VOLTAR/PROXIMO) */
+
+#barraNavTelas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botaoNavTelas{
+    width: 120px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F5F5F5;
+    border: none;
+    background: linear-gradient(to right, #68C899, #489D73);
+    border-radius: 25px;
+    font-family: "Roboto Medium", sans-serif;
+    font-size: 18px;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.botaoNavIcon{
+    width: 30px;
+    height: 30px;
+}
+
+/* ABAS */
+
+#mainSection{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sectionTabs{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-evenly;
+}
+
+.folderTab{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #F5F5F5;
+    border-radius: 15px;
+}
+
+.imgTab{
+    width: 30px;
+    height: 30px;
+}
+
+.titleTab{
+    color: #344253;
+}
+
+
+/* SEÇÃO PRINCIPAL */
+
+#sectionMain{
+    width: 100%;
+    height: 72vh;
+    background-color: #F5F5F5;
+    border-radius: 15px;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    margin: 5px
+}
+
+#containerEditButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+}
+
+#buttonSelectionAll{
+    width: 160px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid #37383A;
+    background-color: transparent;
+    border-radius: 8px;
+    color:#37383A;
+    font-size: 18px;
+}
+
+#buttonDelete{
+    width: 110px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    border: 2px solid #ED5B5B;
+    background-color: transparent;
+    border-radius: 8px;
+    color: #ED5B5B;
+    font-size: 18px;
+}
+
+#deleteIcon{
+    width: 25px;
+    height: 25px;
+}
+
+#containerProducts{
+    padding: 10px;
+    width: 100%;
+    height: 50vh;
+}
+
+#boxProduct{
+    width: 30%;
+    background-color: #CFD3DE;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#imgProduct{
+    width: 100px;
+    height: 100px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.8);
+    accent-color: #449B70; 
+    cursor: pointer;
+    outline: none;
+}
+
+
+/* PAGINAÇÃO */
+
+#pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 30px;
+}
+
+#paginationNav{
+    width: 12%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#paginationInfo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonNavPag{
+    width: 50px;
+    height: 30px;
+    border: none;
+    background: linear-gradient(to right, #68C899, #489D73);
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.imgButtonPag{
+    width: 20px;
+    height: 20px;
+}
