@@ -1,0 +1,213 @@
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: #e5e5e5;
+  text-align: center;
+  padding: 24px 0 8px 0;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+.logo-voltar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0 0 32px;
+}
+.logo {
+  height: 40px;
+}
+.btn-voltar {
+  background: #4ecb71;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.alertas-container {
+  background: #e9ecf6;
+  margin: 32px auto;
+  padding: 32px;
+  border-radius: 16px;
+  max-width: 1200px;
+  box-shadow: 0 2px 8px #0001;
+}
+.abas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.aba {
+  background: #f5f6fa;
+  border: none;
+  border-radius: 12px 12px 0 0;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #888;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+.aba.ativa {
+  background: #fff;
+  color: #e74c3c;
+  border-bottom: 3px solid #e74c3c;
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  min-height: 350px;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px #0001;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+.card img {
+  width: 60px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.card .nome {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.card .quantidade, .card .data {
+  font-size: 0.98rem;
+  color: #555;
+}
+.card .check {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+}
+.paginacao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 0 0;
+}
+.paginacao button {
+  background: #e9ecf6;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #4ecb71;
+  font-weight: bold;
+}
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+.btn-excluir {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 32px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  .alertas-container {
+    padding: 8px;
+  }
+}
+#navbar {
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 65px;
+}
+
+#navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+#navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 100px 0 0;
+}
+
+#conta-cadastrada {
+    color: #4E6074;
+    font-size: 20px;
+    margin: 0;
+}
+
+#nav-logo {
+    width: 100px;
+    height: 65px;
+    margin: 0 0 0 100px;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.navegacao-extremos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 32px 0 0 0;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-voltar, .btn-proximo {
+  background: #4ecb71;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 10px 32px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.btn-proximo {
+  background: #27ae60;
+}
+
+.btn-voltar:hover, .btn-proximo:hover {
+  background: #219150;
+}
