@@ -9,6 +9,13 @@
     height: 65px;
 }
 
+#navLogo{
+    width: 100px; 
+    height: 65px;
+    margin: 0 0 0 100px;
+}
+
+
 /* LOGIN */ 
 
 #login{
