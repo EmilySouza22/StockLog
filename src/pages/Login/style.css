@@ -1,0 +1,65 @@
+/* NAVBAR */
+
+#navbar{
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 65px;
+}
+
+#navLogo{
+    width: 100px; 
+    height: 65px;
+    margin: 0 0 0 100px;
+}
+
+
+/* LOGIN */ 
+
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#containerInput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/*Icon senha*/
+
+#lock{
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+/*Icon User*/
+
+#user{
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+/* IMAGEM LOGIN */
+
+#imgLogin{
+    max-width: 30%;
+    max-width: 30%;
+    display: flex;
+    align-items: column;
+    justify-content: center;
+    margin-top: 30px;
+}
+
