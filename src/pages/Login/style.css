@@ -56,30 +56,85 @@ body{
     height: 100%;
 }
 
-/*Icon senha*/
+/*User*/
 
-#lock{
-    width: 50px;
-    height: 50px;
+#InpLogName{
+    position: relative;
+    width: 100%;
+}
+
+#user{
+    position: absolute;
+    width: 24px;
+    height: 24px;
     margin-top: 20px;
 }
 
-/*Icon User*/
+/*Icon senha*/
 
-#user{
-    width: 50px;
-    height: 50px;
+#lock{
+    position: absolute;
+    width: 24px;
+    height: 24px;
     margin-top: 20px;
+}
+
+/*CADASTRO*/ 
+
+#cadastro{
+    display: flex;                  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: none;
+    color: #4E6074;
 }
 
 /* IMAGEM LOGIN */
 
 #imgLogin{
-    max-width: 30%;
-    max-width: 30%;
     display: flex;
     align-items: column;
     justify-content: center;
+    max-width: 30%;
+    max-height: 30%;
     margin-top: 30px;
+}
+
+/* INPUTS */
+
+.containerInput{
+    display:flex;
+    flex-direction: column;
+}
+
+input{
+    border-radius: 5px;
+    height: 20px;
+    outline: 0; 
+    border: 1px
+}
+
+/*BOTÃO*/
+
+#entrar{
+    background: none;
+    color: #ffffff;
+    height: 28px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    border: 1px solid #ffffff;
+}
+
+#cadastre-se{
+    background: none;
+    color: #28DC84;
+    height: 28px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    border: 1px solid #28DC84;
 }
 

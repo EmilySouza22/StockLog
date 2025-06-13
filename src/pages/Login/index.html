@@ -24,25 +24,35 @@
 
         <div class = "containerInput">
             <label for = "" >E-mail ou CNPJ</label>
-            <input type="text" id="inpLogNome" placeholder="Insira E-Mail ou CPNJ">
-
-            <img id = "user" src = "../../assets/imgs/login/icon/user.svg" alt="Ícone de Usuário"> </img>
+            <div id = "inputIcon">
+                <input type="text" id="inpLogNome" placeholder="Insira E-mail ou CPNJ">
+                <img id = "user" src = "../../assets/imgs/login/icon/user.svg" alt="Ícone de Usuário"> </img>
+        </div>
         </div>
 
         <div class = "containerInput">
             <label for = "" >Senha</label>
-            <input type="password" id="inpLogSenha" placeholder="Insira a senha">
-
-            <img id = "lock" src = "../../assets/imgs/login/icon/cadeado.svg" alt="Ícone de Senha"> </img>
+            <div id = "inputIcon">
+                <input type="password" id="inpLogSenha" placeholder="Insira a senha" >
+                <img id = "lock" src = "../../assets/imgs/login/icon/cadeado.svg" alt="Ícone de Senha"> </img>
+        </div>
         </div>
 
-        <button onclick = "login()">Entrar</button>
+        <button id = "entrar" onclick = "login()">Entrar</button>
 
+        
+        
+    </section>
+    
+    
+    <section id = "cadastro">
+        
         <p>Não possui uma conta?</p>
-        <button onclick = "mostrarCadastro()">Cadastre-se</button>
-
+        <button id = "cadastre-se" onclick = "mostrarCadastro()">Cadastre-se</button>
 
     </section>
+    
+
 
     <img id = "imgLogin" src="../../assets/imgs/login/img/image.png" alt="Imagem de Login"> </img>
     
