@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Etiquetas </title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="navbar-left">
+            <img id="nav-logo" src="../../assets/imgs/home/img/logo.svg" alt="StockLog">
+        </div>
+        <div id="navbar-right">
+            <p id="conta-cadastrada"> Mercado Santana </p>
+            <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
+            <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
+        </div>
+    </nav>
+    <main id="principal">
+        <section id="barraNavTelas">
+            <button class="botaoNavTelas"> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> Voltar </button>
+            <button class="botaoNavTelas"> Próximo <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> </button>
+        </section>
+        <section id="containerMain">
+            <div id="containerLeft">
+                <div id="etiqProductSelect">
+                    <div>
+                        <h2>Produto Selecionado</h2>
+                    </div>
+                    <div>
+                        <img src="../../assets/imgs/label/img/imagemNaoCarregada.png" alt="Imagem Não Carregada">
+                        <p>Café Melitta Tradicional 500g</p>
+                    </div>
+                </div>
+                <div id="etiqPreview">
+                    <div id="etiqPreviewTitle">
+                        <h2>Pré-visualização</h2>
+                    </div>
+                    <div id="etiquetaPreview">
+                    </div>
+                </div>
+            </div>
+            <div id="containerRight">
+                <div id="etiqConfig">
+                    <div id="etiqConfigTitle">
+                        <h2>Configurações</h2>
+                    </div>
+                    <div id="etiqButtonsEdit">
+                        <div>
+                            <p> Modelo de tamanho:</p>
+                            <button>Pequeno</button>
+                            <button>Padrão</button>
+                            <button>Grande</button>
+                        </div>
+                        <div>
+                            <p>Quantidade</p>
+                            <input type="number">
+                        </div>
+                        <div>
+                            <p>Código de barras</p>
+                            <input type="checkbox">
+                        </div>
+                        <div>
+                            <p>Código interno</p>
+                            <input type="checkbox">
+                        </div>
+                        <div>
+                            <p>Cor do texto</p>
+                            <div>
+                                <p>SELEÇÃO DE COR</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Cor do fundo</p>
+                            <div>
+                                <p>SELEÇÃO DE COR</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="etiqButtonsNav">
+                        <div id="etiqContainerEsquerda">
+                            <button> <img src="../../assets/imgs/label/icon/check.svg" alt="Check">Definir Padrão</button>
+                            <button> <img src="../../assets/imgs/label/icon/soma.svg" alt=""> Aplicar padrão</button>
+                        </div>
+                        <div id="etiqContainerDireita">
+                            <button> <img src="../../assets/imgs/label/icon/impressora.svg" alt="Impressora">Imprimir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
