@@ -29,62 +29,88 @@
                         <h2>Produto Selecionado</h2>
                     </div>
                     <div>
-                        <img src="../../assets/imgs/label/img/imagemNaoCarregada.png" alt="Imagem Não Carregada">
-                        <p>Café Melitta Tradicional 500g</p>
+                        <p>Produto:</p>
+                        <select id="form-products"> 
+                            <option> Selecionar Produtos </option>
+                            <option> Café Melitta Tradicional 500g </option>
+                            <option> Leite Ninho Tradicional 1l </option>
+                            <option> Morango 350g </option>
+                        </select>
                     </div>
                 </div>
                 <div id="etiqPreview">
                     <div id="etiqPreviewTitle">
                         <h2>Pré-visualização</h2>
                     </div>
-                    <div id="etiquetaPreview">
+                    <div id="containerPreviewEtiq">
+                        <div id="etiqBoxPreview">
+                            <img class="etiquetaPreview" src="../../assets/imgs/label/img/etiqueta.svg" alt="">
+                        </div>
+                        <div id="etiqTamanhoPreview">
+                            <p class="tamanhoEtiqueta"> 40x30mm </p>
+                        </div>
+                    </div>
+                    <div id="containerExpandPreview">
+                        <div id="etiqQuantPreview">
+                            <p>Visualizando 1 etiqueta de 10</p>
+                        </div>
+                        <div id="etiqExpandPreview">
+                            <p>Expandir</p>
+                            <img class="iconExpand" src="../../assets/imgs/label/icon/expandir.svg" alt="Expandir">
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div id="containerRight">
                 <div id="etiqConfig">
                     <div id="etiqConfigTitle">
-                        <h2>Configurações</h2>
+                        <h2>Configurações da Etiqueta</h2>
                     </div>
                     <div id="etiqButtonsEdit">
-                        <div>
-                            <p> Modelo de tamanho:</p>
-                            <button>Pequeno</button>
-                            <button>Padrão</button>
-                            <button>Grande</button>
+                        <div id="boxTamEtiq">
+                            <p class="textEtiq"> Tamanho (px):</p>
+                            <div id="inputTamEtiq">
+                                <input class="inputTamEtiq" type="text">
+                                <p class="textEtiq"> x </p>
+                                <input class="inputTamEtiq" type="text">
+                            </div>
                         </div>
                         <div>
-                            <p>Quantidade</p>
+                            <p class="textEtiq">Quantidade de etiquetas:</p>
                             <input type="number">
                         </div>
                         <div>
-                            <p>Código de barras</p>
+                            <p class="textEtiq">Espaçamento</p>
+                            <input type="number">
+                        </div>
+                        <div>
+                            <p class="textEtiq">Cor de fundo:</p>
+                            <select>
+                                <option>Branco</option>
+                                <option>Cinza-claro</option>
+                            </select>
+                        </div>
+                        <div class="ContainerCheckBox">
                             <input type="checkbox">
+                            <p class="textEtiq">Incluir validade</p>
                         </div>
-                        <div>
-                            <p>Código interno</p>
+                        <div class="ContainerCheckBox">
                             <input type="checkbox">
+                            <p class="textEtiq">Incluir código de barras</p>
                         </div>
-                        <div>
-                            <p>Cor do texto</p>
-                            <div>
-                                <p>SELEÇÃO DE COR</p>
-                            </div>
-                        </div>
-                        <div>
-                            <p>Cor do fundo</p>
-                            <div>
-                                <p>SELEÇÃO DE COR</p>
-                            </div>
+                        <div class="ContainerCheckBox">
+                            <input type="checkbox">
+                            <p class="textEtiq">Incluir código interno</p>
                         </div>
                     </div>
-                    <div id="etiqButtonsNav">
+                    <div id="etiqBtnConfig">
                         <div id="etiqContainerEsquerda">
-                            <button> <img src="../../assets/imgs/label/icon/check.svg" alt="Check">Definir Padrão</button>
-                            <button> <img src="../../assets/imgs/label/icon/soma.svg" alt=""> Aplicar padrão</button>
+                            <button class="btnConfig1"> <img class="iconConfig" src="../../assets/imgs/label/icon/check.svg" alt="Check">Aplicar Padrão</button>
+                            <button class="btnConfig2"> <img class="iconConfig" src="../../assets/imgs/label/icon/maisOpcoes.svg" alt="Mais Opções"> </button>
                         </div>
                         <div id="etiqContainerDireita">
-                            <button> <img src="../../assets/imgs/label/icon/impressora.svg" alt="Impressora">Imprimir</button>
+                            <button class="btnConfig3"> <img class="iconConfig" src="../../assets/imgs/label/icon/impressora.svg" alt="Impressora">Imprimir</button>
                         </div>
                     </div>
                 </div>

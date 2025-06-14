@@ -93,3 +93,171 @@ body{
 
 /* CONTEUDO */
 
+#containerMain{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*CONTAINER ESQUERDA*/
+
+#containerLeft{
+    width: 40%;
+    height: 70vh;
+    background-color: #CFD3DE;
+    border-radius: 20px;
+}
+
+#etiqButtonsEdit{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+}
+
+#etiqBoxPreview{
+    width: 100%;
+    display: flex;
+}
+
+.etiquetaPreview{
+    width: 450px;
+    height: 200px;
+}
+
+#containerPreviewEtiq{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#etiqBoxPreview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tamanhoEtiqueta{
+    margin: 0;
+}
+
+#containerExpandPreview{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#etiqExpandPreview{
+    width: 14%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconExpand{
+    width: 30px;
+    height: 30px;
+}
+
+
+/* CONTAINER DIREITA ( CONFIGURAÇÕES DA ETIQUETA ) */
+
+#containerRight{
+    width: 40%;
+    height: 70vh;
+    background-color: #CFD3DE;
+    border-radius: 8px;
+}
+
+
+#inputTamEtiq{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.inputTamEtiq{
+    width: 60px;
+    height: 15px;
+}
+
+.textEtiq{
+    margin: 0;
+}
+
+
+.ContainerCheckBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* Botões da configuração (Template / Imprimir )*/
+
+#etiqContainerEsquerda{
+    width: 28%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#etiqBtnConfig{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btnConfig1{
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #449B70;
+    border-radius: 10px;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btnConfig2{
+    width: 40px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #449B70;
+    border-radius: 10px;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btnConfig3{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #449B70;
+    border-radius: 10px;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+}
+
+.iconConfig{
+    width: 22px;
+    height: 22px;
+}
+
+input[type="checkbox"]{
+    accent-color: #449B70;
+    outline: none;
+}
