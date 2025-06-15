@@ -1,55 +1,154 @@
+.navigation-buttons {
+  display: flex;
+  /* coloca os botões na mesma linha */
+  justify-content: space-between;
+  /* ou use flex-start se quiser os dois do mesmo lado */
+  align-items: center;
+  /* alinha verticalmente no centro */
+  padding: 10px 20px;
+  background-color: #f9fafb;
+  position: sticky;
+  /* opcional, se quiser que fique visível ao rolar */
+  top: 0;
+  z-index: 10;
+}
+
+.navigation-buttons .btn {
+  background: linear-gradient(to right, #68c899, #489d73);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 5px;
+  /* opcional, dá um espaço entre os botões */
+}
+
+.navigation-buttons .btn:hover {
+  background: linear-gradient(to right, #68c899, #489d73);
+}
+
 /* NAVBAR */
-#navbar{
-    background-color: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 65px;
-    }
-    #nav-logo{
-        width: 100px;
-        height: 65px;
-        margin: 0px 0px 0px 100px;
-    }
-    #navbar-left{
-    display: flex;
-    align-items: center;
-    }
-    
-    #navbar-right{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin: 0 100px 0 0;
-    }
-    .nav-icon{
-        width: 40px;
-        height: 40px;
-    }
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Arial', sans-serif;
-    }
-    table{
-        width: 100%;
-        border-collapse: collapse;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-    thead th {
-        text-align: left;
-        padding: 12px 15px;
-        font-weight: bold;
-    }
+#navbar {
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 65px;
+}
 
-    tbody td {
-        padding: 12px 15px;
-        border-bottom: 1px solid #e0e0e0;
-    }
+#nav-logo {
+  width: 100px;
+  height: 65px;
+  margin: 0px 0px 0px 100px;
+}
 
-    tbody tr:nth-child(even) {
-        background-color: #f9fafb;
-    }
+#navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+#navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 100px 0 0;
+}
+
+.nav-icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  width: 100%;
+}
+
+.nav-icon button {
+  width: 90px;
+  height: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead th {
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: bold;
+}
+
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.btn {
+  background-color: #3ecf8e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #68c899, #489d73);
+}
+
+#footer-geral {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f9fafb;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  flex-wrap: wrap; /* se o espaço for pequeno, quebra linha */
+  gap: 10px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaço mínimo entre os elementos */
+}
+
+.bnt-footer {
+  background: linear-gradient(to right, #68c899, #489d73);
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pag-footer {
+  text-align: center;
+}
+
+
