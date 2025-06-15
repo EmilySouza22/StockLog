@@ -60,10 +60,21 @@ body{
     height: 40px;
 }
 
+/* PRINCIPAL */
+
+#principal{
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 /* BARRA DE NAVEGAÇÃO ENTRE TELAS (VOLTAR/PROXIMO) */
 
 #barraNavTelas{
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -94,11 +105,12 @@ body{
 /* CONTEUDO */
 
 #containerMain{
-    width: 100%;
+    width: 70%;
+    height: 85vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 /*CONTAINER ESQUERDA*/
@@ -107,16 +119,42 @@ body{
     width: 40%;
     height: 70vh;
     background-color: #CFD3DE;
-    border-radius: 20px;
-}
-
-#etiqButtonsEdit{
-    height: 50vh;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    justify-content: space-between;
+}
+
+#etiqProductSelect{
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#containerTitleProduct{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
 }
+
+#titleProductSelect{
+    margin: 0;
+    font-size: 28px;
+    color: #344253;
+}
+
+#etiqProductInput{
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
 
 #etiqBoxPreview{
     width: 100%;
@@ -147,9 +185,10 @@ body{
 }
 
 #containerExpandPreview{
+    width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -166,7 +205,6 @@ body{
     height: 30px;
 }
 
-
 /* CONTAINER DIREITA ( CONFIGURAÇÕES DA ETIQUETA ) */
 
 #containerRight{
@@ -174,90 +212,237 @@ body{
     height: 70vh;
     background-color: #CFD3DE;
     border-radius: 8px;
+    /* padding: 10px; */
 }
 
+#etiqConfig{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
-#inputTamEtiq{
-    width: 20%;
+#BoxConfigTitle{
+    width: 80%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content:space-around;
+    justify-content: center;
+}
+
+#configTitle{
+    margin: 0;
+    font-size: 28px;
+    color: #344253;
+}
+
+#etiqButtonsEdit{
+    width: 70%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* INPUT TAMANHO */
+
+#boxTamEtiq{
+    width: 80%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#boxSubtitleTam{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#containerTamEtiq{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#inputTamEtiq{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .inputTamEtiq{
     width: 60px;
     height: 15px;
-}
+} 
+
+/* Class pra todos os subtitles do container right*/
 
 .textEtiq{
+    font-size: 18px;
     margin: 0;
+    color: #344253;
 }
 
+/* INPUT QUANTIDADE */
 
-.ContainerCheckBox{
+#boxQuantEtiq{
+    width: 80%;
+    height: 5vh;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-/* Botões da configuração (Template / Imprimir )*/
-
-#etiqContainerEsquerda{
-    width: 28%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-#etiqBtnConfig{
+#boxSubtitleQuant{
     width: 90%;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+#inputQuantEtiq{
+    width: 82%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* ESPAÇAMENTO */
+
+#boxEspacEtiq{
+    width: 80%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#boxSubtitleEspac{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#inputEspacEtiq{
+    width: 82%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* COR DE FUNDO */
+
+#boxCorEtiq{
+    width: 80%;
+    height: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#boxSubtitleCor{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#inputSelectCor{
+    width: 54%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* CHECKBOX */
+
+input[type="checkbox"]{
+    accent-color: #449B70;
+    outline: none;
+}
+
+.containerCheckBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    padding-left: 32px;
+}
+
+
+/* BOTOES DE APLICACAO DA CONFIG  */
+
+#etiqBtnConfig{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
+#etiqContainerEsquerda{
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#etiqContainerDireita{
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .btnConfig1{
-    width: 140px;
+    width: 150px;
+    height: 4vh;
     display: flex;
     justify-content: space-between;
     border: 2px solid #449B70;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: transparent;
     align-items: center;
     cursor: pointer;
+    font-size: 15px;
+    color: #344253;
 }
 
 .btnConfig2{
     width: 40px;
+    height: 4vh;
     display: flex;
     justify-content: space-between;
     border: 2px solid #449B70;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: transparent;
     align-items: center;
     cursor: pointer;
 }
 
 .btnConfig3{
-    width: 100px;
+    width: 110px;
+    height: 4vh;
     display: flex;
     justify-content: space-between;
     border: 2px solid #449B70;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: transparent;
     align-items: center;
     cursor: pointer;
+    font-size: 15px;
+    color: #344253;
 }
 
 .iconConfig{
     width: 22px;
     height: 22px;
-}
-
-input[type="checkbox"]{
-    accent-color: #449B70;
-    outline: none;
 }
