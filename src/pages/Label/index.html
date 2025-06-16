@@ -38,12 +38,15 @@
                         </div>
                         <div id="boxSelectProducts">
                             <select id="formProducts"> 
-                                <option> Selecionar Produtos </option>
+                                <option> Selecionar Produto </option>
                                 <option> Café Melitta Tradicional 500g </option>
                                 <option> Leite Ninho Tradicional 1l </option>
                                 <option> Morango 350g </option>
                             </select>
                         </div>
+                    </div>
+                    <div class="boxhrcss">
+                        <div class="hrcss"></div>
                     </div>
                 </div>
                 <div id="etiqPreview">
@@ -58,9 +61,12 @@
                             <p class="textEtiq"> 40x30mm </p>
                         </div>
                     </div>
+                    <div class="boxhrcss">
+                        <div class="hrcss"></div>
+                    </div>
                     <div id="containerExpandPreview">
                         <div id="etiqQuantPreview">
-                            <p class="textEtiq"> <strong>Visualizando 1 de 10</strong></p>
+                            <p class="textEtiq"> Visualizando 1 de 10</p>
                         </div>
                         <div id="etiqExpandPreview">
                             <p class="textEtiq">Expandir</p>
@@ -134,7 +140,12 @@
                                 <button class="btnConfig1"> <img class="iconConfig" src="../../assets/imgs/label/icon/check.svg" alt="Check"> <strong>Aplicar Padrão</strong></button>
                             </div>
                             <div>
-                                <button class="btnConfig2"> <img class="iconConfig" src="../../assets/imgs/label/icon/maisOpcoes.svg" alt="Mais Opções"> </button>
+                                <button class="btnConfig2" data-modal="modal-1"> <img class="iconMaisOpc" src="../../assets/imgs/label/icon/maisOpcoes.svg" alt="Mais Opções"> </button>
+                                <dialog id="modal-1">
+                                    <button>Novo padrão</button>
+                                    <button>Ver padrões</button>
+                                    <button> X </button>
+                                </dialog>
                             </div>
                         </div>
                         <div id="etiqContainerDireita">
@@ -145,5 +156,6 @@
             </div>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>

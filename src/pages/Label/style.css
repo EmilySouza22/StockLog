@@ -8,6 +8,7 @@
 
 *{
     font-family: "Roboto Medium", sans-serif;
+    outline: none;
 }
 
 body{
@@ -151,7 +152,7 @@ body{
     width: 40%;
     height: 80vh;
     background-color: #CFD3DE;
-    border-radius: 8px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -160,7 +161,7 @@ body{
 /* SELECIONAR PRODUTO */
 
 #etiqProductSelect{
-    height: 18vh;
+    height: 12vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -180,9 +181,9 @@ body{
 }
 
 #etiqProductInput{
-    height: 30%;
+    height: 4vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -194,10 +195,19 @@ body{
 }
 
 #boxSelectProducts{
-    width: 55%;
+    width: 60%;
+    height: 4vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+#formProducts{
+    height: 4vh;
+    width: 70%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
 }
 
 /* PREVIEW ETIQUETA */
@@ -258,6 +268,21 @@ body{
     align-items: center;
 }
 
+.boxhrcss{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hrcss{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    border-top: 1px solid #344253;
+}
+
 #etiqExpandPreview{
     width: 20%;
     height: 4vh;
@@ -287,7 +312,7 @@ body{
     width: 40%;
     height: 80vh;
     background-color: #CFD3DE;
-    border-radius: 8px;
+    border-radius: 5px;
     /* padding: 10px; */
 }
 
@@ -459,15 +484,15 @@ input[type="checkbox"]{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #etiqContainerEsquerda{
-    width: 45%;
+    width: 38%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 #etiqContainerDireita{
@@ -493,15 +518,23 @@ input[type="checkbox"]{
 }
 
 .btnConfig2{
-    width: 40px;
+    width: 30px;
     height: 4vh;
     display: flex;
     justify-content: space-between;
-    border: 2px solid #449B70;
-    border-radius: 5px;
     background-color: transparent;
     align-items: center;
     cursor: pointer;
+    border: none;
+}
+
+#modal-1{
+    position: fixed;
+    top: 72%;
+    left: 54%;
+    border: none;
+    z-index: 1000;
+    border-radius: 4px;
 }
 
 .btnConfig3{
@@ -521,4 +554,9 @@ input[type="checkbox"]{
 .iconConfig{
     width: 22px;
     height: 22px;
+}
+
+.iconMaisOpc{
+    width: 20px;
+    height: 18px;
 }
