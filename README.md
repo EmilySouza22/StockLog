@@ -19,3 +19,4 @@ O projeto foi desenvolvido para auxiliar empresas no controle e gerenciamento de
  • Impressão de Etiquetas
 
 🛠️ ESTE PROJETO ESTÁ EM DESENVOLVIMENTO
+teste prof alex
