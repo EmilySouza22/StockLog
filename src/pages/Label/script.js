@@ -10,3 +10,5 @@ openButtons.forEach(button => {
         modal.showModal();
     })
 });
+
+// JsBarcode(".barcode").init();

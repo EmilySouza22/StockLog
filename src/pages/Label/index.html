@@ -61,7 +61,26 @@
                     </div>
                     <div id="containerPreviewEtiq">
                         <div id="etiqBoxPreview">
-                            <img class="etiquetaPreview" src="../../assets/imgs/label/img/etiqueta.svg" alt="">
+                            <div id="etiqueta">
+                                <div>
+                                    <p>Produto:</p>
+                                    <p>Validade:</p>
+                                    <p>Código:</p>
+                                </div>
+                                <div>
+                                    <p>Café Melitta Tradicional 500g</p>
+                                    <p>21/12/2025</p>
+                                    <p>25</p>
+                                </div>
+                            </div>
+                            <div>
+                                <svg class="barcode"
+                                    jsbarcode-format="upc"
+                                    jsbarcode-value="123456789012"
+                                    jsbarcode-textmargin="0"
+                                    jsbarcode-fontoptions="bold">
+                                </svg>
+                            </div>
                         </div>
                         <div id="etiqTamanhoPreview">
                             <p class="textEtiq"> 40x30mm </p>
@@ -132,7 +151,7 @@
                             <p class="textEtiq">Incluir validade</p>
                         </div>
                         <div id="checkboxCodeBar" class="containerCheckBox">
-                            <input type="checkbox">
+                            <input id="checkBoxBarcode" type="checkbox" onclick="JsBarcode()">
                             <p class="textEtiq">Incluir código de barras</p>
                         </div>
                         <div id="checkboxCodigoInterno" class="containerCheckBox">
@@ -155,7 +174,7 @@
                             </div>
                         </div>
                         <div id="etiqContainerDireita">
-                            <button class="btnConfig3"> <img class="iconConfig" src="../../assets/imgs/label/icon/impressora.svg" alt="Impressora"> <strong> Imprimir </strong> </button>
+                            <button onclick="printJS('etiqueta', 'html')" class="btnConfig3"> <img class="iconConfig" src="../../assets/imgs/label/icon/impressora.svg" alt="Impressora"> <strong> Imprimir </strong> </button>
                         </div>
                     </div>
                 </div>
@@ -163,5 +182,7 @@
         </section>
     </main>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/print-js@1.6.0/dist/print.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 </body>
 </html>
