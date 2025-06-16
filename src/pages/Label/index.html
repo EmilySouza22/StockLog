@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title> Etiquetas </title>
+    <title> Impressão de Etiquetas </title>
 </head>
 <body>
     <nav id="navbar">
         <div id="navbar-left">
-            <img id="nav-logo" src="../../assets/imgs/home/img/logo.svg" alt="StockLog">
+            <a href="../Home/index.html">
+                <img id="nav-logo" src="../../assets/imgs/home/img/logo.svg" alt="StockLog">
+            </a>
         </div>
         <div id="navbar-right">
-            <p id="conta-cadastrada"> Mercado Santana </p>
-            <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
-            <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
+            <div id="boxContaCadastrada">
+                <p id="contaCadastrada"> Mercado Santana </p>
+                <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
+            </div>
+            <div id="boxConfigEtiq">
+                <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
+            </div>
         </div>
     </nav>
     <main id="principal">
         <section id="barraNavTelas">
-            <button class="botaoNavTelas"> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> Voltar </button>
-            <button class="botaoNavTelas"> Próximo <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> </button>
+            <a href="../Report/index.html">
+                <button class="botaoNavTelas"> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> <b>Voltar</b> </button>
+            </a>
+            <a href="../Home/index.html">
+                <button class="botaoNavTelas"> <b>Próximo</b> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> </button>
+            </a>
         </section>
         <section id="containerMain">
             <div id="containerLeft">
@@ -29,33 +39,62 @@
                         <h2 id="titleProductSelect">Produto Selecionado</h2>
                     </div>
                     <div id="etiqProductInput">
-                        <p class="textEtiq">Produto:</p>
-                        <select id="form-products"> 
-                            <option> Selecionar Produtos </option>
-                            <option> Café Melitta Tradicional 500g </option>
-                            <option> Leite Ninho Tradicional 1l </option>
-                            <option> Morango 350g </option>
-                        </select>
+                        <div id="boxsubtitleProduct">
+                            <p class="textEtiq">Produto:</p>
+                        </div>
+                        <div id="boxSelectProducts">
+                            <select id="formProducts"> 
+                                <option> Selecionar Produto </option>
+                                <option> Café Melitta Tradicional 500g </option>
+                                <option> Leite Ninho Tradicional 1l </option>
+                                <option> Morango 350g </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="boxhrcss">
+                        <div class="hrcss"></div>
                     </div>
                 </div>
                 <div id="etiqPreview">
-                    <div id="etiqPreviewTitle">
-                        <h2>Pré-visualização</h2>
+                    <div id="containerTitlePreview">
+                        <h2 id="titleEtiquetaPreview">Pré-visualização</h2>
                     </div>
                     <div id="containerPreviewEtiq">
                         <div id="etiqBoxPreview">
-                            <img class="etiquetaPreview" src="../../assets/imgs/label/img/etiqueta.svg" alt="">
+                            <div id="etiqueta">
+                                <div>
+                                    <p>Produto:</p>
+                                    <p>Validade:</p>
+                                    <p>Código:</p>
+                                </div>
+                                <div>
+                                    <p>Café Melitta Tradicional 500g</p>
+                                    <p>21/12/2025</p>
+                                    <p>25</p>
+                                </div>
+                            </div>
+                            <div>
+                                <svg class="barcode"
+                                    jsbarcode-format="upc"
+                                    jsbarcode-value="123456789012"
+                                    jsbarcode-textmargin="0"
+                                    jsbarcode-fontoptions="bold">
+                                </svg>
+                            </div>
                         </div>
                         <div id="etiqTamanhoPreview">
-                            <p class="tamanhoEtiqueta"> 40x30mm </p>
+                            <p class="textEtiq"> 40x30mm </p>
                         </div>
+                    </div>
+                    <div class="boxhrcss">
+                        <div class="hrcss"></div>
                     </div>
                     <div id="containerExpandPreview">
                         <div id="etiqQuantPreview">
-                            <p>Visualizando 1 etiqueta de 10</p>
+                            <p class="textEtiq"> Visualizando 1 de 10</p>
                         </div>
                         <div id="etiqExpandPreview">
-                            <p>Expandir</p>
+                            <p class="textEtiq">Expandir</p>
                             <img class="iconExpand" src="../../assets/imgs/label/icon/expandir.svg" alt="Expandir">
                         </div>
                     </div>
@@ -70,7 +109,7 @@
                     <div id="etiqButtonsEdit">
                         <div id="boxTamEtiq">
                             <div id="boxSubtitleTam">
-                                <p class="textEtiq"> Tamanho (px):</p>
+                                <p class="textEtiq"> Tamanho:</p>
                             </div>
                             <div id="containerTamEtiq">
                                 <div id="inputTamEtiq">
@@ -112,7 +151,7 @@
                             <p class="textEtiq">Incluir validade</p>
                         </div>
                         <div id="checkboxCodeBar" class="containerCheckBox">
-                            <input type="checkbox">
+                            <input id="checkBoxBarcode" type="checkbox" onclick="JsBarcode()">
                             <p class="textEtiq">Incluir código de barras</p>
                         </div>
                         <div id="checkboxCodigoInterno" class="containerCheckBox">
@@ -126,16 +165,24 @@
                                 <button class="btnConfig1"> <img class="iconConfig" src="../../assets/imgs/label/icon/check.svg" alt="Check"> <strong>Aplicar Padrão</strong></button>
                             </div>
                             <div>
-                                <button class="btnConfig2"> <img class="iconConfig" src="../../assets/imgs/label/icon/maisOpcoes.svg" alt="Mais Opções"> </button>
+                                <button class="btnConfig2" data-modal="modal-1"> <img class="iconMaisOpc" src="../../assets/imgs/label/icon/maisOpcoes.svg" alt="Mais Opções"> </button>
+                                <dialog id="modal-1">
+                                    <button>Novo padrão</button>
+                                    <button>Ver padrões</button>
+                                    <button> X </button>
+                                </dialog>
                             </div>
                         </div>
                         <div id="etiqContainerDireita">
-                            <button class="btnConfig3"> <img class="iconConfig" src="../../assets/imgs/label/icon/impressora.svg" alt="Impressora"> <strong> Imprimir </strong> </button>
+                            <button onclick="printJS('etiqueta', 'html')" class="btnConfig3"> <img class="iconConfig" src="../../assets/imgs/label/icon/impressora.svg" alt="Impressora"> <strong> Imprimir </strong> </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/print-js@1.6.0/dist/print.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 </body>
 </html>
