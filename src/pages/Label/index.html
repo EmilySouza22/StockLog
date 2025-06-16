@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title> Etiquetas </title>
+    <title> Impressão de Etiquetas </title>
 </head>
 <body>
     <nav id="navbar">
@@ -12,15 +12,19 @@
             <img id="nav-logo" src="../../assets/imgs/home/img/logo.svg" alt="StockLog">
         </div>
         <div id="navbar-right">
-            <p id="conta-cadastrada"> Mercado Santana </p>
-            <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
-            <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
+            <div id="boxContaCadastrada">
+                <p id="contaCadastrada"> Mercado Santana </p>
+                <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
+            </div>
+            <div id="boxConfigEtiq">
+                <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
+            </div>
         </div>
     </nav>
     <main id="principal">
         <section id="barraNavTelas">
-            <button class="botaoNavTelas"> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> Voltar </button>
-            <button class="botaoNavTelas"> Próximo <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> </button>
+            <button class="botaoNavTelas"> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> <b>Voltar</b> </button>
+            <button class="botaoNavTelas"> <b>Próximo</b> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> </button>
         </section>
         <section id="containerMain">
             <div id="containerLeft">
@@ -29,33 +33,37 @@
                         <h2 id="titleProductSelect">Produto Selecionado</h2>
                     </div>
                     <div id="etiqProductInput">
-                        <p class="textEtiq">Produto:</p>
-                        <select id="form-products"> 
-                            <option> Selecionar Produtos </option>
-                            <option> Café Melitta Tradicional 500g </option>
-                            <option> Leite Ninho Tradicional 1l </option>
-                            <option> Morango 350g </option>
-                        </select>
+                        <div id="boxsubtitleProduct">
+                            <p class="textEtiq">Produto:</p>
+                        </div>
+                        <div id="boxSelectProducts">
+                            <select id="formProducts"> 
+                                <option> Selecionar Produtos </option>
+                                <option> Café Melitta Tradicional 500g </option>
+                                <option> Leite Ninho Tradicional 1l </option>
+                                <option> Morango 350g </option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div id="etiqPreview">
-                    <div id="etiqPreviewTitle">
-                        <h2>Pré-visualização</h2>
+                    <div id="containerTitlePreview">
+                        <h2 id="titleEtiquetaPreview">Pré-visualização</h2>
                     </div>
                     <div id="containerPreviewEtiq">
                         <div id="etiqBoxPreview">
                             <img class="etiquetaPreview" src="../../assets/imgs/label/img/etiqueta.svg" alt="">
                         </div>
                         <div id="etiqTamanhoPreview">
-                            <p class="tamanhoEtiqueta"> 40x30mm </p>
+                            <p class="textEtiq"> 40x30mm </p>
                         </div>
                     </div>
                     <div id="containerExpandPreview">
                         <div id="etiqQuantPreview">
-                            <p>Visualizando 1 etiqueta de 10</p>
+                            <p class="textEtiq"> <strong>Visualizando 1 de 10</strong></p>
                         </div>
                         <div id="etiqExpandPreview">
-                            <p>Expandir</p>
+                            <p class="textEtiq">Expandir</p>
                             <img class="iconExpand" src="../../assets/imgs/label/icon/expandir.svg" alt="Expandir">
                         </div>
                     </div>
