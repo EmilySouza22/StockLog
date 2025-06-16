@@ -9,6 +9,10 @@
 *{
     font-family: "Roboto Medium", sans-serif;
     outline: none;
+
+    a{
+        text-decoration: none;
+    }
 }
 
 body{
@@ -355,7 +359,7 @@ body{
 }
 
 #boxSubtitleTam{
-    width: 60%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
