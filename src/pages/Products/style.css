@@ -14,23 +14,53 @@
 }
 
 .navigation-buttons .btn {
+  display: flex;
+  justify-content: center;  /* centraliza horizontalmente */
+  align-items: center;      /* centraliza verticalmente */
+  text-align: center;       /* garante centralização do texto */
   background: #68c899;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  min-width: 100px;
   font-weight: bold;
   margin: 0 5px;
-  /* opcional, dá um espaço entre os botões */
 }
 
 .navigation-buttons .btn:hover {
   background: linear-gradient(to right, #68c899, #489d73);
 }
 
-.btn-voltar{
-  padding: 10px 10px;
+#btn-voltar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* espaço entre ícone e texto */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background:#68c899;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 120px;
+}
+
+#btn-proximo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #68c899;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  width: 140px;
 }
 
 /* NAVBAR */
@@ -191,13 +221,64 @@ tbody tr:nth-child(even) {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: none;
 }
-
-
 
 .icons-right{
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
+}
+
+#btn-imprimir{
+  border: 2px solid #489d73;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+#btn-imprimir img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+#btn-planilha {
+  border: 2px solid #489d73;
+  padding: 10px 20px; /* espaçamento interno */
+  display: flex;             /* para alinhar texto e imagem lado a lado */
+  align-items: center;       /* verticalmente centralizados */
+  gap: 8px;                  /* espaço entre texto e imagem */
+  cursor: pointer;           /* muda o cursor ao passar */
+  font-size: 16px;           /* tamanho da fonte do botão */
+  border-radius: 6px;        /* cantos arredondados */
+}
+
+#btn-planilha img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;       /* garante que a imagem fique proporcional */
+}
+#btn-produto{
+  border: 2px solid #489d73;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 6px;
+}
+#btn-produto img{
+  width: 20px;
+  height: 20px;
+  object-fit: contain; 
+}
+#btn-botao-mais img{
+ width: 20px;
+  height: 50px;
+  object-fit: contain; 
 }
