@@ -1,3 +1,27 @@
+/* GERAL */
+
+*{
+    font-family: "Roboto Medium", sans-serif;
+}
+
+/*BODY*/
+
+body{
+    background-color: #DFE3F0;
+    margin: 0; 
+    padding: 0;
+}
+
+
+/*CONTAINER PRINCIPAL*/ 
+
+#container {
+    display: flex;
+    flex-direction: row;
+    /* min-height: 100vh; */
+    position: relative;
+}
+
 /* NAVBAR */
 
 #navbar{
@@ -15,51 +39,168 @@
     margin: 0 0 0 100px;
 }
 
+/*LADO ESQUERDO*/ 
+
+
+#left {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    /* gap: 30px;  */
+}
+
+#imgLogin {
+    max-width: 100%;      
+    max-height: 100%;
+    width: 600px;         
+    height: auto;  
+}
+
+/* LADO DIREITO */
+
+#right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 400px;
+    background: none;
+    gap: 20px;
+}
 
 /* LOGIN */ 
 
-#login{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+#login {
+  display: flex;                  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 55px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(#4FB4A2, #42A373);
+  padding: 50px; 
+  color: #4E6074;
+  margin-bottom: 20px;
+  margin: 20px;
+  width: 100%;
+  max-width: 350px;
+  min-height: 500px;
+  font-size: 18px;
 }
 
-#containerInput{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+#login h1 {
+
+    color: #344253;
+    font-size: 65px;
+    margin: 0 0 0 5px;
 }
 
-/*Icon senha*/
+#label{
+    font-size: 100px;
+}
 
-#lock{
-    width: 50px;
-    height: 50px;
+/*INPUTS*/
+
+.containerInput {
+    max-width: 300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.inputIcon {
+  position: relative; 
+  width: 100px 100px;
+}
+
+.inputIcon input {
+    width: 200px;
+    padding: 12px 30px 12px 40px; 
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.placeholder{
+display: flex;
+justify-items: flex-start;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+input{
+    justify-content: center;
+    border-radius: 5px;
+    height: 30px;
+    /* padding: 10px; */
+    outline: 0; 
+    border: 1px
+}
+
+/*CADASTRO*/ 
+
+#cadastro{
+    position: absolute;
+    left: 80px;
+    bottom: 30px;
+    display: flex;                  
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    /* gap: 1px; */
+    border: none;
+    color: #4E6074;
+}
+
+p{ /*estilização pro p*/
+    margin: 10px 10px 10px 0px;
+}
+
+/*BOTÃO*/
+
+
+
+#entrar{
+    background: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+    height: 35px;
+    width: 130px;
+    border-radius: 5px;
+    /* padding: 10px; */
+    border: 1px solid #ffffff;
+    cursor: pointer;
     margin-top: 20px;
 }
 
-/*Icon User*/
-
-#user{
-    width: 50px;
-    height: 50px;
-    margin-top: 20px;
-}
-
-/* IMAGEM LOGIN */
-
-#imgLogin{
-    max-width: 30%;
-    max-width: 30%;
-    display: flex;
-    align-items: column;
-    justify-content: center;
-    margin-top: 30px;
+#cadastre-se{
+    background: none;
+    color: #28DC84;
+    font-weight: bold;
+    font-size: 25px;
+    height: 35px;
+    width: 180px;
+    border-radius: 5px;
+    /* border: none; */
+    /* padding: 5px; */
+    border: 2px solid #28DC84;
+    cursor: pointer;
 }
 
