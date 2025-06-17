@@ -14,7 +14,7 @@
 }
 
 .navigation-buttons .btn {
-  background: linear-gradient(to right, #68c899, #489d73);
+  background: #68c899;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -27,6 +27,10 @@
 
 .navigation-buttons .btn:hover {
   background: linear-gradient(to right, #68c899, #489d73);
+}
+
+.btn-voltar{
+  padding: 10px 10px;
 }
 
 /* NAVBAR */
@@ -56,7 +60,6 @@
   gap: 15px;
   margin: 0 100px 0 0;
 }
-
 .nav-icon {
   display: flex;
   justify-content: space-between;
@@ -67,6 +70,19 @@
 .nav-icon button {
   width: 90px;
   height: 40px;
+}
+
+.nav-icon button img{
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+p{
+  font-size: large;
+  font-weight: bold;
+  margin: 15px;
+  width: 20px;
 }
 
 * {
@@ -115,6 +131,7 @@ tbody tr:nth-child(even) {
   background: linear-gradient(to right, #68c899, #489d73);
 }
 
+
 #footer-geral {
   display: flex;
   justify-content: space-between;
@@ -138,17 +155,49 @@ tbody tr:nth-child(even) {
   background: linear-gradient(to right, #68c899, #489d73);
   color: rgb(0, 0, 0);
   border: none;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 20px;
   cursor: pointer;
-  font-weight: bold;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
+.footer button img{
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+
 .pag-footer {
   text-align: center;
 }
 
+#icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f9fafb;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  flex-wrap: wrap; /* permite quebra de linha se não couber */
+  gap: 10px;        /* espaçamento entre os elementos */
+}
 
+#icons div button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+
+
+.icons-right{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
