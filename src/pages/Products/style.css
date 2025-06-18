@@ -108,11 +108,62 @@
   margin-right: 8px;
 }
 
-p{
+#filtro-btn {
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  padding: 10px;
+  width: 100%;
+  gap: 10px;
+}
+
+#produtos{
+  width: 5px;
   font-size: large;
   font-weight: bold;
-  margin: 15px;
+}
+
+.botao-filtro{
+  color: white;
+  background-color: #489d73;
+  border: 2px solid #489d73;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+#icon-filtro{
   width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.grupo-filtro{
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espaço entre botão e select */
+}
+
+#select-btn{
+  font-size: small;
+  border: 2px solid #489d73;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 15px;
+}
+
+#filtro-btn div button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.botao-filtro {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
 }
 
 * {
@@ -129,6 +180,12 @@ table {
   overflow: hidden;
 }
 
+.icons-tabela{
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 thead th {
   text-align: left;
   padding: 12px 15px;
@@ -142,6 +199,67 @@ tbody td {
 
 tbody tr:nth-child(even) {
   background-color: #f9fafb;
+}
+
+#color-laticinios{
+  background-color: #ABAEB1;
+  border-radius: 20px;
+  width: 5px;
+  flex-direction: column;
+}
+
+#color-bebidas{
+  background-color: #C7AC9E;
+  border-radius: 20px;
+  width: 5px
+}
+
+#color-cafe{
+  background-color: #64A77A;
+  border-radius: 20px;
+  width: 5px
+}
+
+#color-hortifruti{
+  background-color: #7E81C7;
+  border-radius: 20px;
+  width: 5px
+}
+
+#color-graos{
+  background-color: #ECC67F;
+  border-radius: 20px;
+  width: 5px
+}
+
+#color-padaria{
+  background-color: #E69769;
+  border-radius: 20px;
+  width: 5px
+}
+
+#color-farinhas{
+  background-color: #2E6DAB;
+  border-radius: 20px;
+  width: 5px
+}
+
+#color-frios{
+  background-color: #2E6DAB;
+  border-radius: 20px;
+  width: 5px
+}
+
+#color-congelados{
+  background-color: #7B9CBC;
+  border-radius: 20px;
+  width: 5px
+}
+
+#color-frutas{
+  background-color: #D87E7E;
+  border-radius: 20px;
+  width: 5px
 }
 
 .btn {
@@ -160,7 +278,6 @@ tbody tr:nth-child(even) {
 .btn:hover {
   background: linear-gradient(to right, #68c899, #489d73);
 }
-
 
 #footer-geral {
   display: flex;
