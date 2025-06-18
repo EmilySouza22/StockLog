@@ -62,12 +62,12 @@
                     <div id="containerPreviewEtiq">
                         <div id="etiqBoxPreview">
                             <div id="etiqueta">
-                                <div>
+                                <div id="etiquetaBoxLeft">
                                     <p>Produto:</p>
                                     <p>Validade:</p>
                                     <p>Código:</p>
                                 </div>
-                                <div>
+                                <div id="etiquetaBoxRight">
                                     <p>Café Melitta Tradicional 500g</p>
                                     <p>21/12/2025</p>
                                     <p>25</p>
@@ -75,6 +75,7 @@
                             </div>
                             <div>
                                 <svg class="barcode"
+                                    height="120px"
                                     jsbarcode-format="upc"
                                     jsbarcode-value="123456789012"
                                     jsbarcode-textmargin="0"
@@ -162,11 +163,20 @@
                     <div id="etiqBtnConfig">
                         <div id="etiqContainerEsquerda">
                             <div>
-                                <button class="btnConfig1"> <img class="iconConfig" src="../../assets/imgs/label/icon/check.svg" alt="Check"> <strong>Aplicar Padrão</strong></button>
+                                <button class="btnConfig1" data-modal="modal-1"> <img class="iconConfig" src="../../assets/imgs/label/icon/check.svg" alt="Check"> <strong>Aplicar Padrão</strong></button>
+                                <dialog id="modal-1">
+                                    <button>X</button>
+                                    <h2>Selecione o padrão para etiqueta:</h2>
+                                    <select name="selectPattern" id="">
+                                        <option value="">Padrão 1</option>
+                                        <option value="">Padrão 2</option>
+                                    </select>
+                                    
+                                </dialog>
                             </div>
                             <div>
-                                <button class="btnConfig2" data-modal="modal-1"> <img class="iconMaisOpc" src="../../assets/imgs/label/icon/maisOpcoes.svg" alt="Mais Opções"> </button>
-                                <dialog id="modal-1">
+                                <button class="btnConfig2" data-modal="modal-2"> <img class="iconMaisOpc" src="../../assets/imgs/label/icon/maisOpcoes.svg" alt="Mais Opções"> </button>
+                                <dialog id="modal-2">
                                     <button>Novo padrão</button>
                                     <button>Ver padrões</button>
                                     <button> X </button>
