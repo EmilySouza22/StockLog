@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> Impressão de Etiquetas </title>
+</head>
+<body>
+    <nav id="navbar">
+        <div id="navbar-left">
+            <a href="../Home/index.html">
+                <img id="nav-logo" src="../../assets/imgs/home/img/logo.svg" alt="StockLog">
+            </a>
+        </div>
+        <div id="navbar-right">
+            <div id="boxContaCadastrada">
+                <p id="contaCadastrada"> Mercado Santana </p>
+                <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
+            </div>
+            <div id="boxConfigEtiq">
+                <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
+            </div>
+        </div>
+    </nav>
+    <main id="principal">
+        <section id="barraNavTelas">
+            <a href="../Report/index.html">
+                <button class="botaoNavTelas"> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-esquerda.svg" alt="Seta Esquerda"> <b>Voltar</b> </button>
+            </a>
+            <a href="../Home/index.html">
+                <button class="botaoNavTelas"> <b>Próximo</b> <img class="botaoNavIcon" src="../../assets/imgs/alerts/icon/seta-direita.svg" alt="Seta Direita"> </button>
+            </a>
+        </section>
+        <section id="containerMain">
+            <div id="containerLeft">
+                <div id="etiqProductSelect">
+                    <div id="containerTitleProduct">
+                        <h2 id="titleProductSelect">Produto Selecionado</h2>
+                    </div>
+                    <div id="etiqProductInput">
+                        <div id="boxsubtitleProduct">
+                            <p class="textEtiq">Produto:</p>
+                        </div>
+                        <div id="boxSelectProducts">
+                            <select id="formProducts"> 
+                                <option> Selecionar Produto </option>
+                                <option> Café Melitta Tradicional 500g </option>
+                                <option> Leite Ninho Tradicional 1l </option>
+                                <option> Morango 350g </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="boxhrcss">
+                        <div class="hrcss"></div>
+                    </div>
+                </div>
+                <div id="etiqPreview">
+                    <div id="containerTitlePreview">
+                        <h2 id="titleEtiquetaPreview">Pré-visualização</h2>
+                    </div>
+                    <div id="containerPreviewEtiq">
+                        <div id="etiqBoxPreview">
+                            <div id="etiqueta">
+                                <div id="etiquetaBoxLeft">
+                                    <p>Produto:</p>
+                                    <p>Validade:</p>
+                                    <p>Código:</p>
+                                </div>
+                                <div id="etiquetaBoxRight">
+                                    <p>Café Melitta Tradicional 500g</p>
+                                    <p>21/12/2025</p>
+                                    <p>25</p>
+                                </div>
+                            </div>
+                            <div>
+                                <svg class="barcode"
+                                    height="120px"
+                                    jsbarcode-format="upc"
+                                    jsbarcode-value="123456789012"
+                                    jsbarcode-textmargin="0"
+                                    jsbarcode-fontoptions="bold">
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="etiqTamanhoPreview">
+                            <p class="textEtiq"> 40x30mm </p>
+                        </div>
+                    </div>
+                    <div class="boxhrcss">
+                        <div class="hrcss"></div>
+                    </div>
+                    <div id="containerExpandPreview">
+                        <div id="etiqQuantPreview">
+                            <p class="textEtiq"> Visualizando 1 de 10</p>
+                        </div>
+                        <div id="etiqExpandPreview">
+                            <p class="textEtiq">Expandir</p>
+                            <img class="iconExpand" src="../../assets/imgs/label/icon/expandir.svg" alt="Expandir">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="containerRight">
+                <div id="etiqConfig">
+                    <div id="BoxConfigTitle">
+                        <h2 id="configTitle">Configurações da Etiqueta</h2>
+                    </div>
+                    <div id="etiqButtonsEdit">
+                        <div id="boxTamEtiq">
+                            <div id="boxSubtitleTam">
+                                <p class="textEtiq"> Tamanho:</p>
+                            </div>
+                            <div id="containerTamEtiq">
+                                <div id="inputTamEtiq">
+                                    <input class="inputTamEtiq" type="number">
+                                    <p class="textEtiq"> x </p>
+                                    <input class="inputTamEtiq" type="number">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="boxQuantEtiq">
+                            <div id="boxSubtitleQuant">
+                                <p class="textEtiq">Quantidade de etiquetas:</p>
+                            </div>
+                            <div id="inputQuantEtiq">
+                                <input type="number">
+                            </div>
+                        </div>
+                        <div id="boxEspacEtiq">
+                            <div id="boxSubtitleEspac">
+                                <p class="textEtiq">Espaçamento</p>
+                            </div>
+                            <div id="inputEspacEtiq">
+                                <input type="number">
+                            </div>
+                        </div>
+                        <div id="boxCorEtiq">
+                            <div id="boxSubtitleCor">
+                                <p class="textEtiq">Cor de fundo:</p>
+                            </div>
+                            <div id="inputSelectCor">
+                                <select>
+                                    <option>Branco</option>
+                                    <option>Cinza-claro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="checkboxValidade" class="containerCheckBox">
+                            <input type="checkbox">
+                            <p class="textEtiq">Incluir validade</p>
+                        </div>
+                        <div id="checkboxCodeBar" class="containerCheckBox">
+                            <input id="checkBoxBarcode" type="checkbox" onclick="JsBarcode()">
+                            <p class="textEtiq">Incluir código de barras</p>
+                        </div>
+                        <div id="checkboxCodigoInterno" class="containerCheckBox">
+                            <input type="checkbox">
+                            <p class="textEtiq">Incluir código interno</p>
+                        </div>
+                    </div>
+                    <div id="etiqBtnConfig">
+                        <div id="etiqContainerEsquerda">
+                            <div>
+                                <button class="btnConfig1" data-modal="modal-1"> <img class="iconConfig" src="../../assets/imgs/label/icon/check.svg" alt="Check"> <strong>Aplicar Padrão</strong></button>
+                                <dialog id="modal-1">
+                                    <button>X</button>
+                                    <h2>Selecione o padrão para etiqueta:</h2>
+                                    <select name="selectPattern" id="">
+                                        <option value="">Padrão 1</option>
+                                        <option value="">Padrão 2</option>
+                                    </select>
+                                    
+                                </dialog>
+                            </div>
+                            <div>
+                                <button class="btnConfig2" data-modal="modal-2"> <img class="iconMaisOpc" src="../../assets/imgs/label/icon/maisOpcoes.svg" alt="Mais Opções"> </button>
+                                <dialog id="modal-2">
+                                    <button>Novo padrão</button>
+                                    <button>Ver padrões</button>
+                                    <button> X </button>
+                                </dialog>
+                            </div>
+                        </div>
+                        <div id="etiqContainerDireita">
+                            <button onclick="printJS('etiqueta', 'html')" class="btnConfig3"> <img class="iconConfig" src="../../assets/imgs/label/icon/impressora.svg" alt="Impressora"> <strong> Imprimir </strong> </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/print-js@1.6.0/dist/print.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</body>
+</html>
