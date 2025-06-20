@@ -18,37 +18,38 @@
                 <p id="conta-cadastrada"> Mercado Santana </p>
                 <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
                 <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
-                </div>
-                </nav>
+            </div>
         </nav>
-        <div class="nav-icon navigation-buttons" id="navigation">
 
-            <button class="btn" id="btn-voltar"><img src="../../assets/imgs/products/icon/seta-esquerda.svg"
-                    alt="">Voltar</button>
-            <button class="btn" id="btn-proximo">Próximo <img src="../../assets/imgs/products/icon/seta-direita.svg"
-                    alt=""></button>
+        <div class="navigation-buttons">
+            <button class="btn" id="btn-voltar">
+                <img src="../../assets/imgs/products/icon/seta-esquerda.svg" alt="Voltar">Voltar
+            </button>
+            <button class="btn" id="btn-proximo">
+                Próximo<img src="../../assets/imgs/products/icon/seta-direita.svg" alt="Próximo">
+            </button>
         </div>
-        <div>
 
-            <div id="filtro-btn">
-                <p id="produtos">Produtos</p>
-              
-                <div class="grupo-filtro">
-                <label for="select-btn" class="botao-filtro">
-                  <img src="../../assets/imgs/products/icon/filtro.svg" alt="icon de filtro" id="icon-filtro">
-                  Filtrar por:
-                </label>
-              
-                <select id="select-btn">
-                  <option value="">Nenhum</option>
-                  <option value="data">Data</option>
-                  <option value="hora">Hora</option>
-                  <option value="produto">Produto</option>
-                  <option value="tag">Tag</option>
-                </select>
+        <div class="bloco-tabela">
+            <div class="filter">
+                <div id=" filtro-btn">
+                    <p id="produtos">Produtos</p>
+                    <div class="grupo-filtro">
+                        <label for="select-btn" class="botao-filtro">
+                            <img src="../../assets/imgs/products/icon/filtro.svg" alt="icon de filtro" id="icon-filtro">
+                            Filtrar por:
+                        </label>
+
+                        <select id="select-btn">
+                            <option value="">Nenhum</option>
+                            <option value="data">Data</option>
+                            <option value="hora">Hora</option>
+                            <option value="produto">Produto</option>
+                            <option value="tag">Tag</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            </div>
-              
 
             <table>
                 <thead>
@@ -60,6 +61,8 @@
                         <th>Entrada</th>
                         <th>Validade</th>
                         <th>Categoria</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,10 +73,11 @@
                         <td>12</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-laticinios">Laticínios</td>
+                        <td class="tag-categoria" id="color-laticinios">Laticínios</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>2</td>
@@ -82,10 +86,11 @@
                         <td>3</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-bebidas">Bebidas</td>
+                        <td class="tag-categoria" id="color-bebidas">Bebidas</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>3</td>
@@ -94,10 +99,11 @@
                         <td>6</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-cafe">Café</td>
+                        <td class="tag-categoria" id="color-cafe">Café</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>4</td>
@@ -106,10 +112,11 @@
                         <td>10</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-hortifruti">Hortifrúti</td>
+                        <td class="tag-categoria" id="color-hortifruti">Hortifrúti</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>5</td>
@@ -118,10 +125,11 @@
                         <td>13</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-graos">Grãos</td>
+                        <td class="tag-categoria" id="color-graos">Grãos</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>6</td>
@@ -130,10 +138,11 @@
                         <td>8</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-padaria">Padaria</td>
+                        <td class="tag-categoria" id="color-padaria">Padaria</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>7</td>
@@ -142,10 +151,11 @@
                         <td>5</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-farinhas">Farinhas</td>
+                        <td class="tag-categoria" id="color-farinhas">Farinhas</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>8</td>
@@ -154,10 +164,11 @@
                         <td>6</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-frios">Frios</td>
+                        <td class="tag-categoria" id="color-frios">Frios</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>9</td>
@@ -166,10 +177,11 @@
                         <td>4</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-congelados">Congelados</td>
+                        <td class="tag-categoria" id="color-congelados">Congelados</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                     <tr>
                         <td>10</td>
@@ -178,24 +190,26 @@
                         <td>7</td>
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
-                        <td id="color-frutas">Frutas</td>
+                        <td class="tag-categoria" id="color-frutas">Frutas</td>
                         <td><img src="../../assets/imgs/products/icon/lixeira.svg" alt="" class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela"></td>
+                        <td><img src="../../assets/imgs/products/icon/editar.svg" alt="" class="icons-tabela">
+                        </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
 
-            <div class="footer" id="footer-geral">
-                <div class="pagination">
-                    <button class="bnt-footer" id="bnt-pag-voltar"><img src="../../assets/imgs/products/icon/seta-2.svg"
-                            alt=""></button>
-                    <div class="pag-footer">Página 1 de 34</div>
-                    <button class="bnt-footer" id="bnt-pag-proximo"><img src="../../assets/imgs/products/icon/seta.svg"
-                            alt=""></button>
-                </div>
-                <div id="footer-acoes">Mostrando 10 ações de 340</div>
+        <div class="footer" id="footer-geral">
+            <div class="pagination">
+                <button class="bnt-footer" id="bnt-pag-voltar"><img src="../../assets/imgs/products/icon/seta-2.svg"
+                        alt=""></button>
+                <div class="pag-footer">Página 1 de 34</div>
+                <button class="bnt-footer" id="bnt-pag-proximo"><img src="../../assets/imgs/products/icon/seta.svg"
+                        alt=""></button>
             </div>
+            <div id="footer-acoes">Mostrando 10 ações de 340</div>
+        </div>
         </div>
 
         <div class="icons-footer" id="icons">
@@ -209,7 +223,8 @@
                             alt=""></button>
                 </div>
                 <div class="btn-footer-planilha">
-                    <button id="btn-produto"><img src="../../assets/imgs/products/icon/adicionar.svg" alt=""> Adicionar
+                    <button id="btn-produto"><img src="../../assets/imgs/products/icon/adicionar.svg" alt="">
+                        Adicionar
                         Produto</button>
                 </div>
                 <div>

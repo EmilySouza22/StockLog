@@ -1,129 +1,123 @@
-.navigation-buttons {
-  display: flex;
-  /* coloca os botões na mesma linha */
-  justify-content: space-between;
-  /* ou use flex-start se quiser os dois do mesmo lado */
-  align-items: center;
-  /* alinha verticalmente no centro */
-  padding: 10px 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+
+html, body{
   background-color: #f9fafb;
-  position: sticky;
-  /* opcional, se quiser que fique visível ao rolar */
-  top: 0;
-  z-index: 10;
-}
-
-.navigation-buttons .btn {
-  display: flex;
-  justify-content: center;  /* centraliza horizontalmente */
-  align-items: center;      /* centraliza verticalmente */
-  text-align: center;       /* garante centralização do texto */
-  background: #68c899;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  min-width: 100px;
-  font-weight: bold;
-  margin: 0 5px;
-}
-
-.navigation-buttons .btn:hover {
-  background: linear-gradient(to right, #68c899, #489d73);
-}
-
-#btn-voltar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px; /* espaço entre ícone e texto */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background:#68c899;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  width: 120px;
-}
-
-#btn-proximo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background: #68c899;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  width: 140px;
+   overflow-x: hidden;
 }
 
 /* NAVBAR */
-#navbar{
+#navbar {
   background-color: #F5F5F5;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 65px;
-  }
-  
-#navbar-left{
+}
+
+#navbar-left {
   display: flex;
   align-items: center;
-  }
-  
-#navbar-right{
+}
+
+#navbar-right {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin: 0 100px 0 0;
-  }
-  
-#conta-cadastrada{
+  margin-right: 100px;
+}
+
+#conta-cadastrada {
   color: #4E6074;
   font-size: 20px;
-  margin: 0;
-  }
-  
-#nav-logo{
+}
+
+#nav-logo {
   width: 100px;
   height: 65px;
-  margin: 0 0 0 100px;
-  }
-  
-.nav-icon{
+  margin-left: 100px;
+}
+
+.nav-icon {
   width: 40px;
   height: 40px;
-  }
-  
+}
 
-.nav-icon button img{
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navigation-buttons .btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #68c899;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navigation-buttons .btn:hover {
+  background: linear-gradient(to right, #68c899, #489d73);
+}
+
+.navigation-buttons .btn img {
+  width: 16px;
+  height: 16px;
+}
+
+#btn-voltar img{
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+
+#btn-proximo img {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+}
+
+.nav-icon button img {
   width: 20px;
   height: 20px;
   margin-right: 8px;
 }
 
 #filtro-btn {
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px;
-  padding: 10px;
-  width: 100%;
-  gap: 10px;
+ display: flex;
+  justify-content: flex-end;     /* joga tudo para a direita */
+  align-items: center;           /* alinha verticalmente */
+  gap: 15px;                    
+  padding: 0 20px;
+  margin: 15px 0;
+  background-color: transparent;
 }
 
 #produtos{
-  width: 5px;
-  font-size: large;
+  font-size: 20px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;                   
+  padding: 0;
 }
 
 .botao-filtro{
@@ -141,9 +135,22 @@
 }
 
 .grupo-filtro{
-  display: flex;
+ display: flex;
   align-items: center;
-  gap: 10px; /* espaço entre botão e select */
+  justify-content: flex-end;  /* tudo no canto direito */
+  gap: 10px;
+  margin: 0 0 20px 0;
+   padding: 0 20px;
+   background-color: transparent;
+}
+
+#filtro-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20px 0;
+  padding: 0 20px;
+  background-color: transparent;
 }
 
 #select-btn{
@@ -167,6 +174,16 @@
   cursor: pointer;
 }
 
+.filter{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -177,9 +194,21 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 10px;
-  overflow: hidden;
+  border-spacing: 0;
+  
 }
+
+.bloco-tabela {
+  background-color: white;
+  border-radius: 20px;                
+  padding: 16px 20px;                 
+  margin: 20px auto;                  /* espaço externo automático centralizado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  max-width: 95%;                     /* evita ocupar toda a largura */
+  overflow-x: auto;                   /* protege contra scroll horizontal */
+  transition: all 0.3s ease-in-out;   /* animação sutil para interações futuras */
+}
+
 
 .icons-tabela{
   width: 20px;
@@ -188,14 +217,16 @@ table {
 }
 
 thead th {
-  text-align: left;
   padding: 12px 15px;
-  font-weight: bold;
+  border-bottom: 7px solid #e0e0e0;
+  text-align: left;
+ 
 }
 
 tbody td {
   padding: 12px 15px;
   border-bottom: 1px solid #e0e0e0;
+  text-align: left;
 }
 
 tbody tr:nth-child(even) {
@@ -203,64 +234,142 @@ tbody tr:nth-child(even) {
 }
 
 #color-laticinios{
-  background-color: #ABAEB1;
+ background-color: #abaeb1;
   border-radius: 20px;
-  width: 5px;
-  flex-direction: column;
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;        /* afasta da linha de cima */
+  margin-bottom: 4px;     
 }
+
 
 #color-bebidas{
   background-color: #C7AC9E;
-  border-radius: 20px;
-  width: 5px
+   border-radius: 20px;
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;        
+  margin-bottom: 4px;
 }
 
 #color-cafe{
   background-color: #64A77A;
-  border-radius: 20px;
-  width: 5px
+   border-radius: 20px;
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;       
+  margin-bottom: 4px;
 }
 
 #color-hortifruti{
   background-color: #7E81C7;
-  border-radius: 20px;
-  width: 5px
+   border-radius: 20px;
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;       
+  margin-bottom: 4px;
 }
 
 #color-graos{
   background-color: #ECC67F;
-  border-radius: 20px;
-  width: 5px
+   border-radius: 20px;
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;       
+  margin-bottom: 4px;
 }
 
 #color-padaria{
   background-color: #E69769;
-  border-radius: 20px;
-  width: 5px
+   border-radius: 20px;
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;        
+  margin-bottom: 4px;
 }
 
 #color-farinhas{
   background-color: #2E6DAB;
   border-radius: 20px;
-  width: 5px
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;        
+  margin-bottom: 4px;
+}
+
+.tag-categoria{
+  height: 32px;
+  width: 100px;
+  vertical-align: middle;
+  line-height: 22px;          /* alinha verticalmente o texto */
+  margin: 6px auto;           /* centraliza dentro do <td> */
+  font-size: 15px;
 }
 
 #color-frios{
   background-color: #2E6DAB;
   border-radius: 20px;
-  width: 5px
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;        /* afasta da linha de cima */
+  margin-bottom: 4px;
 }
 
 #color-congelados{
   background-color: #7B9CBC;
   border-radius: 20px;
-  width: 5px
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;       
+  margin-bottom: 4px;
 }
 
 #color-frutas{
   background-color: #D87E7E;
   border-radius: 20px;
-  width: 5px
+  height: 32px;
+  padding: 5px 12px;
+  display: inline-block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  line-height: 22px;
+  margin-top: 6px;        /* afasta da linha de cima */
+  margin-bottom: 4px;     /* afasta da linha de baixo */
 }
 
 .btn {
@@ -289,7 +398,7 @@ tbody tr:nth-child(even) {
   position: sticky;
   bottom: 0;
   z-index: 10;
-  flex-wrap: wrap; /* se o espaço for pequeno, quebra linha */
+  flex-wrap: wrap; 
   gap: 10px;
 }
 
@@ -366,13 +475,13 @@ tbody tr:nth-child(even) {
 
 #btn-planilha {
   border: 2px solid #489d73;
-  padding: 10px 20px; /* espaçamento interno */
+  padding: 10px 20px; 
   display: flex;             /* para alinhar texto e imagem lado a lado */
-  align-items: center;       /* verticalmente centralizados */
+  align-items: center;
   gap: 8px;                  /* espaço entre texto e imagem */
   cursor: pointer;           /* muda o cursor ao passar */
-  font-size: 16px;           /* tamanho da fonte do botão */
-  border-radius: 6px;        /* cantos arredondados */
+  font-size: 16px;          
+  border-radius: 6px;       
 }
 
 #btn-planilha img {
@@ -396,7 +505,7 @@ tbody tr:nth-child(even) {
   object-fit: contain; 
 }
 #btn-botao-mais img{
- width: 20px;
+ width: 30px;
   height: 50px;
   object-fit: contain; 
 }
