@@ -9,6 +9,7 @@
 </head>
 <body>
     <nav id="navbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
         <div id="navbar-left">
             <img id="nav-logo" src="../../assets/imgs/home/img/logo.svg" alt="StockLog">
         </div>
@@ -22,6 +23,19 @@
             </div>
         </div>
     </nav>
+
+    <!-- SIDEBAR MOBILE -->
+    <div class="sidebar" id="sidebar">
+      <div class="item">
+        <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
+        <span>Mercado Santana</span>
+      </div>
+      <div class="item">
+        <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
+        <span>Configurações</span>
+      </div>
+    </div>
+    
     <main id="principal">
         <div id="container1">
             <section id="painelUpdate">
@@ -87,7 +101,7 @@
                         <div class="alertInfo">
                             <div class="alertInfoTitle">
                                 <img class="alertIcon" src="../../assets/imgs/home/icon/atencao.svg" alt="Atenção">
-                                <h2 class="alertSubTitle">Vencimento próximo</h2>
+                                <h2 class="alertSubTitle">Validade próxima</h2>
                             </div>
                             <div class="alertInfoContent">
                                 <p class="alertInfoText">3 produtos próximos do vencimento</p>
@@ -161,7 +175,7 @@
             <div id="containerRight">
                 <section id="painel-publicidade">
                     <div id="containerPubliTitle">
-                        <h1 id="publiTitle">Assine o nosso <br> <span class="destaque">plano premium</span> <br> para gerenciar seu estoque <span class="destaque">sem limites</span>!</h1>
+                        <h1 id="publiTitle">Assine o nosso <br> <span class="destaque">plano premium</span> <br> para gerenciar seu estoque <span class="destaque">sem limites!</span></h1>
                     </div>
                     <div id="containerPubliButton">
                         <button id="publiButton">Acessar planos</button>
@@ -179,5 +193,6 @@
             <p> Problemas?    Fale Conosco </p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
