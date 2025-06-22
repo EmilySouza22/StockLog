@@ -11,6 +11,7 @@
     a{
         text-decoration: none;
     }
+    box-sizing: border-box;
 }
 
 body{
@@ -23,7 +24,39 @@ body{
     font-family: sans-serif;
 }
 
-@media (min-width: 1604px){
+/* SIDEBAR */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      width: 250px;
+      background-color: #fff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+      padding-top: 65px;
+      transition: left 0.3s ease;
+      z-index: 5;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar .item {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #333;
+    }
+
+    .sidebar .item:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+
+@media (min-width: 1380px){
 /* NAVBAR */
 
 #navbar{
@@ -33,6 +66,8 @@ body{
     justify-content: space-between;
     width: 100%;
     height: 65px;
+    position: relative;
+    z-index: 2;
 }
 
 #navbar-left{
@@ -43,51 +78,66 @@ body{
 #navbar-right{
     display: flex;
     align-items: center;
-    margin: 0 100px 0 0;
+    margin-right: 100px;
 }
 
-#boxContaCadastrada{
-    width: 200px;
+#boxContaCadastrada,
+#boxConfigEtiq {
     height: 65px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    padding: 0 10px;
 }
 
-#boxContaCadastrada:hover{
+#boxContaCadastrada:hover,
+#boxConfigEtiq:hover {
     background-color: #eaecf0;
     cursor: pointer;
 }
 
 #contaCadastrada{
     color: #4E6074;
-    -webkit-text-stroke: #344253;
     font-size: 18px;
     margin: 0;
-}
-
-#boxConfigEtiq{
-    height: 65px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-#boxConfigEtiq:hover{
-    background-color: #eaecf0;
-    cursor: pointer;
 }
 
 #nav-logo{
     width: 100px;
     height: 40px;
-    margin: 0 0 0 100px;
+    margin-left: 100px;
 }
 
 .nav-icon{
     width: 30px;
     height: 30px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  padding-top: 65px;
+  transition: left 0.3s ease;
+  z-index: 5;
+}
+.sidebar.active {
+  left: 0;
+}
+
+/* Botão de menu (só aparece no mobile) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    margin-left: 20px;
 }
 
 /* CONTEUDO */
@@ -213,10 +263,11 @@ body{
 }
 
 #containerTitle{
-    width: 25%;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 
@@ -283,7 +334,7 @@ body{
 }
 
 .alertInfo{
-    height: 30%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
@@ -366,7 +417,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .grafContent{
@@ -380,15 +431,16 @@ body{
 }
 
 #grafBoxTitle{
-    width: 80%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 .grafIcon{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 
 #grafTitle{
@@ -398,23 +450,24 @@ body{
 }
 
 #grafButtons{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 12px;
 }
 
 .grafButton{
-    height: 55px;
-    width: 230px;
-    border-radius: 20px;
+    height: 45px;
+    width: 100%;
+    border-radius: 10px;
     border: none;
     color: #F5F5F5;
     background: linear-gradient(to right, #68C899, #489D73);
     cursor: pointer;
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 24px;
 }
 
 /* SEÇÃO 3: RELATORIO, ETIQUETA E PLANO PREMIUM */
@@ -466,10 +519,10 @@ body{
 }
 
 #containerRelatTitle{
-    width: 72%;
+    width: 100%;
     display: flex;
-    justify-content:space-between;
     align-items: center;
+    gap: 20px;
 }
 
 #containerRelatImg{
@@ -534,10 +587,10 @@ body{
 }
 
 #containerEtiqTitle{
-    width: 74%;
+    width: 100%;
     display: flex;
-    justify-content:space-between;
     align-items: center;
+    gap: 20px;
 }
 
 #containerEtiqImg{
@@ -645,9 +698,8 @@ body{
 
 }
 
-
-@media (min-width: 768px) and (max-width: 1603px) {
-    /* NAVBAR */
+@media (min-width: 669px) and (max-width: 1379px){
+/* NAVBAR */
 
 #navbar{
     background-color: #fff;
@@ -668,6 +720,11 @@ body{
     align-items: center;
     margin: 0 100px 0 0;
 }
+
+.menu-toggle{
+    display: none;
+}
+
 
 #boxContaCadastrada{
     width: 200px;
@@ -716,11 +773,11 @@ body{
 /* CONTEUDO */
 
 #principal{
-    padding: 3% 5% 3% 5%;
+    padding: 3% 10% 3% 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content:center;
     gap: 30px;
 }
 
@@ -730,10 +787,8 @@ body{
     width: 100%;
     height: 40vh;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
 }
 
 /* PAINEL UPDATE */
@@ -744,8 +799,8 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 50%;
-    height: 90%;
+    width: 32%;
+    height: 100%;
     border-radius: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -766,14 +821,14 @@ body{
 
 .updTitle{
     margin: 0;
-    font-size: 28px;
-    line-height: 90%;
+    font-size: 220%;
+    line-height: 30px;
     color: #344253;
 }
 
 .updText{
     display: flex;
-    width: 60%;
+    width: 90%;
     height: 30%;
     flex-direction: column;
     align-items: center;
@@ -782,7 +837,7 @@ body{
 }
 
 .updInfo{
-    font-size: 22px;
+    font-size: 30px;
     color: #4E6074;
     margin: 0;
 }
@@ -796,7 +851,7 @@ body{
 .horizontalBar{
     border-top: 2px solid #586b80dc;
     margin: 5px 0;
-    width: 90%;
+    width: 70%;
 }
 
 .updBoxButton{
@@ -804,23 +859,23 @@ body{
 }
 
 #updButton{
-    height: 50px;
-    width: 190px;
+    height: 60px;
+    width: 200px;
     border-radius: 28px;
     border: none;
     color: #F5F5F5;
     background: linear-gradient(to right, #68C899, #489D73);
     cursor: pointer;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /* PAINEL ALERTAS */
 
 #painel-alertas{
     background: #fff;
-    width: 80%;
-    height: 90%;
+    width: 66%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -831,17 +886,18 @@ body{
 
 #containerAlertTitle{
     width: 90%;
-    height: 20%;
+    height: 25%;
     display: flex;
     justify-content:space-between;
     align-items: center
 }
 
 #containerTitle{
-    width: 42%;
+    width: 30%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 
@@ -852,9 +908,9 @@ body{
 
 .alertInfoText{
     color: #4E6074;
-    font-size: 17px;
-    margin: 0;
+    font-size: 100%;
     line-height: 90%;
+    margin: 0;
 }
 
 #box-title{
@@ -870,7 +926,7 @@ body{
 
 #alertTitle{
     color: #344253;
-    font-size: 35px;
+    font-size: 220%;
     margin: 0;
 }
 
@@ -879,45 +935,44 @@ body{
     align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 42px;
-    width: 130px;
+    height: 50px;
+    width: 190px;
     border-radius: 25px;
     border: none;
     color: #F5F5F5;
     background: linear-gradient(to right, #68C899, #489D73);
     cursor: pointer;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 #containerAlertInfo{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     width: 100%;
-    height: 70%;
+    height: 80%;
 }
 
 #alert1{
-    width: 95%;
-    height: 55%;
+    width: 40%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: start;
-    justify-content:space-between;
+    justify-content:space-evenly;
 }
 
 .alertInfo{
-    height: 55%;
-    width: 40%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
     background-color: #d4f3e7e7;
     border-left: 5px solid #4bc991;
     border-radius: 10px;
-    padding: 2%;
+    padding: 5%;
 }
 
 .alertInfoTitle{
@@ -930,18 +985,25 @@ body{
 
 .alertSubTitle{
     color: #344253;
-    font-size: 20px;
+    font-size: 1.3em;
+    line-height: 85%;
     margin: 0;
-    line-height: 90%;
+}
+
+.verticalBar{
+    height: 90%;               
+    margin: 0 20px; 
+    width: 2px;
+    background-color: #586b80dc;
 }
 
 #alert2{
-    width: 95%;
-    height: 60%;
+    width: 40%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: start;
-    justify-content:space-between;
+    justify-content:space-evenly;
 }
 
 .alertInfoContent{
@@ -958,7 +1020,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45vh;
+    height: 60vh;
 }
 
 #painel-graficos{
@@ -982,8 +1044,8 @@ body{
 }
 
 #containerGrafSelect{
-    width: 30%;
-    height: 90%;
+    width: 20%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -994,49 +1056,50 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 65%;
-    height: 60%;
+    width: 72%;
+    height: 90%;
     background-color: #d4f3e7e7;
     border-radius: 20px;
 }
 
 #grafBoxTitle{
-    width: 65%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 .grafIcon{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 #grafTitle{
     color: #344253;
-    font-size: 30px;
+    font-size: 220%;
     margin: 0;
 }
 
 #grafButtons{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px;
-    width: 50%;
+    gap: 12px;
 }
 
 .grafButton{
-    height: 35px;
-    width: 100px;
-    border-radius: 20px;
+    height: 45px;
+    width: 100%;
+    border-radius: 10px;
     border: none;
     color: #F5F5F5;
     background: linear-gradient(to right, #68C899, #489D73);
     cursor: pointer;
-    font-weight: bold;
-    font-size: 15px;
+    font-weight: 600;
+    font-size: 24px;
 }
 
 /* SEÇÃO 3: RELATORIO, ETIQUETA E PLANO PREMIUM */
@@ -1044,22 +1107,22 @@ body{
 #container3{
     width: 100%;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 40vh;
+    height: 45vh;
 }
 
 #containerLeft{
     width: 50%;
-    height: 80%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
 }
 
 #containerRight{
-    width: 50%;
+    width: 48%;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -1075,7 +1138,7 @@ body{
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: 15vh;
+    height: 20vh;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -1088,10 +1151,10 @@ body{
 }
 
 #containerRelatTitle{
-    width: 90%;
+    width: 100%;
     display: flex;
-    justify-content:space-between;
     align-items: center;
+    gap: 20px;
 }
 
 #containerRelatImg{
@@ -1103,7 +1166,7 @@ body{
 
 #relatTitle{
     color: #344253;
-    font-size: 180%;
+    font-size: 220%;
     margin: 0;
     line-height: 100%;
 }
@@ -1114,14 +1177,14 @@ body{
 
 #relatText{
     width: 100%;
-    font-size: 110%;
+    font-size: 1.3em;
     margin: 0;
     color: #4E6074;
 }
 
 #relatIcon{
-    width: 18%;
-    height: 18%;
+    width: 35px;
+    height: 35px;
 }
 
 #containerRelatText{
@@ -1129,8 +1192,8 @@ body{
 }
 
 #relatImg{
-    width: 90%;
-    height: 70%;
+    width: 6em;
+    height: 6em;
 }
 
 
@@ -1143,12 +1206,12 @@ body{
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-    height: 15vh;
+    height: 20vh;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 #containerEtiqContent{
-    width: 55%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -1156,10 +1219,10 @@ body{
 }
 
 #containerEtiqTitle{
-    width: 85%;
+    width: 100%;
     display: flex;
-    justify-content:space-between;
     align-items: center;
+    gap: 20px;
 }
 
 #containerEtiqImg{
@@ -1171,8 +1234,9 @@ body{
 
 #etiqTitle{
     color: #344253;
-    font-size: 35px;
+    font-size: 220%;
     margin: 0;
+    line-height: 100%;
 }
 
 #containerEtiqText{
@@ -1181,14 +1245,14 @@ body{
 
 #etiqText{
     width: 100%;
-    font-size: 20px;
+    font-size: 1.3em;
     margin: 0;
     color: #4E6074;
 }
 
 #etiqIcon{
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
 }
 
 #containerEtiqText{
@@ -1196,8 +1260,8 @@ body{
 }
 
 #etiqImg{
-    width: 110px;
-    height: 110px;
+    width: 7em;
+    height: 7em;
 }
 
 /* PAINEL PUBLICIDADE PREMIUM */
@@ -1209,8 +1273,8 @@ body{
     align-items: center;
     justify-content:space-around;
     background: linear-gradient( #1F8170, #8BD8CA);
-    width: 90%;
-    height: 35vh;
+    width: 95%;
+    height: 45vh;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -1225,8 +1289,8 @@ body{
 #publiTitle{
     width: 81%;
     color: #282C31;
-    font-size: 120%;
-    line-height: 90%;
+    font-size: 135%;
+    line-height: 85%;
     margin: 0;
 }
 
@@ -1242,13 +1306,13 @@ body{
 }
 
 #publiButton{
-    width: 240px;
-    height: 50px;
+    width: 255px;
+    height: 60px;
     border: 2px solid #F5F5F5;
     border-radius: 25px;
     background-color: transparent;
     color: #F5F5F5;
-    font-size: 25px;
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -1266,8 +1330,7 @@ body{
 
 }
 
-
-@media (max-width: 767px){
+@media (min-width: 361px) and (max-width: 668px){
     /* NAVBAR */
 
 #navbar{
@@ -1277,6 +1340,10 @@ body{
     justify-content: space-between;
     width: 100%;
     height: 65px;
+}
+
+.menu-toggle{
+    display: none;
 }
 
 #navbar-left{
@@ -1622,15 +1689,16 @@ body{
 }
 
 #grafBoxTitle{
-    width: 50%;
+    width: 90%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     align-items: center;
 }
 
 .grafIcon{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 
 #grafTitle{
@@ -1652,7 +1720,7 @@ body{
 .grafButton{
     height: 40px;
     width: 100px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     color: #F5F5F5;
     background: linear-gradient(to right, #68C899, #489D73);
@@ -1710,9 +1778,10 @@ body{
 }
 
 #containerRelatTitle{
-    width: 90%;
+    width: 80%;
     display: flex;
-    justify-content:space-between;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
 }
 
@@ -1778,9 +1847,644 @@ body{
 }
 
 #containerEtiqTitle{
-    width: 85%;
+    width: 80%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#containerEtiqImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+#etiqTitle{
+    color: #344253;
+    font-size: 35px;
+    margin: 0;
+}
+
+#containerEtiqText{
+    width: 100%;
+}
+
+#etiqText{
+    width: 100%;
+    font-size: 20px;
+    margin: 0;
+    color: #4E6074;
+}
+
+#etiqIcon{
+    width: 30px;
+    height: 30px;
+}
+
+#containerEtiqText{
+    width: 100%; 
+}
+
+#etiqImg{
+    width: 110px;
+    height: 110px;
+}
+
+/* PAINEL PUBLICIDADE PREMIUM */
+
+#painel-publicidade{
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    background: linear-gradient( #1F8170, #8BD8CA);
+    width: 100%;
+    height: 35vh;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#containerPubliTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    font-size: 30px;
+}
+
+#publiTitle{
+    width: 81%;
+    color: #282C31;
+    font-size: 120%;
+    line-height: 90%;
+    margin: 0;
+}
+
+.destaque{
+    color: #F5F5F5;
+}
+
+#containerPubliButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+}
+
+#publiButton{
+    width: 240px;
+    height: 50px;
+    border: 2px solid #F5F5F5;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #F5F5F5;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* SEÇÃO 4: FOOTER */
+
+#footer-bar{
+    background-color: #489D73;
+    color: azure;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+}
+
+@media (max-width: 360px){
+    /* NAVBAR */
+
+#navbar{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 65px;
+}
+
+#navbar-left{
+    display: flex;
+    align-items: center;
+}
+
+#navbar-right{
+    display: none;
+}
+
+.menu-toggle {
+    display: block;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    margin-left: 20px;
+}
+
+#boxContaCadastrada{
+    width: 200px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#boxContaCadastrada:hover{
+    background-color: #eaecf0;
+    cursor: pointer;
+}
+
+#contaCadastrada{
+    color: #4E6074;
+    -webkit-text-stroke: #344253;
+    font-size: 18px;
+    margin: 0;
+}
+
+#boxConfigEtiq{
+    height: 65px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#boxConfigEtiq:hover{
+    background-color: #eaecf0;
+    cursor: pointer;
+}
+
+#nav-logo{
+    width: 100px;
+    height: 40px;
+    margin: 0 0 0 100px;
+}
+
+.nav-icon{
+    width: 30px;
+    height: 30px;
+}
+
+/* CONTEUDO */
+
+#principal{
+    padding: 3% 4% 3% 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* SEÇÃO 1: UPDATE E ALERTAS */
+
+#container1{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+/* PAINEL UPDATE */
+
+#painelUpdate{
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#titleUpdate{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.updIcon{
+    color: #4E6074;
+    width: 50px;
+    height: 50px;
+}
+
+.updTitle{
+    margin: 0;
+    font-size: 34px;
+    line-height: 30px;
+    color: #344253;
+}
+
+.updText{
+    display: flex;
+    width: 60%;
+    height: 30%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #344253;
+}
+
+.updInfo{
+    font-size: 30px;
+    color: #4E6074;
+    margin: 0;
+}
+
+.updInfoTime{
+    font-size: 18px;
+    color: #4E6074;
+    margin: 0;
+}
+
+.horizontalBar{
+    border-top: 2px solid #586b80dc;
+    margin: 5px 0;
+    width: 90%;
+}
+
+.updBoxButton{
+    height: 16%;
+}
+
+#updButton{
+    height: 50px;
+    width: 190px;
+    border-radius: 28px;
+    border: none;
+    color: #F5F5F5;
+    background: linear-gradient(to right, #68C899, #489D73);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* PAINEL ALERTAS */
+
+#painel-alertas{
+    background: #fff;
+    width: 80%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#containerAlertTitle{
+    width: 90%;
+    height: 20%;
     display: flex;
     justify-content:space-between;
+    align-items: center
+}
+
+#containerTitle{
+    width: 42%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#alertIcon{
+    width: 40px;
+    height: 40px;
+}
+
+.alertInfoText{
+    color: #4E6074;
+    font-size: 17px;
+    margin: 0;
+    line-height: 90%;
+}
+
+#box-title{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.alertIcon{
+    width: 24px;
+    height: 24px;
+}
+
+#alertTitle{
+    color: #344253;
+    font-size: 35px;
+    margin: 0;
+}
+
+#alertButton{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 42px;
+    width: 130px;
+    border-radius: 25px;
+    border: none;
+    color: #F5F5F5;
+    background: linear-gradient(to right, #68C899, #489D73);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#containerAlertInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70%;
+}
+
+#alert1{
+    width: 95%;
+    height: 55%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content:space-between;
+}
+
+.alertInfo{
+    height: 55%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color: #d4f3e7e7;
+    border-left: 5px solid #4bc991;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.alertInfoTitle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+}
+
+.alertSubTitle{
+    color: #344253;
+    font-size: 20px;
+    margin: 0;
+    line-height: 90%;
+}
+
+#alert2{
+    width: 95%;
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content:space-between;
+}
+
+.alertInfoContent{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+/* SEÇÃO 2: GRAFICOS */
+
+#container2{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+#painel-graficos{
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#grafBox{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#containerGrafSelect{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.grafContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 50%;
+    background-color: #d4f3e7e7;
+    border-radius: 20px;
+}
+
+#grafBoxTitle{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.grafIcon{
+    width: 35px;
+    height: 35px;
+}
+
+#grafTitle{
+    color: #344253;
+    font-size: 40px;
+    margin: 0;
+}
+
+#grafButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 90%;
+    flex-wrap: wrap
+}
+
+.grafButton{
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    color: #F5F5F5;
+    background: linear-gradient(to right, #68C899, #489D73);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* SEÇÃO 3: RELATORIO, ETIQUETA E PLANO PREMIUM */
+
+#container3{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+#containerLeft{
+    width: 100%;
+    height: 53%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#containerRight{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+
+/* PAINEL RELATORIOS */
+
+#painel-relatorio{
+    background: #fff;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 20vh;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#containerRelatContent{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+#containerRelatTitle{
+    width: 80%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#containerRelatImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+#relatTitle{
+    color: #344253;
+    font-size: 35px;
+    margin: 0;
+    line-height: 100%;
+}
+
+#containerRelatText{
+    width: 100%; 
+}
+
+#relatText{
+    width: 100%;
+    font-size: 20px;
+    margin: 0;
+    color: #4E6074;
+}
+
+#relatIcon{
+    width: 30px;
+    height: 30px;
+}
+
+#containerRelatText{
+    width: 100%; 
+}
+
+#relatImg{
+    width: 80px;
+    height: 100px;
+}
+
+
+/* PAINEL ETIQUETAS */
+
+#painel-etiquetas{
+    background: #fff;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 20vh;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#containerEtiqContent{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+#containerEtiqTitle{
+    width: 80%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
     align-items: center;
 }
 
