@@ -44,10 +44,7 @@
                         </div>
                         <div id="boxSelectProducts">
                             <select id="formProducts"> 
-                                <option> Selecionar Produto </option>
-                                <option> Café Melitta Tradicional 500g </option>
-                                <option> Leite Ninho Tradicional 1l </option>
-                                <option> Morango 350g </option>
+                                <option value="-1"> Selecionar Produto </option>
                             </select>
                         </div>
                     </div>
@@ -63,14 +60,14 @@
                         <div id="etiqBoxPreview">
                             <div id="etiqueta">
                                 <div id="etiquetaBoxLeft">
-                                    <p>Produto:</p>
-                                    <p>Validade:</p>
-                                    <p>Código:</p>
+                                    <p class="etiquetaToggleProduto" style="display:none;">Produto:</p>
+                                    <p class="etiquetaToggleValidade" style="display:none;">Validade:</p>
+                                    <p class="etiquetaToggleCodigo" style="display:none;">Código:</p>
                                 </div>
                                 <div id="etiquetaBoxRight">
-                                    <p>Café Melitta Tradicional 500g</p>
-                                    <p>21/12/2025</p>
-                                    <p>25</p>
+                                    <p id="etiquetaProduto" class="etiquetaToggleProduto" style="display:none;"></p>
+                                    <p id="etiquetaValidade" class="etiquetaToggleValidade" style="display:none;"></p>
+                                    <p id="etiquetaCodigo" class="etiquetaToggleCodigo" style="display:none;"></p>
                                 </div>
                             </div>
                             <div>
@@ -84,7 +81,7 @@
                             </div>
                         </div>
                         <div id="etiqTamanhoPreview">
-                            <p class="textEtiq"> 40x30mm </p>
+                            <p class="tamanhoPreview"> 40x30mm </p>
                         </div>
                     </div>
                     <div class="boxhrcss">
@@ -152,7 +149,7 @@
                             <p class="textEtiq">Incluir validade</p>
                         </div>
                         <div id="checkboxCodeBar" class="containerCheckBox">
-                            <input id="checkBoxBarcode" type="checkbox" onclick="JsBarcode()">
+                            <input id="checkBoxBarcode" type="checkbox" onclick="incluiCodebar()">
                             <p class="textEtiq">Incluir código de barras</p>
                         </div>
                         <div id="checkboxCodigoInterno" class="containerCheckBox">
