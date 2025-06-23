@@ -47,17 +47,16 @@ body{
     flex: 1; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 40px;
-    /* gap: 30px;  */
 }
 
 #imgLogin {
     max-width: 100%;      
     max-height: 100%;
     width: 600px;         
-    height: auto;  
+    height: auto;
+    transform: translateX(-140px); /*Move a imagem para a esquerda*/
 }
 
 /*LADO ESQUERDO* --> Do cadastro*/ 
@@ -168,20 +167,20 @@ input[type=number] {
 
 /*LOGIN*/ 
 
+
 #login{
     position: absolute;
     right: 80px;
     bottom: 30px;
     display: flex;                  
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     font-size: 20px;
     font-weight: bold;
     justify-content: center;
-    /* gap: 10px; */
+    /* gap: 10px;*/ 
     border: none;
     color: #4E6074;
-    padding: 20px;
 }
 
 p{ /*estilização pro p*/
@@ -217,4 +216,3 @@ p{ /*estilização pro p*/
     border: 2px solid #28DC84;
     cursor: pointer;
 }
-
