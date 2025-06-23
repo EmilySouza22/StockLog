@@ -25,6 +25,7 @@ let listaProdutos = [
 
 
 /* PRODUTO SELECIONADO */
+// TESTE
 
 let PRODUTO_SELECIONADO = -1;
 
