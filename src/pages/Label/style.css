@@ -16,7 +16,7 @@
 }
 
 body{
-    background-color: #DFE3F0;
+    background: #f0f4f8;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -28,7 +28,7 @@ body{
 /* NAVBAR */
 
 #navbar{
-    background-color: #F5F5F5;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -155,7 +155,8 @@ body{
 #containerLeft{
     width: 40%;
     height: 80vh;
-    background-color: #CFD3DE;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -212,6 +213,8 @@ body{
     outline: none;
     border: none;
     border-radius: 5px;
+    background: linear-gradient(to right, #68C899, #489D73);
+    color: #fff;
 }
 
 /* PREVIEW ETIQUETA */
@@ -240,6 +243,7 @@ body{
     display: flex;
     background-color: #ffffff;
     border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 #etiqueta{
@@ -247,6 +251,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
     p{
         margin:0;
     }
@@ -266,6 +271,12 @@ body{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: end;
+}
+
+.tamanhoPreview{
+    font-size: 14px;
+    margin: 0;
+    color: #344253;
 }
 
 .etiquetaPreview{
@@ -343,7 +354,8 @@ body{
 #containerRight{
     width: 40%;
     height: 80vh;
-    background-color: #CFD3DE;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     /* padding: 10px; */
 }
