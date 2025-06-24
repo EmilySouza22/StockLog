@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href = "../../assets/imgs/login/img/logo.svg" type="image/png">
+    <title>Cadastro</title>
+  </head>
+  
+
+  <body>
+
+
+    <nav id="navbar">
+      <div id="navbar">
+        <img id="navLogo" src = "../../assets/imgs/login/img/logo.svg" alt="StockLog">
+      </div> 
+    </nav>
+    
+    <main id="container">
+        
+        <section id="left">
+            <div id="cadastro">
+                <h1>Cadastro</h1>
+    
+                <div class="containerInput">
+                    <label for="inpLogNome">Nome da empresa</label>
+    
+                    <div class="inputIcon">
+                        <input type="text" id="inpLogNome" placeholder="Insira o nome da empresa" />
+                        <img src="../../assets/imgs/register/icon/user.svg" alt="Ícone de Usuário" class="icon" />
+                    </div>
+    
+            </div>
+    
+    <div class="containerInput">
+    <label for="inpLogTelefone">Telefone</label>
+    
+    <div class="inputIcon">
+        <input type="number" id="inpLogTelefone" placeholder="Insira um número de telefone" />
+      <img src="../../assets/imgs/register/icon/phone.svg" alt="Ícone telefone" class="icon" />
+    </div>
+    
+    </div>
+    
+    <div class="containerInput">
+    <label for="inpLogCNPJ">CNPJ</label>
+    
+    <div class="inputIcon">
+        <input type="number" id="inpLogCNPJ" placeholder="Insira o CNPJ" />
+      <img src="../../assets/imgs/register/icon/statistc.svg" alt="Ícone rede" class="icon" />
+    </div>
+    
+    </div>
+    
+    <div class="containerInput">
+    <label for="inpLogTelefone">E-mail</label>
+    
+    <div class="inputIcon">
+        <input type="text" id="inpLogEmail" placeholder="Insira o e-mail da empresa" />
+      <img src="../../assets/imgs/register/icon/email.svg" alt="Ícone e-mail" class="icon" />
+    </div>
+    
+    </div>
+    
+    <div class="containerInput">
+    <label for="inpLogSenha">Senha</label>
+    
+    <div class="inputIcon">
+        <input type="password" id="inpLogSenha" placeholder="Insira sua senha" />
+      <img src="../../assets/imgs/register/icon/eye-closed.svg" alt="Ícone olho" class="icon" />
+    </div>
+    
+    </div>
+    
+    <div class="containerInput">
+    <label for="inpLogSenha">Confirmar senha</label>
+    
+    <div class="inputIcon">
+        <input type="password" id="inpLogSenhaConf" placeholder="Confirme sua senha" />
+      <img src="../../assets/imgs/register/icon/eye.svg" alt="Ícone olho" class="icon" />
+    </div>
+    
+    </div>
+    
+
+    <button id="cadastrar" onclick="cadastrar()">Cadastrar</button>
+    
+    </div>
+    
+        </section>  
+
+        <section id="right">
+          <img id = "imgLogin" src="../../assets/imgs/login/img/image.png" alt="Imagem de Login"> </img>
+         
+          <div id = "login">
+            <p>Já possui uma conta?</p>
+            <button id = "facaLogin" onclick = "mostrarLogin()">Faça login</button>
+          </div>
+        
+        </section>
+      
+  </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
