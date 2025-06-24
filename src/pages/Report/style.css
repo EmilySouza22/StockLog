@@ -1,3 +1,20 @@
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    font-family: "Roboto Medium", sans-serif;
+    outline: none;
+
+    h2{
+        text-decoration: none;
+    }
+}
+
 /* NAVBAR */
 
 #navbar{
@@ -38,26 +55,32 @@
     height: 30px;
 }
 
+/*NAV buttons*/
+
 .navigation-buttons {
-    display: flex; /* coloca os botões na mesma linha */
-    justify-content: space-between; /* ou use flex-start se quiser os dois do mesmo lado */
-    align-items: center; /* alinha verticalmente no centro */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
     padding: 10px 20px;
-    background-color: #f9fafb;
-    position: sticky; /* opcional, se quiser que fique visível ao rolar */
+    background-color: #DFE3F0;;
+    position: sticky; 
     top: 0;
     z-index: 10;
 }
 
 .navigation-buttons .btn {
+    font-family: "Roboto Medium", sans-serif;
+    font-size: 16px;
     background: linear-gradient(to right, #68c899, #489d73);
-    color: white;
+    color: #f0f4f8;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+    width: 120px;
+    height: 35px;
+    border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    margin: 0 5px; /* opcional, dá um espaço entre os botões */
+    margin: 0 5px; 
+    gap: 5px;
 }
 
 .navigation-buttons .btn:hover {
@@ -72,7 +95,7 @@
  }
 
 body {
-    background-color: #f0f4f8;
+    background-color: #DFE3F0;
     color: #333;
  }
 
@@ -89,6 +112,8 @@ header {
     font-weight: bold;
     font-size: 1.5em;
  }
+
+ /*ICON */
 
 .boxTagIcones{
     width: 60%;
@@ -132,6 +157,7 @@ header {
 .iconTamanho{
     width: 20px;
     height: 20px;
+    
 }
 
 
@@ -156,15 +182,6 @@ h2 {
     color: #333;
 }
 
-/* Estilização geral do container */
-/* .top-bar {
-    display: flex;
-    padding: 10px;
-    background-color: white;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 20px;
-} */
 
 .top-bar{
     width: 100%;
@@ -176,6 +193,7 @@ h2 {
 
 .container_icon{
     width: 50%;
+    
 }
 
 /* Container do filtro */
@@ -203,7 +221,7 @@ h2 {
   cursor: pointer;
 }
 
-/* Remove a aparência padrão do botão */
+/* Estilo FILTER */
 .botao-filtrar label {
   cursor: pointer;
   display: flex;
@@ -211,7 +229,7 @@ h2 {
   gap: 6px;
 }
 
-/* Estilo do select */
+
 #filter {
   border: 2px solid  #489d73;
   border-radius: 6px;
@@ -234,6 +252,7 @@ h2 {
 
 
 
+/*CONTAINER TABLE*/
 
 select {
     padding: 8px 12px;
@@ -286,6 +305,8 @@ tbody tr:nth-child(even) {
     justify-content: space-between;
     align-items: center;
 }
+
+/*PAGINAÇÃO */
 
 .pagination {
     display: flex;
