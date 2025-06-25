@@ -81,7 +81,7 @@ body{
   align-items: center;
   gap: 55px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   background: linear-gradient(#4FB4A2, #42A373);
   padding: 50px; 
   color: #4E6074;
@@ -123,7 +123,7 @@ body{
     width: 200px;
     padding: 12px 30px 12px 40px; 
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     font-size: 16px;
 }
 
