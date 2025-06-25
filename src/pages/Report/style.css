@@ -62,7 +62,7 @@
     justify-content: space-between; 
     align-items: center; 
     padding: 10px 20px;
-    background-color: #DFE3F0;;
+    background-color: #DFE3F0;
     position: sticky; 
     top: 0;
     z-index: 10;
@@ -116,10 +116,11 @@ header {
  /*ICON */
 
 .boxTagIcones{
-    width: 60%;
+    width: 12%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    
 }
 
 #container_icon{
@@ -128,10 +129,12 @@ header {
 }
 
 #PrimeiraFileira{
-    width: 140%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    
+
 }
 
 #SegundaFileira{
@@ -141,16 +144,23 @@ header {
     justify-content: space-between;
 }
 
+.Texto_icon{
+    width: 100%;
+    display: flex;
+}
 
+
+/*container */
 
 .container {
-     max-width: 1200px;
-     margin: 20px auto;
-     padding: 20px;
-     background-color: #fff;
-     border-radius: 10px;
-     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-     gap: 16px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 16px 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 95%;
+    overflow-x: auto;
+    transition: all 0.3s ease-in-out;
 
 }
 
@@ -192,7 +202,7 @@ h2 {
 }
 
 .container_icon{
-    width: 50%;
+    width: 70%;
     
 }
 
