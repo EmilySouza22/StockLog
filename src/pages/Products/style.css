@@ -6,7 +6,7 @@
 }
 
 html, body{
-  background-color: #f9fafb;
+  background-color: #dfe3f0;
    overflow-x: hidden;
 }
 
@@ -52,8 +52,8 @@ html, body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
-  background-color: transparent;
+  padding: 10px 20px;
+  background-color: #dfe3f0;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -62,13 +62,16 @@ html, body{
 .navigation-buttons .btn {
   display: flex;
   align-items: center;
-  gap: 4px;
-  background: #68c899;
-  color: white;
+  gap: 5px;
+  background: linear-gradient(to right, #68c899, #489d73);
+  color: #f0f4f8;
   border: none;
+  width: 120px;
+  height: 35px;
   padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: 25px;
+  font-size: 16px;
+  margin: 0 5px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -77,20 +80,21 @@ html, body{
   background: linear-gradient(to right, #68c899, #489d73);
 }
 
-.navigation-buttons .btn img {
+/* .navigation-buttons .btn img {
   width: 16px;
-  height: 16px;
-}
+  height: 16px; 
+  }*/
+
 
 #btn-voltar img{
-  width: 14px;
-  height: 14px;
+  width: 23px;
+  height: 23px;
   margin-right: 4px;
 }
 
 #btn-proximo img {
-  width: 14px;
-  height: 14px;
+  width: 23px;
+  height: 23px;
   margin-right: 4px;
 }
 
@@ -399,7 +403,7 @@ tbody tr:nth-child(even) {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #f9fafb;
+  background-color: white;
   position: sticky;
   bottom: 0;
   z-index: 10;
@@ -441,7 +445,7 @@ tbody tr:nth-child(even) {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #f9fafb;
+  background-color: #dfe3f0;
   position: sticky;
   bottom: 0;
   z-index: 10;
@@ -463,13 +467,14 @@ tbody tr:nth-child(even) {
 
 #btn-imprimir{
   border: 2px solid #489d73;
+  border-radius: 15px;
+  background-color: #dfe3f0;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 6px;
 }
 
 #btn-imprimir img{
@@ -480,13 +485,14 @@ tbody tr:nth-child(even) {
 
 #btn-planilha {
   border: 2px solid #489d73;
+  border-radius: 15px;
+  background-color: #dfe3f0;
   padding: 10px 20px; 
   display: flex;             /* para alinhar texto e imagem lado a lado */
   align-items: center;
   gap: 8px;                  /* espaço entre texto e imagem */
   cursor: pointer;           /* muda o cursor ao passar */
-  font-size: 16px;          
-  border-radius: 6px;       
+  font-size: 16px;               
 }
 
 #btn-planilha img {
@@ -496,19 +502,27 @@ tbody tr:nth-child(even) {
 }
 #btn-produto{
   border: 2px solid #489d73;
+  border-radius: 15px;
+  background-color: #dfe3f0;
   padding: 10px 20px;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 6px;
 }
 #btn-produto img{
   width: 20px;
   height: 20px;
   object-fit: contain; 
 }
+
+#btn-botao-mais{
+  background-color: #dfe3f0;
+  border: #dfe3f0;
+  border-radius: 1px solid #dfe3f0;
+}
+
 #btn-botao-mais img{
  width: 30px;
   height: 50px;
