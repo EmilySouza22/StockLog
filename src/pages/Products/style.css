@@ -52,7 +52,7 @@ html, body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 16px 40px; /* reduzido verticalmente */
   background-color: #dfe3f0;
   position: sticky;
   top: 0;
@@ -62,13 +62,14 @@ html, body{
 .navigation-buttons .btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   background: linear-gradient(to right, #68c899, #489d73);
   color: #f0f4f8;
   border: none;
   width: 120px;
-  height: 35px;
-  padding: 8px 16px;
+  height: 40px;
+  padding: 0px 16px;
   border-radius: 25px;
   font-size: 16px;
   margin: 0 5px;
@@ -124,7 +125,7 @@ html, body{
   padding: 0;
 }
 
-.botao-filtro{
+.botao-filtrar{
   color: white;
   background-color: #489d73;
   border: 2px solid #489d73;
@@ -138,14 +139,15 @@ html, body{
   object-fit: contain;
 }
 
-.grupo-filtro{
- display: flex;
+.grupo-filtro {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: flex-end;  /* tudo no canto direito */
-  gap: 10px;
-  margin: 0 0 20px 0;
-   padding: 0 20px;
-   background-color: transparent;
+  gap: 6px;
+  background-color: white;
+  padding: 8px 10px;
+  border-radius: 10px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 #filtro-btn {
@@ -157,40 +159,49 @@ html, body{
   background-color: transparent;
 }
 
-#select-btn{
-  font-size: small;
+#select-btn {
   border: 2px solid #489d73;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 15px;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-weight: 500;
+  background-color: white;
+  color: #489d73;
+  cursor: pointer;
 }
 
-#filtro-btn div button{
+#filtro-btn div button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .botao-filtro {
+  background-color: #489d73;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  font-weight: 500;
   cursor: pointer;
 }
 
-.filter{
+.botao-filtrar label {
   display: flex;
-  align-items: center;      /* centraliza na vertical */
-  justify-content: center;  /* centraliza na horizontal */
-  gap: 8px;
+  gap: 6px;
+  align-items: center;
+}
+
+.filter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
   background-color: white;
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 0px solid #ccc;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  width: fit-content;
-  margin-left: auto;        /* cola na direita */
-  height: 60px;          /* exemplo de altura */
+  padding: 8px 10px;
+  border-radius: 10px;
 }
 
 * {
