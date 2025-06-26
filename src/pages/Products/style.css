@@ -235,6 +235,7 @@ table {
   height: 20px;
   object-fit: contain;
 }
+ 
 
 thead th {
   padding: 12px 15px;
@@ -251,6 +252,10 @@ tbody td {
 
 tbody tr:nth-child(even) {
   background-color: #f9fafb;
+}
+
+#linha-dois-color{
+  background-color: gray;
 }
 
 #color-laticinios{
@@ -456,7 +461,7 @@ tbody tr:nth-child(even) {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #dfe3f0;
+  background-color: white;
   position: sticky;
   bottom: 0;
   z-index: 10;
@@ -479,7 +484,7 @@ tbody tr:nth-child(even) {
 #btn-imprimir{
   border: 2px solid #489d73;
   border-radius: 15px;
-  background-color: #dfe3f0;
+  background-color: white;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -497,7 +502,7 @@ tbody tr:nth-child(even) {
 #btn-planilha {
   border: 2px solid #489d73;
   border-radius: 15px;
-  background-color: #dfe3f0;
+  background-color: white;
   padding: 10px 20px; 
   display: flex;             /* para alinhar texto e imagem lado a lado */
   align-items: center;
@@ -514,7 +519,7 @@ tbody tr:nth-child(even) {
 #btn-produto{
   border: 2px solid #489d73;
   border-radius: 15px;
-  background-color: #dfe3f0;
+  background-color: white;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -529,9 +534,9 @@ tbody tr:nth-child(even) {
 }
 
 #btn-botao-mais{
-  background-color: #dfe3f0;
-  border: #dfe3f0;
-  border-radius: 1px solid #dfe3f0;
+  background-color: white;
+  border: white;
+  border-radius: 1px solid white;
 }
 
 #btn-botao-mais img{
