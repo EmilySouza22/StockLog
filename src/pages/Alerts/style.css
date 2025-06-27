@@ -1,11 +1,11 @@
 body {
   font-family: 'Montserrat', Arial, sans-serif;
-  background: #EBEBEB;
+  background: #CFD3DE;
   margin: 0;
   padding: 0;
 }
 header {
-  background: #fff;
+  background: #e5e5e5;
   text-align: center;
   padding: 24px 0 8px 0;
   font-size: 2rem;
@@ -21,7 +21,7 @@ header {
   height: 40px;
 }
 .btn-voltar {
-  background: linear-gradient(to right, #68C899, #489D73);
+  background: #4ecb71;
   color: #fff;
   border: none;
   border-radius: 16px;
@@ -30,7 +30,7 @@ header {
   cursor: pointer;
 }
 .alertas-container {
-  background: #fff;
+  background: #e9ecf6;
   margin: 32px auto;
   padding: 32px;
   border-radius: 16px;
@@ -43,27 +43,26 @@ header {
   margin-bottom: 24px;
 }
 .aba {
-
-  background: #D6D6D6;
+  background: #f5f6fa;
   border: none;
   border-radius: 12px 12px 0 0;
   padding: 12px 32px;
   font-size: 1.1rem;
   cursor: pointer;
-  color: #37383A;
+  color: #888;
   font-weight: 600;
   transition: background 0.2s, color 0.2s;
 }
 .aba.ativa {
-  background: #EBEBEB;
+  background: #fff;
   color: #68C899;
   border-bottom: 3px solid #68C899;
 }
 .cards-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  min-height: 150px;
+  gap: 18px;
+  min-height: 350px;
 }
 .card {
   background: #CFD3DE;
@@ -77,8 +76,8 @@ header {
   position: relative;
 }
 .card img {
-  width: 90px;
-  height: 110px;
+  width: 60px;
+  height: 80px;
   object-fit: contain;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -145,7 +144,7 @@ header {
   }
 }
 #navbar {
-    background-color: #fff;
+    background-color:  #F5F5F5;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -194,7 +193,7 @@ header {
 }
 
 .btn-voltar, .btn-proximo {
-  background: linear-gradient(to right, #68C899, #489D73);
+  background: #4ecb71;
   color: #fff;
   border: none;
   border-radius: 16px;
@@ -206,9 +205,9 @@ header {
 }
 
 .btn-proximo {
-  background: linear-gradient(to right, #68C899, #489D73);
+  background: #27ae60;
 }
 
 .btn-voltar:hover, .btn-proximo:hover {
-  background: linear-gradient(to right, #68C899, #489D73);
+  background: #219150;
 }
