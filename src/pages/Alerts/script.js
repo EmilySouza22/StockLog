@@ -1,31 +1,31 @@
 // Dados mockados para cada aba
 const produtos = {
   vencidos: Array(36).fill({
-    nome: "Queijo Ralado Crioulo",
+    nome: "Café Melitta Tradicional",
     quantidade: 3,
     data: "08/06/2025",
-    imagem: "https://latco.com.br/wp-content/uploads/2019/12/latco_queijo_ralado_1000g_mockup-1-1536x1536.png",
+    imagem: "https://www.melitta.com.br/images/products/packshot-cafe-tradicional.png",
     check: true
   }),
   proximo: Array(8).fill({
-    nome: "Molho De Tomate Orgânico Tradicional",
+    nome: "Café Melitta Tradicional",
     quantidade: 3,
-    data: "02/07/2025",
-    imagem: "https://images.tcdn.com.br/img/img_prod/1049139/molho_de_tomate_caseiro_organico_330g_origo_1344_1_3fe841337912587ee682797a7aacb03d.jpg",
+    data: "08/06/2025",
+    imagem: "https://www.melitta.com.br/images/products/packshot-cafe-tradicional.png",
     check: false
   }),
   maximo: Array(5).fill({
-    nome: "Feijão Preto Urbano",
+    nome: "Café Melitta Tradicional",
     quantidade: 3,
     data: "08/06/2025",
-    imagem: "https://sp.cdifoodservice.com.br/wp-content/uploads/2020/10/feijao-preto-urbano-kg-600x600.jpg",
+    imagem: "https://www.melitta.com.br/images/products/packshot-cafe-tradicional.png",
     check: false
   }),
   minimo: Array(4).fill({
-    nome: "Arroz Tio João",
+    nome: "Café Melitta Tradicional",
     quantidade: 3,
     data: "08/06/2025",
-    imagem: "https://boa.vtexassets.com/arquivos/ids/575600/Arroz-Tipo-1-Tio-Joao-2kg.jpg?v=638550511829100000",
+    imagem: "https://www.melitta.com.br/images/products/packshot-cafe-tradicional.png",
     check: false
   }),
 };
