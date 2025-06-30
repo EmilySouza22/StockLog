@@ -239,24 +239,21 @@ table {
 
 thead th {
   padding: 12px 15px;
-  border-bottom: 7px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0; 
   text-align: left;
- 
 }
 
 tbody td {
   padding: 12px 15px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0; 
   text-align: left;
+  
 }
 
 tbody tr:nth-child(even) {
   background-color: #f9fafb;
 }
 
-#linha-dois-color{
-  background-color: gray;
-}
 
 #color-laticinios{
  background-color: #abaeb1;
@@ -267,8 +264,8 @@ tbody tr:nth-child(even) {
   text-align: center;
   color: rgb(0, 0, 0);
   line-height: 22px;
-  margin-top: 6px;        /* afasta da linha de cima */
-  margin-bottom: 4px;     
+  margin-top: 6px;        
+  margin-bottom: 4px;
 }
 
 
@@ -393,9 +390,10 @@ tbody tr:nth-child(even) {
   text-align: center;
   color: rgb(0, 0, 0);
   line-height: 22px;
-  margin-top: 6px;        /* afasta da linha de cima */
-  margin-bottom: 4px;     /* afasta da linha de baixo */
+  margin-top: 6px;      
+  margin-bottom: 4px;
 }
+
 
 .btn {
   background-color: #3ecf8e;
@@ -431,18 +429,23 @@ tbody tr:nth-child(even) {
   display: flex;
   align-items: center;
   gap: 10px; /* espaço mínimo entre os elementos */
+  justify-content: center;
 }
 
 .bnt-footer {
+  justify-content: center;
+  width: 50px;
+  height: 30px;
   background: linear-gradient(to right, #68c899, #489d73);
   color: rgb(0, 0, 0);
   border: none;
-  padding: 5px 10px;
+  padding: 8px 16px;
+  margin: 0;
   border-radius: 20px;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 }
 
 .footer button img{
@@ -451,6 +454,14 @@ tbody tr:nth-child(even) {
   margin-right: 8px;
 }
 
+.btn-footer-img img{
+  width: 20px;
+  height: 20px;
+  margin: 0; /* Remove qualquer margem */
+  padding: 0; /* Remove qualquer padding */
+  object-fit: contain;
+  display: block; /* Remove espaços indesejados abaixo da imagem */
+}
 
 .pag-footer {
   text-align: center;
