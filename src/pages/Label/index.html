@@ -59,25 +59,27 @@
                     <div id="containerPreviewEtiq">
                         <div id="etiqBoxPreview">
                             <div id="etiqueta">
-                                <div id="etiquetaBoxLeft">
-                                    <p class="etiquetaToggleProduto" style="display:none;">Produto:</p>
-                                    <p class="etiquetaToggleValidade" style="display:none;">Validade:</p>
-                                    <p class="etiquetaToggleCodigo" style="display:none;">Código:</p>
+                                <div>
+                                    <div id="etiquetaBoxLeft">
+                                        <p class="etiquetaToggleProduto" style="display:none;">Produto:</p>
+                                        <p class="etiquetaToggleValidade" style="display:none;">Validade:</p>
+                                        <p class="etiquetaToggleCodigo" style="display:none;">Código:</p>
+                                    </div>
+                                    <div id="etiquetaBoxRight">
+                                        <p id="etiquetaProduto" class="etiquetaToggleProduto" style="display:none;"></p>
+                                        <p id="etiquetaValidade" class="etiquetaToggleValidade" style="display:none;"></p>
+                                        <p id="etiquetaCodigo" class="etiquetaToggleCodigo" style="display:none;"></p>
+                                    </div>
                                 </div>
-                                <div id="etiquetaBoxRight">
-                                    <p id="etiquetaProduto" class="etiquetaToggleProduto" style="display:none;"></p>
-                                    <p id="etiquetaValidade" class="etiquetaToggleValidade" style="display:none;"></p>
-                                    <p id="etiquetaCodigo" class="etiquetaToggleCodigo" style="display:none;"></p>
+                                <div>
+                                    <svg class="barcode"
+                                        height="120px"
+                                        jsbarcode-format="upc"
+                                        jsbarcode-value="123456789012"
+                                        jsbarcode-textmargin="0"
+                                        jsbarcode-fontoptions="bold">
+                                    </svg>
                                 </div>
-                            </div>
-                            <div>
-                                <svg class="barcode"
-                                    height="120px"
-                                    jsbarcode-format="upc"
-                                    jsbarcode-value="123456789012"
-                                    jsbarcode-textmargin="0"
-                                    jsbarcode-fontoptions="bold">
-                                </svg>
                             </div>
                         </div>
                         <div id="etiqTamanhoPreview">
