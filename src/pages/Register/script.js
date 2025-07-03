@@ -42,7 +42,7 @@ function alternarSenha(inputId, iconId) {
 
   if (input.type === "password") {
     input.type = "text";
-    icon.src = "/assets/imgs/register/icon/eye.svg"; // ícone de olho aberto
+    icon.src = "../../assets/imgs/register/icon/eye.svg"; // ícone de olho aberto
   } else {
     input.type = "password";
     icon.src = "../../assets/imgs/register/icon/eye-closed.svg"; // ícone de olho fechado
