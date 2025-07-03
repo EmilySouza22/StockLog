@@ -33,3 +33,18 @@ localStorage.setItem("usuarios", JSON.stringify(usuarios)); // Salva o objeto no
 
 }
 
+
+// Coisas a mais 
+
+function alternarSenha(inputId, iconId) {
+  const input = document.getElementById(inputId);
+  const icon = document.getElementById(iconId);
+
+  if (input.type === "password") {
+    input.type = "text";
+    icon.src = "/assets/imgs/register/icon/eye.svg"; // ícone de olho aberto
+  } else {
+    input.type = "password";
+    icon.src = "../../assets/imgs/register/icon/eye-closed.svg"; // ícone de olho fechado
+  }
+}
