@@ -785,7 +785,7 @@ body{
 
 #container1{
     width: 100%;
-    height: 40vh;
+    height: 50vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -965,7 +965,7 @@ body{
 }
 
 .alertInfo{
-    height: 30%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
