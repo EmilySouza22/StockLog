@@ -18,7 +18,7 @@
 /* NAVBAR */
 
 #navbar{
-    background-color: #F5F5F5;
+    background-color: #FFFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,7 +40,7 @@
 
 #conta-cadastrada{
     color: #4E6074;
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
 }
 
@@ -62,7 +62,7 @@
     justify-content: space-between; 
     align-items: center; 
     padding: 10px 20px;
-    background-color: #DFE3F0;;
+    background-color: #f0f4f8;
     position: sticky; 
     top: 0;
     z-index: 10;
@@ -95,7 +95,7 @@
  }
 
 body {
-    background-color: #DFE3F0;
+    background-color: #f0f4f8;
     color: #333;
  }
 
@@ -115,42 +115,49 @@ header {
 
  /*ICON */
 
-.boxTagIcones{
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
 #container_icon{
-    width: 100%;
+    width: 110%;
     
 }
 
-#PrimeiraFileira{
-    width: 140%;
+
+#PrimeiraFileira, #SegundaFileira {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
 
-#SegundaFileira{
-    width: 140%;
+.boxTagIcones {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    min-width: 130px;
+    /*background-color: #fff;*/
+    padding: 6px 10px;
+    border-radius: 8px;
+    /*box-shadow: 0 1px 3px rgba(0,0,0,0.05);*/
+}
+
+.Texto_icon{
+    width: 100%;
+    display: flex;
 }
 
 
+/*container */
 
 .container {
-     max-width: 1200px;
-     margin: 20px auto;
-     padding: 20px;
-     background-color: #fff;
-     border-radius: 10px;
-     box-shadow: 0 0 15px rgba(0,0,0,0.1);
-     gap: 16px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 16px 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 95%;
+    overflow-x: auto;
+    transition: all 0.3s ease-in-out;
 
 }
 
@@ -192,7 +199,7 @@ h2 {
 }
 
 .container_icon{
-    width: 50%;
+    width: 70%;
     
 }
 
@@ -308,23 +315,62 @@ tbody tr:nth-child(even) {
 
 /*PAGINAÇÃO */
 
-.pagination {
+
+#footer-geral {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    flex-wrap: wrap; 
+    gap: 10px;
+  }
+  
+  .pagination {
     display: flex;
     align-items: center;
-    gap: 8px;
-}
-
-.pagination button {
-    background-color: #3ecf8e;
-    color: white;
+    gap: 10px; /* espaço mínimo entre os elementos */
+    justify-content: center;
+  }
+  
+  .bnt-footer {
+    justify-content: center;
+    width: 50px;
+    height: 30px;
+    background: linear-gradient(to right, #68c899, #489d73);
+    color: rgb(0, 0, 0);
     border: none;
-    padding: 6px 12px;
-    border-radius: 50%;
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 20px;
     cursor: pointer;
-    font-weight: bold;
-}
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .footer button img{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .btn-footer-img img{
+    width: 20px;
+    height: 20px;
+    margin: 0; /* Remove qualquer margem */
+    padding: 0; /* Remove qualquer padding */
+    object-fit: contain;
+    display: block; /* Remove espaços indesejados abaixo da imagem */
+  }
+  
+  .pag-footer {
+    text-align: center;
+  }
 
-.pagination button:hover {
-     background: linear-gradient( right, #68c899, #489d73);
-}
+
+
 

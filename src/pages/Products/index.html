@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="icon" href="../../assets/imgs/products/img/logo.svg" type="imagem/svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <nav id="navbar">
+            <div id="navbar-left">
+                <img id="nav-logo" src="../../assets/imgs/home/img/logo.svg" alt="StockLog">
+            </div>
+            <div id="navbar-right">
+                <p id="conta-cadastrada"> Mercado Santana </p>
+                <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
+                <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
+            </div>
+        </nav>
+
+        <div class="navigation-buttons">
+            <button class="btn" id="btn-voltar">
+                <img src="../../assets/imgs/products/icon/seta-esquerda.svg" alt="Voltar">Voltar
+            </button>
+            <button class="btn" id="btn-proximo">
+                Próximo<img src="../../assets/imgs/products/icon/seta-direita.svg" alt="Próximo">
+            </button>
+        </div>
+
+        <div class="bloco-tabela">
+            <div id="filtro-btn">
+                <p id="produtos">Produtos</p>
+                <div class="filter">
+                    <div class="grupo-filtro">
+                        <label for="select-btn" class="botao-filtrar">
+                            <img src="../../assets/imgs/products/icon/filtro.svg" alt="icon de filtro" id="icon-filtro">
+                            Filtrar por:
+                        </label>
+                        <select id="select-btn">
+                            <option value="">Nenhum</option>
+                            <option value="data">Data</option>
+                            <option value="hora">Hora</option>
+                            <option value="produto">Produto</option>
+                            <option value="tag">Tag</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Produto</th>
+                        <th>Codigo de Barra</th>
+                        <th>Unid.</th>
+                        <th>Entrada</th>
+                        <th>Validade</th>
+                        <th>Categoria</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>12</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-laticinios">Laticínios</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela"
+                                id="icon-editar">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>3</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-bebidas">Bebidas</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>6</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-cafe">Café</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>10</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-hortifruti">Hortifrúti</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>13</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-graos">Grãos</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>8</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-padaria">Padaria</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>5</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-farinhas">Farinhas</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>6</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-frios">Frios</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>4</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-congelados">Congelados</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Leite Ninho Tradicional 1l</td>
+                        <td>11238946334</td>
+                        <td>7</td>
+                        <td>18/01/2025</td>
+                        <td>18/09/2025</td>
+                        <td class="tag-categoria" id="color-frutas">Frutas</td>
+                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </td>
+                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="footer" id="footer-geral">
+                <div class="pagination">
+                    <button class="bnt-footer" id="bnt-pag-voltar">
+                        <img src="../../assets/imgs/products/icon/seta-2.svg" alt="" class="btn-footer-img">
+                    </button>
+                    <div class="pag-footer">Página 1 de 34</div>
+                    <button class="bnt-footer" id="bnt-pag-proximo">
+                        <img src="../../assets/imgs/products/icon/seta.svg" alt="" class="btn-footer-img">
+                    </button>
+                </div>
+                <div id="footer-acoes">Mostrando 10 ações de 340</div>
+            </div>
+
+            <div class="icons-footer" id="icons">
+                <div>
+                    <button id="btn-imprimir">
+                        Imprimir Planilha <img src="../../assets/imgs/products/icon/impressora.svg" alt="">
+                    </button>
+                </div>
+                <div class="icons-right">
+                    <div class="btn-footer-planilha">
+                        <button id="btn-planilha">
+                            Importar Planilha <img src="../../assets/imgs/products/icon/planilha.svg" alt="">
+                        </button>
+                    </div>
+                    <div class="btn-footer-planilha">
+                        <button id="btn-produto">
+                            <img src="../../assets/imgs/products/icon/adicionar.svg" alt=""> Adicionar Produto
+                        </button>
+                    </div>
+                    <div>
+                        <button id="btn-botao-mais">
+                            <img src="../../assets/imgs/products/icon/botao-mais-opiçoes.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

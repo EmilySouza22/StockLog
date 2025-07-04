@@ -2,7 +2,7 @@
 
 🛠️ Sistema de Gerenciamento de Estoques para Empresas
 
-Este projeto é um sistema web desenvolvido durante a Situação de Aprendizagem no SENAI.
+Este projeto é um sistema web desenvolvido durante a Situação de Aprendizagem da primeira fase no SENAI.
 O projeto foi desenvolvido para auxiliar empresas no controle e gerenciamento de seus estoques de forma eficiente e intuitiva. 
 
 🔧 Tecnologias utilizadas
