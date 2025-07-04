@@ -1,9 +1,9 @@
 @font-face {
-  font-family: 'Roboto Medium';
-  src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+    font-family: 'Roboto Medium';
+    src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 *{
@@ -14,6 +14,42 @@
     box-sizing: border-box;
 }
 
+/* SIDEBAR */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  height: 100%;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  padding-top: 65px;
+  transition: left 0.3s ease;
+  z-index: 5;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar .item {
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+}
+
+.sidebar .item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+@media (min-width: 1380px){
+
+/* BODY */
 body{
     background: #f0f4f8;
     margin: 0;
@@ -24,39 +60,6 @@ body{
     font-family: sans-serif;
 }
 
-/* SIDEBAR */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      height: 100%;
-      width: 250px;
-      background-color: #fff;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
-      padding-top: 65px;
-      transition: left 0.3s ease;
-      z-index: 5;
-    }
-
-    .sidebar.active {
-      left: 0;
-    }
-
-    .sidebar .item {
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #333;
-    }
-
-    .sidebar .item:hover {
-      background-color: #f1f1f1;
-      cursor: pointer;
-    }
-
-@media (min-width: 1380px){
 /* NAVBAR */
 
 #navbar{
@@ -126,6 +129,7 @@ body{
   transition: left 0.3s ease;
   z-index: 5;
 }
+
 .sidebar.active {
   left: 0;
 }
@@ -699,8 +703,19 @@ body{
 }
 
 @media (min-width: 669px) and (max-width: 1379px){
-/* NAVBAR */
 
+/* BODY */
+body{
+    background: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    min-height: 10vh;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+/* NAVBAR */
 #navbar{
     background-color: #fff;
     display: flex;
@@ -1087,19 +1102,19 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
 }
 
 .grafButton{
-    height: 45px;
-    width: 100%;
-    border-radius: 10px;
+    height: 35px;
+    width: 85%;
+    border-radius: 20px;
     border: none;
     color: #F5F5F5;
     background: linear-gradient(to right, #68C899, #489D73);
     cursor: pointer;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 /* SEÇÃO 3: RELATORIO, ETIQUETA E PLANO PREMIUM */
@@ -1289,7 +1304,7 @@ body{
 #publiTitle{
     width: 81%;
     color: #282C31;
-    font-size: 135%;
+    font-size: 115%;
     line-height: 85%;
     margin: 0;
 }
@@ -1306,13 +1321,13 @@ body{
 }
 
 #publiButton{
-    width: 255px;
-    height: 60px;
+    width: 240px;
+    height: 50px;
     border: 2px solid #F5F5F5;
     border-radius: 25px;
     background-color: transparent;
     color: #F5F5F5;
-    font-size: 30px;
+    font-size: 25px;
     cursor: pointer;
 }
 
