@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Adiciona um evento de clique no botão "Voltar"
     btnVoltar.addEventListener("click", function () {
         // Redireciona para a home page
-        window.location.href = ""; // <-- Trocar pelo caminho correto
+        window.location.href = ""; // <-- colocar caminho correto
     });
 
     // Seleciona o botão "Próximo" pelo ID
