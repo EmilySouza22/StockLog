@@ -7,7 +7,7 @@
 /*BODY*/
 
 body {
-  background-color: #dfe3f0;
+  background-color: #F0F4F8;
   margin: 0;
   padding: 0;
 }
@@ -28,7 +28,7 @@ body {
 /* NAVBAR */
 
 #navbar {
-  background-color: #f5f5f5;
+  background-color: #FFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
