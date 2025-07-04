@@ -151,7 +151,11 @@ body {
   width: 20px;
   height: 20px;
   pointer-events: auto;
-  cursor: pointer;
+}
+
+#alternarSenha, #alternarSenhaConf
+{
+cursor: pointer;
 }
 
 input {
