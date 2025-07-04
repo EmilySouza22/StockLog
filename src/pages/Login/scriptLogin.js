@@ -25,3 +25,18 @@ function login() {
   alert("Login aprovado! Seja bem-vindo(a)!")
   window.location.href = "../Home/index.html"
 }
+
+// A mais 
+
+function alternarSenha(inputId) {
+  const input = document.getElementById(inputId);
+  const icon = input.parentElement.querySelector('img'); // pega o ícone dentro do mesmo container
+
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.src = '../../assets/imgs/login/icon/cadeado-aberto.svg'; // olho aberto
+  } else {
+    input.type = 'password';
+    icon.src = '../../assets/imgs/login/icon/cadeado.svg'; // olho fechado
+  }
+}

@@ -140,7 +140,8 @@ body {
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 input {
