@@ -18,7 +18,7 @@
 /* NAVBAR */
 
 #navbar{
-    background-color: #F5F5F5;
+    background-color: #FFFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,7 +40,7 @@
 
 #conta-cadastrada{
     color: #4E6074;
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
 }
 
@@ -62,7 +62,7 @@
     justify-content: space-between; 
     align-items: center; 
     padding: 10px 20px;
-    background-color: #DFE3F0;
+    background-color: #f0f4f8;
     position: sticky; 
     top: 0;
     z-index: 10;
@@ -95,7 +95,7 @@
  }
 
 body {
-    background-color: #DFE3F0;
+    background-color: #f0f4f8;
     color: #333;
  }
 
@@ -315,23 +315,62 @@ tbody tr:nth-child(even) {
 
 /*PAGINAÇÃO */
 
-.pagination {
+
+#footer-geral {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    flex-wrap: wrap; 
+    gap: 10px;
+  }
+  
+  .pagination {
     display: flex;
     align-items: center;
-    gap: 8px;
-}
-
-.pagination button {
-    background-color: #3ecf8e;
-    color: white;
+    gap: 10px; /* espaço mínimo entre os elementos */
+    justify-content: center;
+  }
+  
+  .bnt-footer {
+    justify-content: center;
+    width: 50px;
+    height: 30px;
+    background: linear-gradient(to right, #68c899, #489d73);
+    color: rgb(0, 0, 0);
     border: none;
-    padding: 6px 12px;
-    border-radius: 50%;
+    padding: 8px 16px;
+    margin: 0;
+    border-radius: 20px;
     cursor: pointer;
-    font-weight: bold;
-}
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .footer button img{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  .btn-footer-img img{
+    width: 20px;
+    height: 20px;
+    margin: 0; /* Remove qualquer margem */
+    padding: 0; /* Remove qualquer padding */
+    object-fit: contain;
+    display: block; /* Remove espaços indesejados abaixo da imagem */
+  }
+  
+  .pag-footer {
+    text-align: center;
+  }
 
-.pagination button:hover {
-     background: linear-gradient( right, #68c899, #489d73);
-}
+
+
 
