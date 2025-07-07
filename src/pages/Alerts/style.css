@@ -24,6 +24,7 @@ header {
 	font-size: 2rem;
 	letter-spacing: 2px;
 }
+
 .logo-voltar {
 	display: flex;
 	align-items: center;
@@ -69,7 +70,7 @@ header {
 	min-height: 150px;
 }
 .card {
-	background: #f9fafb;
+	background: #f0f4f8;
 	border-radius: 12px;
 	box-shadow: 0 1px 4px #0001;
 	padding: 16px;
@@ -78,7 +79,7 @@ header {
 	align-items: flex-start;
 	gap: 8px;
 	position: relative;
-	border: 1px solid #c9c6c6;
+	border: 1px solid #e2ebf3;
 }
 .card img {
 	width: 90px;
@@ -166,14 +167,32 @@ header {
 #navbar-right {
 	display: flex;
 	align-items: center;
-	gap: 15px;
 	margin: 0 100px 0 0;
 }
 
 #conta-cadastrada {
 	color: #4e6074;
-	font-size: 20px;
+	font-size: 18px;
 	margin: 0;
+}
+
+#boxContaCadastrada {
+	gap: 10px;
+}
+
+#boxContaCadastrada,
+#boxConfigEtiq {
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 0 10px;
+}
+
+#boxContaCadastrada:hover,
+#boxConfigEtiq:hover {
+	background-color: #eaecf0;
+	cursor: pointer;
 }
 
 #nav-logo {
@@ -196,8 +215,26 @@ header {
 	margin: 10px 20px 20px 20px;
 }
 
-.btn-voltar,
 .btn-proximo {
+	background: linear-gradient(to right, #68c899, #489d73);
+	color: #fff;
+	border: none;
+	border-radius: 25px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background 0.2s;
+	width: 120px;
+	height: 35px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: #f0f4f8;
+	gap: 10px;
+	padding: 0 15px 0 15px;
+}
+
+.btn-voltar {
+	padding: 0 10px 0 10px;
 	background: linear-gradient(to right, #68c899, #489d73);
 	color: #fff;
 	border: none;
