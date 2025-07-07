@@ -100,13 +100,17 @@ header {
 	color: #555;
 	color: #344253;
 }
-.card .check {
+
+.checkbox {
 	position: absolute;
 	top: 12px;
 	right: 12px;
 	width: 24px;
 	height: 24px;
+	accent-color: #489d73;
+	cursor: pointer;
 }
+
 .paginacao {
 	display: flex;
 	align-items: center;
