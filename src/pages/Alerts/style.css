@@ -1,5 +1,18 @@
+@font-face {
+	font-family: 'Roboto Medium';
+	src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+* {
+	text-decoration: none;
+	font-family: 'Roboto Medium', sans-serif;
+	outline: none;
+}
+
 body {
-	font-family: 'Montserrat', Arial, sans-serif;
 	background: #f0f4f8;
 	margin: 0;
 	padding: 0;
@@ -11,6 +24,7 @@ header {
 	font-size: 2rem;
 	letter-spacing: 2px;
 }
+
 .logo-voltar {
 	display: flex;
 	align-items: center;
@@ -20,19 +34,10 @@ header {
 .logo {
 	height: 40px;
 }
-.btn-voltar {
-	background: linear-gradient(to right, #68c899, #489d73);
-	color: #fff;
-	border: none;
-	border-radius: 0px;
-	padding: 8px 24px;
-	font-size: 1rem;
-	cursor: pointer;
-}
 .alertas-container {
 	background: #fff;
-	margin: 32px auto;
-	padding: 32px;
+	margin: 25px auto;
+	padding: 28px;
 	border-radius: 16px;
 	max-width: 1200px;
 	box-shadow: 0 2px 8px #0001;
@@ -43,18 +48,18 @@ header {
 	margin-bottom: 24px;
 }
 .aba {
-	background: #d6d6d6;
+	background: #f9fafb;
 	border: none;
 	border-radius: 12px 12px 0 0;
 	padding: 12px 32px;
 	font-size: 1.1rem;
 	cursor: pointer;
-	color: #37383a;
+	color: #767779;
 	font-weight: 600;
 	transition: background 0.2s, color 0.2s;
 }
 .aba.ativa {
-	background: #ebebeb;
+	background: #d4f3e7e7;
 	color: #68c899;
 	border-bottom: 3px solid #68c899;
 }
@@ -65,7 +70,7 @@ header {
 	min-height: 150px;
 }
 .card {
-	background: #cfd3de;
+	background: #f0f4f8;
 	border-radius: 12px;
 	box-shadow: 0 1px 4px #0001;
 	padding: 16px;
@@ -74,6 +79,8 @@ header {
 	align-items: flex-start;
 	gap: 8px;
 	position: relative;
+	border: 1px solid #e2ebf3;
+	color: #344253;
 }
 .card img {
 	width: 90px;
@@ -85,19 +92,24 @@ header {
 .card .nome {
 	font-weight: 700;
 	font-size: 1.1rem;
+	color: #344253;
 }
 .card .quantidade,
 .card .data {
 	font-size: 0.98rem;
-	color: #555;
+	color: #344253;
 }
-.card .check {
+
+.checkbox {
 	position: absolute;
 	top: 12px;
 	right: 12px;
 	width: 24px;
 	height: 24px;
+	accent-color: #489d73;
+	cursor: pointer;
 }
+
 .paginacao {
 	display: flex;
 	align-items: center;
@@ -115,17 +127,23 @@ header {
 	color: #4ecb71;
 	font-weight: bold;
 }
+
+#pagina-info {
+	color: #344253;
+}
+
 .rodape {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 18px;
+	color: #344253;
 }
 .btn-excluir {
-	background: #e74c3c;
+	background: #e75544;
 	color: #fff;
 	border: none;
-	border-radius: 12px;
+	border-radius: 25px;
 	padding: 10px 32px;
 	font-size: 1rem;
 	cursor: pointer;
@@ -161,14 +179,32 @@ header {
 #navbar-right {
 	display: flex;
 	align-items: center;
-	gap: 15px;
 	margin: 0 100px 0 0;
 }
 
 #conta-cadastrada {
 	color: #4e6074;
-	font-size: 20px;
+	font-size: 18px;
 	margin: 0;
+}
+
+#boxContaCadastrada {
+	gap: 10px;
+}
+
+#boxContaCadastrada,
+#boxConfigEtiq {
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 0 10px;
+}
+
+#boxContaCadastrada:hover,
+#boxConfigEtiq:hover {
+	background-color: #eaecf0;
+	cursor: pointer;
 }
 
 #nav-logo {
@@ -178,36 +214,58 @@ header {
 }
 
 .nav-icon {
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 }
 
-.navegacao-extremos {
+#barraNavTelas {
+	width: 98%;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: row;
 	align-items: center;
-	margin: 32px 0 0 0;
-	width: 100%;
-	max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
+	justify-content: space-between;
+	margin: 10px 20px 20px 20px;
 }
 
-.btn-voltar,
 .btn-proximo {
 	background: linear-gradient(to right, #68c899, #489d73);
 	color: #fff;
 	border: none;
-	border-radius: 16px;
-	padding: 10px 32px;
-	font-size: 1rem;
+	border-radius: 25px;
+	font-size: 16px;
 	cursor: pointer;
-	font-weight: 600;
 	transition: background 0.2s;
+	width: 120px;
+	height: 35px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: #f0f4f8;
+	gap: 10px;
+	padding: 0 15px 0 15px;
 }
 
-.btn-proximo {
+.btn-voltar {
+	padding: 0 10px 0 10px;
 	background: linear-gradient(to right, #68c899, #489d73);
+	color: #fff;
+	border: none;
+	border-radius: 25px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background 0.2s;
+	width: 110px;
+	height: 35px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: #f0f4f8;
+	gap: 10px;
+}
+
+.botaoNavIcon {
+	width: 25px;
+	height: 25px;
 }
 
 .btn-voltar:hover,
