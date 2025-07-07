@@ -36,8 +36,8 @@ header {
 }
 .alertas-container {
 	background: #fff;
-	margin: 32px auto;
-	padding: 32px;
+	margin: 25px auto;
+	padding: 28px;
 	border-radius: 16px;
 	max-width: 1200px;
 	box-shadow: 0 2px 8px #0001;
@@ -80,6 +80,7 @@ header {
 	gap: 8px;
 	position: relative;
 	border: 1px solid #e2ebf3;
+	color: #344253;
 }
 .card img {
 	width: 90px;
@@ -91,11 +92,13 @@ header {
 .card .nome {
 	font-weight: 700;
 	font-size: 1.1rem;
+	color: #344253;
 }
 .card .quantidade,
 .card .data {
 	font-size: 0.98rem;
 	color: #555;
+	color: #344253;
 }
 .card .check {
 	position: absolute;
@@ -121,11 +124,17 @@ header {
 	color: #4ecb71;
 	font-weight: bold;
 }
+
+#pagina-info {
+	color: #344253;
+}
+
 .rodape {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 18px;
+	color: #344253;
 }
 .btn-excluir {
 	background: #e75544;
