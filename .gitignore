@@ -9,6 +9,10 @@
 # production
 /build
 
+#database
+*.db-journal
+*.sqbpro
+
 # misc
 .DS_Store
 .env.local
