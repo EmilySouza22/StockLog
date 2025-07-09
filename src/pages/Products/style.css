@@ -3,17 +3,16 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Arial", sans-serif;
-  text-decoration: none;
 }
 
 html, body{
-  background-color: #F0F4F8;
+  background-color: #dfe3f0;
    overflow-x: hidden;
 }
 
 /* NAVBAR */
 #navbar {
-  background-color: #FFFF;
+  background-color: #F5F5F5;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,10 +53,10 @@ html, body{
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px; /* reduzido verticalmente */
-  background-color: #F0F4F8;
+  background-color: #dfe3f0;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 0;
 }
 
 .navigation-buttons .btn {
@@ -170,6 +169,11 @@ html, body{
   cursor: pointer;
 }
 
+.escondido {
+  display: none;
+}
+
+
 #filtro-btn div button {
   display: flex;
   justify-content: center;
@@ -235,9 +239,78 @@ table {
   width: 20px;
   height: 20px;
   object-fit: contain;
- 
 }
  
+.delete-icon{
+  background-color: white;
+  border: white;
+  border-radius: 0px solid white;
+}
+
+#confirm-modal{
+  display: none;
+}
+
+.modal1 {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#cancelar-edicao{
+  padding: 8px 16px;
+  border: none;
+  background-color: #489d73;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#cancelar-edicao button:hover{
+  background-color: #3ca765;
+}
+
+
+.editar-icon{
+  background-color: white;
+  border: white;
+  border-radius: 0px solid white;
+}
+
+#modal-editar{
+  display: none;
+}
+
+
+.modal2{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: #489d73;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conteudo-modal{
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
 
 thead th {
   padding: 12px 15px;
@@ -255,6 +328,7 @@ tbody td {
 tbody tr:nth-child(even) {
   background-color: #f9fafb;
 }
+
 
 
 #color-laticinios{
@@ -422,7 +496,7 @@ tbody tr:nth-child(even) {
   background-color: white;
   position: sticky;
   bottom: 0;
-  z-index: 10;
+  z-index:  0;
   flex-wrap: wrap; 
   gap: 10px;
 }
@@ -477,7 +551,7 @@ tbody tr:nth-child(even) {
   background-color: white;
   position: sticky;
   bottom: 0;
-  z-index: 10;
+  z-index: 0;
   flex-wrap: wrap; /* permite quebra de linha se não couber */
   gap: 10px;        /* espaçamento entre os elementos */
 }
@@ -557,3 +631,49 @@ tbody tr:nth-child(even) {
   height: 50px;
   object-fit: contain; 
 }
+
+#adicionar-modal {
+  display: none; /* começa invisível */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* classe que ativa o modal */
+#adicionar-modal.visivel {
+  display: flex;
+}
+
+#box-adicionar {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#botoes-adicionar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+#botoes-adicionar button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #489d73;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#botoes-adicionar button:hover {
+  background-color: #3ca765;
+}
+
