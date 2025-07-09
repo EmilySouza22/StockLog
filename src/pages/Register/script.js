@@ -4,7 +4,7 @@ function cadastrar() { // Função para cadastrar o usuário, verificação e o 
 
 let nomeEmpresa = document.getElementById("inpLogNome").value;
 let telefone = document.getElementById("inpLogTelefone").value;
-let cnpj = document.getElementById("inpLogCNPJ").value;
+let cnpj = document.getElementById("inpLogCNPJ").value.toString(); // por conta do login 
 let email = document.getElementById("inpLogEmail").value;
 let senha = document.getElementById("inpLogSenha").value;
 let confirmarSenha = document.getElementById("inpLogSenhaConf").value;
