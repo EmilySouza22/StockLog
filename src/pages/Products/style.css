@@ -3,16 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Arial", sans-serif;
+  text-decoration: none;
 }
 
 html, body{
-  background-color: #dfe3f0;
+  background-color: #F0F4F8;
    overflow-x: hidden;
 }
 
 /* NAVBAR */
 #navbar {
-  background-color: #F5F5F5;
+  background-color: #FFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,7 +54,7 @@ html, body{
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px; /* reduzido verticalmente */
-  background-color: #dfe3f0;
+  background-color: #F0F4F8;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -234,6 +235,7 @@ table {
   width: 20px;
   height: 20px;
   object-fit: contain;
+ 
 }
  
 

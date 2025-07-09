@@ -23,12 +23,16 @@
         </nav>
 
         <div class="navigation-buttons">
-            <button class="btn" id="btn-voltar">
-                <img src="../../assets/imgs/products/icon/seta-esquerda.svg" alt="Voltar">Voltar
-            </button>
+            <a href="../Home/index.html">
+                <button class="btn" id="btn-voltar">
+                    <img src="../../assets/imgs/products/icon/seta-esquerda.svg" alt="Voltar">Voltar
+                </button>
+            </a>
+           <a href="../Alerts/index.html">
             <button class="btn" id="btn-proximo">
                 Próximo<img src="../../assets/imgs/products/icon/seta-direita.svg" alt="Próximo">
             </button>
+           </a>
         </div>
 
         <div class="bloco-tabela">
@@ -42,10 +46,16 @@
                         </label>
                         <select id="select-btn">
                             <option value="">Nenhum</option>
-                            <option value="data">Data</option>
-                            <option value="hora">Hora</option>
-                            <option value="produto">Produto</option>
-                            <option value="tag">Tag</option>
+                            <option value="data">Laticínios</option>
+                            <option value="hora">Bebidas</option>
+                            <option value="produto">Café</option>
+                            <option value="tag">Hortifrúti</option>
+                            <option value="tag">Grãos</option>
+                            <option value="tag">Padaria</option>
+                            <option value="tag">Farinhas</option>
+                            <option value="tag">Frios</option>
+                            <option value="tag">Congelados</option>
+                            <option value="tag">Frutas</option>
                         </select>
                     </div>
                 </div>
@@ -74,10 +84,14 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-laticinios">Laticínios</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button>
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela"
-                                id="icon-editar">
+                        <td><button>
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela"
+                            id="icon-editar">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -88,9 +102,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-bebidas">Bebidas</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-delete">
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-editar">
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -101,9 +119,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-cafe">Café</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-delete">
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-editar">
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -114,9 +136,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-hortifruti">Hortifrúti</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-delete">
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><butto class="estilizacao-editar">
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -127,9 +153,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-graos">Grãos</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button>
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button class="estilizacao-delete">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-editar">
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -140,9 +170,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-padaria">Padaria</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-delete">
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-editar">
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -153,9 +187,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-farinhas">Farinhas</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-delete">
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><button  class="estilizacao-editar">
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -166,9 +204,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-frios">Frios</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-delete">
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-editar">
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -179,9 +221,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-congelados">Congelados</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button class="estilizacao-delete">
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><button  class="estilizacao-editar">
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                     <tr>
@@ -192,9 +238,13 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-frutas">Frutas</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td><button>
+                            <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td><button>
+                            <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
                         </td>
                     </tr>
                 </tbody>
