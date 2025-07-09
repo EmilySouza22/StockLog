@@ -41,17 +41,23 @@
                             Filtrar por:
                         </label>
                         <select id="select-btn">
-                            <option value="">Nenhum</option>
-                            <option value="data">Data</option>
-                            <option value="hora">Hora</option>
-                            <option value="produto">Produto</option>
-                            <option value="tag">Tag</option>
+                            <option value="Todos">Todos</option>
+                            <option value="Laticínios">Laticínios</option>
+                            <option value="Bebidas">Bebidas</option>
+                            <option value="Café">Café</option>
+                            <option value="Hortifrúti">Hortifrúti</option>
+                            <option value="Grãos">Grãos</option>
+                            <option value="Padaria">Padaria</option>
+                            <option value="Farinhas">Farinhas</option>
+                            <option value="Frios">Frios</option>
+                            <option value="Congelados">Congelados</option>
+                            <option value="Frutas">Frutas</option>
                         </select>
                     </div>
                 </div>
             </div>
 
-            <table>
+            <table id="tabela">
                 <thead>
                     <tr>
                         <th>Codigo</th>
@@ -65,7 +71,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="body">
                     <tr>
                         <td>1</td>
                         <td>Leite Ninho Tradicional 1l</td>
@@ -74,10 +80,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-laticinios">Laticínios</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela"
-                                id="icon-editar">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -88,9 +100,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-bebidas">Bebidas</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src=" ../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -101,9 +120,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-cafe">Café</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -114,9 +140,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-hortifruti">Hortifrúti</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -127,9 +160,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-graos">Grãos</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -140,9 +180,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-padaria">Padaria</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -153,9 +200,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-farinhas">Farinhas</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -166,9 +220,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-frios">Frios</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -179,9 +240,16 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-congelados">Congelados</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
+                            </button>
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                            </button>
                         </td>
                     </tr>
                     <tr>
@@ -192,9 +260,17 @@
                         <td>18/01/2025</td>
                         <td>18/09/2025</td>
                         <td class="tag-categoria" id="color-frutas">Frutas</td>
-                        <td><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="" class="icons-tabela">
+                        <td>
+                            <button class="delete-icon">
+                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
+                                    class="icons-tabela">
                         </td>
-                        <td><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+                        </button>
+                        <td>
+                            <button class="editar-icon">
+                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+
+                            </button>
                         </td>
                     </tr>
                 </tbody>
@@ -240,6 +316,74 @@
         </div>
     </main>
     <script src="script.js"></script>
-</body>
+    <!-- Modal de confirmação -->
+    <div id="confirm-modal" class="modal1">
+        <div class="modal-content">
+            <p>Tem certeza que deseja apagar este item?</p>
+            <button id="confirmar-delete">Sim</button>
+            <button id="cancelar-delete" onclick="closeDeleteModal()">Cancelar</button>
+        </div>
+    </div>
+    <!-- MOdal de edição -->
+    <div id="modal-editar" class="modal2">
+        <div class="conteudo-modal">
+          <h2>Editar Produto</h2>
+      
+          <label>Produto:</label>
+          <input type="text" id="editar-produto">
+      
+          <label>Quantidade:</label>
+          <input type="number" id="editar-quantidade">
+      
+          <label>Validade:</label>
+          <input type="date" id="editar-validade">
+      
+          <label>Categoria:</label>
+          <input type="text" id="editar-categoria">
+      
+          <div class="botoes-modal">
+            <button id="cancelar-edicao">Cancelar</button>
+            <button id="salvar-edicao">Salvar</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Modal de Adicionar Produto -->
+    <div id="adicionar-modal">
+    <div id="box-adicionar">
+      <h2>Adicionar Produto</h2>
+  
+      <label for="novo-produto">Produto:</label>
+      <input type="text" id="novo-produto">
+  
+      <label for="novo-quantidade">Quantidade:</label>
+      <input type="number" id="novo-quantidade">
+  
+      <label for="novo-validade">Validade:</label>
+      <input type="date" id="novo-validade">
+  
+      <label for="nova-categoria">Categoria:</label>
+      <select id="nova-categoria">
+        <option value="Laticínios">Laticínios</option>
+        <option value="Bebidas">Bebidas</option>
+        <option value="Café">Café</option>
+        <option value="Hortifrúti">Hortifrúti</option>
+        <option value="Grãos">Grãos</option>
+        <option value="Padaria">Padaria</option>
+        <option value="Farinhas">Farinhas</option>
+        <option value="Frios">Frios</option>
+        <option value="Congelados">Congelados</option>
+        <option value="Frutas">Frutas</option>
+      </select>
+  
+      <div id="botoes-adicionar">
+        <button id="btn-cancelar-produto">Cancelar</button>
+        <button id="btn-salvar-produto">Salvar</button>
+      </div>
+    </div>
+  </div>
+  
+  
 
+</body>
 </html>

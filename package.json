@@ -2,5 +2,15 @@
   "dependencies": {
     "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7"
-  }
+  },
+  "name": "stocklog",
+  "version": "1.0.0",
+  "description": "🛠️ Sistema de Gerenciamento de Estoques para Empresas",
+  "main": "src/services/database/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
