@@ -36,11 +36,22 @@
                 <p id="produtos">Produtos</p>
                 <div class="filter">
                     <div class="grupo-filtro">
-                        <label for="select-btn" class="botao-filtrar">
-                            <img src="../../assets/imgs/products/icon/filtro.svg" alt="icon de filtro" id="icon-filtro">
-                            Filtrar por:
-                        </label>
-                        <select id="select-btn">
+                        <div class="label-categoria">
+                            <img src="../../assets/imgs/products/icon/filtro.svg" alt="Ícone de filtro" class="icon-label">
+                            <select id="select-filtro" class="botao-filtrar">
+                                <option value="">Filtrar por...</option>
+                                <option value="codigo">Código</option>
+                                <option value="produto">Produto</option>
+                                <option value="codigo-barra">Código de Barra</option>
+                                <option value="unidade">Unid.</option>
+                                <option value="entrada">Entrada</option>
+                                <option value="validade">Validade</option>
+                                <option value="categoria">Categoria</option>
+                            </select>
+                        </div>
+                    
+                        <!-- Só aparece se "categoria" for selecionado -->
+                        <select id="select-categoria" class="botao-filtrar" style="display: none;">
                             <option value="Todos">Todos</option>
                             <option value="Laticínios">Laticínios</option>
                             <option value="Bebidas">Bebidas</option>
@@ -331,9 +342,15 @@
       
           <label>Produto:</label>
           <input type="text" id="editar-produto">
+
+          <label>Codigo de Barra</label>
+          <input type="string" id="editar-codigo-de-barra">
       
           <label>Quantidade:</label>
           <input type="number" id="editar-quantidade">
+
+          <label>Entrada:</label>
+          <input type="date" id="novo-entrada">
       
           <label>Validade:</label>
           <input type="date" id="editar-validade">
@@ -355,9 +372,15 @@
   
       <label for="novo-produto">Produto:</label>
       <input type="text" id="novo-produto">
+
+      <label for="novo-codigo-de-barra">Codigo de Barra</label>
+      <input type="string" id="novo-codigo-de-barra">
   
       <label for="novo-quantidade">Quantidade:</label>
       <input type="number" id="novo-quantidade">
+
+      <label for="novo-entrada">Entrada:</label>
+      <input type="date" id="novo-entrada">
   
       <label for="novo-validade">Validade:</label>
       <input type="date" id="novo-validade">

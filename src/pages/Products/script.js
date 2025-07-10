@@ -70,10 +70,12 @@ document.querySelectorAll(".editar-icon").forEach(botao => {
         btnSalvarProduto.addEventListener("click", () => {
           const produto = document.getElementById("novo-produto").value;
           const quantidade = document.getElementById("novo-quantidade").value;
+          const codigoDeBarra = document.getElementById("novo-codigo-de-barra").value;
+          const entrada = document.getElementById("novo-entrada").value;
           const validade = document.getElementById("novo-validade").value;
           const categoria = document.getElementById("nova-categoria").value;
       
-          if (!produto || !quantidade || !validade || !categoria) {
+          if (!produto || !quantidade || !codigoDeBarra || !entrada || !validade || !categoria) {
             alert("Preencha todos os campos!");
             return;
           }
@@ -88,8 +90,11 @@ document.querySelectorAll(".editar-icon").forEach(botao => {
             <td>${produto}</td>
             <td>---</td>
             <td>${quantidade}</td>
+            <td>${codigoDeBarra}</td>
             <td>${new Date().toLocaleDateString()}</td>
             <td>${validade}</td>
+            <td>${new Date().toLocaleDateString()}</td>
+            <td>${entrada}</td>
             <td class="tag-categoria" id="color-${categoria.toLowerCase()}">${categoria}</td>
             <td><button class="delete-icon"><img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar" class="icons-tabela"></button></td>
             <td><button class="editar-icon"><img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela"></button></td>

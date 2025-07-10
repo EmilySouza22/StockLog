@@ -81,11 +81,6 @@ html, body{
   background: linear-gradient(to right, #68c899, #489d73);
 }
 
-/* .navigation-buttons .btn img {
-  width: 16px;
-  height: 16px; 
-  }*/
-
 
 #btn-voltar img{
   width: 23px;
@@ -269,7 +264,8 @@ table {
   text-align: center;
 }
 
-#cancelar-edicao{
+
+#confirmar-delete {
   padding: 8px 16px;
   border: none;
   background-color: #489d73;
@@ -278,10 +274,22 @@ table {
   cursor: pointer;
 }
 
-#cancelar-edicao button:hover{
+#confirmar-delete:hover {
   background-color: #3ca765;
 }
 
+#cancelar-delete {
+  padding: 8px 16px;
+  border: none;
+  background-color: #489d73;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#cancelar-delete:hover {
+  background-color: #3ca765;
+}
 
 .editar-icon{
   background-color: white;
@@ -298,8 +306,8 @@ table {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
-  background-color: #489d73;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.4);;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -311,6 +319,63 @@ table {
   border-radius: 8px;
   text-align: center;
 }
+
+.botoes-modal{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#salvar-edicao {
+  padding: 8px 16px;
+  border: none;
+  background-color: #489d73;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#salvar-edicao:hover {
+  background-color: #3ca765;
+}
+
+#cancelar-edicao {
+  padding: 8px 16px;
+  border: none;
+  background-color: #489d73;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#cancelar-edicao:hover {
+  background-color: #3ca765;
+}
+
+.conteudo-modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left; 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+}
+
+.conteudo-modal label {
+  margin-bottom: 2px;
+  font-weight: 500;
+}
+
+.conteudo-modal input {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
 
 thead th {
   padding: 12px 15px;
