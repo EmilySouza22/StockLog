@@ -138,11 +138,42 @@ html, body{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   background-color: white;
   padding: 8px 10px;
   border-radius: 10px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.select-filtro {
+  border: 2px solid #489d73;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-weight: 500;
+  background-color: white;
+  color: #489d73;
+  cursor: pointer;
+}
+
+.select-wrapper {
+  
+  position: relative;
+  display: inline-block;
+}
+
+.icon-inside-select {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(18%) saturate(759%) hue-rotate(97deg) brightness(94%) contrast(91%);
+}
+
+.select-wrapper select {
+  padding-left: 34px !important; /* espaço para o ícone dentro */
 }
 
 #filtro-btn {
@@ -202,6 +233,11 @@ html, body{
   background-color: white;
   padding: 8px 10px;
   border-radius: 10px;
+}
+
+
+.select-filtro.escondido {
+  visibility: hidden;
 }
 
 * {
@@ -303,6 +339,7 @@ table {
 
 
 .modal2{
+  display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
@@ -312,6 +349,7 @@ table {
   align-items: center;
   justify-content: center;
 }
+
 
 .conteudo-modal{
   background-color: white;

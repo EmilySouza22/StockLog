@@ -31,27 +31,25 @@
             </button>
         </div>
 
-        <div class="bloco-tabela">
-            <div id="filtro-btn">
+    <div class="bloco-tabela">
+        <div id="filtro-btn">
                 <p id="produtos">Produtos</p>
-                <div class="filter">
-                    <div class="grupo-filtro">
-                        <div class="label-categoria">
-                            <img src="../../assets/imgs/products/icon/filtro.svg" alt="Ícone de filtro" class="icon-label">
-                            <select id="select-filtro" class="botao-filtrar">
-                                <option value="">Filtrar por...</option>
-                                <option value="codigo">Código</option>
-                                <option value="produto">Produto</option>
-                                <option value="codigo-barra">Código de Barra</option>
-                                <option value="unidade">Unid.</option>
-                                <option value="entrada">Entrada</option>
-                                <option value="validade">Validade</option>
-                                <option value="categoria">Categoria</option>
-                            </select>
-                        </div>
+            <div class="filter">
+                <div class="grupo-filtros">
+                    <div class="select-wrapper">
+                        <img src="../../assets/imgs/products/icon/filtro.svg" alt="Ícone de filtro" class="icon-inside-select">
+                        <select id="select-filtro-principal" class="select-filtro">
+                          <option value="">Filtrar por:</option>
+                          <option value="produto">Produto</option>
+                          <option value="codigo">Código</option>
+                          <option value="codigo-barra">Código de Barra</option>
+                          <option value="unidade">Unid.</option>
+                          <option value="entrada">Entrada</option>
+                          <option value="categoria">Categoria</option>
+                        </select>
+                      </div>
                     
-                        <!-- Só aparece se "categoria" for selecionado -->
-                        <select id="select-categoria" class="botao-filtrar" style="display: none;">
+                        <select id="select-categorias" class="select-filtro escondido">
                             <option value="Todos">Todos</option>
                             <option value="Laticínios">Laticínios</option>
                             <option value="Bebidas">Bebidas</option>
@@ -64,9 +62,9 @@
                             <option value="Congelados">Congelados</option>
                             <option value="Frutas">Frutas</option>
                         </select>
-                    </div>
-                </div>
-            </div>
+             </div>                    
+         </div>
+    </div>
 
             <table id="tabela">
                 <thead>
