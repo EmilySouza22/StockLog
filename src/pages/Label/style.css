@@ -194,7 +194,6 @@ body {
 	display: flex;
 	width: 100%;
 	flex-direction: column; /* Um abaixo do outro */
-  	align-items: flex-start;
  	padding-left: 30px;
   	gap: 5px;
 	margin-top: 30px;
@@ -207,7 +206,7 @@ body {
 	width: 30%;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: flex-start; /*Alinha o ''produto'' com o select*/
 }
 
 #boxSelectProducts {
@@ -373,26 +372,44 @@ body {
 
 /* CONTAINER DIREITA ( CONFIGURAÇÕES DA ETIQUETA ) */
 
-#containerRight {
+/* #containerRight {
 	width: 40%;
 	height: 80vh;
 	background-color: #fff;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
-}
+} */
+
+ #containerRight {
+      width: 40%;
+      height: 80vh;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      /* justify-content: space-between; */
+      color: #344253;
+    }
 
 #etiqConfig {
-	height: 80vh;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
+	gap: 20px;
 }
 
+
 #BoxConfigTitle {
-	width: 80%;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    /* border-bottom: 2px solid #344253; Linha embaixo do título */
+    padding-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 #configTitle {
@@ -402,11 +419,13 @@ body {
 }
 
 #etiqButtonsEdit {
-	width: 70%;
+	width: 80%;
 	height: 50vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	align-items: flex-start;
+	/* flex-grow: 1; */
 }
 
 /* INPUT TAMANHO */
@@ -420,13 +439,12 @@ body {
 }
 
 #boxSubtitleTam {
-	width: 50%;
+	width: 100%;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	justify-content: flex-start;
 }
 
-#containerTamEtiq {
+/* #containerTamEtiq {
 	width: 80%;
 	display: flex;
 	flex-direction: row;
@@ -438,12 +456,32 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+} */
+
+#containerTamEtiq,
+#inputTamEtiq {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    align-items: center;
 }
 
+
 .inputTamEtiq {
-	width: 60px;
-	height: 15px;
+	width: 70px;
+    height: 25px;
+    padding: 6px 8px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    color: #344253;
+    transition: none;
+    outline: none;
+    box-shadow: none;
 }
+
 
 /* Class pra todos os subtitles do container right*/
 
@@ -452,6 +490,8 @@ body {
 	margin: 0;
 	color: #4e6074;
 }
+
+
 
 /* INPUT QUANTIDADE */
 
@@ -464,18 +504,31 @@ body {
 }
 
 #boxSubtitleQuant {
-	width: 90%;
+	width: 100%;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	justify-content: flex-start;
 }
 
-#inputQuantEtiq {
+/* #inputQuantEtiq {
 	width: 82%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+} */
+
+#inputQuantEtiq input {
+	width: 120px;
+	height: 25px;
+	padding: 6px 8px;
+	border: 1.5px solid #ccc;
+	border-radius: 6px;
+	font-size: 16px;
+	box-sizing: border-box;
+	color: #344253;
+	outline: none;
+	box-shadow: none;
 }
+
 
 /* ESPAÇAMENTO */
 
@@ -512,43 +565,63 @@ body {
 }
 
 #boxSubtitleCor {
-	width: 60%;
+	width: 100%;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	justify-content: flex-start;
 }
 
-#inputSelectCor {
+/* #inputSelectCor {
 	width: 54%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+} */
+
+#inputSelectCor select {
+	width: 120px;
+	height: 30px;
+	padding: 6px 8px;
+	border: 1.5px solid #ccc;
+	border-radius: 6px;
+	font-size: 16px;
+	box-sizing: border-box;
+	background-color: #fff;
+	color: #344253;
+	cursor: pointer;
+	outline: none;
+	box-shadow: none;
 }
+
+
 
 /* CHECKBOX */
 
 input[type='checkbox'] {
 	accent-color: #449b70;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	margin: 0;
 	outline: none;
 }
 
 .containerCheckBox {
 	width: 100%;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 5px;
-	padding-left: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
+
 
 /* BOTOES DE APLICACAO DA CONFIG  */
 
 #etiqBtnConfig {
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	margin-top: 10px;
+	gap: 12px;
+	justify-content: flex-start;
 	align-items: center;
-	justify-content: space-around;
 }
 
 #etiqContainerEsquerda {
@@ -567,7 +640,7 @@ input[type='checkbox'] {
 	justify-content: space-around;
 }
 
-.btnConfig1 {
+/* .btnConfig1 { --> NÃO EXISTE MAIS
 	width: 150px;
 	height: 4vh;
 	display: flex;
@@ -579,9 +652,10 @@ input[type='checkbox'] {
 	cursor: pointer;
 	font-size: 15px;
 	color: #344253;
+	
 }
 
-.btnConfig2 {
+.btnConfig2 { ---> NÃO EXISTE MAIS 
 	width: 30px;
 	height: 4vh;
 	display: flex;
@@ -590,29 +664,33 @@ input[type='checkbox'] {
 	align-items: center;
 	cursor: pointer;
 	border: none;
-}
+} */
 
-#modal-1 {
+/* #modal-1 {	--> Não existe mais
 	position: fixed;
 	top: 72%;
 	left: 54%;
 	border: none;
 	z-index: 1000;
 	border-radius: 4px;
-}
+} */
 
-.btnConfig3 {
-	width: 110px;
-	height: 4vh;
+.btnConfig3 { 				/*Botão de imprimir*/
 	display: flex;
-	justify-content: space-between;
-	border: 2px solid #449b70;
-	border-radius: 5px;
-	background-color: transparent;
 	align-items: center;
-	cursor: pointer;
-	font-size: 15px;
-	color: #344253;
+	gap: 8px;
+  	height: 34px; 
+  	padding: 0 14px;
+  	border: 1px solid #344253; 
+  	border-radius: 6px;
+  	background-color: transparent;
+  	cursor: pointer;
+  	font-size: 16px;
+  	color: #344253; 
+  	font-weight: 400;
+  	transition: none;
+  	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	margin-left: 0;
 }
 
 .iconConfig {
