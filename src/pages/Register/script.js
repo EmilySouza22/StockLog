@@ -1,14 +1,20 @@
+// Função para cadastrar o usuário, verificação e o salvamento no localStorage
+const nomeEmpresa = document.getElementById('inpLogNome');
+const telefone = document.getElementById('inpLogTelefone');
+const cnpj = document.getElementById('inpLogCNPJ');
+const email = document.getElementById('inpLogEmail');
+const senha = document.getElementById('inpLogSenha');
+const confirmarSenha = document.getElementById('inpLogSenhaConf');
+
+//Listener para o telefone e cnpj ver se tem palavras e traços
+// telefone.addEventListener('input', (event) => {
+// 	console.log(event);
+// 	if (!(event.data >= '0' && event.data <= '9')) {
+// 	}
+// });
+
 function cadastrar() {
-	// Função para cadastrar o usuário, verificação e o salvamento no localStorage
-
-	let nomeEmpresa = document.getElementById('inpLogNome').value;
-	let telefone = document.getElementById('inpLogTelefone').value;
-	let cnpj = document.getElementById('inpLogCNPJ').value.toString(); // por conta do login
-	let email = document.getElementById('inpLogEmail').value;
-	let senha = document.getElementById('inpLogSenha').value;
-	let confirmarSenha = document.getElementById('inpLogSenhaConf').value;
-
-	if (senha !== confirmarSenha) {
+	if (senha.value.toString() !== confirmarSenha.value.toString()) {
 		// Verifica se as senhas coincidem
 		alert('As senhas não coincidem!');
 		return; // Se não coincidirem, exibe um alerta e encerra a função
@@ -16,20 +22,17 @@ function cadastrar() {
 
 	let usuario = {
 		// Cria um objeto com os dados do usuário
-		nomeEmpresa: nomeEmpresa,
-		telefone: telefone,
-		cnpj: cnpj,
-		email: email,
-		senha: senha,
+		nomeEmpresa: nomeEmpresa.value.toString(),
+		telefone: telefone.value.toString(),
+		cnpj: cnpj.value.toString(),
+		email: email.value.toString(),
+		senha: senha.value.toString(),
 	};
 
-	let usuarios = JSON.parse(localStorage.getItem('usuarios')) || []; // Recupera os usuários do localStorage ou inicializa um array vazio se não houver nenhum
+	console.log(usuario);
 
-	usuarios.push(usuario); // Adiciona o novo usuário ao array de usuários
-
-	localStorage.setItem('usuarios', JSON.stringify(usuarios)); // Salva o objeto no localStorage como uma string JSON
-	alert('Usuário cadastrado com sucesso!'); // Exibe um alerta de sucesso
-	window.location.href = '../Login/index.html'; // Redireciona para a página de login
+	// CHAMAR O CONTROLLER 'Register' AQUI;
+    //TEM Q REALIZAR O CONTROLLER AQ
 }
 
 // Coisas a mais
