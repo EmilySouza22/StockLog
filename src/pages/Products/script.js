@@ -1,3 +1,5 @@
+import { adicionarProduto } from '/services/api/products.js';
+
 //Crud Filtro (categorias)
 
   const selectPrincipal = document.getElementById("select-filtro-principal");
@@ -18,9 +20,9 @@ document.getElementById('select-categorias').addEventListener("change", function
     const categoriaSelecionada = this.value;
     const linhas = document.querySelectorAll("#body tr");
 
-    linhas.forEach(linha => {
-        const categoriaTd = linha.querySelector(".tag-categoria");
-        const categoriaTexto = categoriaTd?.textContent.trim();
+	linhas.forEach((linha) => {
+		const categoriaTd = linha.querySelector('.tag-categoria');
+		const categoriaTexto = categoriaTd?.textContent.trim();
 
         if (categoriaSelecionada === "Todos" || categoriaTexto === categoriaSelecionada) {
             linha.classList.remove("escondido"); 
@@ -48,21 +50,22 @@ document.querySelectorAll(".delete-icon").forEach(botao => {
     });
 });
 
-function closeDeleteModal(){
-    document.getElementById("confirm-modal").style.display = "none";
+function closeDeleteModal() {
+	document.getElementById('confirm-modal').style.display = 'none';
 }
 
 //Crud modal (editção tabela)
 
-document.querySelectorAll(".editar-icon").forEach(botao => {
-    botao.addEventListener("click", function () {
-        // Pega a linha (tr) mais próxima do botão clicado
-        trParaRemover = this.closest("tr");
-        // Mostra o modal
-        document.getElementById("modal-editar").style.display = "flex";
-    });
+document.querySelectorAll('.editar-icon').forEach((botao) => {
+	botao.addEventListener('click', function () {
+		// Pega a linha (tr) mais próxima do botão clicado
+		trParaRemover = this.closest('tr');
+		// Mostra o modal
+		document.getElementById('modal-editar').style.display = 'flex';
+	});
 });
 
+//Crud adicionar produto
 
 //Crud adicionar produto
 

@@ -9,10 +9,7 @@
 *{
     font-family: "Roboto Medium", sans-serif;
     outline: none;
-
-    h2{
-        text-decoration: none;
-    }
+    text-decoration: none;
 }
 
 /* NAVBAR */
