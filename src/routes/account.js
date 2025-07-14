@@ -1,3 +1,5 @@
+import bcrypt from 'bcrypt';
+
 export default async function accountRoutes(fastify, options) {
 	fastify.post('/register', async (request, reply) => {
 		const { nome, telefone, cnpj, email, senha } = request.body;

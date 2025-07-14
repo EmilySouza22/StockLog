@@ -1,4 +1,5 @@
 import JsBarcode from 'jsbarcode';
+import moment from 'moment';
 
 export function gerarCodigoBarra(DOMtarget) {
 	return JsBarcode(DOMtarget);
@@ -14,3 +15,7 @@ export function gerarCodigoBarra(DOMtarget) {
 }
 
 export function gerarNumeroCodigoBarra() {}
+
+export function formatarData(dataISO){
+    return moment(dataISO).format('DD/MM/YYYY')
+}
