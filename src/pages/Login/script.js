@@ -1,30 +1,24 @@
-function login() {
+async function login() {
 	let login = document.getElementById('inpLogNome').value; // pode ser email ou CNPJ
 	let senha = document.getElementById('inpLogSenha').value;
 
-	let usuarios = JSON.parse(localStorage.getItem('usuarios'));
+	const usuario = {
+		emailOuCnpj: login,
+		senha,
+	};
 
-	if (!usuarios) {
-		alert('Nenhum usuário cadastrado, por favor, cadastre-se primeiro.');
-		return;
+	try {
+		const response = await axios.post('/login', usuario);
+		console.log('RESPONSE: ', response);
+		if (response.status === 200) {
+			// Handle success - redirect or show success message
+			window.location.href = '/home';
+            localStorage.setItem('dados_empresa', JSON.stringify(response.data));
+		}
+	} catch (error) {
+		console.log(error);
+		alert('Erro no login: ' + error.response?.data?.message || error.message);
 	}
-	// Procura usuário que tenha email OU cnpj igual ao que digitou
-	let usuarioEncontrado = usuarios.find(
-		(usuario) => usuario.email === login || usuario.cnpj === login
-	);
-
-	if (!usuarioEncontrado) {
-		alert('E-mail ou CNPJ não cadastrado');
-		return;
-	}
-
-	if (usuarioEncontrado.senha !== senha) {
-		alert('Senha incorreta');
-		return;
-	}
-
-	alert('Login aprovado! Seja bem-vindo(a)!');
-	window.location.href = '/home';
 }
 
 // A mais

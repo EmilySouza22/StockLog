@@ -1,7 +1,4 @@
-import { adicionarProduto } from '/services/api/products.js';
-
 //Crud Filtro (categorias)
-
   const selectPrincipal = document.getElementById("select-filtro-principal");
   const selectCategorias = document.getElementById("select-categorias");
 
@@ -11,11 +8,10 @@ import { adicionarProduto } from '/services/api/products.js';
     } else {
         selectCategorias.classList.add("escondido");
     }
-  });
+});
+
 
 //Crud filtro
-
-
 document.getElementById('select-categorias').addEventListener("change", function () {
     const categoriaSelecionada = this.value;
     const linhas = document.querySelectorAll("#body tr");
@@ -77,8 +73,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnCancelarModal = document.getElementById("btn-cancelar-produto");
     const btnSalvarProduto = document.getElementById("btn-salvar-produto"); // AQUI ESTAVA FALTANDO
       
-    btnAbrirModal.addEventListener("click", () => {
+    btnAbrirModal.addEventListener("click", (event) => {
         modalAdicionar.classList.add("visivel");
+        console.log('event' , event)
     });
       
     btnCancelarModal.addEventListener("click", () => {

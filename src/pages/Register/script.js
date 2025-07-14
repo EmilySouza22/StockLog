@@ -13,7 +13,7 @@ const confirmarSenha = document.getElementById('inpLogSenhaConf');
 // 	}
 // });
 
-function cadastrar() {
+async function cadastrar() {
 	if (senha.value.toString() !== confirmarSenha.value.toString()) {
 		// Verifica se as senhas coincidem
 		alert('As senhas não coincidem!');
@@ -22,21 +22,29 @@ function cadastrar() {
 
 	let usuario = {
 		// Cria um objeto com os dados do usuário
-		nomeEmpresa: nomeEmpresa.value.toString(),
+		nome: nomeEmpresa.value.toString(),
 		telefone: telefone.value.toString(),
 		cnpj: cnpj.value.toString(),
 		email: email.value.toString(),
 		senha: senha.value.toString(),
 	};
 
-	console.log(usuario);
+	try {
+		const response = await axios.post('/register', usuario);
 
-	// CHAMAR O CONTROLLER 'Register' AQUI;
-    //TEM Q REALIZAR O CONTROLLER AQ
+		if (response.status === 200) {
+			// Handle success - redirect or show success message
+			window.location.href = '/login';
+		}
+	} catch (error) {
+		console.error(error);
+		alert(
+			'Erro no cadastro: ' + error.response?.data?.message || error.message
+		);
+	}
 }
 
-// Coisas a mais
-
+// Senha escondida e vísivel
 function alternarSenha(inputId, iconId) {
 	const input = document.getElementById(inputId);
 	const icon = document.getElementById(iconId);
