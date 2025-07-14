@@ -30,7 +30,7 @@ async function cadastrar() {
 	};
 
 	try {
-		const response = await axios.post('/register', usuario);
+		const response = await axios.post('/account/register', usuario);
 
 		if (response.status === 200) {
 			// Handle success - redirect or show success message

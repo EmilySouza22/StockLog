@@ -11,7 +11,7 @@
 });
 
 
-//Crud filtro
+//Crud listagem (READ) com filtro categoria
 document.getElementById('select-categorias').addEventListener("change", function () {
     const categoriaSelecionada = this.value;
     const linhas = document.querySelectorAll("#body tr");
@@ -29,10 +29,10 @@ document.getElementById('select-categorias').addEventListener("change", function
 });
 
 
-//Crud modal (delete)
+
 
 let trParaRemover = null;
-
+//Crud modal (delete)
 document.querySelectorAll(".delete-icon").forEach(botao => {
     botao.addEventListener("click", function () {
         trParaRemover = this.parentNode.parentNode

@@ -8,12 +8,12 @@ async function login() {
 	};
 
 	try {
-		const response = await axios.post('/login', usuario);
+		const response = await axios.post('/auth/login', usuario);
 		console.log('RESPONSE: ', response);
 		if (response.status === 200) {
 			// Handle success - redirect or show success message
 			window.location.href = '/home';
-            localStorage.setItem('dados_empresa', JSON.stringify(response.data));
+			localStorage.setItem('dados_empresa', JSON.stringify(response.data));
 		}
 	} catch (error) {
 		console.log(error);

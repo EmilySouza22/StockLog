@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 			cnpjInput.value = conta.cnpj;
 			emailInput.value = conta.email;
 			telefoneInput.value = conta.telefone;
+
 		}
 	} catch (error) {
 		console.log(error);
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	}
 });
 
+//Excluindo a conta
 async function excluirConta() {
 	const cache = localStorage.getItem('dados_empresa');
 	const dadosEmpresa = JSON.parse(cache);
@@ -48,6 +50,7 @@ async function excluirConta() {
 	}
 }
 
+//Alterando informações da conta
 async function salvarAlteracoes() {
 	const cache = localStorage.getItem('dados_empresa');
 	const dadosEmpresa = JSON.parse(cache);
@@ -63,6 +66,7 @@ async function salvarAlteracoes() {
 		const response = await axios.put(`/account/${dadosEmpresa.id}`, usuario);
 
 		if (response.status === 200) {
+            alert('Dados atualizados!')
 			window.location.reload(true);
 		}
 	} catch (error) {
