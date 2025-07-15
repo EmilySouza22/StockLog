@@ -29,7 +29,7 @@
 						/>
 					</div>
 				</a>
-				<div id="boxConfigEtiq">
+				<div onclick="abrirModalConfig()" id="boxConfigEtiq">
 					<img
 						class="nav-icon"
 						src="/assets/imgs/home/icon/engrenagem.svg"
@@ -289,8 +289,19 @@
 			</div>
 		</footer>
 
-		<!-- Modal Configurações da conta -->
-		<div></div>
+		<!-- Modal Configurações -->
+		<div id="ModalConfig">
+			<a href="/Login">
+				<div id="boxLogout">
+					<img
+						id="iconLogOut"
+						src="../../assets/imgs/home/icon/logout.svg"
+						alt="Sair"
+					/>
+					<p id="textLogout">Logout</p>
+				</div>
+			</a>
+		</div>
 	</body>
 	<script src="Home/script.js"></script>
 </html>

@@ -313,3 +313,26 @@ new Chart(grafico6, {
 		},
 	},
 });
+
+
+//Modal de configurações >>>>>>>> LOGOUT
+
+function abrirModalConfig() {
+	document.getElementById('ModalConfig').style.display = 'block';
+}
+
+function fecharModal() {
+	document.getElementById('ModalConfig').style.display = 'none';
+}
+
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('ModalConfig');
+    const boxLogout = document.getElementById('boxLogout');
+    const boxConfigEtiq = document.getElementById('boxConfigEtiq');
+    
+    if (modal.style.display === 'block' && 
+        !boxLogout.contains(event.target) && 
+        !boxConfigEtiq.contains(event.target)) {
+        fecharModal();
+    }
+});
