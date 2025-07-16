@@ -107,7 +107,7 @@ body {
 	justify-content: flex-end; /* joga tudo para a direita */
 	align-items: center; /* alinha verticalmente */
 	gap: 15px;
-	padding: 0 10px;
+	padding: 0 20px;
 	margin: 15px 0;
 	background-color: transparent;
 }
@@ -149,7 +149,7 @@ body {
 
 .select-filtro {
 	border: 2px solid #489d73;
-	border-radius: 6px;
+	border-radius: 14px;
 	padding: 8px 10px;
 	font-weight: 500;
 	background-color: white;
@@ -182,7 +182,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 0 3px 0;
+	margin: 0 0 20px 0;
 	padding: 0 20px;
 	background-color: transparent;
 }
@@ -731,10 +731,11 @@ tbody tr:nth-child(even) {
 	background-color: white;
 	border: white;
 	border-radius: 1px solid white;
+	cursor: pointer;
 }
 
 #btn-botao-mais img {
-	width: 30px;
+	width: 35px;
 	height: 50px;
 	object-fit: contain;
 }

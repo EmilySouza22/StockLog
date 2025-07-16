@@ -159,7 +159,7 @@ async function deletarProduto(id) {
 }
 
 //
-//Editando as informações do produto selecionado
+//Trazendo as informações do produto selecionado
 async function editarProduto(id) {
 	try {
 		const response = await axios.get(`/product/${id}`);
@@ -191,6 +191,7 @@ async function editarProduto(id) {
 	document.getElementById('salvar-edicao').onclick = () => salvarEdicao(id);
 }
 
+//Salvando edições
 async function salvarEdicao(id) {
 	const dadosAtualizados = {
 		nome: document.getElementById('editar-produto').value,
@@ -217,9 +218,6 @@ async function salvarEdicao(id) {
 				error.message
 		);
 	}
-
-	// TODO: axios.put(`/api/produtos/${id}`, dadosAtualizados)
-	// TODO: carregarProdutos() em caso de sucesso
 }
 
 // Filtros
@@ -246,16 +244,6 @@ document
 		}
 	});
 
-// Modals
-function closeDeleteModal() {
-	document.getElementById('confirm-modal').style.display = 'none';
-}
-
-document.getElementById('cancelar-delete').onclick = closeDeleteModal;
-document.getElementById('cancelar-edicao').onclick = () => {
-	document.getElementById('modal-editar').style.display = 'none';
-};
-
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
 	carregarProdutos();
@@ -275,3 +263,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	btnSalvarProduto.addEventListener('click', adicionarProduto);
 });
+
+// Modals
+function closeDeleteModal() {
+	document.getElementById('confirm-modal').style.display = 'none';
+}
+
+document.getElementById('cancelar-delete').onclick = closeDeleteModal;
+document.getElementById('cancelar-edicao').onclick = () => {
+	document.getElementById('modal-editar').style.display = 'none';
+};
