@@ -5,10 +5,13 @@
 Este projeto é um sistema web desenvolvido durante a Situação de Aprendizagem da primeira fase no SENAI.
 O projeto foi desenvolvido para auxiliar empresas no controle e gerenciamento de seus estoques de forma eficiente e intuitiva. 
 
-🔧 Tecnologias utilizadas
+🔧 STACK
  • HTML
  • CSS
  • JavaScript
+ • Node.js
+ • Fastify
+ • Mysql
 
 🔐 Funcionalidades Principais
  • Autenticação
