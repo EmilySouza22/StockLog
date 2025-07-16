@@ -4,7 +4,6 @@ const cnpjInput = document.getElementById('inpAccountCNPJ');
 const emailInput = document.getElementById('inpAccountEmail');
 const telefoneInput = document.getElementById('inpAccountTel');
 
-
 //Carrega os dados da empresa
 document.addEventListener('DOMContentLoaded', async () => {
 	const cache = localStorage.getItem('dados_empresa');

@@ -3,10 +3,9 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Arial', sans-serif;
-    outline: none;
-    text-decoration: none;
+	outline: none;
+	text-decoration: none;
 }
-
 
 html,
 body {
@@ -108,7 +107,7 @@ body {
 	justify-content: flex-end; /* joga tudo para a direita */
 	align-items: center; /* alinha verticalmente */
 	gap: 15px;
-	padding: 0 20px;
+	padding: 0 10px;
 	margin: 15px 0;
 	background-color: transparent;
 }
@@ -183,7 +182,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 0 0 20px 0;
+	margin: 0 0 3px 0;
 	padding: 0 20px;
 	background-color: transparent;
 }
@@ -261,14 +260,14 @@ table {
 }
 
 #containerProdBotoes {
-    width: 92%;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    bottom: 4%;
-    left: 4%;
-    background-color: white;
-    z-index: 10;
+	width: 92%;
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	bottom: 4%;
+	left: 4%;
+	background-color: white;
+	z-index: 10;
 }
 
 .icons-tabela {
@@ -285,7 +284,7 @@ table {
 
 #confirm-modal {
 	display: none;
-    z-index: 1000;
+	z-index: 1000;
 }
 
 .modal1 {
@@ -298,7 +297,7 @@ table {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    z-index: 1000;
+	z-index: 1000;
 }
 
 .modal-content {
@@ -307,7 +306,7 @@ table {
 	padding: 20px;
 	border-radius: 8px;
 	text-align: center;
-    z-index: 1000;
+	z-index: 1000;
 }
 
 #confirmar-delete {
@@ -358,7 +357,7 @@ table {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    z-index: 1000;
+	z-index: 1000;
 }
 
 .conteudo-modal {
@@ -366,7 +365,7 @@ table {
 	padding: 20px;
 	border-radius: 8px;
 	text-align: center;
-    z-index: 1000;
+	z-index: 1000;
 }
 
 .botoes-modal {
