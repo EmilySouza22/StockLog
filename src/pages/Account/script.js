@@ -37,7 +37,7 @@ async function excluirConta() {
 	const dadosEmpresa = JSON.parse(cache);
 
 	try {
-		const response = await axios.delete(`/account/${dadosEmpresa.id}`);
+		const response = await axios.put(`/account/delete/${dadosEmpresa.id}`);
 
 		if (response.status === 200) {
 			window.location.href = '/login';

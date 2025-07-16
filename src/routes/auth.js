@@ -7,8 +7,8 @@ export default async function authRoutes(fastify, options) {
 
 		try {
 			const query = emailOuCnpj.includes('@')
-				? 'SELECT * FROM stocklog.empresa WHERE email = ?'
-				: 'SELECT * FROM stocklog.empresa WHERE cnpj = ?';
+				? 'SELECT * FROM stocklog.empresa WHERE email=? AND ativo=1'
+				: 'SELECT * FROM stocklog.empresa WHERE cnpj=? AND ativo=1';
 
 			const queryAsync = promisify(fastify.mysql.query).bind(fastify.mysql);
 			const result = await queryAsync(query, [emailOuCnpj]);

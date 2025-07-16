@@ -1,3 +1,15 @@
+const nome = document.getElementById('novo-produto');
+const codigoBarra = document.getElementById('novo-codigo-de-barra');
+const quantidade = document.getElementById('novo-quantidade');
+const dataValidade = document.getElementById('novo-validade');
+const dataEntrada = document.getElementById('novo-entrada');
+const minimo = document.getElementById('novo-minimo');
+const maximo = document.getElementById('novo-maximo');
+const categoria = document.getElementById('nova-categoria');
+
+const ISO_FORMAT = 'YYYY-MM-DDTHH:mm:ss.sssZ';
+const PT_BR_DATE_FORMAT = 'DD/MM/YYYY';
+
 // Função para renderizar tabela
 async function renderizarTabela(dados = []) {
 	if (!dados) {
@@ -15,8 +27,8 @@ async function renderizarTabela(dados = []) {
             <td>${produto.nome}</td>
             <td>${produto.codigo_barra}</td>
             <td>${produto.quantidade}</td>
-            <td>${moment(produto.data_entrada).format('DD/MM/YYYY')}</td>
-            <td>${moment(produto.data_validade).format('DD/MM/YYYY')}</td>
+            <td>${moment(produto.data_entrada).format(PT_BR_DATE_FORMAT)}</td>
+            <td>${moment(produto.data_validade).format(PT_BR_DATE_FORMAT)}</td>
             <td>
                 <div class="tag-categoria" id="color-${produto.categoria_id}">
                     ${produto.categoria_id}
@@ -108,19 +120,37 @@ async function salvarEdicao(id) {
 }
 
 async function adicionarProduto() {
+	const cache = localStorage.getItem('dados_empresa');
+	const dadosEmpresa = JSON.parse(cache);
+
 	const novoProduto = {
-		produto: document.getElementById('novo-produto').value,
-		quantidade: parseInt(document.getElementById('novo-quantidade').value),
-		codigoBarra: document.getElementById('novo-codigo-de-barra').value,
-		entrada: document.getElementById('novo-entrada').value,
-		validade: document.getElementById('novo-validade').value,
-		categoria: document.getElementById('nova-categoria').value,
+		nome: nome.value,
+		codigo_barra: codigoBarra.value,
+		quantidade: quantidade.value,
+		data_validade: moment(dataValidade.value).format(ISO_FORMAT),
+		data_entrada: moment(dataEntrada.value).format(ISO_FORMAT),
+		minimo: parseInt(minimo.value),
+		maximo: parseInt(maximo.value),
+		categoria: categoria.value,
+		empresa_id: dadosEmpresa.id,
 	};
 
-	// TODO: axios.post('/api/produtos', novoProduto)
-	// TODO: carregarProdutos() em caso de sucesso
-	// TODO: limpar formulário em caso de sucesso
-	document.getElementById('adicionar-modal').classList.remove('visivel');
+	console.log('novoProduto: ', novoProduto);
+
+	try {
+		const response = await axios.post('/product/id', novoProduto);
+
+		if (response.status === 200) {
+			alert('Produto adicionado!');
+			document.getElementById('adicionar-modal').classList.remove('visivel');
+			window.location.reload();
+		}
+	} catch (error) {
+		console.error(error);
+		alert(
+			'Erro no cadastro: ' + error.response?.data?.message || error.message
+		);
+	}
 }
 
 // Filtros

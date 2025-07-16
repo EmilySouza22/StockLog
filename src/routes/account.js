@@ -23,7 +23,7 @@ export default async function accountRoutes(fastify, options) {
 
 	fastify.get('/:id', function (req, reply) {
 		fastify.mysql.query(
-			'SELECT * FROM stocklog.empresa WHERE id=?',
+			'SELECT * FROM stocklog.empresa WHERE id=? AND ativo=1',
 			[req.params.id],
 			function onResult(err, result) {
 				reply.send(err || result);
@@ -43,9 +43,9 @@ export default async function accountRoutes(fastify, options) {
 		);
 	});
 
-	fastify.delete('/:id', function (req, reply) {
+	fastify.put('/delete/:id', function (req, reply) {
 		fastify.mysql.query(
-			'DELETE FROM stocklog.empresa WHERE id=?',
+			'UPDATE stocklog.empresa SET ativo=0, cnpj=CONCAT(NOW(),cnpj), email=CONCAT(NOW(),email) WHERE id=?',
 			[req.params.id],
 			function onResult(err, result) {
 				reply.send(err || result);
