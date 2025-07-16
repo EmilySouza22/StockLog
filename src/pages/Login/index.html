@@ -1,90 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      href="../../assets/imgs/login/img/logo.svg"
-      type="image/png"
-    />
-    <title>Login</title>
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/Login/style.css" />
+		<link rel="icon" href="/assets/imgs/login/img/logo.svg" type="image/png" />
+		<title>Login</title>
+	</head>
 
-  <body>
-    <nav id="navbar">
-      <div id="navbar">
-        <img
-          id="navLogo"
-          src="../../assets/imgs/login/img/logo.svg"
-          alt="StockLog"
-        />
-      </div>
-    </nav>
+	<body>
+		<nav id="navbar">
+			<div id="navbar">
+				<img
+					id="navLogo"
+					src="/assets/imgs/login/img/logo.svg"
+					alt="StockLog"
+				/>
+			</div>
+		</nav>
 
-    <main id="container">
-      <section id="left">
-        <img
-          id="imgLogin"
-          src="../../assets/imgs/login/img/image.png"
-          alt="Imagem de Login"
-        />
+		<main id="container">
+			<section id="left">
+				<img
+					id="imgLogin"
+					src="/assets/imgs/login/img/image.png"
+					alt="Imagem de Login"
+				/>
 
-        <div id="cadastro">
-          <p>Não possui uma conta?</p>
-          <a href="../Register/index.html">
-            <button id="cadastre-se" onclick="mostrarCadastro()">
-              Cadastre-se
-            </button>
-          </a>
-        </div>
-      </section>
+				<div id="cadastro">
+					<p>Não possui uma conta?</p>
+					<a href="/register">
+						<button id="cadastre-se" onclick="mostrarCadastro()">
+							Cadastre-se
+						</button>
+					</a>
+				</div>
+			</section>
 
-      <section id="right">
-        <div id="login">
-          <h1>Login</h1>
+			<section id="right">
+				<div id="login">
+					<h1>Login</h1>
 
-          <div class="containerInput">
-            <label for="inpLogNome">E-mail ou CNPJ</label>
+					<div class="containerInput">
+						<label for="inpLogNome">E-mail ou CNPJ</label>
 
-            <div class="inputIcon">
-              <input
-                type="text"
-                id="inpLogNome"
-                placeholder="Insira E-mail ou CPNJ"
-              />
-              <img
-                src="../../assets/imgs/login/icon/user.svg"
-                alt="Ícone de Usuário"
-                class="icon"
-              />
-            </div>
-          </div>
+						<div class="inputIcon">
+							<input
+								type="text"
+								id="inpLogNome"
+								placeholder="Insira E-mail ou CPNJ"
+							/>
+							<img
+								src="/assets/imgs/login/icon/user.svg"
+								alt="Ícone de Usuário"
+								class="icon"
+							/>
+						</div>
+					</div>
 
-          <div class="containerInput">
-            <label for="inpLogSenha">Senha</label>
+					<div class="containerInput">
+						<label for="inpLogSenha">Senha</label>
 
-            <div class="inputIcon">
-              <input
-                type="password"
-                id="inpLogSenha"
-                placeholder="Insira a senha"
-              />
-              <img
-                src="../../assets/imgs/login/icon/cadeado.svg"
-                alt="Ícone de Senha"
-                class="icon"
-                id="alternarSenha"
-                onclick="alternarSenha('inpLogSenha')"
-              />
-            </div>
-          </div>
-            <button id="entrar" onclick="login()">Entrar</button>
-        </div>
-      </section>
-    </main>
+						<div class="inputIcon">
+							<input
+								type="password"
+								id="inpLogSenha"
+								placeholder="Insira a senha"
+							/>
+							<img
+								src="/assets/imgs/login/icon/cadeado.svg"
+								alt="Ícone de Senha"
+								class="icon"
+								id="alternarSenha"
+								onclick="alternarSenha('inpLogSenha')"
+							/>
+						</div>
+					</div>
+					<button id="entrar" onclick="login()">Entrar</button>
+				</div>
+			</section>
+		</main>
 
-    <script src="scriptLogin.js"></script>
-  </body>
+	</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+    <script src="/Login/script.js"></script>
 </html>

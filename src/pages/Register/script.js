@@ -1,50 +1,59 @@
+// Função para cadastrar o usuário, verificação e o salvamento no localStorage
+const nomeEmpresa = document.getElementById('inpLogNome');
+const telefone = document.getElementById('inpLogTelefone');
+const cnpj = document.getElementById('inpLogCNPJ');
+const email = document.getElementById('inpLogEmail');
+const senha = document.getElementById('inpLogSenha');
+const confirmarSenha = document.getElementById('inpLogSenhaConf');
 
-function cadastrar() { // Função para cadastrar o usuário, verificação e o salvamento no localStorage
+//Listener para o telefone e cnpj ver se tem palavras e traços
+// telefone.addEventListener('input', (event) => {
+// 	console.log(event);
+// 	if (!(event.data >= '0' && event.data <= '9')) {
+// 	}
+// });
 
+async function cadastrar() {
+	if (senha.value.toString() !== confirmarSenha.value.toString()) {
+		// Verifica se as senhas coincidem
+		alert('As senhas não coincidem!');
+		return; // Se não coincidirem, exibe um alerta e encerra a função
+	}
 
-let nomeEmpresa = document.getElementById("inpLogNome").value;
-let telefone = document.getElementById("inpLogTelefone").value;
-let cnpj = document.getElementById("inpLogCNPJ").value.toString(); // por conta do login 
-let email = document.getElementById("inpLogEmail").value;
-let senha = document.getElementById("inpLogSenha").value;
-let confirmarSenha = document.getElementById("inpLogSenhaConf").value;
+	let usuario = {
+		// Cria um objeto com os dados do usuário
+		nome: nomeEmpresa.value.toString(),
+		telefone: telefone.value.toString(),
+		cnpj: cnpj.value.toString(),
+		email: email.value.toString(),
+		senha: senha.value.toString(),
+	};
 
-if (senha !== confirmarSenha) { // Verifica se as senhas coincidem
-    alert("As senhas não coincidem!");
-    return; // Se não coincidirem, exibe um alerta e encerra a função
-  }
+	try {
+		const response = await axios.post('/account/register', usuario);
 
-
-let usuario = { // Cria um objeto com os dados do usuário
-    nomeEmpresa: nomeEmpresa,
-    telefone: telefone,
-    cnpj: cnpj,
-    email: email,
-    senha: senha
-  } 
-
-let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // Recupera os usuários do localStorage ou inicializa um array vazio se não houver nenhum
-
-usuarios.push(usuario); // Adiciona o novo usuário ao array de usuários
-
-localStorage.setItem("usuarios", JSON.stringify(usuarios)); // Salva o objeto no localStorage como uma string JSON
-    alert("Usuário cadastrado com sucesso!"); // Exibe um alerta de sucesso
-    window.location.href = "../Login/index.html"; // Redireciona para a página de login
-
+		if (response.status === 200) {
+			// Handle success - redirect or show success message
+			window.location.href = '/login';
+		}
+	} catch (error) {
+		console.error(error);
+		alert(
+			'Erro no cadastro: ' + error.response?.data?.message || error.message
+		);
+	}
 }
 
-
-// Coisas a mais 
-
+// Senha escondida e vísivel
 function alternarSenha(inputId, iconId) {
-  const input = document.getElementById(inputId);
-  const icon = document.getElementById(iconId);
+	const input = document.getElementById(inputId);
+	const icon = document.getElementById(iconId);
 
-  if (input.type === "password") {
-    input.type = "text";
-    icon.src = "../../assets/imgs/register/icon/eye.svg"; // ícone de olho aberto
-  } else {
-    input.type = "password";
-    icon.src = "../../assets/imgs/register/icon/eye-closed.svg"; // ícone de olho fechado
-  }
+	if (input.type === 'password') {
+		input.type = 'text';
+		icon.src = '/assets/imgs/register/icon/eye.svg'; // ícone de olho aberto
+	} else {
+		input.type = 'password';
+		icon.src = '/assets/imgs/register/icon/eye-closed.svg'; // ícone de olho fechado
+	}
 }

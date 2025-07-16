@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/assets/imgs/home/img/logo.svg" type="image/png" />
+		<link rel="stylesheet" href="Account/style.css" />
+		<title>Configuração</title>
+	</head>
+	<body>
+		<nav id="navbar">
+			<a href="/Home">
+				<div id="navbar-left">
+					<img
+						id="nav-logo"
+						src="/assets/imgs/home/img/logo.svg"
+						alt="StockLog"
+					/>
+				</div>
+			</a>
+		</nav>
+
+		<main id="principal">
+			<div id="containerConta">
+				<div id="titleConfig">
+					<h1 id="titleAcc">Detalhes da Conta</h1>
+				</div>
+				<div id="contentConfig">
+					<div class="boxAccInfo">
+						<p class="descricaoAcc">Nome da Empresa:</p>
+						<input
+							class="inpAccount"
+							id="inpAccountNome"
+							type="text"
+							value=""
+						/>
+					</div>
+					<div class="boxAccInfo">
+						<p class="descricaoAcc">CNPJ:</p>
+						<input
+							class="inpAccount"
+							id="inpAccountCNPJ"
+							type="text"
+							value=""
+						/>
+					</div>
+					<div class="boxAccInfo">
+						<p class="descricaoAcc">E-mail:</p>
+						<input
+							id="inpAccountEmail"
+							type="text"
+							class="inpAccount"
+							value=""
+						/>
+					</div>
+					<div class="boxAccInfo">
+						<p class="descricaoAcc">Telefone:</p>
+						<input class="inpAccount" id="inpAccountTel" type="text" value="" />
+					</div>
+					<div class="boxAccInfo">
+						<p class="descricaoAcc">Senha:</p>
+						<input
+							class="inpAccount"
+							id="inpAccountSenha"
+							type="text"
+							value="*******"
+						/>
+					</div>
+				</div>
+				<div id="boxBtns">
+					<div id="BtnDelete">
+						<button onclick="excluirConta()" id="btnAccountDelete">
+							Deletar conta
+						</button>
+					</div>
+					<div id="BtnSalvar">
+						<button onclick="salvarAlteracoes()" id="btnAccountSalvar">
+							Salvar
+						</button>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+	<script src="Account/script.js"></script>
+</html>

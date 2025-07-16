@@ -1,410 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Produtos</title>
+		<link
+			rel="icon"
+			href="/assets/imgs/products/img/logo.svg"
+			type="imagem/svg"
+		/>
+		<link rel="stylesheet" href="Products/style.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos</title>
-    <link rel="icon" href="../../assets/imgs/products/img/logo.svg" type="imagem/svg">
-    <link rel="stylesheet" href="style.css">
-</head>
+	<body>
+		<main>
+			<nav id="navbar">
+				<div id="navbar-left">
+					<img
+						id="nav-logo"
+						src="/assets/imgs/home/img/logo.svg"
+						alt="StockLog"
+					/>
+				</div>
+				<div id="navbar-right">
+					<p id="conta-cadastrada">Mercado Santana</p>
+					<img
+						class="nav-icon"
+						src="/assets/imgs/home/icon/conta.svg"
+						alt="Conta"
+					/>
+					<img
+						class="nav-icon"
+						src="/assets/imgs/home/icon/engrenagem.svg"
+						alt="Engrenagem"
+					/>
+				</div>
+			</nav>
 
-<body>
-    <main>
-        <nav id="navbar">
-            <div id="navbar-left">
-                <img id="nav-logo" src="../../assets/imgs/home/img/logo.svg" alt="StockLog">
-            </div>
-            <div id="navbar-right">
-                <p id="conta-cadastrada"> Mercado Santana </p>
-                <img class="nav-icon" src="../../assets/imgs/home/icon/conta.svg" alt="Conta">
-                <img class="nav-icon" src="../../assets/imgs/home/icon/engrenagem.svg" alt="Engrenagem">
-            </div>
-        </nav>
+			<div class="navigation-buttons">
+				<a href="/home">
+					<button class="btn" id="btn-voltar">
+						<img
+							src="/assets/imgs/products/icon/seta-esquerda.svg"
+							alt="Voltar"
+						/>Home
+					</button>
+				</a>
+				<a href="/alerts">
+					<button class="btn" id="btn-proximo">
+						Alertas<img
+							src="/assets/imgs/products/icon/seta-direita.svg"
+							alt="Próximo"
+						/>
+					</button>
+				</a>
+			</div>
 
-        <div class="navigation-buttons">
-            <button class="btn" id="btn-voltar">
-                <img src="../../assets/imgs/products/icon/seta-esquerda.svg" alt="Voltar">Voltar
-            </button>
-            <button class="btn" id="btn-proximo">
-                Próximo<img src="../../assets/imgs/products/icon/seta-direita.svg" alt="Próximo">
-            </button>
-        </div>
+			<div class="bloco-tabela">
+				<div id="filtro-btn">
+					<p id="produtos">Produtos</p>
+					<div class="filter">
+						<div class="grupo-filtros">
+							<div class="select-wrapper">
+								<img
+									src="/assets/imgs/products/icon/filtro.svg"
+									alt="Ícone de filtro"
+									class="icon-inside-select"
+								/>
+								<select id="select-filtro-principal" class="select-filtro">
+									<option value="">Filtrar por:</option>
+									<option value="produto">Produto</option>
+									<option value="codigo">Código</option>
+									<option value="codigo-barra">Código de Barra</option>
+									<option value="unidade">Unid.</option>
+									<option value="entrada">Entrada</option>
+									<option value="categoria">Categoria</option>
+								</select>
+							</div>
 
-    <div class="bloco-tabela">
-        <div id="filtro-btn">
-                <p id="produtos">Produtos</p>
-            <div class="filter">
-                <div class="grupo-filtros">
-                    <div class="select-wrapper">
-                        <img src="../../assets/imgs/products/icon/filtro.svg" alt="Ícone de filtro" class="icon-inside-select">
-                        <select id="select-filtro-principal" class="select-filtro">
-                          <option value="">Filtrar por:</option>
-                          <option value="produto">Produto</option>
-                          <option value="codigo">Código</option>
-                          <option value="codigo-barra">Código de Barra</option>
-                          <option value="unidade">Unid.</option>
-                          <option value="entrada">Entrada</option>
-                          <option value="categoria">Categoria</option>
-                        </select>
-                      </div>
-                    
-                        <select id="select-categorias" class="select-filtro escondido">
-                            <option value="Todos">Todos</option>
-                            <option value="Laticínios">Laticínios</option>
-                            <option value="Bebidas">Bebidas</option>
-                            <option value="Café">Café</option>
-                            <option value="Hortifrúti">Hortifrúti</option>
-                            <option value="Grãos">Grãos</option>
-                            <option value="Padaria">Padaria</option>
-                            <option value="Farinhas">Farinhas</option>
-                            <option value="Frios">Frios</option>
-                            <option value="Congelados">Congelados</option>
-                            <option value="Frutas">Frutas</option>
-                        </select>
-             </div>                    
-         </div>
-    </div>
+							<select id="select-categorias" class="select-filtro escondido">
+								<option value="Todos">Todos</option>
+								<option value="Laticínios">Laticínios</option>
+								<option value="Bebidas">Bebidas</option>
+								<option value="Café">Café</option>
+								<option value="Hortifrúti">Hortifrúti</option>
+								<option value="Grãos">Grãos</option>
+								<option value="Padaria">Padaria</option>
+								<option value="Farinhas">Farinhas</option>
+								<option value="Frios">Frios</option>
+								<option value="Congelados">Congelados</option>
+								<option value="Frutas">Frutas</option>
+							</select>
+						</div>
+					</div>
+				</div>
 
-            <table id="tabela">
-                <thead>
-                    <tr>
-                        <th>Codigo</th>
-                        <th>Produto</th>
-                        <th>Codigo de Barra</th>
-                        <th>Unid.</th>
-                        <th>Entrada</th>
-                        <th>Validade</th>
-                        <th>Categoria</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="body">
-                    <tr>
-                        <td>1</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>12</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-laticinios">Laticínios</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>3</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-bebidas">Bebidas</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src=" ../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>6</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-cafe">Café</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>10</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-hortifruti">Hortifrúti</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>13</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-graos">Grãos</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>8</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-padaria">Padaria</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>5</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-farinhas">Farinhas</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>6</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-frios">Frios</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>4</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-congelados">Congelados</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                            </button>
-                        </td>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td>11238946334</td>
-                        <td>7</td>
-                        <td>18/01/2025</td>
-                        <td>18/09/2025</td>
-                        <td class="tag-categoria" id="color-frutas">Frutas</td>
-                        <td>
-                            <button class="delete-icon">
-                                <img src="../../assets/imgs/products/icon/icon-lixeira.svg" alt="apagar"
-                                    class="icons-tabela">
-                        </td>
-                        </button>
-                        <td>
-                            <button class="editar-icon">
-                                <img src="../../assets/imgs/products/icon/icon-editar.svg" alt="" class="icons-tabela">
+				<table id="tabela">
+					<thead>
+						<tr>
+							<th>Código</th>
+							<th>Produto</th>
+							<th>Código de Barra</th>
+							<th>Unid.</th>
+							<th>Entrada</th>
+							<th>Validade</th>
+							<th>Categoria</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody id="body"></tbody>
+				</table>
 
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+				<div id="containerProdBotoes">
+					<div class="footer" id="footer-geral">
+						<div class="pagination">
+							<button class="bnt-footer" id="bnt-pag-voltar">
+								<img
+									src="/assets/imgs/products/icon/seta-2.svg"
+									alt=""
+									class="btn-footer-img"
+								/>
+							</button>
+							<div class="pag-footer">Página 1 de 34</div>
+							<button class="bnt-footer" id="bnt-pag-proximo">
+								<img
+									src="/assets/imgs/products/icon/seta.svg"
+									alt=""
+									class="btn-footer-img"
+								/>
+							</button>
+						</div>
+						<div id="footer-acoes">Mostrando 10 ações de 340</div>
+					</div>
 
-            <div class="footer" id="footer-geral">
-                <div class="pagination">
-                    <button class="bnt-footer" id="bnt-pag-voltar">
-                        <img src="../../assets/imgs/products/icon/seta-2.svg" alt="" class="btn-footer-img">
-                    </button>
-                    <div class="pag-footer">Página 1 de 34</div>
-                    <button class="bnt-footer" id="bnt-pag-proximo">
-                        <img src="../../assets/imgs/products/icon/seta.svg" alt="" class="btn-footer-img">
-                    </button>
-                </div>
-                <div id="footer-acoes">Mostrando 10 ações de 340</div>
-            </div>
+					<div class="icons-footer" id="icons">
+						<div>
+							<button id="btn-imprimir">
+								Imprimir Planilha
+								<img src="/assets/imgs/products/icon/impressora.svg" alt="" />
+							</button>
+						</div>
+						<div class="icons-right">
+							<div class="btn-footer-planilha">
+								<button id="btn-planilha">
+									Importar Planilha
+									<img src="/assets/imgs/products/icon/planilha.svg" alt="" />
+								</button>
+							</div>
+							<div class="btn-footer-planilha">
+								<button id="btn-produto">
+									<img src="/assets/imgs/products/icon/adicionar.svg" alt="" />
+									Adicionar Produto
+								</button>
+							</div>
+							<div>
+								<button id="btn-botao-mais">
+									<img
+										src="/assets/imgs/products/icon/botao-mais-opiçoes.svg"
+										alt=""
+									/>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 
-            <div class="icons-footer" id="icons">
-                <div>
-                    <button id="btn-imprimir">
-                        Imprimir Planilha <img src="../../assets/imgs/products/icon/impressora.svg" alt="">
-                    </button>
-                </div>
-                <div class="icons-right">
-                    <div class="btn-footer-planilha">
-                        <button id="btn-planilha">
-                            Importar Planilha <img src="../../assets/imgs/products/icon/planilha.svg" alt="">
-                        </button>
-                    </div>
-                    <div class="btn-footer-planilha">
-                        <button id="btn-produto">
-                            <img src="../../assets/imgs/products/icon/adicionar.svg" alt=""> Adicionar Produto
-                        </button>
-                    </div>
-                    <div>
-                        <button id="btn-botao-mais">
-                            <img src="../../assets/imgs/products/icon/botao-mais-opiçoes.svg" alt="">
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script src="script.js"></script>
-    <!-- Modal de confirmação -->
-    <div id="confirm-modal" class="modal1">
-        <div class="modal-content">
-            <p>Tem certeza que deseja apagar este item?</p>
-            <button id="confirmar-delete">Sim</button>
-            <button id="cancelar-delete" onclick="closeDeleteModal()">Cancelar</button>
-        </div>
-    </div>
-    <!-- MOdal de edição -->
-    <div id="modal-editar" class="modal2">
-        <div class="conteudo-modal">
-          <h2>Editar Produto</h2>
-      
-          <label>Produto:</label>
-          <input type="text" id="editar-produto">
+		<!-- Modal de confirmação -->
+		<div id="confirm-modal" class="modal1">
+			<div class="modal-content">
+				<p>Tem certeza que deseja apagar este item?</p>
+				<button id="confirmar-delete">Sim</button>
+				<button id="cancelar-delete" onclick="closeDeleteModal()">
+					Cancelar
+				</button>
+			</div>
+		</div>
 
-          <label>Codigo de Barra</label>
-          <input type="string" id="editar-codigo-de-barra">
-      
-          <label>Quantidade:</label>
-          <input type="number" id="editar-quantidade">
+		<!-- MOdal de edição -->
+		<div id="modal-editar" class="modal2">
+			<div class="conteudo-modal">
+				<h2>Editar Produto</h2>
 
-          <label>Entrada:</label>
-          <input type="date" id="novo-entrada">
-      
-          <label>Validade:</label>
-          <input type="date" id="editar-validade">
-      
-          <label>Categoria:</label>
-          <input type="text" id="editar-categoria">
-      
-          <div class="botoes-modal">
-            <button id="cancelar-edicao">Cancelar</button>
-            <button id="salvar-edicao">Salvar</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Modal de Adicionar Produto -->
-    <div id="adicionar-modal">
-    <div id="box-adicionar">
-      <h2>Adicionar Produto</h2>
-  
-      <label for="novo-produto">Produto:</label>
-      <input type="text" id="novo-produto">
+				<label>Produto:</label>
+				<input type="text" id="editar-produto" />
 
-      <label for="novo-codigo-de-barra">Codigo de Barra</label>
-      <input type="string" id="novo-codigo-de-barra">
-  
-      <label for="novo-quantidade">Quantidade:</label>
-      <input type="number" id="novo-quantidade">
+				<label>Codigo de Barra</label>
+				<input type="string" id="editar-codigo-de-barra" />
 
-      <label for="novo-entrada">Entrada:</label>
-      <input type="date" id="novo-entrada">
-  
-      <label for="novo-validade">Validade:</label>
-      <input type="date" id="novo-validade">
-  
-      <label for="nova-categoria">Categoria:</label>
-      <select id="nova-categoria">
-        <option value="Laticínios">Laticínios</option>
-        <option value="Bebidas">Bebidas</option>
-        <option value="Café">Café</option>
-        <option value="Hortifrúti">Hortifrúti</option>
-        <option value="Grãos">Grãos</option>
-        <option value="Padaria">Padaria</option>
-        <option value="Farinhas">Farinhas</option>
-        <option value="Frios">Frios</option>
-        <option value="Congelados">Congelados</option>
-        <option value="Frutas">Frutas</option>
-      </select>
-  
-      <div id="botoes-adicionar">
-        <button id="btn-cancelar-produto">Cancelar</button>
-        <button id="btn-salvar-produto">Salvar</button>
-      </div>
-    </div>
-  </div>
-  
-  
+				<label>Quantidade:</label>
+				<input type="number" id="editar-quantidade" />
 
-</body>
+				<label>Entrada:</label>
+				<input type="date" id="editar-entrada" />
+
+				<label>Validade:</label>
+				<input type="date" id="editar-validade" />
+
+				<label>Categoria:</label>
+				<input type="text" id="editar-categoria" />
+
+				<div class="botoes-modal">
+					<button id="cancelar-edicao">Cancelar</button>
+					<button id="salvar-edicao">Salvar</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal de Adicionar Produto -->
+		<div id="adicionar-modal">
+			<div id="box-adicionar">
+				<h2>Adicionar Produto</h2>
+
+				<label for="novo-produto">Produto:</label>
+				<input type="text" id="novo-produto" />
+
+				<label for="novo-codigo-de-barra">Codigo de Barra</label>
+				<input type="string" id="novo-codigo-de-barra" />
+
+				<label for="novo-quantidade">Quantidade:</label>
+				<input type="number" id="novo-quantidade" />
+
+				<label for="novo-entrada">Entrada:</label>
+				<input type="date" id="novo-entrada" />
+
+				<label for="novo-validade">Validade:</label>
+				<input type="date" id="novo-validade" />
+
+				<label for="novo-minimo">Mínimo:</label>
+				<input type="number" id="novo-minimo" />
+
+				<label for="novo-maximo">Máximo:</label>
+				<input type="number" id="novo-maximo" />
+
+				<label for="nova-categoria">Categoria:</label>
+				<select id="nova-categoria">
+					<option value="Laticínios">Laticínios</option>
+					<option value="Bebidas">Bebidas</option>
+					<option value="Café">Café</option>
+					<option value="Hortifrúti">Hortifrúti</option>
+					<option value="Grãos">Grãos</option>
+					<option value="Padaria">Padaria</option>
+					<option value="Farinhas">Farinhas</option>
+					<option value="Frios">Frios</option>
+					<option value="Congelados">Congelados</option>
+					<option value="Frutas">Frutas</option>
+				</select>
+
+				<div id="botoes-adicionar">
+					<button id="btn-cancelar-produto">Cancelar</button>
+					<button id="btn-salvar-produto">Adicionar</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+	<script type="module" src="/Products/script.js"></script>
 </html>
