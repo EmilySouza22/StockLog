@@ -260,12 +260,12 @@ table {
 }
 
 #containerProdBotoes {
-	width: 92%;
+	width: 95%;
 	display: flex;
 	flex-direction: column;
-	position: fixed;
-	bottom: 4%;
-	left: 4%;
+	position: sticky;
+	top: 1000px;
+	left: 25px;
 	background-color: white;
 	z-index: 10;
 }
@@ -285,6 +285,11 @@ table {
 #confirm-modal {
 	display: none;
 	z-index: 1000;
+}
+
+/* Modal de adicionar categoria */
+#modal-adicionar-categoria{
+	display: none;
 }
 
 .modal1 {
@@ -640,10 +645,10 @@ tbody tr:nth-child(even) {
 .btn-footer-img img {
 	width: 20px;
 	height: 20px;
-	margin: 0; /* Remove qualquer margem */
-	padding: 0; /* Remove qualquer padding */
+	margin: 0;
+	padding: 0;
 	object-fit: contain;
-	display: block; /* Remove espaços indesejados abaixo da imagem */
+	display: block;
 }
 
 .pag-footer {
@@ -656,16 +661,18 @@ tbody tr:nth-child(even) {
 	align-items: center;
 	padding: 10px 20px;
 	background-color: white;
-	/* position: sticky; - REMOVIDO */
-	/* bottom: 0; - REMOVIDO */
-	/* z-index: 0; - REMOVIDO */
 	flex-wrap: wrap;
-	gap: 10px;
 }
 
 #icons div button {
 	display: flex;
 	justify-content: center;
+	align-items: center;
+}
+
+.icons-left{
+	display: flex;
+	gap: 20px;
 	align-items: center;
 }
 
@@ -693,7 +700,7 @@ tbody tr:nth-child(even) {
 	object-fit: contain;
 }
 
-#btn-planilha {
+#btn-VerCategorias {
 	border: 2px solid #489d73;
 	border-radius: 15px;
 	background-color: white;
@@ -705,7 +712,25 @@ tbody tr:nth-child(even) {
 	font-size: 16px;
 }
 
-#btn-planilha img {
+#btn-adicionarCategoria{
+	border: 2px solid #489d73;
+	border-radius: 15px;
+	background-color: white;
+	padding: 10px 20px;
+	display: flex; /* para alinhar texto e imagem lado a lado */
+	align-items: center;
+	gap: 8px; /* espaço entre texto e imagem */
+	cursor: pointer; /* muda o cursor ao passar */
+	font-size: 16px;
+}
+
+#btn-adicionarCategoria img{
+	width: 20px;
+	height: 20px;
+	object-fit: contain; /* garante que a imagem fique proporcional */
+}
+
+#btn-VerCategorias img {
 	width: 20px;
 	height: 20px;
 	object-fit: contain; /* garante que a imagem fique proporcional */

@@ -9,7 +9,7 @@ export const setupDatabase = async () => {
 	const connection = await mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'root',
+		password: 'senai',
 	});
 
 	try {
@@ -21,7 +21,7 @@ export const setupDatabase = async () => {
 		const dbConnection = await mysql.createConnection({
 			host: 'localhost',
 			user: 'root',
-			password: 'root',
+			password: 'senai',
 			database: 'stocklog',
 		});
 
@@ -49,7 +49,7 @@ export const seedDatabase = async () => {
 	const connection = await mysql.createConnection({
 		host: 'localhost',
 		user: 'root',
-		password: 'root',
+		password: 'senai',
 		database: 'stocklog',
 	});
 

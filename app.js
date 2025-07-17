@@ -19,7 +19,7 @@ const fastify = Fastify({
 await fastify.register(cors);
 
 await fastify.register(fastify_mysql, {
-	uri: 'mysql://root@localhost/mysql?password="root"',
+	uri: 'mysql://root@localhost/mysql?password="senai"',
 });
 
 await fastify.register(fastify_static, {
