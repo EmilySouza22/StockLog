@@ -97,5 +97,3 @@ export default async function productRoutes(fastify, options) {
 		);
 	});
 }
-
-// 'UPDATE stocklog.produto SET ativo=0, cnpj=CONCAT(NOW(),cnpj), email=CONCAT(NOW(),email) WHERE id=?'

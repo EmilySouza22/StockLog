@@ -139,8 +139,20 @@ function criarEventListeners() {
 	});
 }
 
-/* Deletando produto da tabela - (Não deleta realmente apenas deixa o ativo = 0, 
-assim não mostra na tela de produtos, mas na tabela produto ele ainda existe, apenas está desativado ) */
+/* 
+
+Deletando produto da tabela: 
+
+>>> Não deleta realmente apenas deixa o ativo = 0, 
+assim não mostra na tela de produtos, mas na tabela produto ele ainda existe, apenas está desativado (ativo = 0)
+
+>>> Por esse motivos não usamos o fastify.delete() mas sim só para dar um update na coluna ativo da tabela produto, usamos fastify.put()
+
+>>> Assim ativo default é 1 e quando deletado fica 0
+
+>>> Isso vale tanto para a tabela produto quanto para a empresa
+
+*/
 async function deletarProduto(id) {
 	try {
 		const response = await axios.put(`/product/delete/${id}`);
@@ -191,7 +203,7 @@ async function editarProduto(id) {
 	document.getElementById('salvar-edicao').onclick = () => salvarEdicao(id);
 }
 
-//Salvando edições
+//Edição dos dados do produto selecionado
 async function salvarEdicao(id) {
 	const dadosAtualizados = {
 		nome: document.getElementById('editar-produto').value,
@@ -244,7 +256,7 @@ document
 		}
 	});
 
-// Inicialização
+// Modal de adicionar produto
 document.addEventListener('DOMContentLoaded', () => {
 	carregarProdutos();
 
@@ -264,12 +276,89 @@ document.addEventListener('DOMContentLoaded', () => {
 	btnSalvarProduto.addEventListener('click', adicionarProduto);
 });
 
-// Modals
+// Cancelar modal
 function closeDeleteModal() {
 	document.getElementById('confirm-modal').style.display = 'none';
 }
-
 document.getElementById('cancelar-delete').onclick = closeDeleteModal;
+
 document.getElementById('cancelar-edicao').onclick = () => {
 	document.getElementById('modal-editar').style.display = 'none';
 };
+
+// Modal de editar / deletar categoria já existente
+document.addEventListener('DOMContentLoaded', () => {
+	const modalEditCateg = document.getElementById('edit-modal-categ');
+	const btnVerCateg = document.getElementById('btn-VerCategorias');
+	const btnCancelarVerCateg = document.getElementById(
+		'btn-cancelar-edit-categ'
+	);
+	const btnEditCateg = document.getElementById('btn-editar-edit-categ');
+
+	btnVerCateg.addEventListener('click', () => {
+		modalEditCateg.classList.add('visivel');
+	});
+
+	btnCancelarVerCateg.addEventListener('click', () => {
+		modalEditCateg.classList.remove('visivel');
+	});
+
+	// btnEditCateg.addEventListener('click', editarCategoria);
+});
+
+// CRUD - MODAL ADICIONAR CATEGORIA
+async function adicionarCategoria() {
+	const cache = localStorage.getItem('dados_empresa');
+	const dadosEmpresa = JSON.parse(cache);
+
+	const inpNome = document.getElementById('inpNomeAddCateg');
+	const inpColor = document.getElementById('inpColorAddCateg');
+
+	const novaCategoria = {
+		nome: inpNome.value,
+		cor: inpColor.value,
+		empresa_id: dadosEmpresa.id,
+	};
+
+	console.log('novaCategoria: ', novaCategoria);
+
+	try {
+		const response = await axios.post('/category', novaCategoria);
+
+		if (response.status === 200) {
+			alert('Categoria adicionada!');
+			document
+				.getElementById('adicionar-modal-categ')
+				.classList.remove('visivel');
+			window.location.reload();
+		}
+	} catch (error) {
+		console.error(error);
+		alert(
+			'Erro ao adicionar categoria: ' + error.response?.data?.message ||
+				error.message
+		);
+	}
+}
+
+// Modal de adicionar nova categoria
+document.addEventListener('DOMContentLoaded', () => {
+	const modalAddCateg = document.getElementById('adicionar-modal-categ');
+	const btnAbrirModalAddCateg = document.getElementById(
+		'btn-adicionarCategoria'
+	);
+	const btnCancelarModalCateg = document.getElementById(
+		'btn-cancelar-categoria'
+	);
+	const btnAddCateg = document.getElementById('btn-adicionar-categoria');
+
+	btnAbrirModalAddCateg.addEventListener('click', () => {
+		modalAddCateg.classList.add('visivel');
+	});
+
+	btnCancelarModalCateg.addEventListener('click', () => {
+		modalAddCateg.classList.remove('visivel');
+	});
+
+	btnAddCateg.addEventListener('click', adicionarCategoria);
+});

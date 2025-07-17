@@ -1,8 +1,16 @@
+@font-face {
+	font-family: 'Roboto Medium';
+	src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Arial', sans-serif;
+	font-family: sans-serif;
 	outline: none;
 	text-decoration: none;
 }
@@ -288,8 +296,171 @@ table {
 }
 
 /* Modal de adicionar categoria */
-#modal-adicionar-categoria{
+
+#adicionar-modal-categ {
 	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.4);
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+}
+
+#adicionar-modal-categ.visivel {
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-adicionar-categ {
+	border-radius: 15px;
+	height: 40%;
+	width: 20%;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	z-index: 1500;
+	overflow-y: auto;
+	justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#boxTopAddCateg {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 80%;
+	height: 25%;
+}
+
+#boxBottomAddCateg {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	height: 20%;
+}
+
+#box-inp-dados-categoria {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#box-btn-add-categ {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 90%;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* Modal de editar / deletar categoria */
+
+#edit-modal-categ {
+	position: fixed;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1500;
+}
+
+#edit-modal-categ.visivel {
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-edit-del-categ {
+	border-radius: 15px;
+	height: 40%;
+	width: 20%;
+	background-color: #fff;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	z-index: 1500;
+	overflow-y: auto;
+	justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#selectModalEditCateg {
+	width: 80%;
+	border-radius: 5px;
+}
+
+#box-select-edit-categ {
+	width: 80%;
+}
+
+#box-input-edit-categ {
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	justify-content: space-between;
+}
+
+/* INPUT TYPE COLOR (meudeus qbagulho chato pra zera a aparencia)*/
+
+input[type='color'] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 45px;
+	height: 30px;
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer;
+	padding: 0;
+	border-radius: 5px;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+	padding: 0;
+	border: none;
+}
+
+input[type='color']::-webkit-color-swatch {
+	border: none;
+	border-radius: 0;
+}
+
+input[type='color']::-moz-color-swatch {
+	border: none;
+}
+
+/* >>>>>>>>>>>>> */
+
+#box-btn-edit-categ {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	height: 15%;
+	justify-content: space-between;
+}
+
+#boxTopEditCateg {
+	display: flex;
+	flex-direction: row;
+}
+
+#boxBottomEditCateg {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .modal1 {
@@ -670,7 +841,7 @@ tbody tr:nth-child(even) {
 	align-items: center;
 }
 
-.icons-left{
+.icons-left {
 	display: flex;
 	gap: 20px;
 	align-items: center;
@@ -712,7 +883,7 @@ tbody tr:nth-child(even) {
 	font-size: 16px;
 }
 
-#btn-adicionarCategoria{
+#btn-adicionarCategoria {
 	border: 2px solid #489d73;
 	border-radius: 15px;
 	background-color: white;
@@ -724,7 +895,7 @@ tbody tr:nth-child(even) {
 	font-size: 16px;
 }
 
-#btn-adicionarCategoria img{
+#btn-adicionarCategoria img {
 	width: 20px;
 	height: 20px;
 	object-fit: contain; /* garante que a imagem fique proporcional */

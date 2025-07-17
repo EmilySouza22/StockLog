@@ -138,7 +138,10 @@
 						<div class="icons-left">
 							<div class="btn-footer-planilha">
 								<button id="btn-VerCategorias">
-									<img src="/assets/imgs/products/icon/tag-categoria.svg" alt="" />
+									<img
+										src="/assets/imgs/products/icon/tag-categoria.svg"
+										alt=""
+									/>
 									Ver Categorias
 								</button>
 							</div>
@@ -160,14 +163,6 @@
 								<button id="btn-produto">
 									<img src="/assets/imgs/products/icon/adicionar.svg" alt="" />
 									Adicionar Produto
-								</button>
-							</div>
-							<div>
-								<button id="btn-botao-mais">
-									<img
-										src="/assets/imgs/products/icon/botao-mais-opiçoes.svg"
-										alt=""
-									/>
 								</button>
 							</div>
 						</div>
@@ -260,34 +255,67 @@
 		</div>
 
 		<!-- Modal de adicionar categoria  -->
-		<div id="modal-adicionar-categoria">
-			<div id="box-title-adicionar-categoria">
-				<p> Adicionar nova categoria</p>
-			</div>
-			<div id="box-categoria-dados">
-				<div>
-					<p>Nome:</p>
-					<input type="text">
+		<div id="adicionar-modal-categ" class="">
+			<div id="modal-adicionar-categ">
+				<div id="boxTopAddCateg">
+					<div id="box-title-adicionar-categoria">
+						<p>Adicionar nova categoria:</p>
+					</div>
+					<div id="box-inp-dados-categoria">
+						<div>
+							<p>Nome:</p>
+							<input type="text" id="inpNomeAddCateg" />
+						</div>
+						<div>
+							<p>Cor:</p>
+							<input type="color" id="inpColorAddCateg" />
+						</div>
+					</div>
 				</div>
-				<div>
-					<p>Cor:</p>
-					<input type="color" id="minha-cor" value="#ff0000">
+				<div id="boxBottomAddCateg">
+					<div id="box-btn-add-categ">
+						<div>
+							<button id="btn-cancelar-categoria">Cancelar</button>
+						</div>
+						<div>
+							<button
+								id="btn-adicionar-categoria"
+								onclick=""
+							>
+								Adicionar
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div id="box-categoria-visualizacao">
-				<p>Visualização:</p>
-				<div id="visualizacao-categoria">
+		</div>
 
+		<!-- Modal de editar e deletar categoria  -->
+		<div id="edit-modal-categ">
+			<div id="modal-edit-del-categ">
+				<div id="box-select-edit-categ">
+					<p>Selecionar Categoria:</p>
+					<select id="selectModalEditCateg"></select>
 				</div>
-			</div>
-			<div id="box-btns-product">
-				<div>
-					<button>Cancelar</button>
+				<div id="box-input-edit-categ">
+					<div>
+						<p>Nome:</p>
+						<input type="text" />
+					</div>
+					<div>
+						<p>Cor:</p>
+						<input type="color" id="inpEditCateg" />
+					</div>
 				</div>
-				<div>
-					<button>Adicionar</button>
+				<div id="box-btn-edit-categ">
+					<div id="boxTopEditCateg">
+						<button>Deletar</button>
+					</div>
+					<div id="boxBottomEditCateg">
+						<button id="btn-cancelar-edit-categ">Cancelar</button>
+						<button id="btn-editar-edit-categ">Editar</button>
+					</div>
 				</div>
-				
 			</div>
 		</div>
 	</body>
