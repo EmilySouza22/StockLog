@@ -13,6 +13,19 @@ const confirmarSenha = document.getElementById('inpLogSenhaConf');
 // 	}
 // });
 
+//Função que vai verificar se já existe algum usuário com o cpnj ou com o email
+
+function usuarioJaExiste(cnpj, email) {
+	const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+	return usuarios.some(
+		(u) =>
+			u.cnpj.toLowerCase() === cnpj.toLowerCase() ||
+			u.email.toLowerCase() === email.toLowerCase()
+	);
+}
+
+
 async function cadastrar() {
 	if (senha.value.toString() !== confirmarSenha.value.toString()) {
 		// Verifica se as senhas coincidem
@@ -29,6 +42,11 @@ async function cadastrar() {
 		senha: senha.value.toString(),
 	};
 
+	if (usuarioJaExiste(usuario.cnpj, usuario.email)) {
+	alert('Já existe uma conta com esse CNPJ ou e-mail!');
+	return;
+	}
+
 	try {
 		const response = await axios.post('/account/register', usuario);
 
@@ -43,6 +61,7 @@ async function cadastrar() {
 		);
 	}
 }
+
 
 // Senha escondida e vísivel
 function alternarSenha(inputId, iconId) {
