@@ -1,13 +1,11 @@
 @font-face {
-	font-family: 'Roboto Medium';
-	src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
-	font-weight: normal;
+	font-family: 'poppins', sans-serif;
+	font-weight: 500;
 	font-style: normal;
-	font-display: swap;
 }
 
 * {
-	font-family: 'Roboto Medium', sans-serif;
+	font-family: 'poppins', sans-serif;
 	a {
 		text-decoration: none;
 	}
@@ -96,9 +94,9 @@ body {
 		cursor: pointer;
 	}
 
-    #boxContaCadastrada{
-        width: 210px;
-    }
+	#boxContaCadastrada {
+		width: 210px;
+	}
 
 	#contaCadastrada {
 		color: #4e6074;
@@ -727,48 +725,48 @@ body {
 		justify-content: space-around;
 	}
 
-    /* MODAL LOGOUT 1380 */
+	/* MODAL LOGOUT 1380 */
 
-    #ModalConfig{
-        width: 100px;
-        height: 50px;
-        background-color: #fff;
-        display: none;
-        position: absolute;
-        z-index: 1000;
-        right: 20px;
-        top: 65px;
-        border-radius: 5px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        align-items: center;
-        justify-content: center;
-    }
+	#ModalConfig {
+		width: 100px;
+		height: 50px;
+		background-color: #fff;
+		display: none;
+		position: absolute;
+		z-index: 1000;
+		right: 20px;
+		top: 65px;
+		border-radius: 5px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+		align-items: center;
+		justify-content: center;
+	}
 
-    #boxLogout{
-        padding: 5px;
-        width: 90%;
-        display: flex;
-        position: absolute;
-        right: 5px;
-        top: 10px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+	#boxLogout {
+		padding: 5px;
+		width: 90%;
+		display: flex;
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 
-        p{
-            margin: 0;
-        }
-    }
-    
-    #iconLogOut{
-        width: 22px;
-        height: 22px;
-    }
+		p {
+			margin: 0;
+		}
+	}
 
-    #textLogout{
-        color:#4e6074;
-        font-size: 18px;
-    }
+	#iconLogOut {
+		width: 22px;
+		height: 22px;
+	}
+
+	#textLogout {
+		color: #4e6074;
+		font-size: 18px;
+	}
 }
 
 @media (min-width: 669px) and (max-width: 1379px) {

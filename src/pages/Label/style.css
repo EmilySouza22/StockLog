@@ -1,13 +1,11 @@
 @font-face {
-	font-family: 'Roboto Medium';
-	src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
-	font-weight: normal;
+	font-family: 'poppins', sans-serif;
+	font-weight: 500;
 	font-style: normal;
-	font-display: swap;
 }
 
 * {
-	font-family: 'Roboto Medium', sans-serif;
+	font-family: 'poppins', sans-serif;
 	outline: none;
 
 	a {
@@ -196,8 +194,8 @@ body {
 	display: flex;
 	width: 100%;
 	flex-direction: column; /* Um abaixo do outro */
- 	padding-left: 30px;
-  	gap: 5px;
+	padding-left: 30px;
+	gap: 5px;
 	margin-top: 30px;
 	/* flex-direction: row;
 	justify-content: space-between;
@@ -219,7 +217,7 @@ body {
 	justify-content: space-around;
 }
 
-#formProducts {		
+#formProducts {
 	width: 100%;
 	height: 120%;
 	padding: 6px 8px;
@@ -318,8 +316,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-start; 
-	gap: 4px; 
+	justify-content: flex-start;
+	gap: 4px;
 }
 
 #etiqBoxPreview {
@@ -393,19 +391,19 @@ body {
 	border-radius: 20px;
 } */
 
- #containerRight {
-      width: 40%;
-      height: 80vh;
-      background-color: #fff;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-      border-radius: 20px;
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      /* justify-content: space-between; */
-      color: #344253;
-    }
+#containerRight {
+	width: 40%;
+	height: 80vh;
+	background-color: #fff;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+	padding: 20px;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-between; */
+	color: #344253;
+}
 
 #etiqConfig {
 	height: 100%;
@@ -415,14 +413,13 @@ body {
 	gap: 20px;
 }
 
-
 #BoxConfigTitle {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    /* border-bottom: 2px solid #344253; Linha embaixo do título */
-    padding-bottom: 8px;
-    margin-bottom: 12px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	/* border-bottom: 2px solid #344253; Linha embaixo do título */
+	padding-bottom: 8px;
+	margin-bottom: 12px;
 }
 
 #configTitle {
@@ -473,28 +470,26 @@ body {
 
 #containerTamEtiq,
 #inputTamEtiq {
-    width: 100%;
-    display: flex;
-    gap: 12px;
-    justify-content: flex-start;
-    align-items: center;
+	width: 100%;
+	display: flex;
+	gap: 12px;
+	justify-content: flex-start;
+	align-items: center;
 }
-
 
 .inputTamEtiq {
 	width: 70px;
-    height: 25px;
-    padding: 6px 8px;
-    border: 1.5px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-    color: #344253;
-    transition: none;
-    outline: none;
-    box-shadow: none;
+	height: 25px;
+	padding: 6px 8px;
+	border: 1.5px solid #ccc;
+	border-radius: 6px;
+	font-size: 16px;
+	box-sizing: border-box;
+	color: #344253;
+	transition: none;
+	outline: none;
+	box-shadow: none;
 }
-
 
 /* Class pra todos os subtitles do container right*/
 
@@ -503,8 +498,6 @@ body {
 	margin: 0;
 	color: #4e6074;
 }
-
-
 
 /* INPUT QUANTIDADE */
 
@@ -541,7 +534,6 @@ body {
 	outline: none;
 	box-shadow: none;
 }
-
 
 /* ESPAÇAMENTO */
 
@@ -605,8 +597,6 @@ body {
 	box-shadow: none;
 }
 
-
-
 /* CHECKBOX */
 
 input[type='checkbox'] {
@@ -620,11 +610,10 @@ input[type='checkbox'] {
 
 .containerCheckBox {
 	width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
 }
-
 
 /* BOTOES DE APLICACAO DA CONFIG  */
 
@@ -688,21 +677,22 @@ input[type='checkbox'] {
 	border-radius: 4px;
 } */
 
-.btnConfig3 { 				/*Botão de imprimir*/
+.btnConfig3 {
+	/*Botão de imprimir*/
 	display: flex;
 	align-items: center;
 	gap: 8px;
-  	height: 34px; 
-  	padding: 0 14px;
-  	border: 1px solid #344253; 
-  	border-radius: 6px;
-  	background-color: transparent;
-  	cursor: pointer;
-  	font-size: 16px;
-  	color: #344253; 
-  	font-weight: 400;
-  	transition: none;
-  	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+	height: 34px;
+	padding: 0 14px;
+	border: 1px solid #344253;
+	border-radius: 6px;
+	background-color: transparent;
+	cursor: pointer;
+	font-size: 16px;
+	color: #344253;
+	font-weight: 400;
+	transition: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 	margin-left: 0;
 }
 

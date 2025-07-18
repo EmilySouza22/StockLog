@@ -1,14 +1,12 @@
 @font-face {
-	font-family: 'Roboto Medium';
-	src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
-	font-weight: normal;
+	font-family: 'poppins', sans-serif;
+	font-weight: 500;
 	font-style: normal;
-	font-display: swap;
 }
 
 * {
 	text-decoration: none;
-	font-family: 'Roboto Medium', sans-serif;
+	font-family: 'poppins', sans-serif;
 	outline: none;
 }
 
