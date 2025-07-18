@@ -1,13 +1,13 @@
 @font-face {
-	font-family: 'Roboto Medium';
-	src: url('../../fonts/Roboto-Medium.ttf') format('truetype');
-	font-weight: normal;
+	font-family: 'poppins', sans-serif;
+	font-weight: 500;
 	font-style: normal;
-	font-display: swap;
+	src: url('path/to/poppins-medium.woff2') format('woff2'),
+		url('path/to/poppins-medium.woff') format('woff');
 }
 
 * {
-	font-family: 'Roboto Medium', sans-serif;
+	font-family: 'poppins', sans-serif;
 	a {
 		text-decoration: none;
 	}
@@ -96,9 +96,9 @@ body {
 		cursor: pointer;
 	}
 
-    #boxContaCadastrada{
-        width: 210px;
-    }
+	#boxContaCadastrada {
+		width: 245px;
+	}
 
 	#contaCadastrada {
 		color: #4e6074;
@@ -283,6 +283,7 @@ body {
 		color: #4e6074;
 		font-size: 20px;
 		margin: 0;
+		line-height: 110%;
 	}
 
 	#box-title {
@@ -443,7 +444,6 @@ body {
 	.grafico1 {
 		z-index: 60;
 		display: block;
-		left: 25%;
 	}
 
 	.grafico2 {
@@ -575,6 +575,7 @@ body {
 
 	#containerRelatText {
 		width: 100%;
+		line-height: 170%;
 	}
 
 	#relatText {
@@ -642,6 +643,7 @@ body {
 
 	#containerEtiqText {
 		width: 100%;
+		line-height: 170%;
 	}
 
 	#etiqText {
@@ -654,10 +656,6 @@ body {
 	#etiqIcon {
 		width: 35px;
 		height: 35px;
-	}
-
-	#containerEtiqText {
-		width: 100%;
 	}
 
 	#etiqImg {
@@ -689,9 +687,10 @@ body {
 
 	#publiTitle {
 		width: 81%;
+		height: 90%;
 		color: #282c31;
 		font-size: 150%;
-		line-height: 85%;
+		line-height: 100%;
 		margin: 0;
 	}
 
@@ -703,7 +702,8 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 20%;
+		height: 15%;
+		width: 65%;
 	}
 
 	#publiButton {
@@ -728,48 +728,48 @@ body {
 		justify-content: space-around;
 	}
 
-    /* MODAL LOGOUT 1380 */
+	/* MODAL LOGOUT 1380 */
 
-    #ModalConfig{
-        width: 100px;
-        height: 50px;
-        background-color: #fff;
-        display: none;
-        position: absolute;
-        z-index: 1000;
-        right: 20px;
-        top: 65px;
-        border-radius: 5px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        align-items: center;
-        justify-content: center;
-    }
+	#ModalConfig {
+		width: 100px;
+		height: 50px;
+		background-color: #fff;
+		display: none;
+		position: absolute;
+		z-index: 1000;
+		right: 20px;
+		top: 65px;
+		border-radius: 5px;
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+		align-items: center;
+		justify-content: center;
+	}
 
-    #boxLogout{
-        padding: 5px;
-        width: 90%;
-        display: flex;
-        position: absolute;
-        right: 5px;
-        top: 10px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+	#boxLogout {
+		padding: 5px;
+		width: 90%;
+		display: flex;
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
 
-        p{
-            margin: 0;
-        }
-    }
-    
-    #iconLogOut{
-        width: 22px;
-        height: 22px;
-    }
+		p {
+			margin: 0;
+		}
+	}
 
-    #textLogout{
-        color:#4e6074;
-        font-size: 18px;
-    }
+	#iconLogOut {
+		width: 22px;
+		height: 22px;
+	}
+
+	#textLogout {
+		color: #4e6074;
+		font-size: 18px;
+	}
 }
 
 @media (min-width: 669px) and (max-width: 1379px) {

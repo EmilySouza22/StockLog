@@ -1,79 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.svg" type="image/png">
-    <link rel="stylesheet" href="Report/style.css">
-    <title> Histórico </title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="logo.svg" type="image/png" />
+		<link rel="stylesheet" href="https://use.typekit.net/vdf6prs.css" />
+		<link rel="icon" href="/assets/imgs/login/img/logo.svg" type="image/png" />
+		<link rel="stylesheet" href="Report/style.css" />
+		<title>Histórico</title>
+	</head>
+	<body>
+		<nav id="navbar">
+			<div id="navbar-left">
+				<img
+					id="nav-logo"
+					src="/assets/imgs/report/img/logo.svg"
+					alt="StockLog"
+				/>
+			</div>
+			<div id="navbar-right">
+				<p id="conta-cadastrada">Mercado Santana</p>
+				<img
+					class="nav-icon"
+					src="/assets/imgs/report/icon/conta.svg"
+					alt="Conta"
+				/>
+				<img
+					class="nav-icon"
+					src="/assets/imgs/report/icon/engrenagem.svg"
+					alt="Engrenagem"
+				/>
+			</div>
+		</nav>
 
-    <nav id="navbar">
-        <div id="navbar-left">
-            <img id="nav-logo" src="/assets/imgs/report/img/logo.svg" alt="StockLog">
-        </div>
-        <div id="navbar-right">
-            <p id="conta-cadastrada"> Mercado Santana </p>
-            <img class="nav-icon" src="/assets/imgs/report/icon/conta.svg" alt="Conta">
-            <img class="nav-icon" src="/assets/imgs/report/icon/engrenagem.svg" alt="Engrenagem">
-        </div>
-    </nav>
+		<nav>
+			<div class="navigation-buttons">
+				<a href="/alerts">
+					<button class="btn" id="btn-voltar">
+						<img
+							width="24px"
+							height="24px"
+							viewBox="0 0 50 50"
+							src="/assets/imgs/report/icon/seta-esquerda.svg"
+						/>
+						Alertas
+					</button>
+				</a>
+				<a href="/label">
+					<button class="btn" id="btn-voltar">
+						Etiquetas<img
+							width="24px"
+							height="24px"
+							viewBox="0 0 50 50"
+							src="/assets/imgs/report/icon/seta-direita.svg"
+						/>
+					</button>
+				</a>
+			</div>
+		</nav>
 
-    <nav>
-        <div class="navigation-buttons">
-            <a href="/alerts">
-                <button class="btn" id="btn-voltar"><img width="24px" height="24px" viewBox="0 0 50 50" src="/assets/imgs/report/icon/seta-esquerda.svg">Voltar </button>
-            </a>
-            <a href="/label">
-                <button class="btn" id="btn-voltar">Próximo<img width="24px" height="24px" viewBox="0 0 50 50" src="/assets/imgs/report/icon/seta-direita.svg"></button>
-            </a>
-        </div>
-    </nav>
+		<div class="container">
+			<h2>Histórico</h2>
 
-    <div class="container">
-
-        <h2>Histórico</h2>
-
-
-        <div class="top-bar">
-            <div class="container_icon">
-                <div id="PrimeiraFileira">
-                    <div class="boxTagIcones">
-                            <img class="iconTamanho" src="/assets/imgs/report/icon/entrada.svg" alt="Entrada">  <p>Entrada</p>
-                    </div>
-                    <div class="boxTagIcones">
-                          <img class="iconTamanho" src="/assets/imgs/report/icon/edit.svg" alt="Editar"> <p>Editado</p>
-                    </div>
-                    <div class="boxTagIcones">
-                            <img class="iconTamanho" src="/assets/imgs/report/icon/vencido.svg" alt="Vencido">  <p>Vencido</p>
-                    </div>
-                    <div class="boxTagIcones">
-                            <img class="iconTamanho" src="/assets/imgs/report/icon/maximo.svg" alt="Máximo"> <p>Maximo</p>
-                    </div>
-                    <div class="boxTagIcones">
-                            <img class="iconTamanho"  src="/assets/imgs/report/icon/etiqueta.svg" alt="Etiquetas"> <p>Etiquetas</p>
-                    </div>
-                </div>
-                <div id="SegundaFileira">
-                    <div class="boxTagIcones">
-                        <img class="iconTamanho" src="/assets/imgs/report/icon/saida.svg" alt="Saida"> <p>Saida</p>
-                    </div>
-                    <div class="boxTagIcones">
-                        <img class="iconTamanho" src="/assets/imgs/report/icon/delete.svg" alt="Deletado"> <p>Deletado</p>
-                    </div>
-                    <div class="boxTagIcones">
-                        <img class="iconTamanho" src="/assets/imgs/report/icon/vencendo.svg" alt="Vencendo"> <p>Vencendo</p>
-                    </div>
-                    <div class="boxTagIcones">
-                        <img class="iconTamanho" src="/assets/imgs/report/icon/minimo.svg" alt="Minimo"> <p>Minimo</p>
-                    </div>
-                    <div class="boxTagIcones">
-                        <img class="iconTamanho" src="/assets/imgs/report/icon/categoria.svg" alt="Categoria"> <p>Categoria</p>
-                    </div>
-                </div>
-            </div>
-            <div class="filter">
+			<div class="top-bar">
+				<div class="container_icon">
+					<div id="PrimeiraFileira">
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/entrada.svg"
+								alt="Entrada"
+							/>
+							<p>Entrada</p>
+						</div>
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/edit.svg"
+								alt="Editar"
+							/>
+							<p>Editado</p>
+						</div>
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/vencido.svg"
+								alt="Vencido"
+							/>
+							<p>Vencido</p>
+						</div>
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/maximo.svg"
+								alt="Máximo"
+							/>
+							<p>Maximo</p>
+						</div>
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/etiqueta.svg"
+								alt="Etiquetas"
+							/>
+							<p>Etiquetas</p>
+						</div>
+					</div>
+					<div id="SegundaFileira">
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/saida.svg"
+								alt="Saida"
+							/>
+							<p>Saida</p>
+						</div>
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/delete.svg"
+								alt="Deletado"
+							/>
+							<p>Deletado</p>
+						</div>
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/vencendo.svg"
+								alt="Vencendo"
+							/>
+							<p>Vencendo</p>
+						</div>
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/minimo.svg"
+								alt="Minimo"
+							/>
+							<p>Minimo</p>
+						</div>
+						<div class="boxTagIcones">
+							<img
+								class="iconTamanho"
+								src="/assets/imgs/report/icon/categoria.svg"
+								alt="Categoria"
+							/>
+							<p>Categoria</p>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="filter">
                     <button class="botao-filtrar">
                         <label for="filter">
                             <img class="iconTamanho" src="/assets/imgs/report/icon/filtro.svg" alt="filter">
@@ -86,109 +162,195 @@
                          <option>Tag</option>
                         
                     </select>
-            </div>
-        </div> 
+            </div> -->
+			</div>
 
-        <div id="containerTable">
-            <table>
-                <tbody>
-                    <tr>
-                        <td><h3>Data</h3></td>
-                        <td><h3>Hora</h3></td>
-                        <td><h3>Produto</h3></td>
-                        <td><h3>tag</h3></td>
-                        <td><h3>Detalhe</h3></td>
-    
-                    </tr>
-                    <tr>
-                        <td>07/06/2025</td>
-                        <td>19:02</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/delete.svg" alt="Deletado"></td>
-                        <td>Produto deletado</td>
-                    </tr>
-                    <tr>
-                        <td>07/06/2025</td>
-                        <td>15:40</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/vencido.svg" alt="vencido"></td>
-                        <td>2 un. vencidas</td>
-                    </tr>
-                    <tr>
-                        <td>06/06/2025</td>
-                        <td>14:12</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/vencendo.svg" alt="vencendo"></td>
-                        <td>2 un. perto de vencer</td>
-                    </tr>
-                    <tr>
-                        <td>05/06/2025</td>
-                        <td>19:32</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/etiqueta.svg" alt="etiqueta"></td>
-                        <td>2 Etiquetas impressas</td>
-                    </tr>
-                    <tr>
-                        <td>04/06/2025</td>
-                        <td>11:02</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/minimo.svg" alt="Minimo"></td>
-                        <td>Abaixo do mínimo - 3</td>
-                    </tr>
-                    <tr>
-                        <td>04/06/2025</td>
-                        <td>16:16</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/saida.svg" alt="Saida"></td>
-                        <td>Saída de 9 un.</td>
-                    </tr>
-                    <tr>
-                        <td>03/06/2025</td>
-                        <td>14:22</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/edit.svg" alt="Editado"></td>
-                        <td>Produto editado</td>
-                    </tr>
-                    <tr>
-                        <td>03/06/2025</td>
-                        <td>19:32</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/maximo.svg" alt="Maximo"></td>
-                        <td>Acima do máximo - 10</td>
-                    </tr>
-                    <tr>
-                        <td>02/06/2025</td>
-                        <td>11:02</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/categoria.svg" alt="Categoria"></td>
-                        <td>Adicionado a categoria...</td>
-                    </tr>
-                    <tr>
-                        <td>02/06/2025</td>
-                        <td>16:16</td>
-                        <td>Leite Ninho Tradicional 1l</td>
-                        <td ><img width="17" height="17" viewBox="0 0 50 50" src="/assets/imgs/report/icon/entrada.svg" alt="Entrada"></td>
-                        <td>Entrada de 11 un.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+			<div id="containerTable">
+				<table>
+					<tbody>
+						<tr>
+							<td><h3>Data</h3></td>
+							<td><h3>Hora</h3></td>
+							<td><h3>Produto</h3></td>
+							<td><h3>tag</h3></td>
+							<td><h3>Detalhe</h3></td>
+						</tr>
+						<tr>
+							<td>07/06/2025</td>
+							<td>19:02</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/delete.svg"
+									alt="Deletado"
+								/>
+							</td>
+							<td>Produto deletado</td>
+						</tr>
+						<tr>
+							<td>07/06/2025</td>
+							<td>15:40</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/vencido.svg"
+									alt="vencido"
+								/>
+							</td>
+							<td>2 un. vencidas</td>
+						</tr>
+						<tr>
+							<td>06/06/2025</td>
+							<td>14:12</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/vencendo.svg"
+									alt="vencendo"
+								/>
+							</td>
+							<td>2 un. perto de vencer</td>
+						</tr>
+						<tr>
+							<td>05/06/2025</td>
+							<td>19:32</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/etiqueta.svg"
+									alt="etiqueta"
+								/>
+							</td>
+							<td>2 Etiquetas impressas</td>
+						</tr>
+						<tr>
+							<td>04/06/2025</td>
+							<td>11:02</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/minimo.svg"
+									alt="Minimo"
+								/>
+							</td>
+							<td>Abaixo do mínimo - 3</td>
+						</tr>
+						<tr>
+							<td>04/06/2025</td>
+							<td>16:16</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/saida.svg"
+									alt="Saida"
+								/>
+							</td>
+							<td>Saída de 9 un.</td>
+						</tr>
+						<tr>
+							<td>03/06/2025</td>
+							<td>14:22</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/edit.svg"
+									alt="Editado"
+								/>
+							</td>
+							<td>Produto editado</td>
+						</tr>
+						<tr>
+							<td>03/06/2025</td>
+							<td>19:32</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/maximo.svg"
+									alt="Maximo"
+								/>
+							</td>
+							<td>Acima do máximo - 10</td>
+						</tr>
+						<tr>
+							<td>02/06/2025</td>
+							<td>11:02</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/categoria.svg"
+									alt="Categoria"
+								/>
+							</td>
+							<td>Adicionado a categoria...</td>
+						</tr>
+						<tr>
+							<td>02/06/2025</td>
+							<td>16:16</td>
+							<td>Leite Ninho Tradicional 1l</td>
+							<td>
+								<img
+									width="17"
+									height="17"
+									viewBox="0 0 50 50"
+									src="/assets/imgs/report/icon/entrada.svg"
+									alt="Entrada"
+								/>
+							</td>
+							<td>Entrada de 11 un.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
+			<div class="footer" id="footer-geral">
+				<div class="pagination">
+					<button class="bnt-footer" id="bnt-pag-voltar">
+						<img
+							src="/assets/imgs/products/icon/seta-2.svg"
+							alt=""
+							class="btn-footer-img"
+						/>
+					</button>
+					<div class="pag-footer">Página 1 de 34</div>
+					<button class="bnt-footer" id="bnt-pag-proximo">
+						<img
+							src="/assets/imgs/products/icon/seta.svg"
+							alt=""
+							class="btn-footer-img"
+						/>
+					</button>
+				</div>
+				<div id="footer-acoes">Mostrando 10 ações de 340</div>
+			</div>
+		</div>
 
-        <div class="footer" id="footer-geral">
-            <div class="pagination">
-                <button class="bnt-footer" id="bnt-pag-voltar">
-                    <img src="/assets/imgs/products/icon/seta-2.svg" alt="" class="btn-footer-img">
-                </button>
-                <div class="pag-footer">Página 1 de 34</div>
-                <button class="bnt-footer" id="bnt-pag-proximo">
-                    <img src="/assets/imgs/products/icon/seta.svg" alt="" class="btn-footer-img">
-                </button>
-            </div>
-            <div id="footer-acoes">Mostrando 10 ações de 340</div>
-        </div>
-    </div>
-    
-    <script src="Report/script.js"></script>
-</body>
+		<script src="Report/script.js"></script>
+	</body>
 </html>

@@ -45,7 +45,7 @@ mostrarGrafico(grafico1);
 */
 grafico1.style.display = 'block';
 new Chart(grafico1, {
-	type: 'pie',
+	type: 'bar',
 	data: {
 		labels: [
 			'Janeiro',

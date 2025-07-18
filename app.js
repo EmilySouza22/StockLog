@@ -8,6 +8,7 @@ import { fileURLToPath } from 'url';
 import authRoutes from './src/routes/auth.js';
 import accountRoutes from './src/routes/account.js';
 import productRoutes from './src/routes/products.js';
+import categoryRoutes from './src/routes/category.js';
 import pageRoutes from './src/routes/pages.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -42,6 +43,7 @@ await fastify.register(fastify_static, {
 await fastify.register(authRoutes, { prefix: '/auth' });
 await fastify.register(accountRoutes, { prefix: '/account' });
 await fastify.register(productRoutes, { prefix: '/product' });
+await fastify.register(categoryRoutes, { prefix: '/category' });
 await fastify.register(pageRoutes);
 
 try {

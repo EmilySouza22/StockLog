@@ -1,5 +1,7 @@
+// Total de 5 rotas para produtos
+
 export default async function productRoutes(fastify, options) {
-	fastify.post('/id', async (request, reply) => {
+	fastify.post('', async (request, reply) => {
 		const {
 			nome,
 			codigo_barra,
@@ -39,7 +41,7 @@ export default async function productRoutes(fastify, options) {
 
 	fastify.get('/:id', function (req, reply) {
 		fastify.mysql.query(
-			'SELECT * FROM stocklog.produto WHERE id=?',
+			'SELECT * FROM stocklog.produto WHERE id=? AND ativo=1',
 			[req.params.id],
 			function onResult(err, result) {
 				reply.send(err || result);
@@ -50,8 +52,47 @@ export default async function productRoutes(fastify, options) {
 	fastify.post('/all', function (req, reply) {
 		const dadosEmpresa = req.body;
 		fastify.mysql.query(
-			'SELECT * FROM stocklog.produto WHERE empresa_id=?',
+			'SELECT * FROM stocklog.produto WHERE empresa_id=? AND ativo=1',
 			[dadosEmpresa.id],
+			function onResult(err, result) {
+				reply.send(err || result);
+			}
+		);
+	});
+
+	fastify.put('/:id', function (req, reply) {
+		const {
+			nome,
+			codigo_barra,
+			quantidade,
+			data_entrada,
+			data_validade,
+			minimo,
+			maximo,
+		} = req.body;
+
+		fastify.mysql.query(
+			'UPDATE stocklog.produto SET nome=?, codigo_barra=?, quantidade=?, data_entrada=?, data_validade=?, minimo=?, maximo=? WHERE id=?',
+			[
+				nome,
+				codigo_barra,
+				quantidade,
+				data_entrada,
+				data_validade,
+				minimo,
+				maximo,
+				req.params.id,
+			],
+			function onResult(err, result) {
+				reply.send(err || result);
+			}
+		);
+	});
+
+	fastify.put('/delete/:id', function (req, reply) {
+		fastify.mysql.query(
+			'UPDATE stocklog.produto SET ativo=0 WHERE id=?',
+			[req.params.id],
 			function onResult(err, result) {
 				reply.send(err || result);
 			}

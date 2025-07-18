@@ -1,3 +1,5 @@
+// Total de 4 rotas para account
+
 import bcrypt from 'bcrypt';
 
 export default async function accountRoutes(fastify, options) {

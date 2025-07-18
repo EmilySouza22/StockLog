@@ -11,6 +11,8 @@ CREATE TABLE IF NOT EXISTS empresa (
 CREATE TABLE IF NOT EXISTS categoria (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
+    cor VARCHAR(7) NOT NULL,
+    ativo INT DEFAULT 1,
     empresa_id INT NOT NULL,
     FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );
@@ -18,13 +20,14 @@ CREATE TABLE IF NOT EXISTS categoria (
 CREATE TABLE IF NOT EXISTS produto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    codigo_barra VARCHAR(13) UNIQUE,
+    codigo_barra VARCHAR(13),
     quantidade INT NOT NULL DEFAULT 0,
     data_validade VARCHAR(255),
     data_entrada VARCHAR(255),
     data_saida VARCHAR(255),
     minimo INT DEFAULT 0,
     maximo INT DEFAULT 0,
+    ativo INT DEFAULT 1,
     categoria_id INT,
     empresa_id INT,
     FOREIGN KEY (categoria_id) REFERENCES categoria(id),

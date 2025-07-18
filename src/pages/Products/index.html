@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://use.typekit.net/vdf6prs.css" />
 		<title>Produtos</title>
 		<link
 			rel="icon"
@@ -122,7 +123,7 @@
 									class="btn-footer-img"
 								/>
 							</button>
-							<div class="pag-footer">Página 1 de 34</div>
+							<div class="pag-footer">Página 1 de 10</div>
 							<button class="bnt-footer" id="bnt-pag-proximo">
 								<img
 									src="/assets/imgs/products/icon/seta.svg"
@@ -131,35 +132,38 @@
 								/>
 							</button>
 						</div>
-						<div id="footer-acoes">Mostrando 10 ações de 340</div>
+						<div id="footer-acoes">Mostrando 10 produtos de 100</div>
 					</div>
 
 					<div class="icons-footer" id="icons">
-						<div>
-							<button id="btn-imprimir">
-								Imprimir Planilha
-								<img src="/assets/imgs/products/icon/impressora.svg" alt="" />
-							</button>
+						<div class="icons-left">
+							<div class="btn-footer-planilha">
+								<button id="btn-VerCategorias">
+									<img
+										src="/assets/imgs/products/icon/tag-categoria.svg"
+										alt=""
+									/>
+									Ver Categorias
+								</button>
+							</div>
+							<div>
+								<button id="btn-adicionarCategoria">
+									<img src="/assets/imgs/products/icon/planilha.svg" alt="" />
+									Adicionar Categoria
+								</button>
+							</div>
 						</div>
 						<div class="icons-right">
-							<div class="btn-footer-planilha">
-								<button id="btn-planilha">
-									Importar Planilha
-									<img src="/assets/imgs/products/icon/planilha.svg" alt="" />
+							<div>
+								<button id="btn-imprimir">
+									Imprimir Planilha
+									<img src="/assets/imgs/products/icon/impressora.svg" alt="" />
 								</button>
 							</div>
 							<div class="btn-footer-planilha">
 								<button id="btn-produto">
 									<img src="/assets/imgs/products/icon/adicionar.svg" alt="" />
 									Adicionar Produto
-								</button>
-							</div>
-							<div>
-								<button id="btn-botao-mais">
-									<img
-										src="/assets/imgs/products/icon/botao-mais-opiçoes.svg"
-										alt=""
-									/>
 								</button>
 							</div>
 						</div>
@@ -195,6 +199,12 @@
 
 				<label>Entrada:</label>
 				<input type="date" id="editar-entrada" />
+
+				<label>Mínimo:</label>
+				<input type="number" id="editar-minimo" />
+
+				<label>Máximo:</label>
+				<input type="number" id="editar-maximo" />
 
 				<label>Validade:</label>
 				<input type="date" id="editar-validade" />
@@ -236,22 +246,71 @@
 				<input type="number" id="novo-maximo" />
 
 				<label for="nova-categoria">Categoria:</label>
-				<select id="nova-categoria">
-					<option value="Laticínios">Laticínios</option>
-					<option value="Bebidas">Bebidas</option>
-					<option value="Café">Café</option>
-					<option value="Hortifrúti">Hortifrúti</option>
-					<option value="Grãos">Grãos</option>
-					<option value="Padaria">Padaria</option>
-					<option value="Farinhas">Farinhas</option>
-					<option value="Frios">Frios</option>
-					<option value="Congelados">Congelados</option>
-					<option value="Frutas">Frutas</option>
-				</select>
+				<select id="nova-categoria"></select>
 
 				<div id="botoes-adicionar">
 					<button id="btn-cancelar-produto">Cancelar</button>
 					<button id="btn-salvar-produto">Adicionar</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal de adicionar categoria  -->
+		<div id="adicionar-modal-categ" class="">
+			<div id="modal-adicionar-categ">
+				<div id="boxTopAddCateg">
+					<div id="box-title-adicionar-categoria">
+						<p id="titleAddCateg">Adicionar categoria:</p>
+					</div>
+					<div id="box-inp-dados-categoria">
+						<div>
+							<p>Nome:</p>
+							<input type="text" id="inpNomeAddCateg" />
+						</div>
+						<div>
+							<p>Cor:</p>
+							<input type="color" id="inpColorAddCateg" />
+						</div>
+					</div>
+				</div>
+				<div id="boxBottomAddCateg">
+					<div id="box-btn-add-categ">
+						<div>
+							<button id="btn-cancelar-categoria">Cancelar</button>
+						</div>
+						<div>
+							<button id="btn-adicionar-categoria" onclick="">Adicionar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal de editar e deletar categoria  -->
+		<div id="edit-modal-categ">
+			<div id="modal-edit-del-categ">
+				<div id="box-select-edit-categ">
+					<p>Selecionar Categoria:</p>
+					<select id="selectModalEditCateg"></select>
+				</div>
+				<div id="box-input-edit-categ">
+					<div>
+						<p>Nome:</p>
+						<input type="text" id="inpNomeEditCateg" />
+					</div>
+					<div>
+						<p>Cor:</p>
+						<input type="color" id="inpColorEditCateg" />
+					</div>
+				</div>
+				<div id="box-btn-edit-categ">
+					<div id="boxTopEditCateg">
+						<button id="btn-deletar-edit-categ">Deletar</button>
+					</div>
+					<div id="boxBottomEditCateg">
+						<button id="btn-cancelar-edit-categ">Cancelar</button>
+						<button id="btn-editar-edit-categ">Editar</button>
+					</div>
 				</div>
 			</div>
 		</div>
