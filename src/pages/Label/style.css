@@ -1,7 +1,9 @@
 @font-face {
-	font-family: 'poppins', sans-serif;
+	font-family: 'poppins';
 	font-weight: 500;
 	font-style: normal;
+	src: url('path/to/poppins-medium.woff2') format('woff2'),
+		url('path/to/poppins-medium.woff') format('woff');
 }
 
 * {
