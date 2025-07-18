@@ -2,7 +2,7 @@
 	font-family: 'poppins', sans-serif;
 	font-weight: 500;
 	font-style: normal;
-    src: url('path/to/poppins-medium.woff2') format('woff2'),
+	src: url('path/to/poppins-medium.woff2') format('woff2'),
 		url('path/to/poppins-medium.woff') format('woff');
 }
 
@@ -336,7 +336,7 @@ table {
 	flex-direction: column;
 	justify-content: space-between;
 	width: 80%;
-	height: 25%;
+	height: 35%;
 }
 
 #boxBottomAddCateg {
@@ -345,7 +345,7 @@ table {
 	justify-content: space-between;
 	align-items: center;
 	width: 80%;
-	height: 20%;
+	height: 11%;
 }
 
 #box-inp-dados-categoria {
@@ -358,7 +358,46 @@ table {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	width: 90%;
+	width: 100%;
+}
+
+#btn-adicionar-categoria {
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	background-color: #489d73;
+	height: 40px;
+	width: 90px;
+	cursor: pointer;
+}
+
+#btn-adicionar-categoria:hover {
+	background-color: #38614d;
+}
+
+#btn-cancelar-categoria {
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	background-color: #c95353;
+	height: 40px;
+	width: 90px;
+	cursor: pointer;
+}
+
+#btn-cancelar-categoria:hover {
+	background-color: #8b4343;
+}
+
+#inpNomeAddCateg {
+	height: 30px;
+	border-radius: 5px;
+	border: 1px solid #050607;
+}
+
+#titleAddCateg {
+	font-size: 20px;
+	font-weight: 600;
 }
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -397,8 +436,19 @@ table {
 }
 
 #selectModalEditCateg {
-	width: 80%;
+	width: 100%;
 	border-radius: 5px;
+	height: 30px;
+}
+
+#inpNomeEditCateg {
+	border-radius: 5px;
+	border: 1px solid #050607;
+	height: 30px;
+}
+
+#inpColorEditCateg {
+	height: 30px;
 }
 
 #box-select-edit-categ {
@@ -410,6 +460,50 @@ table {
 	flex-direction: row;
 	width: 80%;
 	justify-content: space-between;
+}
+
+/* 3 buttons modal-editar-categoria*/
+
+#btn-cancelar-edit-categ {
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	background-color: #c95454;
+	height: 35px;
+	width: 90px;
+	cursor: pointer;
+}
+
+#btn-cancelar-edit-categ:hover {
+	background-color: #8d3535;
+}
+
+#btn-editar-edit-categ {
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	background-color: #489d73;
+	height: 35px;
+	width: 90px;
+	cursor: pointer;
+}
+
+#btn-editar-edit-categ:hover {
+	background-color: #345a46;
+}
+
+#btn-deletar-edit-categ {
+	border: none;
+	border-radius: 8px;
+	color: #fff;
+	background-color: #c95454;
+	height: 35px;
+	width: 90px;
+	cursor: pointer;
+}
+
+#btn-deletar-edit-categ:hover {
+	background-color: #8d3535;
 }
 
 /* INPUT TYPE COLOR (meudeus qbagulho chato pra zera a aparencia)*/
@@ -448,13 +542,15 @@ input[type='color']::-moz-color-swatch {
 	display: flex;
 	flex-direction: column;
 	width: 80%;
-	height: 15%;
+	height: 21%;
 	justify-content: space-between;
 }
 
 #boxTopEditCateg {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	justify-content: end;
 }
 
 #boxBottomEditCateg {
