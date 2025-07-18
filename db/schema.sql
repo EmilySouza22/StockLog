@@ -11,8 +11,9 @@ CREATE TABLE IF NOT EXISTS empresa (
 CREATE TABLE IF NOT EXISTS categoria (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
-    empresa_id INT NOT NULL,
     cor VARCHAR(7) NOT NULL,
+    ativo INT DEFAULT 1,
+    empresa_id INT NOT NULL,
     FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );
 

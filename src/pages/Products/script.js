@@ -78,7 +78,7 @@ async function adicionarProduto() {
 	}
 }
 
-// Função para renderizar a tabela toda
+// Função para renderizar a tabela produtos
 async function renderizarTabela(dados = []) {
 	if (!dados) {
 		return;
@@ -118,7 +118,7 @@ async function renderizarTabela(dados = []) {
 	criarEventListeners();
 }
 
-// Função para criar event listeners
+// Função para criar event listeners produto
 function criarEventListeners() {
 	// Delete listeners
 	document.querySelectorAll('.delete-icon').forEach((botao) => {
@@ -170,7 +170,6 @@ async function deletarProduto(id) {
 	closeDeleteModal();
 }
 
-//
 //Trazendo as informações do produto selecionado
 async function editarProduto(id) {
 	try {
@@ -232,30 +231,6 @@ async function salvarEdicao(id) {
 	}
 }
 
-// Filtros
-const selectPrincipal = document.getElementById('select-filtro-principal');
-const selectCategorias = document.getElementById('select-categorias');
-
-selectPrincipal.addEventListener('change', function () {
-	if (this.value === 'categoria') {
-		selectCategorias.classList.remove('escondido');
-	} else {
-		selectCategorias.classList.add('escondido');
-	}
-});
-
-document
-	.getElementById('select-categorias')
-	.addEventListener('change', function () {
-		const categoriaSelecionada = this.value;
-		if (categoriaSelecionada === 'Todos') {
-			carregarProdutos();
-		} else {
-			// TODO: axios.get(`/api/produtos?categoria=${categoriaSelecionada}`)
-			// TODO: renderizarTabela(response.data)
-		}
-	});
-
 // Modal de adicionar produto
 document.addEventListener('DOMContentLoaded', () => {
 	carregarProdutos();
@@ -276,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	btnSalvarProduto.addEventListener('click', adicionarProduto);
 });
 
-// Cancelar modal
+// Cancelar modal de adicionar produto
 function closeDeleteModal() {
 	document.getElementById('confirm-modal').style.display = 'none';
 }
@@ -286,25 +261,17 @@ document.getElementById('cancelar-edicao').onclick = () => {
 	document.getElementById('modal-editar').style.display = 'none';
 };
 
-// Modal de editar / deletar categoria já existente
-document.addEventListener('DOMContentLoaded', () => {
-	const modalEditCateg = document.getElementById('edit-modal-categ');
-	const btnVerCateg = document.getElementById('btn-VerCategorias');
-	const btnCancelarVerCateg = document.getElementById(
-		'btn-cancelar-edit-categ'
-	);
-	const btnEditCateg = document.getElementById('btn-editar-edit-categ');
+/* 
+    
+    Daqui pra baixo é relacionado ao CRUD DAS CATEGORIAS 
+    
+*/
 
-	btnVerCateg.addEventListener('click', () => {
-		modalEditCateg.classList.add('visivel');
-	});
+/* 
 
-	btnCancelarVerCateg.addEventListener('click', () => {
-		modalEditCateg.classList.remove('visivel');
-	});
+    ADICIONAR CATEGORIA
 
-	// btnEditCateg.addEventListener('click', editarCategoria);
-});
+*/
 
 // CRUD - MODAL ADICIONAR CATEGORIA
 async function adicionarCategoria() {
@@ -362,3 +329,126 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	btnAddCateg.addEventListener('click', adicionarCategoria);
 });
+
+/* 
+
+    EDITAR OU DELETAR CATEGORIA 
+
+*/
+
+//Pegando os inputs do modal de EDITAR categoria
+const editarNomeCategoria = document.getElementById('inpNomeEditCateg');
+const editarCorCategoria = document.getElementById('inpColorEditCateg');
+
+//Trazendo as informaçõesd do banco relacionados ao produto selecionado
+async function editarCategoria(id) {
+	try {
+		const response = await axios.get(`/category/${id}`);
+
+		if (response.status === 200) {
+			const resultado = response.data[0];
+			console.log('resultado: ', resultado);
+			//
+			editarNomeCategoria.value = resultado.nome;
+			editarCorCategoria.value = resultado.cor;
+		}
+	} catch (error) {
+		console.log(error);
+		alert(
+			'Erro em carregar as informações da categoria: ' +
+				error.response?.data?.message || error.message
+		);
+	}
+	document.getElementById('edit-modal-categ').style.display = 'flex';
+	document.getElementById('btn-editar-edit-categ').onclick = () =>
+		salvarEdicaoCategoria(id);
+}
+
+//Edição dos dados do produto selecionado
+async function salvarEdicaoCategoria(id) {
+	const cache = localStorage.getItem('dados_empresa');
+	const dadosEmpresa = JSON.parse(cache);
+
+	const inpEditNome = document.getElementById('inpNomeEditCateg');
+	const inpEditColor = document.getElementById('inpColorEditCateg');
+
+	const dadosAtualizados = {
+		nome: inpEditNome.value,
+		cor: inpEditColor.value,
+		empresa_id: dadosEmpresa.id,
+	};
+
+	try {
+		const response = await axios.put(`/category/${id}`, dadosAtualizados);
+
+		if (response.status === 200) {
+			alert('Dados da categoria atualizados!');
+			document.getElementById('edit-modal-categ').style.display = 'none';
+			window.location.reload(true);
+		}
+	} catch (error) {
+		console.error(error);
+		alert(
+			'Erro na edição da categoria: ' + error.response?.data?.message ||
+				error.message
+		);
+	}
+}
+
+// Modal de editar / deletar categoria já existente
+document.addEventListener('DOMContentLoaded', () => {
+	const modalEditCateg = document.getElementById('edit-modal-categ');
+	const btnVerCateg = document.getElementById('btn-VerCategorias');
+	const btnCancelarVerCateg = document.getElementById(
+		'btn-cancelar-edit-categ'
+	);
+	const btnEditCateg = document.getElementById('btn-editar-edit-categ');
+
+	btnVerCateg.addEventListener('click', () => {
+		modalEditCateg.classList.add('visivel');
+	});
+
+	btnCancelarVerCateg.addEventListener('click', () => {
+		modalEditCateg.classList.remove('visivel');
+	});
+
+	btnEditCateg.addEventListener('click', editarCategoria);
+});
+
+//Carregar categorias no select
+async function carregarCategorias() {
+	const cache = localStorage.getItem('dados_empresa');
+	const dadosEmpresa = JSON.parse(cache);
+
+	try {
+		const response = await axios.post('/category/all', dadosEmpresa);
+		if (response.status === 200) {
+			//Select do modal editar categoria
+			const selectModal = document.getElementById('selectModalEditCateg');
+			//Select do modal adicionar produto
+			const selectProduto = document.getElementById('nova-categoria');
+
+			//Criando option pro select
+			selectModal.innerHTML =
+				'<option value="">Selecione uma categoria</option>';
+			selectProduto.innerHTML =
+				'<option value="">Selecione uma categoria</option>';
+
+			response.data.forEach((categoria) => {
+				selectModal.innerHTML += `<option value="${categoria.id}">${categoria.nome}</option>`;
+				selectProduto.innerHTML += `<option value="${categoria.id}">${categoria.nome}</option>`;
+			});
+		}
+	} catch (error) {
+		console.log(error);
+		alert(
+			'Erro ao carregar categorias: ' + error.response?.data?.message ||
+				error.message
+		);
+	}
+}
+
+//Deletar categoria
+async function deletarCategoria(id){
+    
+}

@@ -352,6 +352,7 @@ table {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	height: 55%;
 }
 
 #box-btn-add-categ {

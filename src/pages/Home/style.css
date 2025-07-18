@@ -283,6 +283,7 @@ body {
 		color: #4e6074;
 		font-size: 20px;
 		margin: 0;
+		line-height: 110%;
 	}
 
 	#box-title {
@@ -574,6 +575,7 @@ body {
 
 	#containerRelatText {
 		width: 100%;
+		line-height: 170%;
 	}
 
 	#relatText {
@@ -641,6 +643,7 @@ body {
 
 	#containerEtiqText {
 		width: 100%;
+		line-height: 170%;
 	}
 
 	#etiqText {
@@ -653,10 +656,6 @@ body {
 	#etiqIcon {
 		width: 35px;
 		height: 35px;
-	}
-
-	#containerEtiqText {
-		width: 100%;
 	}
 
 	#etiqImg {
@@ -688,9 +687,10 @@ body {
 
 	#publiTitle {
 		width: 81%;
+		height: 90%;
 		color: #282c31;
 		font-size: 150%;
-		line-height: 85%;
+		line-height: 100%;
 		margin: 0;
 	}
 
@@ -702,7 +702,8 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 20%;
+		height: 15%;
+		width: 65%;
 	}
 
 	#publiButton {

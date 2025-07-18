@@ -1,3 +1,5 @@
+// Total de 5 rotas para produtos
+
 export default async function productRoutes(fastify, options) {
 	fastify.post('', async (request, reply) => {
 		const {
