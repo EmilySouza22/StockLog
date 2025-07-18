@@ -353,7 +353,7 @@ async function editarCategoria(id) {
 			editarCorCategoria.value = resultado.cor;
 		}
 	} catch (error) {
-		console.log(error);
+		console.log('Erro completo:', error);
 		alert(
 			'Erro em carregar as informações da categoria: ' +
 				error.response?.data?.message || error.message
@@ -366,6 +366,7 @@ async function editarCategoria(id) {
 
 //Edição dos dados do produto selecionado
 async function salvarEdicaoCategoria(id) {
+	console.log('ID enviado:', id);
 	const cache = localStorage.getItem('dados_empresa');
 	const dadosEmpresa = JSON.parse(cache);
 
@@ -380,6 +381,8 @@ async function salvarEdicaoCategoria(id) {
 
 	try {
 		const response = await axios.put(`/category/${id}`, dadosAtualizados);
+		console.log('Resposta completa:', response);
+		console.log('Dados retornados:', response.data);
 
 		if (response.status === 200) {
 			alert('Dados da categoria atualizados!');
@@ -411,8 +414,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	btnCancelarVerCateg.addEventListener('click', () => {
 		modalEditCateg.classList.remove('visivel');
 	});
-
-	btnEditCateg.addEventListener('click', editarCategoria);
 });
 
 //Carregar categorias no select
@@ -449,6 +450,61 @@ async function carregarCategorias() {
 }
 
 //Deletar categoria
-async function deletarCategoria(id){
-    
+async function deletarCategoria(id) {
+	try {
+		const response = await axios.put(`/category/delete/${id}`);
+		if (response.status === 200) {
+			alert('Categoria deletada!');
+			document.getElementById('edit-modal-categ').style.display = 'none';
+			carregarCategorias();
+		}
+	} catch (error) {
+		console.error('Erro ao deletar categoria:', error);
+		alert(
+			'Erro ao deletar categoria: ' +
+				(error.response?.data?.message || error.message)
+		);
+	}
 }
+
+//Atualizar o DOMContentLoaded para o modal de edição
+document.addEventListener('DOMContentLoaded', () => {
+	carregarCategorias();
+
+	const modalEditCateg = document.getElementById('edit-modal-categ');
+	const btnVerCateg = document.getElementById('btn-VerCategorias');
+	const btnCancelarVerCateg = document.getElementById(
+		'btn-cancelar-edit-categ'
+	);
+	const selectCategoria = document.getElementById('selectModalEditCateg');
+	const btnDeletarCateg = document.getElementById('btn-deletar-edit-categ');
+
+	btnVerCateg.addEventListener('click', () => {
+		modalEditCateg.style.display = 'flex';
+		carregarCategorias();
+	});
+
+	btnCancelarVerCateg.addEventListener('click', () => {
+		modalEditCateg.style.display = 'none';
+	});
+
+	//Carregar dados da categoria quando selecionada
+	selectCategoria.addEventListener('change', function () {
+		const categoriaId = this.value;
+		if (categoriaId) {
+			editarCategoria(categoriaId);
+		}
+	});
+
+	//Função para quando clicar no botão deletar categoria
+	btnDeletarCateg.addEventListener('click', function () {
+		const categoriaId = selectCategoria.value;
+		if (categoriaId) {
+			if (confirm('Tem certeza que deseja deletar esta categoria?')) {
+				deletarCategoria(categoriaId);
+			}
+		} else {
+			alert('Selecione uma categoria primeiro');
+		}
+	});
+});

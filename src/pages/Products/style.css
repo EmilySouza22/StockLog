@@ -285,7 +285,7 @@ table {
 }
 
 .delete-icon {
-	background-color: white;
+	background-color: transparent;
 	border: white;
 	border-radius: 0px solid white;
 }
@@ -377,17 +377,17 @@ table {
 }
 
 #btn-cancelar-categoria {
-	border: none;
 	border-radius: 8px;
-	color: #fff;
-	background-color: #c95353;
+	border: 2px solid #c95454;
+	color: #c95454;
+	background-color: #fff;
 	height: 40px;
 	width: 90px;
 	cursor: pointer;
 }
 
 #btn-cancelar-categoria:hover {
-	background-color: #8b4343;
+	background-color: #d38b8b;
 }
 
 #inpNomeAddCateg {
@@ -466,17 +466,17 @@ table {
 /* 3 buttons modal-editar-categoria*/
 
 #btn-cancelar-edit-categ {
-	border: none;
 	border-radius: 8px;
-	color: #fff;
-	background-color: #c95454;
+	border: 2px solid #c95454;
+	color: #c95454;
+	background-color: #fff;
 	height: 35px;
 	width: 90px;
 	cursor: pointer;
 }
 
 #btn-cancelar-edit-categ:hover {
-	background-color: #8d3535;
+	background-color: #d38b8b;
 }
 
 #btn-editar-edit-categ {
@@ -609,7 +609,7 @@ input[type='color']::-moz-color-swatch {
 }
 
 .editar-icon {
-	background-color: white;
+	background-color: transparent;
 	border: white;
 	border-radius: 0px solid white;
 }
@@ -1067,7 +1067,7 @@ tbody tr:nth-child(even) {
 	margin-top: 10px;
 }
 
-#botoes-adicionar button {
+#btn-salvar-produto {
 	padding: 8px 16px;
 	border: none;
 	background-color: #489d73;
@@ -1076,6 +1076,20 @@ tbody tr:nth-child(even) {
 	cursor: pointer;
 }
 
-#botoes-adicionar button:hover {
+#btn-cancelar-produto {
+	border-radius: 8px;
+	border: 2px solid #c95454;
+	color: #c95454;
+	background-color: #fff;
+	height: 40px;
+	width: 90px;
+	cursor: pointer;
+}
+
+#btn-cancelar-produto:hover {
+	background-color: #d38b8b;
+}
+
+#btn-salvar-produto:hover {
 	background-color: #3ca765;
 }
