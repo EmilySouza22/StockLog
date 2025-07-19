@@ -55,7 +55,7 @@ async function cadastrar() {
 		!usuario.email ||
 		!usuario.senha
 	) {
-		alert("Preencha todos os campos!");
+		toastr.info("Erro 404", "teste2");
 		return;
 	}
 
