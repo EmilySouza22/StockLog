@@ -24,17 +24,23 @@
 					/>
 				</div>
 				<div id="navbar-right">
-					<p id="conta-cadastrada">Mercado Santana</p>
-					<img
-						class="nav-icon"
-						src="/assets/imgs/home/icon/conta.svg"
-						alt="Conta"
-					/>
-					<img
-						class="nav-icon"
-						src="/assets/imgs/home/icon/engrenagem.svg"
-						alt="Engrenagem"
-					/>
+					<a href="/account">
+						<div id="boxContaCadastrada">
+							<p id="contaCadastrada">Mercado Santana</p>
+							<img
+								class="nav-icon"
+								src="/assets/imgs/home/icon/conta.svg"
+								alt="Conta"
+							/>
+						</div>
+					</a>
+					<div onclick="abrirModalConfig()" id="boxConfigEtiq">
+						<img
+							class="nav-icon"
+							src="/assets/imgs/home/icon/engrenagem.svg"
+							alt="Engrenagem"
+						/>
+					</div>
 				</div>
 			</nav>
 
@@ -143,8 +149,9 @@
 							<span id="footer-acoes-info">
 								Mostrando
 								<p id="footer-qtd-produtos">0</p>
-								produtos de
+								de
 								<p id="footer-total-produtos">0</p>
+								produtos
 							</span>
 						</div>
 					</div>
@@ -327,6 +334,19 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<!-- Modal Configurações -->
+		<div id="ModalConfig">
+			<a href="/Login">
+				<div id="boxLogout">
+					<img
+						id="iconLogOut"
+						src="../../assets/imgs/home/icon/logout.svg"
+						alt="Sair"
+					/>
+					<p id="textLogout">Logout</p>
+				</div>
+			</a>
 		</div>
 	</body>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>

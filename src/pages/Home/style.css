@@ -751,7 +751,7 @@ body {
 		display: flex;
 		position: absolute;
 		right: 5px;
-		top: 10px;
+		top: 5px;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;

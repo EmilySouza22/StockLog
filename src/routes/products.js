@@ -1,5 +1,11 @@
 // Total de 5 rotas para produtos
 
+import moment from 'moment';
+
+import { inserirHistorico } from '../components/utils.js';
+
+const ISO_FORMAT = 'YYYY-MM-DDTHH:mm:ss.sssZ';
+
 export default async function productRoutes(fastify, options) {
 	fastify.post('', async (request, reply) => {
 		const {
@@ -27,7 +33,16 @@ export default async function productRoutes(fastify, options) {
 					empresa_id,
 				],
 				function onResult(err, result) {
-					console.log('insert result', result);
+					if (result) {
+						inserirHistorico(fastify, {
+							empresa_id,
+							produto_id: result.insertId,
+							produto_nome: nome,
+							data_criacao: moment().format(ISO_FORMAT),
+							tipo: 'ADICIONADO',
+							quantidade,
+						});
+					}
 					reply.send(err || result);
 				}
 			);
@@ -120,12 +135,27 @@ export default async function productRoutes(fastify, options) {
 	});
 
 	fastify.put('/delete/:id', function (req, reply) {
-		fastify.mysql.query(
-			'UPDATE stocklog.produto SET ativo=0 WHERE id=?',
-			[req.params.id],
-			function onResult(err, result) {
-				reply.send(err || result);
-			}
-		);
+		const { empresa_id, produto_nome } = req.body;
+		const { id } = req.params;
+		try {
+			fastify.mysql.query(
+				'UPDATE stocklog.produto SET ativo=0 WHERE id=?',
+				[id],
+				function onResult(err, result) {
+					if (result) {
+						inserirHistorico(fastify, {
+							empresa_id,
+							produto_id: id,
+							produto_nome,
+							data_criacao: moment().format(ISO_FORMAT),
+							tipo: 'EXCLUIDO',
+						});
+					}
+					reply.send(err || result);
+				}
+			);
+		} catch (error) {
+			reply.send(error);
+		}
 	});
 }

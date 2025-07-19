@@ -22,13 +22,16 @@ body {
 }
 
 /* NAVBAR */
+
 #navbar {
-	background-color: #f5f5f5;
+	background-color: #fff;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
 	height: 65px;
+	position: relative;
+	z-index: 2;
 }
 
 #navbar-left {
@@ -39,26 +42,88 @@ body {
 #navbar-right {
 	display: flex;
 	align-items: center;
-	gap: 15px;
 	margin-right: 100px;
 }
 
-#conta-cadastrada {
+#boxContaCadastrada,
+#boxConfigEtiq {
+	height: 65px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding: 0 10px;
+}
+
+#boxContaCadastrada:hover,
+#boxConfigEtiq:hover {
+	background-color: #eaecf0;
+	cursor: pointer;
+}
+
+#boxContaCadastrada {
+	width: 245px;
+}
+
+#contaCadastrada {
 	color: #4e6074;
-	font-size: 20px;
+	font-size: 18px;
+	margin: 0;
 }
 
 #nav-logo {
 	width: 100px;
-	height: 65px;
+	height: 40px;
 	margin-left: 100px;
 }
 
 .nav-icon {
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height: 30px;
 }
 
+/* Modal config */
+#ModalConfig {
+	width: 100px;
+	height: 50px;
+	background-color: #fff;
+	display: none;
+	position: fixed; /* Changed from absolute to fixed */
+	z-index: 1000;
+	right: 20px;
+	top: 65px;
+	border-radius: 5px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+	align-items: center;
+	justify-content: center;
+}
+
+#boxLogout {
+	padding: 5px;
+	width: 90%;
+	display: flex;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+
+	p {
+		margin: 0;
+	}
+}
+
+#iconLogOut {
+	width: 22px;
+	height: 22px;
+}
+
+#textLogout {
+	color: #4e6074;
+	font-size: 18px;
+}
+
+/* >>>>>> */
 .navigation-buttons {
 	display: flex;
 	justify-content: space-between;
@@ -128,6 +193,7 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+    color: #344253;
 }
 
 .botao-filtrar {
@@ -701,12 +767,14 @@ thead th {
 	padding: 8px 15px;
 	border-bottom: 2px solid #e0e0e0;
 	text-align: left;
+    color: #344253;
 }
 
 tbody td {
 	padding: 5px 10px;
 	border-bottom: 1px solid #e0e0e0;
 	text-align: left;
+    color: #4e6074;
 }
 
 tbody tr:nth-child(even) {
@@ -919,6 +987,7 @@ tbody tr:nth-child(even) {
 
 #footer-acoes-info {
 	display: flex;
+    color: #344253;
 }
 
 #footer-qtd-produtos {
@@ -938,6 +1007,7 @@ tbody tr:nth-child(even) {
 #footer-pag-info {
 	display: flex;
 	padding: 0;
+    color: #344253;
 }
 
 #footer-pag-atual {
@@ -963,6 +1033,8 @@ tbody tr:nth-child(even) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+    color: #344253;
+    height: 48px;
 }
 
 .icons-left {

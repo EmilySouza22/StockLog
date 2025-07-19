@@ -41,7 +41,9 @@ CREATE TABLE IF NOT EXISTS historico (
     detalhe VARCHAR(255),
     produto_nome VARCHAR(255) NOT NULL,
     produto_id INT NOT NULL,
-    FOREIGN KEY (produto_id) REFERENCES produto(id)
+    empresa_id INT NOT NULL,
+    FOREIGN KEY (produto_id) REFERENCES produto(id),
+    FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );
 
 CREATE INDEX idx_produto_codigo_barra ON produto(codigo_barra);

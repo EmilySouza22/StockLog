@@ -67,9 +67,11 @@ async function carregarProdutos() {
 			renderizarTabela(response.data.list);
 			total_produtos.innerHTML = parseInt(response.data.total);
 			qtd_produtos.innerHTML = response.data.list.length;
-			pagina_total.innerHTML = Math.ceil(
+
+			const paginaCalculada = Math.ceil(
 				parseInt(response.data.total) / parseInt(limite_produtos)
 			);
+			pagina_total.innerHTML = paginaCalculada > 0 ? paginaCalculada : 1;
 		} else {
 			alert('Falha ao carregar produtos.');
 		}
@@ -122,7 +124,6 @@ async function renderizarTabela(dados = []) {
 		return;
 	}
 
-	console.log('dados do banco:', dados);
 	const tbody = document.getElementById('body');
 	tbody.innerHTML = '';
 
@@ -141,7 +142,11 @@ async function renderizarTabela(dados = []) {
                 </div>
             </td>
             <td>
-                <button class="delete-icon" data-id="${produto.id}">
+                <button 
+                    class="delete-icon"
+                    data-id="${produto.id}"
+                    data-name="${produto.nome}"
+                >
                     <img src="/assets/imgs/products/icon/icon-lixeira.svg" alt="apagar" class="icons-tabela">
                 </button>
             </td>
@@ -161,10 +166,17 @@ function criarEventListeners() {
 	// Delete listeners
 	document.querySelectorAll('.delete-icon').forEach((botao) => {
 		botao.addEventListener('click', function () {
+			console.log('dataset', this.dataset);
 			const id = parseInt(this.dataset.id);
 			document.getElementById('confirm-modal').style.display = 'flex';
-			document.getElementById('confirmar-delete').onclick = () =>
-				deletarProduto(id);
+			document.getElementById('confirmar-delete').onclick = () => {
+				const cache = localStorage.getItem('dados_empresa');
+				const dadosEmpresa = JSON.parse(cache);
+				deletarProduto(id, {
+					empresa_id: dadosEmpresa.id,
+					produto_nome: this.dataset.name,
+				});
+			};
 		});
 	});
 
@@ -191,9 +203,9 @@ assim não mostra na tela de produtos, mas na tabela produto ele ainda existe, a
 >>> Isso vale tanto para a tabela produto quanto para a empresa
 
 */
-async function deletarProduto(id) {
+async function deletarProduto(id, dados) {
 	try {
-		const response = await axios.put(`/product/delete/${id}`);
+		const response = await axios.put(`/product/delete/${id}`, dados);
 
 		if (response.status === 200) {
 			carregarProdutos();
@@ -324,8 +336,6 @@ async function adicionarCategoria() {
 		cor: inpColor.value,
 		empresa_id: dadosEmpresa.id,
 	};
-
-	console.log('novaCategoria: ', novaCategoria);
 
 	try {
 		const response = await axios.post('/category', novaCategoria);
@@ -545,4 +555,27 @@ document.addEventListener('DOMContentLoaded', () => {
 			alert('Selecione uma categoria primeiro');
 		}
 	});
+});
+
+//Modal de configurações
+document.getElementById('boxConfigEtiq').addEventListener('click', function () {
+	document.getElementById('ModalConfig').style.display = 'block';
+});
+
+function fecharModal() {
+	document.getElementById('ModalConfig').style.display = 'none';
+}
+
+document.addEventListener('click', function (event) {
+	const modal = document.getElementById('ModalConfig');
+	const boxLogout = document.getElementById('boxLogout');
+	const boxConfigEtiq = document.getElementById('boxConfigEtiq');
+
+	if (
+		modal.style.display === 'block' &&
+		!boxLogout.contains(event.target) &&
+		!boxConfigEtiq.contains(event.target)
+	) {
+		fecharModal();
+	}
 });
