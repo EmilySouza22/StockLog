@@ -27,8 +27,8 @@ export default async function pageRoutes(fastify, options) {
 		return reply.sendFile('Products/index.html');
 	});
 
-	fastify.get('/report', async (request, reply) => {
-		return reply.sendFile('Report/index.html');
+	fastify.get('/historic', async (request, reply) => {
+		return reply.sendFile('Historic/index.html');
 	});
 
 	fastify.get('/account', async (request, reply) => {
