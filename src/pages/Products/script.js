@@ -23,15 +23,53 @@ const editar_minimo = document.getElementById('editar-minimo');
 const editar_maximo = document.getElementById('editar-maximo');
 const editar_categoria = document.getElementById('editar-categoria');
 
+//Pegando inputs paginação
+const qtd_produtos = document.getElementById('footer-qtd-produtos');
+const total_produtos = document.getElementById('footer-total-produtos');
+const pagina_atual = document.getElementById('footer-pag-atual');
+const pagina_total = document.getElementById('footer-pag-total');
+
+const btnVoltarPagina = document.getElementById('bnt-pag-voltar');
+const btnProximaPagina = document.getElementById('bnt-pag-proximo');
+
+const limite_produtos = 10;
+
+function voltarPagina() {
+	const valor = parseInt(pagina_atual.innerHTML) - 1;
+	pagina_atual.innerHTML = valor < 1 ? 1 : valor;
+	return carregarProdutos();
+}
+
+function avancarPagina() {
+	const valor = parseInt(pagina_atual.innerHTML) + 1;
+	const maximo = parseInt(pagina_total.innerHTML);
+	pagina_atual.innerHTML = valor > maximo ? maximo : valor;
+	return carregarProdutos();
+}
+
+//Listeners para os botaos para voltar e avançar página
+btnVoltarPagina.addEventListener('click', voltarPagina);
+btnProximaPagina.addEventListener('click', avancarPagina);
+
 // CRUD READ - CARREGAR PRODUTOS
 async function carregarProdutos() {
 	const cache = localStorage.getItem('dados_empresa');
 	const dadosEmpresa = JSON.parse(cache);
+	const pagina = parseInt(pagina_atual.innerHTML);
+	const offset = (pagina - 1) * limite_produtos;
 
 	try {
-		const response = await axios.post('/product/all', dadosEmpresa);
+		const response = await axios.post(
+			`/product/all?limit=${limite_produtos}&offset=${offset}`,
+			dadosEmpresa
+		);
 		if (response.status === 200) {
-			renderizarTabela(response.data);
+			renderizarTabela(response.data.list);
+			total_produtos.innerHTML = parseInt(response.data.total);
+			qtd_produtos.innerHTML = response.data.list.length;
+			pagina_total.innerHTML = Math.ceil(
+				parseInt(response.data.total) / parseInt(limite_produtos)
+			);
 		} else {
 			alert('Falha ao carregar produtos.');
 		}

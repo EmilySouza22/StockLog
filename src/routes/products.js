@@ -49,15 +49,45 @@ export default async function productRoutes(fastify, options) {
 		);
 	});
 
-	fastify.post('/all', function (req, reply) {
+	fastify.post('/all', async function (req, reply) {
 		const dadosEmpresa = req.body;
-		fastify.mysql.query(
-			'SELECT * FROM stocklog.produto WHERE empresa_id=? AND ativo=1',
-			[dadosEmpresa.id],
-			function onResult(err, result) {
-				reply.send(err || result);
-			}
-		);
+		const parametros = req.query;
+
+		let query = 'SELECT * FROM stocklog.produto WHERE empresa_id=? AND ativo=1';
+
+		if (parametros && parametros.limit && parametros.offset) {
+			query += ` LIMIT ${parametros.limit} OFFSET ${parametros.offset}`;
+		}
+
+		try {
+			const countQuery = new Promise((resolve, reject) => {
+				fastify.mysql.query(
+					'SELECT COUNT(id) AS total FROM stocklog.produto WHERE empresa_id=? AND ativo=1',
+					[dadosEmpresa.id],
+					(err, result) => (err ? reject(err) : resolve(result))
+				);
+			});
+
+			const listQuery = new Promise((resolve, reject) => {
+				fastify.mysql.query(query, [dadosEmpresa.id], (err, result) =>
+					err ? reject(err) : resolve(result)
+				);
+			});
+
+			const [countResult, dataResult] = await Promise.all([
+				countQuery,
+				listQuery,
+			]);
+
+			const result = {
+				total: countResult[0].total,
+				list: dataResult,
+			};
+
+			reply.send(result);
+		} catch (error) {
+			reply.send(error);
+		}
 	});
 
 	fastify.put('/:id', function (req, reply) {
