@@ -15,19 +15,19 @@ function limparCNPJ(cnpj) {
 
 //Função que vai verificar se já existe algum usuário com o cpnj ou com o email
 
-function usuarioJaExiste(cnpj, email) {
-	// vai verificar se já existe algum usuário com esse CNPJ ou email cadastrado no localStorage.
-	const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // pega os usuários salvos e converte de volta para um array. Se não houver usuários, usa um array vazio.
+// function usuarioJaExiste(cnpj, email) {
+// 	// vai verificar se já existe algum usuário com esse CNPJ ou email cadastrado no localStorage.
+// 	const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // pega os usuários salvos e converte de volta para um array. Se não houver usuários, usa um array vazio.
 
-	const cnpjLimpo = limparCNPJ(cnpj);
+// 	const cnpjLimpo = limparCNPJ(cnpj);
 
-	return usuarios.some(
-		// Verifica se existe algum usuário com o mesmo CNPJ ou email (o some)
-		(usuario) =>
-			limparCNPJ(usuario.cnpj) === cnpjLimpo ||
-			usuario.email.toLowerCase() === email.toLowerCase()
-	);
-}
+// 	return usuarios.some(
+// 		// Verifica se existe algum usuário com o mesmo CNPJ ou email (o some)
+// 		(usuario) =>
+// 			limparCNPJ(usuario.cnpj) === cnpjLimpo ||
+// 			usuario.email.toLowerCase() === email.toLowerCase()
+// 	);
+// }
 
 async function cadastrar() {
 	// sobre o async: "Esta função de cadastro pode fazer algo que demora (como se comunicar com o servidor), então quero que ela espere essas coisas acontecerem antes de continuar.
@@ -66,16 +66,23 @@ async function cadastrar() {
 		return;
 	}
 
+	//Confere se o CPNJ é válido --> não precisou fazer isso com o telefone pq no CPNJ pode ter pontos, barras e hífens...
+	const cnpjValido = /^[0-9./-]+$/.test(usuario.cnpj);
+	if (!cnpjValido) {
+		alert("CNPJ contém caracteres inválidos! Use apenas números, '.', '/' ou '-'.");
+		return;
+	}
+
 	//CNPJ com 14 dígitos (limpando antes)
 	if (limparCNPJ(usuario.cnpj).length !== 14) {
 		alert("CNPJ inválido! Deve conter 14 números.");
 		return;
 	}
 
-	//Telefone com pelo menos 10 dígitos (limpando antes)
+	// Telefone deve ter até 11 dígitos (limpando antes)
 	const telefoneLimpo = usuario.telefone.replace(/\D/g, "");
-	if (telefoneLimpo.length < 10) {
-		alert("Telefone inválido!");
+	if (telefoneLimpo.length < 11) {
+		alert("Telefone inválido! Deve conter entre 10 e 11 números.");
 		return;
 	}
 
@@ -85,11 +92,6 @@ async function cadastrar() {
 		return;
 	}
 
-	if (usuarioJaExiste(usuario.cnpj, usuario.email)) {
-		// chama a função usuarioJaExiste passando o CNPJ e email que você quer verificar.
-		alert("Já existe uma conta com esse CNPJ ou e-mail!");
-		return;
-	}
 
 	// Envia os dados do usuário para o servidor
 
