@@ -120,7 +120,8 @@ async function adicionarProduto() {
 
 // Função para renderizar a tabela produtos
 async function renderizarTabela(dados = []) {
-	if (!dados) {
+	if (!dados || dados.length === 0 || !Array.isArray(dados)) {
+		tbody.innerHTML = '<tr><td colspan="5">Nenhum dado disponível</td></tr>';
 		return;
 	}
 

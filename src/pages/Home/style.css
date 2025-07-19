@@ -506,6 +506,18 @@ body {
 		font-size: 24px;
 	}
 
+	#btnGraf4:disabled {
+		background: linear-gradient(to right, #a5a8a7, #575858);
+	}
+
+    #btnGraf5:disabled {
+		background: linear-gradient(to right, #a5a8a7, #575858);
+	}
+
+    #btnGraf6:disabled {
+		background: linear-gradient(to right, #a5a8a7, #575858);
+	}
+
 	/* SEÇÃO 3: HISTORICO, ETIQUETA E PLANO PREMIUM */
 
 	#container3 {
