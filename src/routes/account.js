@@ -7,6 +7,50 @@ export default async function accountRoutes(fastify, options) {
 		const { nome, telefone, cnpj, email, senha } = request.body;
 
 		try {
+
+			const verificarCNPJ = new Promise((resolve, reject) => {
+				fastify.mysql.query(
+					'SELECT id FROM stocklog.empresa WHERE cnpj=?',
+					[cnpj], 
+					function onResult(err, result) {
+						if (err) {
+							reject(err);
+						} else if (result.length > 0) {
+							resolve(true); // CNPJ já existe
+						} else {
+							resolve(false); // CNPJ não existe
+						}
+					}
+				)
+			})
+
+			const cnpjExiste = await verificarCNPJ;
+			if (cnpjExiste) {
+				return reply.status(400).send({ message: 'CNPJ já cadastrado.' });
+			}
+		
+			const verificarEmail = new Promise((resolve, reject) => {
+				fastify.mysql.query(
+					'SELECT id FROM stocklog.empresa WHERE email=?',
+					[email], 
+					function onResult(err, result) {
+						if (err) {
+							reject(err);
+						} else if (result.length > 0) {
+							resolve(true); // Email já existe
+						} else {
+							resolve(false); // Email não existe
+						}
+					}
+				)
+			})
+
+			const emailExiste = await verificarEmail;
+			if (emailExiste) {
+				return reply.status(400).send({ message: 'E-mail já cadastrado.' });
+			}
+
+
 			fastify.mysql.query(
 				'INSERT INTO stocklog.empresa(`nome`,`telefone`,`cnpj`,`email`,`senha`) VALUES (?,?,?,?,?)',
 				[nome, telefone, cnpj, email, bcrypt.hashSync(senha, 10)],
@@ -18,6 +62,11 @@ export default async function accountRoutes(fastify, options) {
 
 			return reply;
 		} catch (error) {
+
+			if (error.code === 'ER_DATA_TOO_LONG' && error.message.includes("telefone")) {
+				return reply.status(400).send({ message: 'Telefone excede o limite de caracteres. Digite um número com no máximo 11 dígitos.' });
+			}
+
 			console.error('Falha ao inserir dados na tabela empresa:', error);
 			return reply;
 		}
