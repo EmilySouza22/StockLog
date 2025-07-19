@@ -506,7 +506,7 @@ body {
 		font-size: 24px;
 	}
 
-	/* SEÇÃO 3: RELATORIO, ETIQUETA E PLANO PREMIUM */
+	/* SEÇÃO 3: HISTORICO, ETIQUETA E PLANO PREMIUM */
 
 	#container3 {
 		width: 100%;
@@ -751,7 +751,7 @@ body {
 		display: flex;
 		position: absolute;
 		right: 5px;
-		top: 10px;
+		top: 5px;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;

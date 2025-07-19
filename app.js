@@ -14,7 +14,7 @@ import pageRoutes from './src/routes/pages.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const fastify = Fastify({
-	logger: true,
+	logger: false,
 });
 
 await fastify.register(cors);

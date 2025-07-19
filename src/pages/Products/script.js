@@ -23,15 +23,55 @@ const editar_minimo = document.getElementById('editar-minimo');
 const editar_maximo = document.getElementById('editar-maximo');
 const editar_categoria = document.getElementById('editar-categoria');
 
+//Pegando inputs paginação
+const qtd_produtos = document.getElementById('footer-qtd-produtos');
+const total_produtos = document.getElementById('footer-total-produtos');
+const pagina_atual = document.getElementById('footer-pag-atual');
+const pagina_total = document.getElementById('footer-pag-total');
+
+const btnVoltarPagina = document.getElementById('bnt-pag-voltar');
+const btnProximaPagina = document.getElementById('bnt-pag-proximo');
+
+const limite_produtos = 10;
+
+function voltarPagina() {
+	const valor = parseInt(pagina_atual.innerHTML) - 1;
+	pagina_atual.innerHTML = valor < 1 ? 1 : valor;
+	return carregarProdutos();
+}
+
+function avancarPagina() {
+	const valor = parseInt(pagina_atual.innerHTML) + 1;
+	const maximo = parseInt(pagina_total.innerHTML);
+	pagina_atual.innerHTML = valor > maximo ? maximo : valor;
+	return carregarProdutos();
+}
+
+//Listeners para os botaos para voltar e avançar página
+btnVoltarPagina.addEventListener('click', voltarPagina);
+btnProximaPagina.addEventListener('click', avancarPagina);
+
 // CRUD READ - CARREGAR PRODUTOS
 async function carregarProdutos() {
 	const cache = localStorage.getItem('dados_empresa');
 	const dadosEmpresa = JSON.parse(cache);
+	const pagina = parseInt(pagina_atual.innerHTML);
+	const offset = (pagina - 1) * limite_produtos;
 
 	try {
-		const response = await axios.post('/product/all', dadosEmpresa);
+		const response = await axios.post(
+			`/product/all?limit=${limite_produtos}&offset=${offset}`,
+			dadosEmpresa
+		);
 		if (response.status === 200) {
-			renderizarTabela(response.data);
+			renderizarTabela(response.data.list);
+			total_produtos.innerHTML = parseInt(response.data.total);
+			qtd_produtos.innerHTML = response.data.list.length;
+
+			const paginaCalculada = Math.ceil(
+				parseInt(response.data.total) / parseInt(limite_produtos)
+			);
+			pagina_total.innerHTML = paginaCalculada > 0 ? paginaCalculada : 1;
 		} else {
 			alert('Falha ao carregar produtos.');
 		}
@@ -84,7 +124,6 @@ async function renderizarTabela(dados = []) {
 		return;
 	}
 
-	console.log('dados do banco:', dados);
 	const tbody = document.getElementById('body');
 	tbody.innerHTML = '';
 
@@ -103,7 +142,11 @@ async function renderizarTabela(dados = []) {
                 </div>
             </td>
             <td>
-                <button class="delete-icon" data-id="${produto.id}">
+                <button 
+                    class="delete-icon"
+                    data-id="${produto.id}"
+                    data-name="${produto.nome}"
+                >
                     <img src="/assets/imgs/products/icon/icon-lixeira.svg" alt="apagar" class="icons-tabela">
                 </button>
             </td>
@@ -123,10 +166,17 @@ function criarEventListeners() {
 	// Delete listeners
 	document.querySelectorAll('.delete-icon').forEach((botao) => {
 		botao.addEventListener('click', function () {
+			console.log('dataset', this.dataset);
 			const id = parseInt(this.dataset.id);
 			document.getElementById('confirm-modal').style.display = 'flex';
-			document.getElementById('confirmar-delete').onclick = () =>
-				deletarProduto(id);
+			document.getElementById('confirmar-delete').onclick = () => {
+				const cache = localStorage.getItem('dados_empresa');
+				const dadosEmpresa = JSON.parse(cache);
+				deletarProduto(id, {
+					empresa_id: dadosEmpresa.id,
+					produto_nome: this.dataset.name,
+				});
+			};
 		});
 	});
 
@@ -153,9 +203,9 @@ assim não mostra na tela de produtos, mas na tabela produto ele ainda existe, a
 >>> Isso vale tanto para a tabela produto quanto para a empresa
 
 */
-async function deletarProduto(id) {
+async function deletarProduto(id, dados) {
 	try {
-		const response = await axios.put(`/product/delete/${id}`);
+		const response = await axios.put(`/product/delete/${id}`, dados);
 
 		if (response.status === 200) {
 			carregarProdutos();
@@ -287,8 +337,6 @@ async function adicionarCategoria() {
 		empresa_id: dadosEmpresa.id,
 	};
 
-	console.log('novaCategoria: ', novaCategoria);
-
 	try {
 		const response = await axios.post('/category', novaCategoria);
 
@@ -353,7 +401,7 @@ async function editarCategoria(id) {
 			editarCorCategoria.value = resultado.cor;
 		}
 	} catch (error) {
-		console.log(error);
+		console.log('Erro completo:', error);
 		alert(
 			'Erro em carregar as informações da categoria: ' +
 				error.response?.data?.message || error.message
@@ -366,6 +414,7 @@ async function editarCategoria(id) {
 
 //Edição dos dados do produto selecionado
 async function salvarEdicaoCategoria(id) {
+	console.log('ID enviado:', id);
 	const cache = localStorage.getItem('dados_empresa');
 	const dadosEmpresa = JSON.parse(cache);
 
@@ -380,6 +429,8 @@ async function salvarEdicaoCategoria(id) {
 
 	try {
 		const response = await axios.put(`/category/${id}`, dadosAtualizados);
+		console.log('Resposta completa:', response);
+		console.log('Dados retornados:', response.data);
 
 		if (response.status === 200) {
 			alert('Dados da categoria atualizados!');
@@ -411,8 +462,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	btnCancelarVerCateg.addEventListener('click', () => {
 		modalEditCateg.classList.remove('visivel');
 	});
-
-	btnEditCateg.addEventListener('click', editarCategoria);
 });
 
 //Carregar categorias no select
@@ -449,6 +498,84 @@ async function carregarCategorias() {
 }
 
 //Deletar categoria
-async function deletarCategoria(id){
-    
+async function deletarCategoria(id) {
+	try {
+		const response = await axios.put(`/category/delete/${id}`);
+		if (response.status === 200) {
+			alert('Categoria deletada!');
+			document.getElementById('edit-modal-categ').style.display = 'none';
+			carregarCategorias();
+		}
+	} catch (error) {
+		console.error('Erro ao deletar categoria:', error);
+		alert(
+			'Erro ao deletar categoria: ' +
+				(error.response?.data?.message || error.message)
+		);
+	}
 }
+
+//Atualizar o DOMContentLoaded para o modal de edição
+document.addEventListener('DOMContentLoaded', () => {
+	carregarCategorias();
+
+	const modalEditCateg = document.getElementById('edit-modal-categ');
+	const btnVerCateg = document.getElementById('btn-VerCategorias');
+	const btnCancelarVerCateg = document.getElementById(
+		'btn-cancelar-edit-categ'
+	);
+	const selectCategoria = document.getElementById('selectModalEditCateg');
+	const btnDeletarCateg = document.getElementById('btn-deletar-edit-categ');
+
+	btnVerCateg.addEventListener('click', () => {
+		modalEditCateg.style.display = 'flex';
+		carregarCategorias();
+	});
+
+	btnCancelarVerCateg.addEventListener('click', () => {
+		modalEditCateg.style.display = 'none';
+	});
+
+	//Carregar dados da categoria quando selecionada
+	selectCategoria.addEventListener('change', function () {
+		const categoriaId = this.value;
+		if (categoriaId) {
+			editarCategoria(categoriaId);
+		}
+	});
+
+	//Função para quando clicar no botão deletar categoria
+	btnDeletarCateg.addEventListener('click', function () {
+		const categoriaId = selectCategoria.value;
+		if (categoriaId) {
+			if (confirm('Tem certeza que deseja deletar esta categoria?')) {
+				deletarCategoria(categoriaId);
+			}
+		} else {
+			alert('Selecione uma categoria primeiro');
+		}
+	});
+});
+
+//Modal de configurações
+document.getElementById('boxConfigEtiq').addEventListener('click', function () {
+	document.getElementById('ModalConfig').style.display = 'block';
+});
+
+function fecharModal() {
+	document.getElementById('ModalConfig').style.display = 'none';
+}
+
+document.addEventListener('click', function (event) {
+	const modal = document.getElementById('ModalConfig');
+	const boxLogout = document.getElementById('boxLogout');
+	const boxConfigEtiq = document.getElementById('boxConfigEtiq');
+
+	if (
+		modal.style.display === 'block' &&
+		!boxLogout.contains(event.target) &&
+		!boxConfigEtiq.contains(event.target)
+	) {
+		fecharModal();
+	}
+});

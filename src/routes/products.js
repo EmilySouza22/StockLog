@@ -1,5 +1,11 @@
 // Total de 5 rotas para produtos
 
+import moment from 'moment';
+
+import { inserirHistorico } from '../components/utils.js';
+
+const ISO_FORMAT = 'YYYY-MM-DDTHH:mm:ss.sssZ';
+
 export default async function productRoutes(fastify, options) {
 	fastify.post('', async (request, reply) => {
 		const {
@@ -27,7 +33,16 @@ export default async function productRoutes(fastify, options) {
 					empresa_id,
 				],
 				function onResult(err, result) {
-					console.log('insert result', result);
+					if (result) {
+						inserirHistorico(fastify, {
+							empresa_id,
+							produto_id: result.insertId,
+							produto_nome: nome,
+							data_criacao: moment().format(ISO_FORMAT),
+							tipo: 'ADICIONADO',
+							quantidade,
+						});
+					}
 					reply.send(err || result);
 				}
 			);
@@ -49,15 +64,45 @@ export default async function productRoutes(fastify, options) {
 		);
 	});
 
-	fastify.post('/all', function (req, reply) {
+	fastify.post('/all', async function (req, reply) {
 		const dadosEmpresa = req.body;
-		fastify.mysql.query(
-			'SELECT * FROM stocklog.produto WHERE empresa_id=? AND ativo=1',
-			[dadosEmpresa.id],
-			function onResult(err, result) {
-				reply.send(err || result);
-			}
-		);
+		const parametros = req.query;
+
+		let query = 'SELECT * FROM stocklog.produto WHERE empresa_id=? AND ativo=1';
+
+		if (parametros && parametros.limit && parametros.offset) {
+			query += ` LIMIT ${parametros.limit} OFFSET ${parametros.offset}`;
+		}
+
+		try {
+			const countQuery = new Promise((resolve, reject) => {
+				fastify.mysql.query(
+					'SELECT COUNT(id) AS total FROM stocklog.produto WHERE empresa_id=? AND ativo=1',
+					[dadosEmpresa.id],
+					(err, result) => (err ? reject(err) : resolve(result))
+				);
+			});
+
+			const listQuery = new Promise((resolve, reject) => {
+				fastify.mysql.query(query, [dadosEmpresa.id], (err, result) =>
+					err ? reject(err) : resolve(result)
+				);
+			});
+
+			const [countResult, dataResult] = await Promise.all([
+				countQuery,
+				listQuery,
+			]);
+
+			const result = {
+				total: countResult[0].total,
+				list: dataResult,
+			};
+
+			reply.send(result);
+		} catch (error) {
+			reply.send(error);
+		}
 	});
 
 	fastify.put('/:id', function (req, reply) {
@@ -90,12 +135,27 @@ export default async function productRoutes(fastify, options) {
 	});
 
 	fastify.put('/delete/:id', function (req, reply) {
-		fastify.mysql.query(
-			'UPDATE stocklog.produto SET ativo=0 WHERE id=?',
-			[req.params.id],
-			function onResult(err, result) {
-				reply.send(err || result);
-			}
-		);
+		const { empresa_id, produto_nome } = req.body;
+		const { id } = req.params;
+		try {
+			fastify.mysql.query(
+				'UPDATE stocklog.produto SET ativo=0 WHERE id=?',
+				[id],
+				function onResult(err, result) {
+					if (result) {
+						inserirHistorico(fastify, {
+							empresa_id,
+							produto_id: id,
+							produto_nome,
+							data_criacao: moment().format(ISO_FORMAT),
+							tipo: 'EXCLUIDO',
+						});
+					}
+					reply.send(err || result);
+				}
+			);
+		} catch (error) {
+			reply.send(error);
+		}
 	});
 }
