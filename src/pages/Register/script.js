@@ -18,7 +18,7 @@ async function cadastrar() {
 	// sobre o async: "Esta função de cadastro pode fazer algo que demora (como se comunicar com o servidor), então quero que ela espere essas coisas acontecerem antes de continuar.
 	if (senha.value !== confirmarSenha.value) {
 		//Verifica se as senhas coincidem
-		alert("As senhas não coincidem!");
+		toastr["error"]("As senhas não coincidem!", "Erro")
 		return; // Se não coincidirem, exibe um alerta e encerra a função
 	}
 
@@ -40,33 +40,41 @@ async function cadastrar() {
 		!usuario.email ||
 		!usuario.senha
 	) {
-		toastr.info("Erro 404", "teste2");
+		toastr["error"]("Preencha todos os campos", "Erro")
+		return;
+	}
+
+	// Confere se o telefone é válido --> tbm tem a parte do backend
+
+	const telefoneLimpo = usuario.telefone.replace(/\D/g, '');
+	if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
+		toastr["error"]("Telefone inválido! Deve conter entre 10 e 11 números.", "Erro");
 		return;
 	}
 
 	//Confere se o e-mail é válido
 	const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(usuario.email);
 	if (!emailValido) {
-		alert("Digite um e-mail válido!");
+		toastr["error"]("Digite um e-mail válido!", "Erro")
 		return;
 	}
 
 	//Confere se o CPNJ é válido --> não precisou fazer isso com o telefone pq no CPNJ pode ter pontos, barras e hífens...
 	const cnpjValido = /^[0-9./-]+$/.test(usuario.cnpj);
 	if (!cnpjValido) {
-		alert("CNPJ contém caracteres inválidos! Use apenas números, '.', '/' ou '-'.");
+		toastr["error"]("CNPJ contém caracteres inválidos! Use apenas números, '.', '/' ou '-'.", "Erro")
 		return;
 	}
 
 	//CNPJ com 14 dígitos (limpando antes)
 	if (limparCNPJ(usuario.cnpj).length !== 14) {
-		alert("CNPJ inválido! Deve conter 14 números.");
+		toastr["error"]("CNPJ inválido! Deve conter 14 números", "Erro")
 		return;
 	}
 
 	//Senha com no mínimo 6 caracteres
 	if (usuario.senha.length < 6) {
-		alert("A senha deve ter pelo menos 6 caracteres.");
+		toastr["error"]("A senha deve ter pelo menos 6 caracteres", "Erro")
 		return;
 	}
 
@@ -80,11 +88,16 @@ async function cadastrar() {
 			// Handle success - redirect or show success message
 			window.location.href = "/login";
 		}
+		
 	} catch (error) {
 		console.error(error);
-		alert(
-			"Erro no cadastro: " + error.response?.data?.message || error.message
-		);
+		
+		const mensagem = error.response?.data?.message || "Erro inesperado no cadastro.";
+		toastr["error"](mensagem, "Erro no cadastro");
+		
+		// alert( 			--> sem o toastr
+		// 	"Erro no cadastro: " + error.response?.data?.message || error.message
+		// );
 	}
 }
 
