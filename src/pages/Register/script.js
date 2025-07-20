@@ -13,21 +13,6 @@ function limparCNPJ(cnpj) {
 	return cnpj.replace(/\D/g, ""); // Remove tudo que não é dígito -- // .replace() serve para substituir parte de uma string por outra.
 }
 
-//Função que vai verificar se já existe algum usuário com o cpnj ou com o email
-
-// function usuarioJaExiste(cnpj, email) {
-// 	// vai verificar se já existe algum usuário com esse CNPJ ou email cadastrado no localStorage.
-// 	const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // pega os usuários salvos e converte de volta para um array. Se não houver usuários, usa um array vazio.
-
-// 	const cnpjLimpo = limparCNPJ(cnpj);
-
-// 	return usuarios.some(
-// 		// Verifica se existe algum usuário com o mesmo CNPJ ou email (o some)
-// 		(usuario) =>
-// 			limparCNPJ(usuario.cnpj) === cnpjLimpo ||
-// 			usuario.email.toLowerCase() === email.toLowerCase()
-// 	);
-// }
 
 async function cadastrar() {
 	// sobre o async: "Esta função de cadastro pode fazer algo que demora (como se comunicar com o servidor), então quero que ela espere essas coisas acontecerem antes de continuar.
@@ -79,13 +64,6 @@ async function cadastrar() {
 		return;
 	}
 
-	// Telefone deve ter até 11 dígitos (limpando antes)
-	const telefoneLimpo = usuario.telefone.replace(/\D/g, "");
-	if (telefoneLimpo.length < 11) {
-		alert("Telefone inválido! Deve conter entre 10 e 11 números.");
-		return;
-	}
-
 	//Senha com no mínimo 6 caracteres
 	if (usuario.senha.length < 6) {
 		alert("A senha deve ter pelo menos 6 caracteres.");
@@ -125,9 +103,18 @@ function alternarSenha(inputId, iconId) {
 	}
 }
 
-//Listener para o telefone e cnpj ver se tem palavras e traços
-// telefone.addEventListener('input', (event) => {
-// 	console.log(event);
-// 	if (!(event.data >= '0' && event.data <= '9')) {
-// 	}
-// });
+		//Função que vai verificar se já existe algum usuário com o cpnj ou com o email --> COMENTADA POIS AGR FOI CONFIGURADA COM O BANCO
+		
+		// function usuarioJaExiste(cnpj, email) {
+		// 	// vai verificar se já existe algum usuário com esse CNPJ ou email cadastrado no localStorage.
+		// 	const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // pega os usuários salvos e converte de volta para um array. Se não houver usuários, usa um array vazio.
+		
+		// 	const cnpjLimpo = limparCNPJ(cnpj);
+		
+		// 	return usuarios.some(
+		// 		// Verifica se existe algum usuário com o mesmo CNPJ ou email (o some)
+		// 		(usuario) =>
+		// 			limparCNPJ(usuario.cnpj) === cnpjLimpo ||
+		// 			usuario.email.toLowerCase() === email.toLowerCase()
+		// 	);
+		// }
