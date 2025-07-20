@@ -2,7 +2,7 @@
 	font-family: 'poppins', sans-serif;
 	font-weight: 500;
 	font-style: normal;
-    src: url('path/to/poppins-medium.woff2') format('woff2'),
+	src: url('path/to/poppins-medium.woff2') format('woff2'),
 		url('path/to/poppins-medium.woff') format('woff');
 }
 
@@ -17,6 +17,7 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
 header {
 	background: #fff;
 	text-align: center;
@@ -31,22 +32,37 @@ header {
 	gap: 16px;
 	margin: 24px 0 0 32px;
 }
+
 .logo {
 	height: 40px;
 }
+
+/* PRINCIPAL */
+
+#principal {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 84vh;
+	flex-direction: column;
+}
+
 .alertas-container {
 	background: #fff;
-	margin: 25px auto;
 	padding: 28px;
+	width: 100%;
+	min-height: 85%;
 	border-radius: 16px;
-	max-width: 1200px;
+	max-width: 1750px;
 	box-shadow: 0 2px 8px #0001;
 }
 .abas {
+	width: 92%;
 	display: flex;
 	gap: 8px;
-	margin-bottom: 24px;
 }
+
 .aba {
 	background: #f9fafb;
 	border: none;
@@ -54,34 +70,40 @@ header {
 	padding: 12px 32px;
 	font-size: 1.1rem;
 	cursor: pointer;
-	color: #767779;
+	color: #4e6074;
 	font-weight: 600;
 	transition: background 0.2s, color 0.2s;
 }
+
 .aba.ativa {
-	background: #d4f3e7e7;
-	color: #68c899;
-	border-bottom: 3px solid #68c899;
+	background: #fff;
+	color: #344253;
+	box-shadow: 0 2px 8px #0001;
 }
+
 .cards-container {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 8px;
 	min-height: 150px;
+	margin-top: 30px;
 }
+
 .card {
 	background: #f0f4f8;
 	border-radius: 12px;
 	box-shadow: 0 1px 4px #0001;
 	padding: 16px;
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	flex-direction: row;
 	gap: 8px;
 	position: relative;
 	border: 1px solid #e2ebf3;
 	color: #344253;
+	align-items: center;
+	justify-content: space-around;
 }
+
 .card img {
 	width: 90px;
 	height: 110px;
@@ -94,20 +116,42 @@ header {
 	font-size: 1.1rem;
 	color: #344253;
 }
+
 .card .quantidade,
 .card .data {
 	font-size: 0.98rem;
 	color: #344253;
 }
 
+.card:has(input[type='checkbox']:checked) {
+	background-color: rgb(171, 211, 189);
+	border: 1px solid #4bb87f;
+}
+
+.card:has(input[type='checkbox']:checked) .nome,
+.card:has(input[type='checkbox']:checked) .quantidade,
+.card:has(input[type='checkbox']:checked) .data{
+	color: #fff;
+}
+
 .checkbox {
-	position: absolute;
 	top: 12px;
 	right: 12px;
 	width: 24px;
 	height: 24px;
-	accent-color: #489d73;
+	accent-color: #389b6d;
 	cursor: pointer;
+}
+
+#footer-alert {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	position: sticky;
+	top: 1000px;
+	left: 25px;
+	background-color: white;
+	z-index: 10;
 }
 
 .paginacao {
@@ -224,7 +268,7 @@ header {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	margin: 10px 20px 20px 20px;
+	margin: 10px 20px 10px 20px;
 }
 
 .btn-proximo {
