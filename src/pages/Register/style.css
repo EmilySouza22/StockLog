@@ -18,6 +18,8 @@ body {
 	background-color: #f0f4f8;
 	margin: 0;
 	padding: 0;
+	height: 100vh;
+  	overflow: hidden;
 }
 
 /*CONTAINER PRINCIPAL*/
@@ -26,8 +28,9 @@ body {
 	display: flex;
 	flex-direction: row;
 	position: relative;
-	min-height: 90vh;
-	max-height: max-content;
+	height: calc(100vh - 65px);
+	/* min-height: 90vh;
+	max-height: max-content; */
 	min-width: 90px;
 	justify-content: flex-start;
 	align-items: center;
@@ -70,17 +73,17 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	gap: 10px;
 	border: none;
 	border-radius: 8px;
 	background: linear-gradient(#4fb4a2, #42a373);
-	padding: 40px;
+	padding: 30px;
 	color: #4e6074;
 	/* margin-bottom: 20px; */
 	margin: 20px;
 	width: 100%;
 	max-width: 450px;
-	min-height: 450px;
+	min-height: 420px;
 	font-size: 18px;
 }
 
