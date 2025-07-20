@@ -126,7 +126,7 @@ body {
 /*INPUTS*/
 
 .containerInput {
-	max-width: 300px;
+	max-width: 400px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -142,8 +142,8 @@ body {
 }
 
 .inputIcon input {
-	width: 300px;
-	padding: 20px 20px 16px 45px;
+	width: 400px;
+	padding: 20px 10px 16px 45px;
 	border: none;
 	border-radius: 8px;
 	font-size: 16px;
