@@ -8,7 +8,7 @@ export default async function accountRoutes(fastify, options) {
 
 		const telefoneLimpo = telefone.replace(/\D/g, '');
 		if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
-			return reply.status(400).send({ message: 'Telefone inválido! Deve conter entre 10 e 11 números.'});
+			return reply.status(400).send({ message: 'Telefone inválido!'});
 		}
 
 		try {

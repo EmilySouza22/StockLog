@@ -48,7 +48,7 @@ async function cadastrar() {
 
 	const telefoneLimpo = usuario.telefone.replace(/\D/g, '');
 	if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
-		toastr["error"]("Telefone inválido! Deve conter entre 10 e 11 números.", "Erro");
+		toastr["error"]("Telefone inválido!", "Erro");
 		return;
 	}
 
@@ -85,8 +85,13 @@ async function cadastrar() {
 		const response = await axios.post("/account/register", usuario);
 
 		if (response.status === 200) {
+
 			// Handle success - redirect or show success message
-			window.location.href = "/login";
+			toastr["success"]("Cadastro realizado com sucesso!", "Sucesso");
+
+			setTimeout(() => {
+				window.location.href = "/login";
+			}, 1500); // espera 1.5 segundos antes de redirecionar
 		}
 		
 	} catch (error) {
