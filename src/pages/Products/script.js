@@ -85,6 +85,57 @@ async function carregarProdutos() {
 
 //CRUD CREATE - ADICIONAR PRODUTO
 async function adicionarProduto() {
+	// Validações
+	if (!nome.value.trim()) {
+		alert('Nome do produto é obrigatório');
+		return;
+	}
+
+	if (!codigoBarra.value.trim()) {
+		alert('Código de barra é obrigatório');
+		return;
+	}
+
+	if (!quantidade.value || parseInt(quantidade.value) < 0) {
+		alert('Quantidade deve ser um número válido e não negativo');
+		return;
+	}
+
+	if (!dataEntrada.value) {
+		alert('Data de entrada é obrigatória');
+		return;
+	}
+
+	if (!dataValidade.value) {
+		alert('Data de validade é obrigatória');
+		return;
+	}
+
+	if (moment(dataValidade.value).isBefore(moment(dataEntrada.value))) {
+		alert('Data de validade não pode ser anterior à data de entrada');
+		return;
+	}
+
+	if (!minimo.value || parseInt(minimo.value) < 0) {
+		alert('Valor mínimo deve ser um número válido e não negativo');
+		return;
+	}
+
+	if (!maximo.value || parseInt(maximo.value) < 0) {
+		alert('Valor máximo deve ser um número válido e não negativo');
+		return;
+	}
+
+	if (parseInt(maximo.value) < parseInt(minimo.value)) {
+		alert('Valor máximo não pode ser menor que o mínimo');
+		return;
+	}
+
+	if (!categoria.value) {
+		alert('Categoria é obrigatória');
+		return;
+	}
+
 	const cache = localStorage.getItem('dados_empresa');
 	const dadosEmpresa = JSON.parse(cache);
 
@@ -96,7 +147,7 @@ async function adicionarProduto() {
 		data_entrada: moment(dataEntrada.value).format(ISO_FORMAT),
 		minimo: parseInt(minimo.value),
 		maximo: parseInt(maximo.value),
-		categoria: categoria.value,
+		categoria_id: categoria.value,
 		empresa_id: dadosEmpresa.id,
 	};
 
