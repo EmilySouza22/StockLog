@@ -20,6 +20,13 @@ const fastify = Fastify({
 	logger: false,
 });
 
+fastify.addHook('onSend', async (request, reply, payload) => {
+	if (!reply.getHeader('content-type')) {
+		reply.header('content-type', 'application/json; charset=utf-8');
+	}
+	return payload;
+});
+
 await fastify.register(cors);
 
 await fastify.register(fastify_mysql, {
