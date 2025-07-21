@@ -51,10 +51,10 @@ header {
 .alertas-container {
 	background: #fff;
 	padding: 28px;
-	width: 100%;
-	min-height: 85%;
+	width: 90%;
+	min-height: 80%;
 	border-radius: 16px;
-	max-width: 1750px;
+	max-width: 100%;
 	box-shadow: 0 2px 8px #0001;
 }
 .abas {

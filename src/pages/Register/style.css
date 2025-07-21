@@ -191,7 +191,7 @@ input[type='number'] {
 
 #login {
 	position: absolute;
-	right: 80px;
+	right: 50px;
 	bottom: 30px;
 	display: flex;
 	flex-direction: column;
@@ -229,12 +229,21 @@ p {
 	background: none;
 	color: #28dc84;
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 20px;
 	height: 35px;
 	width: 180px;
 	border-radius: 8px;
 	/* border: none; */
 	/* padding: 5px; */
-	border: 2px solid #28dc84;
+	border: 3px solid #28dc84;
 	cursor: pointer;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/*remover a linha do link */
+a {
+    text-decoration: none;
 }
