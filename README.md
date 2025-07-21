@@ -1,6 +1,6 @@
 # StockLog
 
-🛠️ Sistema de Gerenciamento de Estoques para Empresas
+🛠️ Sistema de Gerenciamento de Estoques para Empresas do ramo Alimentício
 
 Este projeto é um sistema web desenvolvido durante a Situação de Aprendizagem da primeira fase no SENAI.
 O projeto foi desenvolvido para auxiliar empresas no controle e gerenciamento de seus estoques de forma eficiente e intuitiva. 
@@ -17,8 +17,8 @@ O projeto foi desenvolvido para auxiliar empresas no controle e gerenciamento de
  • Autenticação
  • Gestão de Produtos
  • Cadastro completo de produtos
- • Alertas Inteligentes 
- • Relatórios Detalhados
+ • Cadastro completo de categorias dos produtos
+ • Histórico detalhado
  • Impressão de Etiquetas
 
 🛠️ ESTE PROJETO ESTÁ EM DESENVOLVIMENTO
