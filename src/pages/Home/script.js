@@ -40,8 +40,7 @@ btnGraf6.addEventListener('click', () => mostrarGrafico(grafico6));
 
 mostrarGrafico(grafico1);
 /* 
-    Gráfico 1. Status Geral do Estoque
-    - Radar
+    Gráfico 1. Categoria
 */
 grafico1.style.display = 'block';
 new Chart(grafico1, {
@@ -63,7 +62,7 @@ new Chart(grafico1, {
 		],
 		datasets: [
 			{
-				label: 'Etiquetas Impressas',
+				label: 'Quantidade de produto por categorias',
 				data: [120, 40, 34, 60, 58, 47, 140, 150, 157, 102, 98, 183],
 				borderWidth: 1,
 				backgroundColor: '#489d73',
@@ -85,8 +84,7 @@ new Chart(grafico1, {
 });
 
 /* 
-    Gráfico 2. Quantidade de Produtos por Categoria
-    Gráfico de barras ou pizza
+    Gráfico 2. Histórico de ações
 
 */
 
@@ -109,10 +107,10 @@ new Chart(grafico2, {
 		],
 		datasets: [
 			{
-				label: 'Etiquetas Impressas',
+				label: 'Atividades executadas por mês',
 				data: [120, 40, 34, 60, 58, 47, 140, 150, 157, 102, 98, 183],
 				borderWidth: 1,
-				backgroundColor: '#2596be',
+				backgroundColor: '#238856ff',
 			},
 		],
 	},
@@ -132,13 +130,12 @@ new Chart(grafico2, {
 
 /*
 
-    Gráfico 3. Entradas e Saídas no Mês
-    Gráfico de linhas ou colunas agrupadas
+    Gráfico 3. Teendências de validades
 
 */
 
 new Chart(grafico3, {
-	type: 'line',
+	type: 'bar',
 	data: {
 		labels: [
 			'Janeiro',
@@ -156,10 +153,16 @@ new Chart(grafico3, {
 		],
 		datasets: [
 			{
-				label: 'Etiquetas Impressas',
+				label: 'Produtos a vencer em 30 dias',
 				data: [120, 40, 34, 60, 58, 47, 140, 150, 157, 102, 98, 183],
 				borderWidth: 1,
-				backgroundColor: '#873e23',
+				backgroundColor: '#138848ff',
+			},
+			{
+				label: 'Produtos vencidos',
+				data: [100, 50, 45, 70, 65, 55, 130, 140, 145, 95, 88, 170],
+				borderWidth: 1,
+				backgroundColor: '#48a77aff',
 			},
 		],
 	},
@@ -314,7 +317,6 @@ new Chart(grafico6, {
 	},
 });
 
-
 //Modal de configurações >>>>>>>> LOGOUT
 
 function abrirModalConfig() {
@@ -325,14 +327,38 @@ function fecharModal() {
 	document.getElementById('ModalConfig').style.display = 'none';
 }
 
-document.addEventListener('click', function(event) {
-    const modal = document.getElementById('ModalConfig');
-    const boxLogout = document.getElementById('boxLogout');
-    const boxConfigEtiq = document.getElementById('boxConfigEtiq');
-    
-    if (modal.style.display === 'block' && 
-        !boxLogout.contains(event.target) && 
-        !boxConfigEtiq.contains(event.target)) {
-        fecharModal();
-    }
+document.addEventListener('click', function (event) {
+	const modal = document.getElementById('ModalConfig');
+	const boxLogout = document.getElementById('boxLogout');
+	const boxConfigEtiq = document.getElementById('boxConfigEtiq');
+
+	if (
+		modal.style.display === 'block' &&
+		!boxLogout.contains(event.target) &&
+		!boxConfigEtiq.contains(event.target)
+	) {
+		fecharModal();
+	}
+});
+
+// Carregar as informações da home
+async function carregarHome() {
+	const cache = localStorage.getItem('dados_empresa');
+	const dadosEmpresa = JSON.parse(cache);
+
+	try {
+		const response = await axios.post(`/product/all`, dadosEmpresa);
+		if (response.status === 200) {
+			renderizarTabela(response.data.list);
+		} else {
+			alert('Falha ao carregar a home.');
+		}
+	} catch (error) {
+		console.log(error);
+		alert('Erro tela home: ' + error.response?.data?.message || error.message);
+	}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+	carregarHome();
 });

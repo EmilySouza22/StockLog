@@ -10,6 +10,7 @@ import accountRoutes from './src/routes/account.js';
 import productRoutes from './src/routes/products.js';
 import categoryRoutes from './src/routes/category.js';
 import historicRoutes from './src/routes/historic.js';
+import homeRoutes from './src/routes/home.js';
 import pageRoutes from './src/routes/pages.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -46,6 +47,7 @@ await fastify.register(accountRoutes, { prefix: '/account' });
 await fastify.register(productRoutes, { prefix: '/product' });
 await fastify.register(categoryRoutes, { prefix: '/category' });
 await fastify.register(historicRoutes, { prefix: '/historic' });
+await fastify.register(homeRoutes, { prefix: '/home' });
 await fastify.register(pageRoutes);
 
 try {

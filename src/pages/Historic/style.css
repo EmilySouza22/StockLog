@@ -243,6 +243,11 @@ h2 {
 
 /*CONTAINER TABLE*/
 
+img.icons-tabela{
+    width: 25px;
+	height: 25px;
+}
+
 select {
 	padding: 8px 12px;
 	border-radius: 8px;
@@ -269,7 +274,7 @@ thead th {
 }
 
 tbody td {
-	padding: 12px 15px;
+	padding: 10px 15px;
 	border-bottom: 1px solid #e0e0e0;
 }
 

@@ -87,13 +87,13 @@ document.querySelectorAll('.aba').forEach((btn) => {
 	btn.addEventListener('click', () => trocarAba(btn.dataset.aba));
 });
 
-document.getElementById('anterior').addEventListener('click', () => {
+document.getElementById('bnt-pag-voltar').addEventListener('click', () => {
 	if (paginaAtual > 1) {
 		paginaAtual--;
 		renderCards();
 	}
 });
-document.getElementById('proximo').addEventListener('click', () => {
+document.getElementById('bnt-pag-proximo').addEventListener('click', () => {
 	const total = produtos[abaAtual].length;
 	if (paginaAtual < Math.ceil(total / cardsPorPagina)) {
 		paginaAtual++;

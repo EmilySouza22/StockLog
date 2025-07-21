@@ -130,7 +130,7 @@ header {
 
 .card:has(input[type='checkbox']:checked) .nome,
 .card:has(input[type='checkbox']:checked) .quantidade,
-.card:has(input[type='checkbox']:checked) .data{
+.card:has(input[type='checkbox']:checked) .data {
 	color: #fff;
 }
 
@@ -154,6 +154,27 @@ header {
 	z-index: 10;
 }
 
+.bnt-footer {
+	justify-content: center;
+	width: 0px;
+	height: 30px;
+	background: linear-gradient(to right, #68c899, #489d73);
+	color: rgb(0, 0, 0);
+	border: none;
+	padding: 8px 16px;
+	margin: 0;
+	border-radius: 20px;
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.btn-footer-img {
+	width: 15px;
+	height: 15px;
+}
+
 .paginacao {
 	display: flex;
 	align-items: center;
@@ -161,7 +182,6 @@ header {
 	margin: 18px 0 0 0;
 }
 .paginacao button {
-	background: #e9ecf6;
 	border: none;
 	border-radius: 50%;
 	width: 32px;
