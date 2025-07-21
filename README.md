@@ -1,4 +1,3 @@
-# StockLog
 
 ![Description](./src/assets/imgs/home/img/logo.svg)
 
