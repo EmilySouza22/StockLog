@@ -84,9 +84,9 @@ header {
 .cards-container {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 8px;
+	gap: 12px;
 	min-height: 150px;
-	margin-top: 30px;
+	margin-top: 12px;
 }
 
 .card {

@@ -255,6 +255,9 @@ async function editarProduto(id) {
 
 //Edição dos dados do produto selecionado
 async function salvarEdicao(id) {
+	const cache = localStorage.getItem('dados_empresa');
+	const dadosEmpresa = JSON.parse(cache);
+
 	const dadosAtualizados = {
 		nome: document.getElementById('editar-produto').value,
 		codigo_barra: document.getElementById('editar-codigo-de-barra').value,
@@ -263,6 +266,7 @@ async function salvarEdicao(id) {
 		data_validade: document.getElementById('editar-validade').value,
 		minimo: parseInt(document.getElementById('editar-minimo').value),
 		maximo: parseInt(document.getElementById('editar-maximo').value),
+		empresa_id: dadosEmpresa.id,
 	};
 
 	try {
