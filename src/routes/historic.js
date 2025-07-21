@@ -3,9 +3,9 @@ export default async function historicRoutes(fastify, options) {
 		const dadosEmpresa = req.body;
 		const parametros = req.query;
 
-		let query =
-			'SELECT * FROM stocklog.historico WHERE empresa_id=? ORDER BY id DESC';
+		let query = 'SELECT * FROM stocklog.historico WHERE empresa_id=? ORDER BY id DESC';
 
+		// Aplicar paginação apenas se os parâmetros forem fornecidos
 		if (parametros && parametros.limit && parametros.offset) {
 			query += ` LIMIT ${parametros.limit} OFFSET ${parametros.offset}`;
 		}
@@ -37,7 +37,11 @@ export default async function historicRoutes(fastify, options) {
 
 			reply.send(result);
 		} catch (error) {
-			reply.send(error);
+			console.error('Erro na rota do histórico:', error);
+			reply.status(500).send({
+				error: 'Erro interno do servidor',
+				message: error.message
+			});
 		}
 	});
 }
