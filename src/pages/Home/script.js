@@ -705,6 +705,11 @@ async function carregarHome() {
 	const cache = localStorage.getItem('dados_empresa');
 	const dadosEmpresa = JSON.parse(cache);
 
+	// Se não tem dados da empresa, sai sem fazer nada
+	if (!dadosEmpresa) {
+		return;
+	}
+
 	try {
 		const response = await axios.post(`/product/all`, dadosEmpresa);
 		if (response.status === 200) {
@@ -714,7 +719,8 @@ async function carregarHome() {
 		}
 	} catch (error) {
 		console.log(error);
-		alert('Erro tela home: ' + error.response?.data?.message || error.message);
+		// Não mostra alert se não tem dados da empresa
+		// alert('Erro tela home: ' + error.response?.data?.message || error.message);
 	}
 }
 

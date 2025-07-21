@@ -244,6 +244,29 @@ body {
 		font-size: 20px;
 	}
 
+	.ultima-atualização {
+		display: flex;
+    	align-items: center;
+ 		justify-content: center;
+    	text-align: center;
+	}
+
+	.quantidade{
+		display: flex;
+    	align-items: center;
+ 		justify-content: center;
+    	text-align: center;
+		font-size: 18px;
+	}
+
+	.hora{
+		display: flex;
+    	align-items: center;
+ 		justify-content: center;
+    	text-align: center;
+		font-size: 14px;
+	}
+
 	/* PAINEL ALERTAS */
 
 	#painel-alertas {
@@ -281,7 +304,7 @@ body {
 
 	.alertInfoText {
 		color: #4e6074;
-		font-size: 20px;
+		font-size: 15px;
 		margin: 0;
 		line-height: 110%;
 	}
@@ -592,7 +615,7 @@ body {
 
 	#relatText {
 		width: 100%;
-		font-size: 24px;
+		font-size: 21px;
 		margin: 0;
 		color: #4e6074;
 	}
@@ -660,7 +683,7 @@ body {
 
 	#etiqText {
 		width: 100%;
-		font-size: 24px;
+		font-size: 21px;
 		margin: 0;
 		color: #4e6074;
 	}
@@ -874,6 +897,8 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		gap: 20px; /* Adiciona espaçamento entre os painéis */
+    	flex-wrap: wrap; /* Permite quebra de linha em telas menores */
 	}
 
 	/* PAINEL UPDATE */
@@ -885,6 +910,7 @@ body {
 		justify-content: space-evenly;
 		align-items: center;
 		width: 32%;
+		min-width: 300px;
 		height: 100%;
 		border-radius: 20px;
 		box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
