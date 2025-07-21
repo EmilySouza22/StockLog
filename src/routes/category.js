@@ -11,7 +11,7 @@ export default async function categoryRoutes(fastify, options) {
 				[nome, cor, empresa_id],
 				function onResult(err, result) {
 					console.log('insert result', result);
-					reply.send(err || result);
+					reply.type('application/json').send(err || result);
 				}
 			);
 
@@ -28,7 +28,7 @@ export default async function categoryRoutes(fastify, options) {
 			'SELECT * FROM stocklog.categoria WHERE id=? AND ativo=1',
 			[req.params.id],
 			function onResult(err, result) {
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});
@@ -40,7 +40,7 @@ export default async function categoryRoutes(fastify, options) {
 			'SELECT * FROM stocklog.categoria WHERE empresa_id=? AND ativo=1',
 			[dadosEmpresa.id],
 			function onResult(err, result) {
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});
@@ -53,7 +53,7 @@ export default async function categoryRoutes(fastify, options) {
 			'UPDATE stocklog.categoria SET nome=?, cor=?, empresa_id=? WHERE id=?',
 			[nome, cor, empresa_id, req.params.id],
 			function onResult(err, result) {
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});
@@ -64,7 +64,7 @@ export default async function categoryRoutes(fastify, options) {
 			'UPDATE stocklog.categoria SET ativo=0 WHERE id=?',
 			[req.params.id],
 			function onResult(err, result) {
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});

@@ -4,7 +4,8 @@ export default async function historicRoutes(fastify, options) {
 		const dadosEmpresa = req.body;
 		const parametros = req.query;
 
-		let query = 'SELECT * FROM stocklog.historico WHERE empresa_id=? ORDER BY id DESC';
+		let query =
+			'SELECT * FROM stocklog.historico WHERE empresa_id=? ORDER BY id DESC';
 
 		// Aplicar paginação apenas se os parâmetros forem fornecidos
 		if (parametros && parametros.limit && parametros.offset) {
@@ -26,14 +27,17 @@ export default async function historicRoutes(fastify, options) {
 				);
 			});
 
-			const [countResult, dataResult] = await Promise.all([countQuery, listQuery]);
+			const [countResult, dataResult] = await Promise.all([
+				countQuery,
+				listQuery,
+			]);
 
 			const result = {
 				total: countResult[0].total,
 				list: dataResult,
 			};
 
-			reply.send(result);
+			reply.type('application/json').send(result);
 		} catch (error) {
 			console.error('Erro na rota do histórico:', error);
 			reply.status(500).send({
@@ -62,7 +66,7 @@ export default async function historicRoutes(fastify, options) {
 				);
 			});
 
-			reply.send(result); // Envia um array com 0 ou 1 elemento
+			reply.type('application/json').send(result); // Envia um array com 0 ou 1 elemento
 		} catch (error) {
 			console.error('Erro na rota do histórico recente:', error);
 			reply.status(500).send({

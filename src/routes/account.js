@@ -8,11 +8,10 @@ export default async function accountRoutes(fastify, options) {
 
 		const telefoneLimpo = telefone.replace(/\D/g, '');
 		if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
-			return reply.status(400).send({ message: 'Telefone inválido!'});
+			return reply.status(400).send({ message: 'Telefone inválido!' });
 		}
 
 		try {
-
 			const verificarCNPJ = new Promise((resolve, reject) => {
 				fastify.mysql.query(
 					'SELECT id FROM stocklog.empresa WHERE cnpj=?',
@@ -26,8 +25,8 @@ export default async function accountRoutes(fastify, options) {
 							resolve(false); // CNPJ não existe
 						}
 					}
-				)
-			})
+				);
+			});
 
 			const cnpjExiste = await verificarCNPJ;
 			if (cnpjExiste) {
@@ -47,26 +46,24 @@ export default async function accountRoutes(fastify, options) {
 							resolve(false); // Email não existe
 						}
 					}
-				)
-			})
+				);
+			});
 
 			const emailExiste = await verificarEmail;
 			if (emailExiste) {
 				return reply.status(400).send({ message: 'E-mail já cadastrado.' });
 			}
 
-
 			fastify.mysql.query(
 				'INSERT INTO stocklog.empresa(`nome`,`telefone`,`cnpj`,`email`,`senha`) VALUES (?,?,?,?,?)',
 				[nome, telefone, cnpj, email, bcrypt.hashSync(senha, 10)],
 				function onResult(err, result) {
 					console.log('insert result', result);
-					reply.send(err || result);
+					reply.type('application/json').send(err || result);
 				}
 			);
 
 			return reply;
-
 		} catch (error) {
 			console.error('Falha ao inserir dados na tabela empresa:', error);
 			return reply;
@@ -78,7 +75,7 @@ export default async function accountRoutes(fastify, options) {
 			'SELECT * FROM stocklog.empresa WHERE id=? AND ativo=1',
 			[req.params.id],
 			function onResult(err, result) {
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});
@@ -90,7 +87,7 @@ export default async function accountRoutes(fastify, options) {
 			'UPDATE stocklog.empresa SET nome=?, cnpj=?, telefone=?, email=? WHERE id=?',
 			[nome, cnpj, telefone, email, req.params.id],
 			function onResult(err, result) {
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});
@@ -100,7 +97,7 @@ export default async function accountRoutes(fastify, options) {
 			'UPDATE stocklog.empresa SET ativo=0, cnpj=CONCAT(NOW(),cnpj), email=CONCAT(NOW(),email) WHERE id=?',
 			[req.params.id],
 			function onResult(err, result) {
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});

@@ -45,7 +45,7 @@ export default async function productRoutes(fastify, options) {
 							quantidade,
 						});
 					}
-					reply.send(err || result);
+					reply.type('application/json').send(err || result);
 				}
 			);
 
@@ -61,7 +61,7 @@ export default async function productRoutes(fastify, options) {
 			'SELECT * FROM stocklog.produto WHERE id=? AND ativo=1',
 			[req.params.id],
 			function onResult(err, result) {
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});
@@ -102,9 +102,9 @@ export default async function productRoutes(fastify, options) {
 				list: dataResult,
 			};
 
-			reply.send(result);
+			reply.type('application/json').send(result);
 		} catch (error) {
-			reply.send(error);
+			reply.type('application/json').send(error);
 		}
 	});
 
@@ -145,7 +145,7 @@ export default async function productRoutes(fastify, options) {
 						quantidade,
 					});
 				}
-				reply.send(err || result);
+				reply.type('application/json').send(err || result);
 			}
 		);
 	});
@@ -167,11 +167,11 @@ export default async function productRoutes(fastify, options) {
 							tipo: 'EXCLUIDO',
 						});
 					}
-					reply.send(err || result);
+					reply.type('application/json').send(err || result);
 				}
 			);
 		} catch (error) {
-			reply.send(error);
+			reply.type('application/json').send(error);
 		}
 	});
 }

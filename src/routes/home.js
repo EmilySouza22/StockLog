@@ -29,9 +29,9 @@ export default async function homeRoutes(fastify, options) {
 				list: dataResult,
 			};
 
-			reply.send(result);
+			reply.type('application/json').send(result);
 		} catch (error) {
-			reply.send(error);
+			reply.type('application/json').send(error);
 		}
 	});
 }
