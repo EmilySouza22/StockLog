@@ -9,9 +9,10 @@ Nosso sistema foi desenvolvido para auxiliar empresas no controle e gerenciament
 
 Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque do ramo alimentício, desde pequenos negócios até supermercados.
 
+
 🔧 STACK
 
- • HTML
+   HTML
  • CSS
  • JavaScript
  • Node.js
