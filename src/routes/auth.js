@@ -14,6 +14,11 @@ export default async function authRoutes(fastify, options) {
 			const result = await queryAsync(query, [emailOuCnpj]);
 
 			const userData = result[0];
+
+			if (!userData) { //Se o usuário não estiver cadastrado 
+				return reply.code(404).send({ message: 'E-mail ou CNPJ não cadastrado' });
+			}
+
 			const compare = bcrypt.compareSync(senha, userData.senha);
 
 			if (!compare) {

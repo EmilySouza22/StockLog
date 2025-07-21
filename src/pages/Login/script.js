@@ -1,6 +1,28 @@
 async function login() {
-	let login = document.getElementById('inpLogNome').value; // pode ser email ou CNPJ
+	let login = document.getElementById('inpLogNome').value.trim(); // pode ser email ou CNPJ // trim: remove os espaços em branco do início e do fim de uma string.
 	let senha = document.getElementById('inpLogSenha').value;
+
+	// Verifica se os campos estão preenchidos
+	if (!login || !senha) {
+		toastr["error"]("Preencha todos os campos!", "Erro");
+		return;
+	}
+
+	// Verifica se é um CNPJ ou um e-mail
+	const cnpjLimpo = login.replace(/\D/g, '');
+	const confereCNPJ = cnpjLimpo.length === 14;
+	const confereEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(login);
+
+	if (!confereCNPJ && !confereEmail) {
+		toastr["error"]("Digite um e-mail ou CNPJ válido!", "Erro");
+		return;
+	}
+
+	// Validação de senha (opcional)
+	if (senha.length < 6) {
+		toastr["error"]("A senha deve ter pelo menos 6 caracteres.", "Erro");
+		return;
+	}
 
 	const usuario = {
 		emailOuCnpj: login,
@@ -12,12 +34,16 @@ async function login() {
 		console.log('RESPONSE: ', response);
 		if (response.status === 200) {
 			// Handle success - redirect or show success message
-			window.location.href = '/home';
+			toastr["success"]("Login realizado com sucesso!", "Bem-vindo!");
 			localStorage.setItem('dados_empresa', JSON.stringify(response.data));
+			setTimeout(() => {
+				window.location.href = '/home';
+			}, 1500);
 		}
 	} catch (error) {
 		console.log(error);
-		alert('Erro no login: ' + error.response?.data?.message || error.message);
+		const mensagem = error.response?.data?.message || "Erro inesperado no login.";
+		toastr["error"](mensagem, "Erro no login");
 	}
 }
 

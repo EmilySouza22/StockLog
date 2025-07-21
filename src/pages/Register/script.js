@@ -13,27 +13,12 @@ function limparCNPJ(cnpj) {
 	return cnpj.replace(/\D/g, ""); // Remove tudo que não é dígito -- // .replace() serve para substituir parte de uma string por outra.
 }
 
-//Função que vai verificar se já existe algum usuário com o cpnj ou com o email
-
-// function usuarioJaExiste(cnpj, email) {
-// 	// vai verificar se já existe algum usuário com esse CNPJ ou email cadastrado no localStorage.
-// 	const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // pega os usuários salvos e converte de volta para um array. Se não houver usuários, usa um array vazio.
-
-// 	const cnpjLimpo = limparCNPJ(cnpj);
-
-// 	return usuarios.some(
-// 		// Verifica se existe algum usuário com o mesmo CNPJ ou email (o some)
-// 		(usuario) =>
-// 			limparCNPJ(usuario.cnpj) === cnpjLimpo ||
-// 			usuario.email.toLowerCase() === email.toLowerCase()
-// 	);
-// }
 
 async function cadastrar() {
 	// sobre o async: "Esta função de cadastro pode fazer algo que demora (como se comunicar com o servidor), então quero que ela espere essas coisas acontecerem antes de continuar.
 	if (senha.value !== confirmarSenha.value) {
 		//Verifica se as senhas coincidem
-		alert("As senhas não coincidem!");
+		toastr["error"]("As senhas não coincidem!", "Erro")
 		return; // Se não coincidirem, exibe um alerta e encerra a função
 	}
 
@@ -55,40 +40,41 @@ async function cadastrar() {
 		!usuario.email ||
 		!usuario.senha
 	) {
-		toastr.info("Erro 404", "teste2");
+		toastr["error"]("Preencha todos os campos", "Erro")
+		return;
+	}
+
+	// Confere se o telefone é válido --> tbm tem a parte do backend
+
+	const telefoneLimpo = usuario.telefone.replace(/\D/g, '');
+	if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
+		toastr["error"]("Telefone inválido!", "Erro");
 		return;
 	}
 
 	//Confere se o e-mail é válido
 	const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(usuario.email);
 	if (!emailValido) {
-		alert("Digite um e-mail válido!");
+		toastr["error"]("Digite um e-mail válido!", "Erro")
 		return;
 	}
 
 	//Confere se o CPNJ é válido --> não precisou fazer isso com o telefone pq no CPNJ pode ter pontos, barras e hífens...
 	const cnpjValido = /^[0-9./-]+$/.test(usuario.cnpj);
 	if (!cnpjValido) {
-		alert("CNPJ contém caracteres inválidos! Use apenas números, '.', '/' ou '-'.");
+		toastr["error"]("CNPJ contém caracteres inválidos! Use apenas números, '.', '/' ou '-'.", "Erro")
 		return;
 	}
 
 	//CNPJ com 14 dígitos (limpando antes)
 	if (limparCNPJ(usuario.cnpj).length !== 14) {
-		alert("CNPJ inválido! Deve conter 14 números.");
-		return;
-	}
-
-	// Telefone deve ter até 11 dígitos (limpando antes)
-	const telefoneLimpo = usuario.telefone.replace(/\D/g, "");
-	if (telefoneLimpo.length < 11) {
-		alert("Telefone inválido! Deve conter entre 10 e 11 números.");
+		toastr["error"]("CNPJ inválido! Deve conter 14 números", "Erro")
 		return;
 	}
 
 	//Senha com no mínimo 6 caracteres
 	if (usuario.senha.length < 6) {
-		alert("A senha deve ter pelo menos 6 caracteres.");
+		toastr["error"]("A senha deve ter pelo menos 6 caracteres", "Erro")
 		return;
 	}
 
@@ -99,14 +85,24 @@ async function cadastrar() {
 		const response = await axios.post("/account/register", usuario);
 
 		if (response.status === 200) {
+
 			// Handle success - redirect or show success message
-			window.location.href = "/login";
+			toastr["success"]("Cadastro realizado com sucesso!", "Sucesso");
+
+			setTimeout(() => {
+				window.location.href = "/login";
+			}, 1500); // espera 1.5 segundos antes de redirecionar
 		}
+		
 	} catch (error) {
 		console.error(error);
-		alert(
-			"Erro no cadastro: " + error.response?.data?.message || error.message
-		);
+		
+		const mensagem = error.response?.data?.message || "Erro inesperado no cadastro.";
+		toastr["error"](mensagem, "Erro no cadastro");
+		
+		// alert( 			--> sem o toastr
+		// 	"Erro no cadastro: " + error.response?.data?.message || error.message
+		// );
 	}
 }
 
@@ -125,9 +121,18 @@ function alternarSenha(inputId, iconId) {
 	}
 }
 
-//Listener para o telefone e cnpj ver se tem palavras e traços
-// telefone.addEventListener('input', (event) => {
-// 	console.log(event);
-// 	if (!(event.data >= '0' && event.data <= '9')) {
-// 	}
-// });
+		//Função que vai verificar se já existe algum usuário com o cpnj ou com o email --> COMENTADA POIS AGR FOI CONFIGURADA COM O BANCO
+		
+		// function usuarioJaExiste(cnpj, email) {
+		// 	// vai verificar se já existe algum usuário com esse CNPJ ou email cadastrado no localStorage.
+		// 	const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; // pega os usuários salvos e converte de volta para um array. Se não houver usuários, usa um array vazio.
+		
+		// 	const cnpjLimpo = limparCNPJ(cnpj);
+		
+		// 	return usuarios.some(
+		// 		// Verifica se existe algum usuário com o mesmo CNPJ ou email (o some)
+		// 		(usuario) =>
+		// 			limparCNPJ(usuario.cnpj) === cnpjLimpo ||
+		// 			usuario.email.toLowerCase() === email.toLowerCase()
+		// 	);
+		// }

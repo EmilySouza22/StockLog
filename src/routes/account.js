@@ -6,12 +6,17 @@ export default async function accountRoutes(fastify, options) {
 	fastify.post('/register', async (request, reply) => {
 		const { nome, telefone, cnpj, email, senha } = request.body;
 
+		const telefoneLimpo = telefone.replace(/\D/g, '');
+		if (telefoneLimpo.length < 10 || telefoneLimpo.length > 11) {
+			return reply.status(400).send({ message: 'Telefone inválido!'});
+		}
+
 		try {
 
 			const verificarCNPJ = new Promise((resolve, reject) => {
 				fastify.mysql.query(
 					'SELECT id FROM stocklog.empresa WHERE cnpj=?',
-					[cnpj], 
+					[cnpj],
 					function onResult(err, result) {
 						if (err) {
 							reject(err);
@@ -28,11 +33,11 @@ export default async function accountRoutes(fastify, options) {
 			if (cnpjExiste) {
 				return reply.status(400).send({ message: 'CNPJ já cadastrado.' });
 			}
-		
+
 			const verificarEmail = new Promise((resolve, reject) => {
 				fastify.mysql.query(
 					'SELECT id FROM stocklog.empresa WHERE email=?',
-					[email], 
+					[email],
 					function onResult(err, result) {
 						if (err) {
 							reject(err);
@@ -61,12 +66,8 @@ export default async function accountRoutes(fastify, options) {
 			);
 
 			return reply;
+
 		} catch (error) {
-
-			if (error.code === 'ER_DATA_TOO_LONG' && error.message.includes("telefone")) {
-				return reply.status(400).send({ message: 'Telefone excede o limite de caracteres. Digite um número com no máximo 11 dígitos.' });
-			}
-
 			console.error('Falha ao inserir dados na tabela empresa:', error);
 			return reply;
 		}
