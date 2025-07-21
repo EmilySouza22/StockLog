@@ -718,9 +718,148 @@ async function carregarHome() {
 	}
 }
 
+// ===== FUNÇÃO PARA CARREGAR DADOS DA ÚLTIMA ATUALIZAÇÃO =====
+
+function getDescricaoAcao(tipoAcao) {
+	if (!tipoAcao) return 'Ação';
+
+	const acoes = {
+		'ADICIONADO': 'Entrada de',
+		'EDITADO': 'Alteração de',
+		'EXCLUIDO': 'Exclusão de'
+	};
+
+	return acoes[tipoAcao] || tipoAcao;
+} 
+
+async function carregarUltimaAtualizacao() {
+	const cache = localStorage.getItem('dados_empresa');
+	const dadosEmpresa = JSON.parse(cache);
+
+	try {
+		const response = await axios.post(`/historic/recent`, dadosEmpresa);
+		if (response.status === 200) {
+			const ultimaEntrada = response.data;
+			atualizarUltimaAtualizacao(ultimaEntrada);
+		}
+	} catch (error) {
+		console.error('Erro ao carregar última atualização:', error);
+		atualizarUltimaAtualizacao(null);
+	}
+}
+
+function atualizarUltimaAtualizacao(entradas) {
+	const quantidadeElement = document.querySelector('.ultima-atualizacao .quantidade');
+	const horaElement = document.querySelector('.ultima-atualizacao .hora');
+	if (!quantidadeElement || !horaElement) return;
+
+	if (!entradas || entradas.length === 0) {
+		quantidadeElement.textContent = 'Nenhuma ação recente';
+		horaElement.textContent = '';
+		return;
+	}
+
+	const ultima = Array.isArray(entradas) ? entradas[0] : entradas;
+
+	const descricaoAcao = getDescricaoAcao(ultima.tipo);
+	const quantidade = ultima.quantidade || 1;
+
+	const data = new Date(ultima.data_criacao || ultima.created_at);
+	const horaFormatada = `${data.getHours()}:${data.getMinutes().toString().padStart(2, '0')}`;
+
+	quantidadeElement.textContent = `${descricaoAcao} ${quantidade} produto${quantidade > 1 ? 's' : ''}`;
+	horaElement.textContent = `às ${horaFormatada}`;
+}
+
+// ===== FUNÇÃO PARA CARREGAR ALERTAS DO ESTOQUE =====
+async function carregarAlertas() {
+	const cache = localStorage.getItem('dados_empresa');
+	const dadosEmpresa = JSON.parse(cache);
+
+	try {
+		const response = await axios.post(`/product/all`, dadosEmpresa);
+		if (response.status === 200) {
+			const produtos = response.data.list;
+			processarAlertas(produtos);
+		}
+	} catch (error) {
+		console.error('Erro ao carregar alertas:', error);
+		// Fallback - manter os dados que já estão na tela
+	}
+}
+
+// Função para processar e contar os alertas
+function processarAlertas(produtos) {
+	const hoje = new Date();
+	const em30Dias = new Date();
+	em30Dias.setDate(hoje.getDate() + 30);
+
+	let contadores = {
+		maximo: 0,
+		minimo: 0,
+		vencidos: 0,
+		proximoVencimento: 0
+	};
+
+	produtos.forEach(produto => {
+		// Verificar estoque máximo (assumindo que existe um campo estoque_maximo)
+		if (produto.estoque_maximo && produto.quantidade > produto.estoque_maximo) {
+			contadores.maximo++;
+		}
+
+		// Verificar estoque mínimo (assumindo que existe um campo estoque_minimo)
+		if (produto.estoque_minimo && produto.quantidade < produto.estoque_minimo) {
+			contadores.minimo++;
+		}
+
+		// Verificar produtos vencidos
+		if (produto.data_validade) {
+			const dataValidade = new Date(produto.data_validade);
+			if (dataValidade < hoje) {
+				contadores.vencidos++;
+			} else if (dataValidade <= em30Dias) {
+				contadores.proximoVencimento++;
+			}
+		}
+	});
+
+	// Atualizar a UI dos alertas
+	atualizarAlertas(contadores);
+}
+
+// Função para atualizar a UI dos alertas
+function atualizarAlertas(contadores) {
+	// Você precisa adicionar IDs ou classes específicas nos elementos HTML dos alertas
+	const alertaMaximo = document.querySelector('.alerta-maximo .quantidade');
+	const alertaMinimo = document.querySelector('.alerta-minimo .quantidade');
+	const alertaVencidos = document.querySelector('.alerta-vencidos .quantidade');
+	const alertaProximoVenc = document.querySelector('.alerta-proximo-venc .quantidade');
+
+	if (alertaMaximo) {
+		alertaMaximo.textContent = `${contadores.maximo} produto${contadores.maximo !== 1 ? 's' : ''} ${contadores.maximo !== 1 ? 'excedem' : 'excede'} o estoque máximo`;
+	}
+
+	if (alertaMinimo) {
+		alertaMinimo.textContent = `${contadores.minimo} produto${contadores.minimo !== 1 ? 's' : ''} abaixo do estoque mínimo`;
+	}
+
+	if (alertaVencidos) {
+		alertaVencidos.textContent = `${contadores.vencidos} produto${contadores.vencidos !== 1 ? 's estão' : ' está'} vencido${contadores.vencidos !== 1 ? 's' : ''} no estoque`;
+	}
+
+	if (alertaProximoVenc) {
+		alertaProximoVenc.textContent = `${contadores.proximoVencimento} produto${contadores.proximoVencimento !== 1 ? 's próximos' : ' próximo'} do vencimento`;
+	}
+}
+
+
 // Função para inicializar tudo
 async function inicializarHome() {
 	await carregarHome();
+
+	// Carregar última atualização e alertas
+	await carregarUltimaAtualizacao();
+	await carregarAlertas();
 
 	// Para !!apresentação!! vamos usar dados mockados pra ficar perto da realidade
 	// GRÁFICOS ESTÁTICOS (dados mockados) ================

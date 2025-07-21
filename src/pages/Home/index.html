@@ -1,316 +1,318 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" href="/assets/imgs/home/img/logo.svg" type="image/png" />
-		<link rel="stylesheet" href="Home/style.css" />
-		<link rel="stylesheet" href="https://use.typekit.net/vdf6prs.css" />
-		<title>Home</title>
-		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-	</head>
-	<body>
-		<nav id="navbar">
-			<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-			<div id="navbar-left">
-				<img
-					id="nav-logo"
-					src="/assets/imgs/home/img/logo.svg"
-					alt="StockLog"
-				/>
-			</div>
-			<div id="navbar-right">
-				<a href="/account">
-					<div id="boxContaCadastrada">
-						<p id="contaCadastrada">Mercado Santana</p>
-						<img
-							class="nav-icon"
-							src="/assets/imgs/home/icon/conta.svg"
-							alt="Conta"
-						/>
-					</div>
-				</a>
-				<div onclick="abrirModalConfig()" id="boxConfigEtiq">
-					<img
-						class="nav-icon"
-						src="/assets/imgs/home/icon/engrenagem.svg"
-						alt="Engrenagem"
-					/>
-				</div>
-			</div>
-		</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/imgs/home/img/logo.svg" type="image/png" />
+    <link rel="stylesheet" href="Home/style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/vdf6prs.css" />
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <nav id="navbar">
+      <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <div id="navbar-left">
+        <img
+          id="nav-logo"
+          src="/assets/imgs/home/img/logo.svg"
+          alt="StockLog"
+        />
+      </div>
+      <div id="navbar-right">
+        <a href="/account">
+          <div id="boxContaCadastrada">
+            <p id="contaCadastrada">Mercado Santana</p>
+            <img
+              class="nav-icon"
+              src="/assets/imgs/home/icon/conta.svg"
+              alt="Conta"
+            />
+          </div>
+        </a>
+        <div onclick="abrirModalConfig()" id="boxConfigEtiq">
+          <img
+            class="nav-icon"
+            src="/assets/imgs/home/icon/engrenagem.svg"
+            alt="Engrenagem"
+          />
+        </div>
+      </div>
+    </nav>
 
-		<!-- SIDEBAR MOBILE -->
-		<div class="sidebar" id="sidebar">
-			<div class="item">
-				<img
-					class="nav-icon"
-					src="/assets/imgs/home/icon/conta.svg"
-					alt="Conta"
-				/>
-				<span>Mercado Santana</span>
-			</div>
-			<div class="item">
-				<img
-					class="nav-icon"
-					src="/assets/imgs/home/icon/engrenagem.svg"
-					alt="Engrenagem"
-				/>
-				<span>Configurações</span>
-			</div>
-		</div>
+    <!-- SIDEBAR MOBILE -->
+    <div class="sidebar" id="sidebar">
+      <div class="item">
+        <img
+          class="nav-icon"
+          src="/assets/imgs/home/icon/conta.svg"
+          alt="Conta"
+        />
+        <span>Mercado Santana</span>
+      </div>
+      <div class="item">
+        <img
+          class="nav-icon"
+          src="/assets/imgs/home/icon/engrenagem.svg"
+          alt="Engrenagem"
+        />
+        <span>Configurações</span>
+      </div>
+    </div>
 
-		<main id="principal">
-			<div id="container1">
-				<section id="painelUpdate">
-					<div id="titleUpdate">
-						<img
-							class="updIcon"
-							src="/assets/imgs/home/icon/atualizacao.svg"
-							alt=""
-						/>
-						<h1 class="updTitle">
-							Última <br />
-							atualização
-						</h1>
-					</div>
-					<div class="updText">
-						<p class="updInfo">10 entradas</p>
-						<p class="updInfoTime">Hoje às 8:30</p>
-						<div class="horizontalBar"></div>
-					</div>
-					<div class="updBoxButton">
-						<a href="/products">
-							<button id="updButton">Checar estoque</button>
-						</a>
-					</div>
-				</section>
-				<section id="painel-alertas">
-					<div id="containerAlertTitle">
-						<div id="containerTitle">
-							<img
-								id="alertIcon"
-								src="/assets/imgs/home/icon/alerta.svg"
-								alt="Alerta"
-							/>
-							<h1 id="alertTitle">Alertas</h1>
-						</div>
-						<div id="containerButton">
-							<a href="/alerts">
-								<button id="alertButton">
-									Ver mais
-									<img
-										class="alertIcon"
-										src="/assets/imgs/home/icon/setadupla.svg"
-										alt="Seta"
-									/>
-								</button>
-							</a>
-						</div>
-					</div>
-					<div id="containerAlertInfo">
-						<div id="alert1">
-							<div class="alertInfo">
-								<div class="alertInfoTitle">
-									<img
-										class="alertIcon"
-										src="/assets/imgs/home/icon/quadrado-soma.svg"
-										alt="Mais"
-									/>
-									<h2 class="alertSubTitle">Máximo</h2>
-								</div>
-								<div class="alertInfoContent">
-									<p class="alertInfoText">1 produto excede o estoque máximo</p>
-								</div>
-							</div>
-							<div class="alertInfo">
-								<div class="alertInfoTitle">
-									<img
-										class="alertIcon"
-										src="/assets/imgs/home/icon/quadrado-menos.svg"
-										alt="Menos"
-									/>
-									<h2 class="alertSubTitle">Mínimo</h2>
-								</div>
-								<div class="alertInfoContent">
-									<p class="alertInfoText">
-										6 produtos abaixo do estoque mínimo
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="verticalBar"></div>
-						<div id="alert2">
-							<div class="alertInfo">
-								<div class="alertInfoTitle">
-									<img
-										class="alertIcon"
-										src="/assets/imgs/home/icon/atencao.svg"
-										alt="Atenção"
-									/>
-									<h2 class="alertSubTitle">Vencidos</h2>
-								</div>
-								<div class="alertInfoContent">
-									<p class="alertInfoText">
-										8 produtos estão vencidos no estoque
-									</p>
-								</div>
-							</div>
-							<div class="alertInfo">
-								<div class="alertInfoTitle">
-									<img
-										class="alertIcon"
-										src="/assets/imgs/home/icon/atencao.svg"
-										alt="Atenção"
-									/>
-									<h2 class="alertSubTitle">Validade próxima</h2>
-								</div>
-								<div class="alertInfoContent">
-									<p class="alertInfoText">3 produtos próximos do vencimento</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
+    <main id="principal">
+      <div id="container1">
+        <section id="painelUpdate">
+          <div id="titleUpdate">
+            <img
+              class="updIcon"
+              src="/assets/imgs/home/icon/atualizacao.svg"
+              alt=""
+            />
+            <h1 class="updTitle">
+              Última <br />
+              atualização
+            </h1>
+          </div>
+          <div class="updText">
+            <div class="ultima-atualizacao">
+              <p class="quantidade">10 entradas</p>
+              <p class="hora">Hoje às 8:30</p>
+            </div>
+            <div class="horizontalBar"></div>
+          </div>
+          <div class="updBoxButton">
+            <a href="/products">
+              <button id="updButton">Checar estoque</button>
+            </a>
+          </div>
+        </section>
+        <section id="painel-alertas">
+          <div id="containerAlertTitle">
+            <div id="containerTitle">
+              <img
+                id="alertIcon"
+                src="/assets/imgs/home/icon/alerta.svg"
+                alt="Alerta"
+              />
+              <h1 id="alertTitle">Alertas</h1>
+            </div>
+            <div id="containerButton">
+              <a href="/alerts">
+                <button id="alertButton">
+                  Ver mais
+                  <img
+                    class="alertIcon"
+                    src="/assets/imgs/home/icon/setadupla.svg"
+                    alt="Seta"
+                  />
+                </button>
+              </a>
+            </div>
+          </div>
+          <div id="containerAlertInfo">
+            <div id="alert1">
+              <div class="alertInfo">
+                <div class="alertInfoTitle">
+                  <img
+                    class="alertIcon"
+                    src="/assets/imgs/home/icon/quadrado-soma.svg"
+                    alt="Mais"
+                  />
+                  <h2 class="alertSubTitle">Máximo</h2>
+                </div>
+                <div class="alertInfoContent">
+                  <p class="alertInfoText">1 produto excede o estoque máximo</p>
+                </div>
+              </div>
+              <div class="alertInfo">
+                <div class="alertInfoTitle">
+                  <img
+                    class="alertIcon"
+                    src="/assets/imgs/home/icon/quadrado-menos.svg"
+                    alt="Menos"
+                  />
+                  <h2 class="alertSubTitle">Mínimo</h2>
+                </div>
+                <div class="alertInfoContent">
+                  <p class="alertInfoText">
+                    6 produtos abaixo do estoque mínimo
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="verticalBar"></div>
+            <div id="alert2">
+              <div class="alertInfo">
+                <div class="alertInfoTitle">
+                  <img
+                    class="alertIcon"
+                    src="/assets/imgs/home/icon/atencao.svg"
+                    alt="Atenção"
+                  />
+                  <h2 class="alertSubTitle">Vencidos</h2>
+                </div>
+                <div class="alertInfoContent">
+                  <p class="alertInfoText">
+                    8 produtos estão vencidos no estoque
+                  </p>
+                </div>
+              </div>
+              <div class="alertInfo">
+                <div class="alertInfoTitle">
+                  <img
+                    class="alertIcon"
+                    src="/assets/imgs/home/icon/atencao.svg"
+                    alt="Atenção"
+                  />
+                  <h2 class="alertSubTitle">Validade próxima</h2>
+                </div>
+                <div class="alertInfoContent">
+                  <p class="alertInfoText">3 produtos próximos do vencimento</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
 
-			<div id="container2">
-				<section id="painel-graficos">
-					<div id="grafBox">
-						<div id="containerGrafSelect">
-							<div id="grafBoxTitle">
-								<img
-									class="grafIcon"
-									src="/assets/imgs/home/icon/cadeado.svg"
-									alt=""
-								/>
-								<h1 id="grafTitle">Gráficos</h1>
-							</div>
-							<div id="grafButtons">
-								<button id="btnGraf1" class="grafButton">Categoria</button>
-								<button id="btnGraf2" class="grafButton">Atividades</button>
-								<button id="btnGraf3" class="grafButton">Validades</button>
-								<button id="btnGraf4" class="grafButton" disabled>
-									Movimentação
-								</button>
-								<button id="btnGraf5" class="grafButton" disabled>
-									Alertas
-								</button>
-								<button id="btnGraf6" class="grafButton" disabled>
-									Etiquetas
-								</button>
-							</div>
-						</div>
-						<div id="containerGrafInfo">
-							<canvas class="box grafico1"></canvas>
-							<canvas class="box grafico2"></canvas>
-							<canvas class="box grafico3"></canvas>
-							<canvas class="box grafico4"></canvas>
-							<canvas class="box grafico5"></canvas>
-							<canvas class="box grafico6"></canvas>
-						</div>
-					</div>
-				</section>
-			</div>
+      <div id="container2">
+        <section id="painel-graficos">
+          <div id="grafBox">
+            <div id="containerGrafSelect">
+              <div id="grafBoxTitle">
+                <img
+                  class="grafIcon"
+                  src="/assets/imgs/home/icon/cadeado.svg"
+                  alt=""
+                />
+                <h1 id="grafTitle">Gráficos</h1>
+              </div>
+              <div id="grafButtons">
+                <button id="btnGraf1" class="grafButton">Categoria</button>
+                <button id="btnGraf2" class="grafButton">Atividades</button>
+                <button id="btnGraf3" class="grafButton">Validades</button>
+                <button id="btnGraf4" class="grafButton" disabled>
+                  Movimentação
+                </button>
+                <button id="btnGraf5" class="grafButton" disabled>
+                  Alertas
+                </button>
+                <button id="btnGraf6" class="grafButton" disabled>
+                  Etiquetas
+                </button>
+              </div>
+            </div>
+            <div id="containerGrafInfo">
+              <canvas class="box grafico1"></canvas>
+              <canvas class="box grafico2"></canvas>
+              <canvas class="box grafico3"></canvas>
+              <canvas class="box grafico4"></canvas>
+              <canvas class="box grafico5"></canvas>
+              <canvas class="box grafico6"></canvas>
+            </div>
+          </div>
+        </section>
+      </div>
 
-			<div id="container3">
-				<div id="containerLeft">
-					<a href="/historic">
-						<section id="painel-relatorio">
-							<div id="containerRelatContent">
-								<div id="containerRelatTitle">
-									<img
-										id="relatIcon"
-										src="/assets/imgs/home/icon/cadeado.svg"
-										alt="Cadeado"
-									/>
-									<h1 id="relatTitle">Histórico</h1>
-								</div>
-								<div id="containerRelatText">
-									<p id="relatText">
-										Veja as movimentações sobre seus produtos
-									</p>
-								</div>
-							</div>
-							<div id="containerRelatImg">
-								<img
-									id="relatImg"
-									src="/assets/imgs/home/img/planilha.svg"
-									alt="Planilha"
-								/>
-							</div>
-						</section>
-					</a>
+      <div id="container3">
+        <div id="containerLeft">
+          <a href="/historic">
+            <section id="painel-relatorio">
+              <div id="containerRelatContent">
+                <div id="containerRelatTitle">
+                  <img
+                    id="relatIcon"
+                    src="/assets/imgs/home/icon/cadeado.svg"
+                    alt="Cadeado"
+                  />
+                  <h1 id="relatTitle">Histórico</h1>
+                </div>
+                <div id="containerRelatText">
+                  <p id="relatText">
+                    Veja as movimentações sobre seus produtos
+                  </p>
+                </div>
+              </div>
+              <div id="containerRelatImg">
+                <img
+                  id="relatImg"
+                  src="/assets/imgs/home/img/planilha.svg"
+                  alt="Planilha"
+                />
+              </div>
+            </section>
+          </a>
 
-					<a href="/label">
-						<section id="painel-etiquetas">
-							<div id="containerEtiqContent">
-								<div id="containerEtiqTitle">
-									<img
-										id="etiqIcon"
-										src="/assets/imgs/home/icon/cadeado.svg"
-										alt="Cadeado"
-									/>
-									<h1 id="etiqTitle">Etiquetas</h1>
-								</div>
-								<div id="containerEtiqText">
-									<p id="etiqText">
-										Crie suas etiquetas para controle de estoque
-									</p>
-								</div>
-							</div>
-							<div id="containerEtiqImg">
-								<img
-									id="etiqImg"
-									src="/assets/imgs/home/img/etiqueta.svg"
-									alt="Etiqueta"
-								/>
-							</div>
-						</section>
-					</a>
-				</div>
-				<div id="containerRight">
-					<section id="painel-publicidade">
-						<div id="containerPubliTitle">
-							<h1 id="publiTitle">
-								Assine o nosso <br />
-								<span class="destaque">plano premium</span> <br />
-								para gerenciar seu estoque
-								<span class="destaque">sem limites!</span>
-							</h1>
-						</div>
-						<div id="containerPubliButton">
-							<button id="publiButton">Acessar planos</button>
-						</div>
-					</section>
-				</div>
-			</div>
-		</main>
+          <a href="/label">
+            <section id="painel-etiquetas">
+              <div id="containerEtiqContent">
+                <div id="containerEtiqTitle">
+                  <img
+                    id="etiqIcon"
+                    src="/assets/imgs/home/icon/cadeado.svg"
+                    alt="Cadeado"
+                  />
+                  <h1 id="etiqTitle">Etiquetas</h1>
+                </div>
+                <div id="containerEtiqText">
+                  <p id="etiqText">
+                    Crie suas etiquetas para controle de estoque
+                  </p>
+                </div>
+              </div>
+              <div id="containerEtiqImg">
+                <img
+                  id="etiqImg"
+                  src="/assets/imgs/home/img/etiqueta.svg"
+                  alt="Etiqueta"
+                />
+              </div>
+            </section>
+          </a>
+        </div>
+        <div id="containerRight">
+          <section id="painel-publicidade">
+            <div id="containerPubliTitle">
+              <h1 id="publiTitle">
+                Assine o nosso <br />
+                <span class="destaque">plano premium</span> <br />
+                para gerenciar seu estoque
+                <span class="destaque">sem limites!</span>
+              </h1>
+            </div>
+            <div id="containerPubliButton">
+              <button id="publiButton">Acessar planos</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
 
-		<footer id="footer-bar">
-			<div class="foot-left">
-				<p>StockLog — 2025 - &copy; Todos os direitos reservados</p>
-			</div>
-			<div class="foot-right">
-				<p>Problemas? Fale Conosco</p>
-			</div>
-		</footer>
+    <footer id="footer-bar">
+      <div class="foot-left">
+        <p>StockLog — 2025 - &copy; Todos os direitos reservados</p>
+      </div>
+      <div class="foot-right">
+        <p>Problemas? Fale Conosco</p>
+      </div>
+    </footer>
 
-		<!-- Modal Configurações -->
-		<div id="ModalConfig">
-			<a href="/Login">
-				<div id="boxLogout">
-					<img
-						id="iconLogOut"
-						src="../../assets/imgs/home/icon/logout.svg"
-						alt="Sair"
-					/>
-					<p id="textLogout">Logout</p>
-				</div>
-			</a>
-		</div>
-	</body>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-	<script src="Home/script.js"></script>
+    <!-- Modal Configurações -->
+    <div id="ModalConfig">
+      <a href="/Login">
+        <div id="boxLogout">
+          <img
+            id="iconLogOut"
+            src="../../assets/imgs/home/icon/logout.svg"
+            alt="Sair"
+          />
+          <p id="textLogout">Logout</p>
+        </div>
+      </a>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+  <script src="Home/script.js"></script>
 </html>
