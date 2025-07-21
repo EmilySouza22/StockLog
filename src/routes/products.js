@@ -114,6 +114,7 @@ export default async function productRoutes(fastify, options) {
 			data_validade,
 			minimo,
 			maximo,
+			empresa_id,
 		} = req.body;
 
 		fastify.mysql.query(
@@ -129,6 +130,16 @@ export default async function productRoutes(fastify, options) {
 				req.params.id,
 			],
 			function onResult(err, result) {
+				if (result) {
+					inserirHistorico(fastify, {
+						empresa_id,
+						produto_id: req.params.id,
+						produto_nome: nome,
+						data_criacao: moment().format(ISO_FORMAT),
+						tipo: 'EDITADO',
+						quantidade,
+					});
+				}
 				reply.send(err || result);
 			}
 		);

@@ -17,7 +17,7 @@
 
 html,
 body {
-	background-color: #dfe3f0;
+	background-color: #f0f4f8;
 	overflow-x: hidden;
 }
 
@@ -129,7 +129,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	padding: 15px 30px; /* reduzido verticalmente */
-	background-color: #dfe3f0;
+	background-color: #f0f4f8;
 	position: sticky;
 	top: 0;
 	z-index: 0;
@@ -1191,4 +1191,8 @@ tbody tr:nth-child(even) {
 
 #btn-salvar-produto:hover {
 	background-color: #3ca765;
+}
+
+input {
+    padding-left: 10px;
 }

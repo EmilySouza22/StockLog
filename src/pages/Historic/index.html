@@ -167,30 +167,16 @@
 
 			<div id="containerTable">
 				<table>
-					<tbody>
-						<!-- <tr>
+					<thead>
+						<tr>
 							<td><h3>Data</h3></td>
 							<td><h3>Hora</h3></td>
 							<td><h3>Produto</h3></td>
-							<td><h3>tag</h3></td>
+							<td><h3>Tag</h3></td>
 							<td><h3>Detalhe</h3></td>
 						</tr>
-						<tr>
-							<td>07/06/2025</td>
-							<td>19:02</td>
-							<td>Leite Ninho Tradicional 1l</td>
-							<td>
-								<img
-									width="17"
-									height="17"
-									viewBox="0 0 50 50"
-									src="/assets/imgs/historic/icon/delete.svg"
-									alt="Deletado"
-								/>
-							</td>
-							<td>Produto deletado</td>
-						</tr> -->
-					</tbody>
+					</thead>
+					<tbody id="body"></tbody>
 				</table>
 			</div>
 
@@ -203,7 +189,14 @@
 							class="btn-footer-img"
 						/>
 					</button>
-					<div class="pag-footer">Página 1 de 34</div>
+					<div class="pag-footer">
+						<span id="footer-pag-info">
+							Página
+							<p id="footer-pag-atual">1</p>
+							de
+							<p id="footer-pag-total">1</p>
+						</span>
+					</div>
 					<button class="bnt-footer" id="bnt-pag-proximo">
 						<img
 							src="/assets/imgs/products/icon/seta.svg"
@@ -212,10 +205,19 @@
 						/>
 					</button>
 				</div>
-				<div id="footer-acoes">Mostrando 10 ações de 340</div>
+				<div id="footer-acoes">
+					<span id="footer-acoes-info">
+						Mostrando
+						<p id="footer-qtd-produtos">0</p>
+						de
+						<p id="footer-total-produtos">0</p>
+						ações
+					</span>
+				</div>
 			</div>
 		</div>
-
-		<script src="/Historic/script.js"></script>
 	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+	<script src="/Historic/script.js"></script>
 </html>

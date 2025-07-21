@@ -1,5 +1,5 @@
 const produtos = {
-	vencidos: Array(36).fill({
+	vencidos: Array(8).fill({
 		nome: 'Queijo Ralado Crioulo',
 		quantidade: 3,
 		data: '08/06/2025',
@@ -13,23 +13,23 @@ const produtos = {
 		data: '02/07/2025',
 		imagem:
 			'https://images.tcdn.com.br/img/img_prod/1049139/molho_de_tomate_caseiro_organico_330g_origo_1344_1_3fe841337912587ee682797a7aacb03d.jpg',
-		check: false,
+		check: true,
 	}),
-	maximo: Array(5).fill({
+	maximo: Array(16).fill({
 		nome: 'Feijão Preto Urbano',
 		quantidade: 3,
 		data: '08/06/2025',
 		imagem:
 			'https://sp.cdifoodservice.com.br/wp-content/uploads/2020/10/feijao-preto-urbano-kg-600x600.jpg',
-		check: false,
+		check: true,
 	}),
-	minimo: Array(4).fill({
+	minimo: Array(10).fill({
 		nome: 'Arroz Tio João',
 		quantidade: 3,
 		data: '08/06/2025',
 		imagem:
 			'https://boa.vtexassets.com/arquivos/ids/575600/Arroz-Tipo-1-Tio-Joao-2kg.jpg?v=638550511829100000',
-		check: false,
+		check: true,
 	}),
 };
 
@@ -50,10 +50,14 @@ function renderCards() {
 		card.className = 'card';
 		card.innerHTML = `
       <img src="${produto.imagem}" alt="${produto.nome}">
-      <div class="nome">${produto.nome}</div>
-      <div class="quantidade">Quantidade: ${produto.quantidade} UNI</div>
-      <div class="data">Data: ${produto.data}</div>
-      ${produto.check ? '<input type="checkbox" class="checkbox" >' : ''}
+      <div>
+        <div class="nome">${produto.nome}</div>
+        <div class="quantidade">Quantidade: ${produto.quantidade} UNI</div>
+        <div class="data">Data: ${produto.data}</div>
+      </div>
+      <div>
+        ${produto.check ? '<input type="checkbox" class="checkbox" >' : ''}
+      </div>
     `;
 		container.appendChild(card);
 	});
@@ -83,13 +87,13 @@ document.querySelectorAll('.aba').forEach((btn) => {
 	btn.addEventListener('click', () => trocarAba(btn.dataset.aba));
 });
 
-document.getElementById('anterior').addEventListener('click', () => {
+document.getElementById('bnt-pag-voltar').addEventListener('click', () => {
 	if (paginaAtual > 1) {
 		paginaAtual--;
 		renderCards();
 	}
 });
-document.getElementById('proximo').addEventListener('click', () => {
+document.getElementById('bnt-pag-proximo').addEventListener('click', () => {
 	const total = produtos[abaAtual].length;
 	if (paginaAtual < Math.ceil(total / cardsPorPagina)) {
 		paginaAtual++;

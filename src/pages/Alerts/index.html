@@ -58,25 +58,37 @@
 			</a>
 		</div>
 
-		<main>
+		<main id="principal">
+			<div class="abas">
+				<button class="aba ativa" data-aba="vencidos">Produtos vencidos</button>
+				<button class="aba" data-aba="proximo">Próximo a vencer</button>
+				<button class="aba" data-aba="maximo">Acima do máximo</button>
+				<button class="aba" data-aba="minimo">Abaixo do mínimo</button>
+			</div>
 			<div class="alertas-container">
-				<div class="abas">
-					<button class="aba ativa" data-aba="vencidos">
-						Produtos vencidos
-					</button>
-					<button class="aba" data-aba="proximo">Próximo a vencer</button>
-					<button class="aba" data-aba="maximo">Acima do máximo</button>
-					<button class="aba" data-aba="minimo">Abaixo do mínimo</button>
-				</div>
 				<div class="cards-container" id="cards-container"></div>
-				<div class="paginacao">
-					<button id="anterior">&lt;</button>
-					<span id="pagina-info"></span>
-					<button id="proximo">&gt;</button>
-				</div>
-				<div class="rodape">
-					<span id="itens-info"></span>
-					<button class="btn-excluir">Excluir</button>
+				<div id="footer-alert">
+					<div class="paginacao">
+						<button class="bnt-footer" id="bnt-pag-voltar">
+								<img
+									src="/assets/imgs/products/icon/seta-2.svg"
+									alt=""
+									class="btn-footer-img"
+								/>
+							</button>
+						<span id="pagina-info"></span>
+						<button class="bnt-footer" id="bnt-pag-proximo">
+							<img
+								src="/assets/imgs/products/icon/seta.svg"
+								alt=""
+								class="btn-footer-img"
+							/>
+						</button>
+					</div>
+					<div class="rodape">
+						<span id="itens-info"></span>
+						<button class="btn-excluir">Excluir</button>
+					</div>
 				</div>
 			</div>
 		</main>
