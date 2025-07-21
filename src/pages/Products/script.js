@@ -118,47 +118,42 @@ async function adicionarProduto() {
 	}
 }
 
-// Função para renderizar a tabela produtos
-async function renderizarTabela(dados = []) {
-	if (!dados || dados.length === 0 || !Array.isArray(dados)) {
-		tbody.innerHTML = '<tr><td colspan="5">Nenhum dado disponível</td></tr>';
-		return;
-	}
-
+function renderizarTabela(dados = []) {
 	const tbody = document.getElementById('body');
 	tbody.innerHTML = '';
 
 	dados.forEach((produto) => {
 		const tr = document.createElement('tr');
 		tr.innerHTML = `
-            <td>${produto.id}</td>
-            <td>${produto.nome}</td>
-            <td>${produto.codigo_barra}</td>
-            <td>${produto.quantidade}</td>
-            <td>${moment(produto.data_entrada).format(PT_BR_DATE_FORMAT)}</td>
-            <td>${moment(produto.data_validade).format(PT_BR_DATE_FORMAT)}</td>
-            <td>
-                <div class="tag-categoria" id="color-${produto.categoria_id}">
-                    ${produto.categoria_id}
-                </div>
-            </td>
-            <td>
-                <button 
-                    class="delete-icon"
-                    data-id="${produto.id}"
-                    data-name="${produto.nome}"
-                >
-                    <img src="/assets/imgs/products/icon/icon-lixeira.svg" alt="apagar" class="icons-tabela">
-                </button>
-            </td>
-            <td>
-                <button class="editar-icon" data-id="${produto.id}">
-                    <img src="/assets/imgs/products/icon/icon-editar.svg" alt="editar" class="icons-tabela">
-                </button>
-            </td>
-        `;
+      <td>${produto.id}</td>
+      <td>${produto.nome}</td>
+      <td>${produto.codigo_barra}</td>
+      <td>${produto.quantidade}</td>
+      <td>${moment(produto.data_entrada).format(PT_BR_DATE_FORMAT)}</td>
+      <td>${moment(produto.data_validade).format(PT_BR_DATE_FORMAT)}</td>
+      <td>
+        <div class="tag-categoria" style="background-color: ${
+					categoria.cor || '#999'
+				};">
+          ${categoria.nome || 'Sem Categoria'}
+        </div>
+      </td>
+      <td>
+        <button class="delete-icon" data-id="${produto.id}" data-name="${
+			produto.nome
+		}">
+          <img src="/assets/imgs/products/icon/icon-lixeira.svg" alt="apagar" class="icons-tabela">
+        </button>
+      </td>
+      <td>
+        <button class="editar-icon" data-id="${produto.id}">
+          <img src="/assets/imgs/products/icon/icon-editar.svg" alt="editar" class="icons-tabela">
+        </button>
+      </td>
+    `;
 		tbody.appendChild(tr);
 	});
+
 	criarEventListeners();
 }
 

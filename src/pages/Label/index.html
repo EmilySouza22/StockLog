@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" href="/assets/imgs/login/img/logo.svg" type="image/png" />
+		<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 		<link rel="stylesheet" href="https://use.typekit.net/vdf6prs.css" />
 		<link rel="stylesheet" href="Label/style.css" />
 		<title>Impressão de Etiquetas</title>
@@ -118,14 +119,7 @@
 										</div>
 									</div>
 									<div>
-										<svg
-											class="barcode"
-											height="120px"
-											jsbarcode-format="upc"
-											jsbarcode-value="123456789012"
-											jsbarcode-textmargin="0"
-											jsbarcode-fontoptions="bold"
-										></svg>
+										<svg id="barcode"></svg>
 									</div>
 								</div>
 							</div>
@@ -133,25 +127,9 @@
 								<p class="tamanhoPreview">40x30mm</p>
 							</div>
 						</div>
-						<div class="boxhrcss">
-							<div class="hrcss"></div>
-						</div>
-						<div id="containerExpandPreview">
-							<div id="etiqQuantPreview">
-								<p class="textEtiq">Visualizando 1 de 10</p>
-							</div>
-							<div id="etiqExpandPreview">
-								<p class="textEtiq">Expandir</p>
-								<img
-									class="iconExpand"
-									src="/assets/imgs/label/icon/expandir.svg"
-									alt="Expandir"
-								/>
-							</div>
-						</div>
 					</div>
 				</div>
-
+				<div id="hrcss"></div>
 				<div id="containerRight">
 					<div id="etiqConfig">
 						<div id="BoxConfigTitle">
@@ -190,19 +168,19 @@
 								</div>
 							</div>
 							<div id="checkboxValidade" class="containerCheckBox">
-								<input type="checkbox" />
+								<input id="inpCheckboxValidade" type="checkbox" />
 								<p class="textEtiq">Incluir validade</p>
 							</div>
 							<div id="checkboxCodeBar" class="containerCheckBox">
 								<input
 									id="checkBoxBarcode"
 									type="checkbox"
-									onclick="incluiCodebar()"
+									onclick="incluirCodigoBarra()"
 								/>
 								<p class="textEtiq">Incluir código de barras</p>
 							</div>
 							<div id="checkboxCodigoInterno" class="containerCheckBox">
-								<input type="checkbox" />
+								<input id="inpCheckboxID" type="checkbox" />
 								<p class="textEtiq">Incluir código interno</p>
 							</div>
 						</div>
@@ -214,10 +192,10 @@
 								>
 									<img
 										class="iconConfig"
-										src="/assets/imgs/label/icon/impressora.svg"
+										src="/assets/imgs/products/icon/impressora.svg"
 										alt="Impressora"
 									/>
-									<strong> Imprimir </strong>
+									Imprimir
 								</button>
 							</div>
 						</div>
@@ -225,8 +203,8 @@
 				</div>
 			</section>
 		</main>
-		<script src="Label/script.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/print-js@1.6.0/dist/print.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 	</body>
+	<script src="https://cdn.jsdelivr.net/npm/print-js@1.6.0/dist/print.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script type="module" src="Label/script.js"></script>
 </html>

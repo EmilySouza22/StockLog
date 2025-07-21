@@ -1,107 +1,99 @@
-/* LISTA DE PRODUTOS */
+const cache = localStorage.getItem('dados_empresa');
+const dadosEmpresa = JSON.parse(cache);
 
-import { gerarCodigoBarra } from '../../services/components/utils';
+//Carregar produtos no select
+async function carregarProdutosSelect() {
+	//Select do modal editar categoria
+	const selectModal = document.getElementById('formProducts');
 
-let listaProdutos = [
-	{
-		id: 1,
-		nome: 'Café Melitta Tradicional 500g',
-		validade: '15/02/2026',
-	},
-	{
-		id: 2,
-		nome: 'Suco Maguary Néctar Uva 1l',
-		validade: '12/02/2026',
-	},
-	{
-		id: 3,
-		nome: 'Leite Ninho Tradicional 1l ',
-		validade: '13/02/2026',
-	},
-	{
-		id: 4,
-		nome: 'Waffle Forno de Minas 280g Tradicional',
-		validade: '21/05/2026',
-	},
-];
+	try {
+		const response = await axios.post('/label/all', dadosEmpresa);
+		if (response.status === 200) {
+			//Criando option pro select
+			selectModal.innerHTML =
+				'<option value=""> Selecione um produto </option>';
 
-/* PRODUTO SELECIONADO */
-
-let PRODUTO_SELECIONADO = -1;
-
-// Captura o seletor que contém os options (produtos) para selecionar.
-const seletorProdutos = document.getElementById('formProducts');
-
-// Cria um listener que vai ser responsável apenas por disparar a função quando tiver uma mudança no seletor.
-// Para conseguir manipular o objeto da mudança, é nomeado o objeto como "event".
-seletorProdutos.addEventListener('change', (event) => {
-	// event é o objeto contendo as informações do evento "change"
-	// event.target é o elemento alvo que está sendo ouvido (no caso, é o seletor que possui o id "formProducts")
-	// event.target.value é o valor atual que o seletor está segurando, um número. O numero é inicializado como -1.
-	PRODUTO_SELECIONADO = event.target.value;
-
-	// Com a lista de produtos disponíveis, busca o produto pelo id se for igual ao numero atual do seletor.
-	const dadosProduto = listaProdutos.find(
-		(produto) => produto.id === parseInt(PRODUTO_SELECIONADO)
-	);
-
-	// Renderizar titulo "Produto:" e nome do produto na tela.
-	// Puxa a lista dos elementos da classe "etiquetaToggleProduto"
-	const etiquetaToggleProduto = document.querySelectorAll(
-		'.etiquetaToggleProduto'
-	);
-
-	// Para cada elemento da lista de elementos da classe "etiquetaToggleProduto"
-	for (let elemento of etiquetaToggleProduto) {
-		// Verifica se é uma opção de um produto ao invés da opção vazia (Selecionar Produto) que possui o valor -1.
-		if (PRODUTO_SELECIONADO > -1) {
-			// Se for um produto, exibe na tela tanto o titulo "Produto:" quanto o nome do produto.
-			elemento.style.setProperty('display', 'inline');
-		} else {
-			// Se não, oculta da tela.
-			elemento.style.setProperty('display', 'none');
+			response.data.forEach((produto) => {
+				selectModal.innerHTML += `<option value="${produto.nome}"> ${produto.nome} </option>`;
+			});
 		}
-
-		// Se for o elemento onde precisa ser preenchido com o nome do produto e existe o objeto "dadosProduto"
-		if (elemento.id === 'etiquetaProduto' && dadosProduto) {
-			// Então, incluir na tela o nome do produto.
-			elemento.innerHTML = dadosProduto.nome;
-		}
-	}
-});
-
-/* SELETOR DOS PRODUTOS */
-
-function popularSeletor() {
-	const seletorProdutos = document.getElementById('formProducts');
-
-	for (const produto of listaProdutos) {
-		const option = document.createElement('option');
-
-		option.value = produto.id;
-		option.text = produto.nome;
-
-		seletorProdutos.add(option);
+	} catch (error) {
+		console.log(error);
+		alert(
+			'Erro ao carregar produtos do select das etiquetas: ' +
+				error.response?.data?.message || error.message
+		);
 	}
 }
 
-popularSeletor();
-
-/* MODAL */
-
-const openButtons = document.querySelectorAll('.btnConfig2');
-
-openButtons.forEach((button) => {
-	button.addEventListener('click', () => {
-		const modalId = button.getAttribute('data-modal');
-		const modal = document.getElementById(modalId);
-
-		modal.showModal();
-	});
+document.addEventListener('DOMContentLoaded', () => {
+	carregarProdutosSelect();
 });
 
-// JsBarcode(".barcode").init();
+window.incluirCodigoBarra = function () {
+	const checkbox = document.getElementById('checkBoxBarcode');
+	const svg = document.getElementById('barcode');
 
-function incluiCodebar() {
-	gerarCodigoBarra('.barcode').init();
-}
+	if (checkbox.checked) {
+		const valor = '123456789012'; // aqui você pode colocar o código real do produto
+		JsBarcode(svg, valor, {
+			format: 'EAN13',
+			displayValue: true,
+			fontSize: 14,
+			height: 40,
+		});
+		svg.style.display = 'block';
+	} else {
+		svg.innerHTML = ''; // limpa o conteúdo do SVG
+		svg.style.display = 'none';
+	}
+};
+
+window.incluirValidade = function () {
+	const checkbox = document.querySelector('#inpCheckboxValidade input');
+
+	if (checkbox.checked && produtoSelecionado) {
+		etiquetaValidade.textContent = `Validade: ${produtoSelecionado.validade}`;
+		toggleValidade.forEach((p) => (p.style.display = 'block'));
+	} else {
+		etiquetaValidade.textContent = '';
+		toggleValidade.forEach((p) => (p.style.display = 'none'));
+	}
+};
+
+window.incluirCodigoInterno = function () {
+	const checkbox = document.querySelector('#inpCheckboxID input');
+
+	if (checkbox.checked && produtoSelecionado) {
+		etiquetaCodigo.textContent = `Código: ${produtoSelecionado.codigo_interno}`;
+		toggleCodigo.forEach((p) => (p.style.display = 'block'));
+	} else {
+		etiquetaCodigo.textContent = '';
+		toggleCodigo.forEach((p) => (p.style.display = 'none'));
+	}
+};
+
+selectProdutos.addEventListener('change', async () => {
+	const selectedIndex = selectProdutos.value;
+
+	if (selectedIndex === '-1') {
+		produtoSelecionado = null;
+		toggleProduto.forEach((p) => (p.style.display = 'none'));
+		etiquetaProduto.textContent = '';
+		return;
+	}
+
+	try {
+		const { data } = await axios.get(`/produtos/${produto.id}`);
+		produtoSelecionado = data;
+
+		etiquetaProduto.textContent = `Produto: ${produtoSelecionado.nome}`;
+		toggleProduto.forEach((p) => (p.style.display = 'block'));
+
+		// Atualiza validade/código se os checkboxes já estiverem marcados
+		window.incluirValidade();
+		window.incluirCodigoInterno();
+	} catch (error) {
+		console.error('Erro ao buscar produto:', error);
+	}
+});
