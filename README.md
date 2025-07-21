@@ -27,6 +27,7 @@ Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque
  • Histórico detalhado
  • Impressão de Etiquetas
 
- Link do protótipo no figma: https://www.figma.com/proto/8iVRFvjGa4sSILBWdoOFfq/Prot%C3%B3tipo-StockLog?node-id=451-11&t=3Yrd8EhhABjQPwoB-1&starting-point-node-id=441%3A11&scaling=contain&content-scaling=fixed
+ Link do protótipo no figma: 
+ <a href="https://www.figma.com/proto/8iVRFvjGa4sSILBWdoOFfq/Prot%C3%B3tipo-StockLog?node-id=451-11&t=3Yrd8EhhABjQPwoB-1&starting-point-node-id=441%3A11&scaling=contain&content-scaling=fixed" style="display: inline-block; padding: 12px 24px; background-color: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">Protótipo</a>
 
 🛠️ Projeto em desenvolvimento...
