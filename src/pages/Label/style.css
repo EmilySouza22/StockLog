@@ -270,7 +270,7 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
-    position: sticky;
+	position: sticky;
 
 	p {
 		margin: 0;

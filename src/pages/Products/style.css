@@ -1190,14 +1190,14 @@ input {
 
 td .tag-categoria{
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
+    justify-content: center;
 }
 
 .tag-categoria {
 	display: flex;
     width: 50%;
-	padding: 4px;
+	padding: 8px;
 	border-radius: 18px;
 	font-size: 15px;
 	color: #fff;
@@ -1206,7 +1206,6 @@ td .tag-categoria{
     height: 32px;
 	vertical-align: middle;
 	line-height: 25px; /* alinha verticalmente o texto */
-    padding-left: 12px;
 	margin: 6px ; /* centraliza dentro do <td> */
     
 }

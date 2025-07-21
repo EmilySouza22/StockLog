@@ -68,7 +68,8 @@ export default async function productRoutes(fastify, options) {
 		const dadosEmpresa = req.body;
 		const parametros = req.query;
 
-		let query = 'SELECT * FROM stocklog.produto WHERE empresa_id=? AND ativo=1';
+		let query =
+			'SELECT p.*, c.nome as categoria_nome, c.cor as categoria_cor FROM stocklog.produto p LEFT JOIN stocklog.categoria c ON p.categoria_id = c.id WHERE p.empresa_id=? AND p.ativo=1';
 
 		if (parametros && parametros.limit && parametros.offset) {
 			query += ` LIMIT ${parametros.limit} OFFSET ${parametros.offset}`;
@@ -114,11 +115,12 @@ export default async function productRoutes(fastify, options) {
 			data_validade,
 			minimo,
 			maximo,
+			categoria_id,
 			empresa_id,
 		} = req.body;
 
 		fastify.mysql.query(
-			'UPDATE stocklog.produto SET nome=?, codigo_barra=?, quantidade=?, data_entrada=?, data_validade=?, minimo=?, maximo=? WHERE id=?',
+			'UPDATE stocklog.produto SET nome=?, codigo_barra=?, quantidade=?, data_entrada=?, data_validade=?, minimo=?, maximo=?, categoria_id=? WHERE id=?',
 			[
 				nome,
 				codigo_barra,
@@ -127,6 +129,7 @@ export default async function productRoutes(fastify, options) {
 				data_validade,
 				minimo,
 				maximo,
+				categoria_id,
 				req.params.id,
 			],
 			function onResult(err, result) {
