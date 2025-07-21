@@ -1,5 +1,7 @@
 # StockLog
 
+![Description](./src/assets/imgs/home/img/logo.svg)
+
 🛠️ Sistema de Gerenciamento de Estoques para Empresas do ramo Alimentício
 
 Este projeto é um sistema web desenvolvido durante a Situação de Aprendizagem da primeira fase no SENAI.
