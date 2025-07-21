@@ -1,107 +1,154 @@
-/* LISTA DE PRODUTOS */
-
-import { gerarCodigoBarra } from '../../services/components/utils';
-
-let listaProdutos = [
-	{
-		id: 1,
-		nome: 'Café Melitta Tradicional 500g',
-		validade: '15/02/2026',
-	},
-	{
-		id: 2,
-		nome: 'Suco Maguary Néctar Uva 1l',
-		validade: '12/02/2026',
-	},
-	{
-		id: 3,
-		nome: 'Leite Ninho Tradicional 1l ',
-		validade: '13/02/2026',
-	},
-	{
-		id: 4,
-		nome: 'Waffle Forno de Minas 280g Tradicional',
-		validade: '21/05/2026',
-	},
-];
-
-/* PRODUTO SELECIONADO */
-
-let PRODUTO_SELECIONADO = -1;
-
-// Captura o seletor que contém os options (produtos) para selecionar.
 const seletorProdutos = document.getElementById('formProducts');
+const toggleProduto = document.getElementsByClassName('etiquetaToggleProduto');
+const toggleValidade = document.getElementsByClassName(
+	'etiquetaToggleValidade'
+);
+const toggleCodigo = document.getElementsByClassName('etiquetaToggleCodigo');
+const etiquetaProduto = document.getElementById('etiquetaProduto');
+const etiquetaValidade = document.getElementById('etiquetaValidade');
+const etiquetaCodigo = document.getElementById('etiquetaCodigo');
 
-// Cria um listener que vai ser responsável apenas por disparar a função quando tiver uma mudança no seletor.
-// Para conseguir manipular o objeto da mudança, é nomeado o objeto como "event".
-seletorProdutos.addEventListener('change', (event) => {
-	// event é o objeto contendo as informações do evento "change"
-	// event.target é o elemento alvo que está sendo ouvido (no caso, é o seletor que possui o id "formProducts")
-	// event.target.value é o valor atual que o seletor está segurando, um número. O numero é inicializado como -1.
-	PRODUTO_SELECIONADO = event.target.value;
+const svg = document.getElementById('barcode');
 
-	// Com a lista de produtos disponíveis, busca o produto pelo id se for igual ao numero atual do seletor.
-	const dadosProduto = listaProdutos.find(
-		(produto) => produto.id === parseInt(PRODUTO_SELECIONADO)
-	);
+const cache = localStorage.getItem('dados_empresa');
+const dadosEmpresa = JSON.parse(cache);
 
-	// Renderizar titulo "Produto:" e nome do produto na tela.
-	// Puxa a lista dos elementos da classe "etiquetaToggleProduto"
-	const etiquetaToggleProduto = document.querySelectorAll(
-		'.etiquetaToggleProduto'
-	);
+const PT_BR_DATE_FORMAT = 'DD/MM/YYYY';
 
-	// Para cada elemento da lista de elementos da classe "etiquetaToggleProduto"
-	for (let elemento of etiquetaToggleProduto) {
-		// Verifica se é uma opção de um produto ao invés da opção vazia (Selecionar Produto) que possui o valor -1.
-		if (PRODUTO_SELECIONADO > -1) {
-			// Se for um produto, exibe na tela tanto o titulo "Produto:" quanto o nome do produto.
-			elemento.style.setProperty('display', 'inline');
-		} else {
-			// Se não, oculta da tela.
-			elemento.style.setProperty('display', 'none');
-		}
+let produtos;
+let produtoSelecionado;
 
-		// Se for o elemento onde precisa ser preenchido com o nome do produto e existe o objeto "dadosProduto"
-		if (elemento.id === 'etiquetaProduto' && dadosProduto) {
-			// Então, incluir na tela o nome do produto.
-			elemento.innerHTML = dadosProduto.nome;
-		}
-	}
+document.addEventListener('DOMContentLoaded', () => {
+	carregarProdutosSelect();
 });
 
-/* SELETOR DOS PRODUTOS */
+//Carregar produtos no select
+async function carregarProdutosSelect() {
+	//Select do modal editar categoria
 
-function popularSeletor() {
-	const seletorProdutos = document.getElementById('formProducts');
+	try {
+		const response = await axios.post('/label/all', dadosEmpresa);
+		if (response.status === 200) {
+			produtos = response.data;
+			//Criando option pro select
+			seletorProdutos.innerHTML =
+				'<option value="-1"> Selecione um produto </option>';
 
-	for (const produto of listaProdutos) {
-		const option = document.createElement('option');
-
-		option.value = produto.id;
-		option.text = produto.nome;
-
-		seletorProdutos.add(option);
+			response.data.forEach((produto) => {
+				seletorProdutos.innerHTML += `<option value="${produto.id}"> ${produto.nome} </option>`;
+			});
+		}
+	} catch (error) {
+		console.log(error);
+		alert(
+			'Erro ao carregar produtos do select das etiquetas: ' +
+				error.response?.data?.message || error.message
+		);
 	}
 }
 
-popularSeletor();
+seletorProdutos.addEventListener('change', async () => {
+	const selectedId = parseInt(seletorProdutos.value);
 
-/* MODAL */
+	if (selectedId === -1) {
+		produtoSelecionado = null;
+		for (const p of toggleProduto) {
+			p.style.display = 'none';
+		}
+		etiquetaProduto.textContent = '';
 
-const openButtons = document.querySelectorAll('.btnConfig2');
+		for (const p of toggleValidade) {
+			p.style.display = 'none';
+		}
+		etiquetaValidade.textContent = '';
 
-openButtons.forEach((button) => {
-	button.addEventListener('click', () => {
-		const modalId = button.getAttribute('data-modal');
-		const modal = document.getElementById(modalId);
+		for (const p of toggleCodigo) {
+			p.style.display = 'none';
+		}
+		etiquetaCodigo.textContent = '';
 
-		modal.showModal();
-	});
+		svg.innerHTML = ''; // limpa o conteúdo do SVG
+		svg.style.display = 'none';
+
+		return;
+	}
+
+	try {
+		produtoSelecionado = produtos.find((produto) => produto.id === selectedId);
+
+		etiquetaProduto.textContent = produtoSelecionado.nome;
+
+		for (const p of toggleProduto) {
+			p.style.display = 'block';
+		}
+
+		// Atualiza validade/código se os checkboxes já estiverem marcados
+		window.incluirValidade();
+		window.incluirCodigoInterno();
+		window.incluirCodigoBarra();
+	} catch (error) {
+		console.error('Erro ao buscar produto:', error);
+	}
 });
 
-// JsBarcode(".barcode").init();
+window.incluirValidade = function () {
+	const checkbox = document.getElementById('inpCheckboxValidade');
 
-function incluiCodebar() {
-	gerarCodigoBarra('.barcode').init();
-}
+	if (checkbox.checked && produtoSelecionado) {
+		etiquetaValidade.textContent = moment(
+			produtoSelecionado.data_validade
+		).format(PT_BR_DATE_FORMAT);
+		for (const p of toggleValidade) {
+			p.style.display = 'block';
+		}
+	} else {
+		etiquetaValidade.textContent = '';
+		for (const p of toggleValidade) {
+			p.style.display = 'none';
+		}
+	}
+};
+
+window.incluirCodigoInterno = function () {
+	const checkbox = document.getElementById('inpCheckboxID');
+
+	if (checkbox.checked && produtoSelecionado) {
+		etiquetaCodigo.textContent = produtoSelecionado.id;
+		for (const p of toggleCodigo) {
+			p.style.display = 'block';
+		}
+	} else {
+		etiquetaCodigo.textContent = '';
+		for (const p of toggleCodigo) {
+			p.style.display = 'none';
+		}
+	}
+};
+
+window.incluirCodigoBarra = function () {
+	const selectedId = parseInt(seletorProdutos.value);
+	const checkbox = document.getElementById('checkBoxBarcode');
+
+	if (selectedId === -1) {
+		svg.innerHTML = ''; // limpa o conteúdo do SVG
+		svg.style.display = 'none';
+
+		return;
+	}
+	console.log(
+		'produtoSelecionado.codigo_barra',
+		produtoSelecionado.codigo_barra
+	);
+	if (checkbox.checked && produtoSelecionado) {
+		JsBarcode(svg, produtoSelecionado.codigo_barra, {
+			format: 'CODE128B',
+			displayValue: true,
+			fontSize: 14,
+			height: 40,
+		});
+		svg.style.display = 'block';
+	} else {
+		svg.innerHTML = ''; // limpa o conteúdo do SVG
+		svg.style.display = 'none';
+	}
+};

@@ -108,7 +108,7 @@ async function adicionarProduto() {
 		if (response.status === 200) {
 			alert('Produto adicionado!');
 			document.getElementById('adicionar-modal').classList.remove('visivel');
-			window.location.reload();
+			carregarProdutos();
 		}
 	} catch (error) {
 		console.error(error);
@@ -118,47 +118,42 @@ async function adicionarProduto() {
 	}
 }
 
-// Função para renderizar a tabela produtos
-async function renderizarTabela(dados = []) {
-	if (!dados || dados.length === 0 || !Array.isArray(dados)) {
-		tbody.innerHTML = '<tr><td colspan="5">Nenhum dado disponível</td></tr>';
-		return;
-	}
-
+function renderizarTabela(dados = []) {
 	const tbody = document.getElementById('body');
 	tbody.innerHTML = '';
 
 	dados.forEach((produto) => {
 		const tr = document.createElement('tr');
 		tr.innerHTML = `
-            <td>${produto.id}</td>
-            <td>${produto.nome}</td>
-            <td>${produto.codigo_barra}</td>
-            <td>${produto.quantidade}</td>
-            <td>${moment(produto.data_entrada).format(PT_BR_DATE_FORMAT)}</td>
-            <td>${moment(produto.data_validade).format(PT_BR_DATE_FORMAT)}</td>
-            <td>
-                <div class="tag-categoria" id="color-${produto.categoria_id}">
-                    ${produto.categoria_id}
-                </div>
-            </td>
-            <td>
-                <button 
-                    class="delete-icon"
-                    data-id="${produto.id}"
-                    data-name="${produto.nome}"
-                >
-                    <img src="/assets/imgs/products/icon/icon-lixeira.svg" alt="apagar" class="icons-tabela">
-                </button>
-            </td>
-            <td>
-                <button class="editar-icon" data-id="${produto.id}">
-                    <img src="/assets/imgs/products/icon/icon-editar.svg" alt="editar" class="icons-tabela">
-                </button>
-            </td>
-        `;
+      <td>${produto.id}</td>
+      <td>${produto.nome}</td>
+      <td>${produto.codigo_barra}</td>
+      <td>${produto.quantidade}</td>
+      <td>${moment(produto.data_entrada).format(PT_BR_DATE_FORMAT)}</td>
+      <td>${moment(produto.data_validade).format(PT_BR_DATE_FORMAT)}</td>
+      <td>
+        <div class="tag-categoria" style="background-color: ${
+					produto.categoria_cor || '#999'
+				};">
+          ${produto.categoria_nome || 'Sem Categoria'}
+        </div>
+      </td>
+      <td>
+        <button class="delete-icon" data-id="${produto.id}" data-name="${
+			produto.nome
+		}">
+          <img src="/assets/imgs/products/icon/icon-lixeira.svg" alt="apagar" class="icons-tabela">
+        </button>
+      </td>
+      <td>
+        <button class="editar-icon" data-id="${produto.id}">
+          <img src="/assets/imgs/products/icon/icon-editar.svg" alt="editar" class="icons-tabela">
+        </button>
+      </td>
+    `;
 		tbody.appendChild(tr);
 	});
+
 	criarEventListeners();
 }
 
@@ -266,6 +261,7 @@ async function salvarEdicao(id) {
 		data_validade: document.getElementById('editar-validade').value,
 		minimo: parseInt(document.getElementById('editar-minimo').value),
 		maximo: parseInt(document.getElementById('editar-maximo').value),
+		categoria_id: document.getElementById('editar-categoria').value,
 		empresa_id: dadosEmpresa.id,
 	};
 
@@ -440,7 +436,7 @@ async function salvarEdicaoCategoria(id) {
 		if (response.status === 200) {
 			alert('Dados da categoria atualizados!');
 			document.getElementById('edit-modal-categ').style.display = 'none';
-			window.location.reload(true);
+			carregarProdutos();
 		}
 	} catch (error) {
 		console.error(error);
@@ -481,16 +477,21 @@ async function carregarCategorias() {
 			const selectModal = document.getElementById('selectModalEditCateg');
 			//Select do modal adicionar produto
 			const selectProduto = document.getElementById('nova-categoria');
+			//Select do modal editar produto
+			const selectEditProduto = document.getElementById('editar-categoria');
 
 			//Criando option pro select
 			selectModal.innerHTML =
 				'<option value="">Selecione uma categoria</option>';
 			selectProduto.innerHTML =
 				'<option value="">Selecione uma categoria</option>';
+			selectEditProduto.innerHTML =
+				'<option value="">Selecione uma categoria</option>';
 
 			response.data.forEach((categoria) => {
 				selectModal.innerHTML += `<option value="${categoria.id}">${categoria.nome}</option>`;
 				selectProduto.innerHTML += `<option value="${categoria.id}">${categoria.nome}</option>`;
+				selectEditProduto.innerHTML += `<option value="${categoria.id}">${categoria.nome}</option>`;
 			});
 		}
 	} catch (error) {

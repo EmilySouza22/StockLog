@@ -141,12 +141,15 @@ body {
 /* CONTEUDO */
 
 #containerMain {
-	width: 85%;
+	width: 90%;
 	height: 80vh;
 	display: flex;
+	background-color: #fff;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: space-around;
+	border-radius: 20px;
 }
 
 /*CONTAINER ESQUERDA*/
@@ -154,8 +157,6 @@ body {
 #containerLeft {
 	width: 40%;
 	height: 80vh;
-	background-color: #fff;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
@@ -177,10 +178,8 @@ body {
 #containerTitleProduct {
 	width: 100%;
 	display: flex;
-	justify-content: flex-start; /* Alinha pra esquerda */
+	justify-content: flex-start;
 	padding-left: 30px;
-	/* flex-direction: row;
-	justify-content: space-around; */
 }
 
 #titleProductSelect {
@@ -262,7 +261,6 @@ body {
 	display: flex;
 	background-color: #ffffff;
 	border-radius: 5px;
-	/* box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); */
 	border: 1px solid #c0c2c5;
 }
 
@@ -272,10 +270,20 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	position: sticky;
 
 	p {
 		margin: 0;
 	}
+}
+
+#barcode {
+	display: none;
+	margin-top: 20px;
+}
+
+#checkBoxBarcode:checked ~ #barcode {
+	display: block;
 }
 
 #etiquetaBoxLeft {
@@ -303,8 +311,7 @@ body {
 }
 
 .tamanhoPreview {
-	font-size: 14px;
-	/* margin: 0; */
+	font-size: 18px;
 	color: #344253;
 }
 
@@ -341,19 +348,14 @@ body {
 	align-items: center;
 }
 
-/* .boxhrcss {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-} */
-
-.hrcss {
+#hrcss {
+	width: 0.1%;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	width: 90%;
-	/* border-top: 1px solid #c0c2c5; */
+	height: 90%;
+	border-left: 5px solid #e0e0e0;
+	border-radius: 6px;
 }
 
 #etiqExpandPreview {
@@ -385,25 +387,14 @@ body {
 
 /* CONTAINER DIREITA ( CONFIGURAÇÕES DA ETIQUETA ) */
 
-/* #containerRight {
-	width: 40%;
-	height: 80vh;
-	background-color: #fff;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-	border-radius: 20px;
-} */
-
 #containerRight {
 	width: 40%;
 	height: 80vh;
-	background-color: #fff;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 	border-radius: 20px;
 	padding: 20px;
 	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-between; */
 	color: #344253;
 }
 
@@ -456,20 +447,6 @@ body {
 	justify-content: flex-start;
 }
 
-/* #containerTamEtiq {
-	width: 80%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
-
-#inputTamEtiq {
-	width: 80%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-} */
-
 #containerTamEtiq,
 #inputTamEtiq {
 	width: 100%;
@@ -481,7 +458,7 @@ body {
 
 .inputTamEtiq {
 	width: 70px;
-	height: 25px;
+	height: 35px;
 	padding: 6px 8px;
 	border: 1.5px solid #ccc;
 	border-radius: 6px;
@@ -491,6 +468,33 @@ body {
 	transition: none;
 	outline: none;
 	box-shadow: none;
+}
+
+/* Remove seta dos inputs number */
+.inputTamEtiq::-webkit-outer-spin-button,
+.inputTamEtiq::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.inputTamEtiq[type='number'] {
+	-moz-appearance: textfield;
+}
+
+#inputQuantEtiq input::-webkit-outer-spin-button,
+#inputQuantEtiq input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url('../../assets/imgs/label/icon/seta-select.svg');
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-size: 15px;
 }
 
 /* Class pra todos os subtitles do container right*/
@@ -517,16 +521,9 @@ body {
 	justify-content: flex-start;
 }
 
-/* #inputQuantEtiq {
-	width: 82%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-} */
-
 #inputQuantEtiq input {
 	width: 120px;
-	height: 25px;
+	height: 35px;
 	padding: 6px 8px;
 	border: 1.5px solid #ccc;
 	border-radius: 6px;
@@ -577,16 +574,9 @@ body {
 	justify-content: flex-start;
 }
 
-/* #inputSelectCor {
-	width: 54%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-} */
-
 #inputSelectCor select {
-	width: 120px;
-	height: 30px;
+	width: 150px;
+	height: 36px;
 	padding: 6px 8px;
 	border: 1.5px solid #ccc;
 	border-radius: 6px;
@@ -624,7 +614,7 @@ input[type='checkbox'] {
 	display: flex;
 	margin-top: 10px;
 	gap: 12px;
-	justify-content: flex-start;
+	justify-content: flex-end;
 	align-items: center;
 }
 
@@ -644,58 +634,24 @@ input[type='checkbox'] {
 	justify-content: space-around;
 }
 
-/* .btnConfig1 { --> NÃO EXISTE MAIS
-	width: 150px;
-	height: 4vh;
-	display: flex;
-	justify-content: space-between;
-	border: 2px solid #449b70;
-	border-radius: 5px;
-	background-color: transparent;
-	align-items: center;
-	cursor: pointer;
-	font-size: 15px;
-	color: #344253;
-	
-}
-
-.btnConfig2 { ---> NÃO EXISTE MAIS 
-	width: 30px;
-	height: 4vh;
-	display: flex;
-	justify-content: space-between;
-	background-color: transparent;
-	align-items: center;
-	cursor: pointer;
-	border: none;
-} */
-
-/* #modal-1 {	--> Não existe mais
-	position: fixed;
-	top: 72%;
-	left: 54%;
-	border: none;
-	z-index: 1000;
-	border-radius: 4px;
-} */
-
 .btnConfig3 {
 	/*Botão de imprimir*/
 	display: flex;
 	align-items: center;
 	gap: 8px;
-	height: 34px;
+	width: 140px;
+	height: 42px;
 	padding: 0 14px;
-	border: 1px solid #344253;
-	border-radius: 6px;
+	border: 2px solid #489d73;
+	border-radius: 12px;
 	background-color: transparent;
 	cursor: pointer;
 	font-size: 16px;
 	color: #344253;
-	font-weight: 400;
 	transition: none;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 	margin-left: 0;
+	align-items: center;
+	justify-content: center;
 }
 
 .iconConfig {
@@ -706,4 +662,8 @@ input[type='checkbox'] {
 .iconMaisOpc {
 	width: 20px;
 	height: 18px;
+}
+
+strong {
+	color: #489d73;
 }
