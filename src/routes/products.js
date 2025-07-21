@@ -16,12 +16,13 @@ export default async function productRoutes(fastify, options) {
 			data_entrada,
 			minimo,
 			maximo,
+			categoria_id,
 			empresa_id,
 		} = request.body;
 
 		try {
 			fastify.mysql.query(
-				'INSERT INTO stocklog.produto(`nome`,`codigo_barra`,`quantidade`,`data_validade`,`data_entrada`,`minimo`,`maximo`,`empresa_id`) VALUES (?,?,?,?,?,?,?,?)',
+				'INSERT INTO stocklog.produto(`nome`,`codigo_barra`,`quantidade`,`data_validade`,`data_entrada`,`minimo`,`maximo`, `categoria_id`, `empresa_id`) VALUES (?,?,?,?,?,?,?,?,?)',
 				[
 					nome,
 					codigo_barra,
@@ -30,6 +31,7 @@ export default async function productRoutes(fastify, options) {
 					data_entrada,
 					minimo,
 					maximo,
+					categoria_id,
 					empresa_id,
 				],
 				function onResult(err, result) {
