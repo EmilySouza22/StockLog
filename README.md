@@ -27,4 +27,4 @@ Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque
  • Histórico detalhado
  • Impressão de Etiquetas
 
-🛠️ ESTE PROJETO ESTÁ EM DESENVOLVIMENTO
+🛠️ Projeto em desenvolvimento...
