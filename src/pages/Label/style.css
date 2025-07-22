@@ -118,19 +118,23 @@ body {
 }
 
 .botaoNavTelas {
-	width: 120px;
-	height: 35px;
+	padding: 8px 16px;
+	background: linear-gradient(to right, #68c899, #489d73);
+	color: #fff;
+	border: none;
+	border-radius: 30px;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background 0.2s;
+	min-width: 120px;
+	height: 38px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #f5f5f5;
-	border: none;
-	background: linear-gradient(to right, #68c899, #489d73);
-	border-radius: 25px;
-	font-family: 'Roboto Medium', sans-serif;
-	font-size: 16px;
-	gap: 5px;
-	cursor: pointer;
+	text-align: center;
+	gap: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .botaoNavIcon {

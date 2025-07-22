@@ -66,18 +66,23 @@
 }
 
 .navigation-buttons .btn {
-	font-family: 'Roboto Medium', sans-serif;
-	font-size: 16px;
+	padding: 8px 16px;
 	background: linear-gradient(to right, #68c899, #489d73);
-	color: #f0f4f8;
+	color: #fff;
 	border: none;
-	width: 120px;
-	height: 35px;
-	border-radius: 25px;
+	border-radius: 30px;
+	font-size: 16px;
+	/* font-weight: 500; */
 	cursor: pointer;
-	font-weight: bold;
-	margin: 0 5px;
-	gap: 5px;
+	transition: background 0.2s;
+	min-width: 120px;
+	height: 38px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navigation-buttons .btn:hover {

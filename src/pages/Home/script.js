@@ -871,7 +871,7 @@ async function inicializarHome() {
 	// GRÁFICOS ESTÁTICOS (dados mockados) ================
 
 	// gráfico de categoria
-	criarGraficoCategoriasEstatico();
+	// criarGraficoCategoriasEstatico();
 
 	// gráfico de atividades
 	criarGraficoAtividadesEstatico();
@@ -887,7 +887,7 @@ async function inicializarHome() {
 	// await criarGraficoAtividades();
 
 	// Carregar gráfico de categorias com dados reais
-	// await criarGraficoCategorias();
+	await criarGraficoCategorias();
 
 	// Carregar gráfico de validades com dados reais
 	// await criarGraficoValidades();
