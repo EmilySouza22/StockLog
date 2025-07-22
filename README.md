@@ -1,7 +1,7 @@
 
 ![LOGO](./src/assets/imgs/home/img/logo.svg)
 
-🛠️ Sistema de Gerenciamento de Estoques para Empresas
+# **🛠️ Sistema de Gerenciamento de Estoques para Empresas**
 
 Este projeto é um sistema web desenvolvido durante a Situação de Aprendizagem da primeira fase no SENAI.
 
@@ -10,7 +10,7 @@ Nosso sistema foi desenvolvido para auxiliar empresas no controle e gerenciament
 Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque do ramo alimentício, desde pequenos negócios até supermercados.
 
 
-🔧 STACK
+## **🔧 STACK**
 
    HTML
  • CSS
@@ -19,7 +19,8 @@ Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque
  • Fastify
  • Mysql
 
-🔐 Funcionalidades Principais
+## **🔐 Funcionalidades Principais**
+
  • Autenticação
  • Gestão de Produtos
  • Cadastro completo de produtos
@@ -29,5 +30,6 @@ Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque
 
 [![Protótipo](https://img.shields.io/badge/Protótipo-Figma-489d73?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/proto/8iVRFvjGa4sSILBWdoOFfq/Prot%C3%B3tipo-StockLog?node-id=451-11&t=3Yrd8EhhABjQPwoB-1&starting-point-node-id=441%3A11&scaling=contain&content-scaling=fixed)
 [![Mockup: Tinkercad](https://img.shields.io/badge/Mockup-Tinkercad-28DB83?style=for-the-badge&logo=tinkercad&logoColor=white)]((https://www.tinkercad.com/things/61oBALlrOC5-exquisite-vihelmo-migelo))
+[![Apresentação: Canva](https://img.shields.io/badge/Apresentação-Canva-8bd8ca?style=for-the-badge&logo=canva&logoColor=white)]([https://www.canva.com/](https://www.canva.com/design/DAGstuFRWos/v12iUfONK2lmzRhtirUuGQ/view?utm_content=DAGstuFRWos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd3c6b17432))
 
-🛠️ Projeto em desenvolvimento...
+##🛠️ Projeto em desenvolvimento...
