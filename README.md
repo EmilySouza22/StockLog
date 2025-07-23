@@ -10,15 +10,6 @@ Nosso sistema foi desenvolvido para auxiliar empresas no controle e gerenciament
 Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque do ramo alimentício, desde pequenos negócios até supermercados.
 
 
-## **🔧 STACK**
-
-   HTML
- • CSS
- • JavaScript
- • Node.js
- • Fastify
- • Mysql
-
 ## **🔐 Funcionalidades Principais**
 
    Autenticação
@@ -28,6 +19,15 @@ Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque
  • Histórico detalhado
  • Impressão de Etiquetas
 
+## **🔧 STACK**
+
+   HTML
+ • CSS
+ • JavaScript
+ • Node.js
+ • Fastify
+ • Mysql
+ 
 [![Protótipo](https://img.shields.io/badge/Protótipo-Figma-489d73?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/proto/8iVRFvjGa4sSILBWdoOFfq/Prot%C3%B3tipo-StockLog?node-id=441-11&t=b8mo8IMvT2MrAKTH-1&starting-point-node-id=441%3A11&scaling=contain&content-scaling=fixed)
 [![Mockup: Tinkercad](https://img.shields.io/badge/Mockup-Tinkercad-28DB83?style=for-the-badge&logo=tinkercad&logoColor=white)](https://www.tinkercad.com/things/61oBALlrOC5-exquisite-vihelmo-migelo)
 [![Apresentação: Canva](https://img.shields.io/badge/Apresentação-Canva-8bd8ca?style=for-the-badge&logo=canva&logoColor=white&labelColor=555555&color=8bd8ca)](https://www.canva.com/design/DAGstuFRWos/v12iUfONK2lmzRhtirUuGQ/view?utm_content=DAGstuFRWos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd3c6b17432)
