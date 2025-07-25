@@ -33,3 +33,9 @@ Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque
 [![Apresentação: Canva](https://img.shields.io/badge/Apresentação-Canva-8bd8ca?style=for-the-badge&logo=canva&logoColor=white&labelColor=555555&color=8bd8ca)](https://www.canva.com/design/DAGstuFRWos/v12iUfONK2lmzRhtirUuGQ/view?utm_content=DAGstuFRWos&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd3c6b17432)
 
 ## 🚧 Projeto em desenvolvimento...
+
+Grupo:
+[@EmilySouza22](https://github.com/EmilySouza22)
+[@Lwbane](https://github.com/LwBane)
+[@francagiovanna](https://github.com/francagiovanna)
+[@Alioliv](https://github.com/Alioliv)
