@@ -1,7 +1,7 @@
 
 ![LOGO](./src/assets/imgs/home/img/logo.svg)
 
-# **📦 Sistema de Gerenciamento de Estoques para Empresas**
+# **📦 Sistema de Gerenciamento de Estoques**
 
 Este projeto é um sistema web desenvolvido durante a Situação de Aprendizagem da primeira fase no SENAI.
 
