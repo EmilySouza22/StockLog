@@ -9,6 +9,8 @@ Nosso sistema foi desenvolvido para auxiliar empresas no controle e gerenciament
 
 Nesta primeira etapa de desenvolvimento do MVP, o foco são empresas com estoque do ramo alimentício, desde pequenos negócios até supermercados.
 
+<img width="1889" height="907" alt="image" src="https://github.com/user-attachments/assets/c1ee7ed0-1f5e-457f-873f-ca72b6d6c1fc" />
+
 
 ## **🛠️ Funcionalidades Principais**
 
